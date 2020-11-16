@@ -16,7 +16,7 @@ kPow covers the full surface area of Kafka and associated systems like Kafka Con
 
 ### X-Ray Vision for Apache Kafka
 
-Gain instant visibility of your brokers, topics, groups, partitions, offsets, and more. 
+Gain instant visibility of your brokers, topics, groups, partitions, offsets, and more.
 
-![](../.gitbook/assets/screen-kpow-xray.png)
+![](../.gitbook/assets/screen-xray.png)
 
