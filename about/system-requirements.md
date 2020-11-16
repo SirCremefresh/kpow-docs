@@ -1,3 +1,7 @@
+---
+description: Built for Simplicity from Kafka and Clojure
+---
+
 # System Requirements
 
 ## Dependencies

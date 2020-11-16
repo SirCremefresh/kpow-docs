@@ -1,8 +1,8 @@
 ---
-description: Get Working with kPow for Apache Kafka
+description: Start a Free 30-Day Trial Today
 ---
 
-# Licensing
+# Trials and Licensing
 
 ## Free Trial
 
