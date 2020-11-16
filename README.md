@@ -1,5 +1,5 @@
 ---
-description: A guide to the ultimate engineering toolkit for Apache Kafka®.
+description: Get to work with the ultimate engineering toolkit for Apache Kafka®.
 ---
 
 # kPow User Guide
