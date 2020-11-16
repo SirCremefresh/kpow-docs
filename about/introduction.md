@@ -1,5 +1,5 @@
 ---
-description: The what and how of kPow.
+description: The What and How of kPow.
 ---
 
 # Introduction

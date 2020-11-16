@@ -5,6 +5,7 @@
 ## About
 
 * [Introduction](about/introduction.md)
+* [Our Team](about/our-team.md)
 * [Releases](about/releases.md)
 
 ## Installation
