@@ -1,6 +1,14 @@
 # Table of contents
 
-* [kPow.IO Documentation](README.md)
+* [kPow Documentation](README.md)
 
-## Getting Started
+## About
+
+* [Releases](about/latest.md)
+
+## Installation
+
+---
+
+* [Quick Start](quick-start.md)
 
