@@ -12,5 +12,7 @@ kPow is our flagship product and was originally called simply Operatr \(yes, we 
 
 To understand more of our team and what excites us about Apache Kafka, see Derek Troy-West's talk at the 2019 Clojure/conj:
 
-[https://www.youtube.com/watch?v=MnvtPzEH-d8](https://www.youtube.com/watch?v=MnvtPzEH-d8)
+{% embed url="https://www.youtube.com/watch?v=MnvtPzEH-d8" %}
+
+
 
