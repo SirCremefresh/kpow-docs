@@ -14,3 +14,7 @@
 
 * [Quick Start](installation/quick-start.md)
 
+---
+
+* [Support](support.md)
+
