@@ -1,6 +1,6 @@
 # Table of contents
 
-* [kPow Documentation](README.md)
+* [kPow User Guide](README.md)
 
 ## About
 
