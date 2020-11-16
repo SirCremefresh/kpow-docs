@@ -4,6 +4,10 @@ description: Get to work with the ultimate engineering toolkit for Apache KafkaÂ
 
 # kPow User Guide
 
+{% hint style="info" %}
+**Tip**: Search the kPow Guide in the top right-hand corner.
+{% endhint %}
+
 ## Try kPow Today
 
 Sign-up for a [**free 30-day trial**](https://kpow.io/try) and see our [**Quick Start**](installation/quick-start.md) guide to get up and running in minutes.
@@ -16,5 +20,9 @@ Take a quick look at [**Our Team**](about/our-team.md) ****to understand why we 
 
 Grab the latest of our [**Releases**](about/releases.md), check the [**System Requirements**](about/system-requirements.md), then get started with a [**Free Trial**](about/trials-and-licenses.md).
 
-Finally dive into all of kPows **Features** and find out how to get **Support** from our team.
+Finally, dive into all of kPows **Features** and find out how to get [**Support**](about/support.md) from our team.
+
+{% hint style="success" %}
+**Need Help?** Email [**support@operatr.io**](mailto:support@operatr.io) ****or [**book a video call**](about/support.md)**.**
+{% endhint %}
 
