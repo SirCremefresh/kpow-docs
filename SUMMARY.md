@@ -15,3 +15,7 @@
 
 * [Quick Start](installation/quick-start.md)
 
+## Configuration
+
+* [Kafka Cluster](configuration/kafka-cluster.md)
+
