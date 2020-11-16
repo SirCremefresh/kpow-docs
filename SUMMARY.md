@@ -19,8 +19,5 @@
 
 * [Kafka Cluster](configuration/kafka-cluster.md)
 * [HTTPS Connections](configuration/https-connections.md)
-
----
-
-* [Data Policies](data-policies.md)
+* [Data Policies](configuration/data-policies.md)
 
