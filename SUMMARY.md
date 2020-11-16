@@ -1,4 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [kPow.IO Documentation](README.md)
+
+## Getting Started
 
