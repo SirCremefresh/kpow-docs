@@ -2,7 +2,7 @@
 description: Start a Free 30-Day Trial Today
 ---
 
-# Trials and Licensing
+# Trials and Licenses
 
 ## Free Trial
 
