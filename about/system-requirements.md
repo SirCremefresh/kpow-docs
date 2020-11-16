@@ -14,6 +14,30 @@ kPow can run with as little as **256MB** memory and **0.25** CPU.
 
 We recommend **1GB** memory and **0.5** CPU for a standard installation but encourage you to experiment with constraining resources as much as possible.
 
+## Memory Constraints
+
+The Docker container starts the JAR file with **initial and max memory constraints** set to 80% of the resources provided to the container.
+
+```text
+CMD java -XX:InitialRAMPercentage=80 -XX:MaxRAMPercentage=80 -jar /opt/operatr/lib/kpow.jar
+```
+
+Make sure you to set the memory available to the container on startup \(**-m1G** in this case\):
+
+```text
+docker run -p 3000:3000 -m1G --env-file ./kpow.env operatr/kpow:latest
+```
+
+When running in Kubernetes **ensure that your pod resources are set**. Preferably run with **pod QOS class guaranteed** by setting both the min and max memory and CPU to the same desired values.
+
+When using the JAR file directly **ensure you set suitable memory constraints** with -Xmx and -Xms:
+
+```text
+BOOTSTRAP="your-bootstrap-url" java -Xms1G -Xmx1G -jar ./kpow-latest.jar
+```
+
+Failing to set memory constraints may cause kPow to consume more memory than required.
+
 ## Disk Space
 
 kPow **does not use local disk** so does not require any particular storage beyond configuration.
@@ -35,4 +59,6 @@ Ideal for containerized deployments, kPow thrives in Fargate, ECS, EC2, EKS, Kub
 Consumable as a JAR file with no further resources and able to run fully air-gapped, kPow is ideal for enterprise installations.
 
 See our installation guides for more.
+
+## 
 
