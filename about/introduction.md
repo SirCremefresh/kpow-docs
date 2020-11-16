@@ -1,5 +1,5 @@
 ---
-description: 'The what, why, and who of kPow.'
+description: The what and how of kPow.
 ---
 
 # Introduction
@@ -12,11 +12,27 @@ kPow is the toolkit that empowers your team to deliver with Kafka.
 
 Once installed, kPow gathers information about your Kafka resources every minute, stores the results locally in internal topics, then provides custom telemetry and insights to you in a rich data-oriented UI.
 
-kPow covers the full surface area of Kafka and associated systems like Kafka Connect and Schema Registry, giving you:
-
-### X-Ray Vision for Apache Kafka
+### X-Ray Vision of Kafka Resources
 
 Gain instant visibility of your brokers, topics, groups, partitions, offsets, and more.
 
-![](../.gitbook/assets/screen-xray.png)
+kPow offers full support for controlling and monitoring Kafka Connect clusters and Schema Registries.
+
+![kPow provides x-ray vision of Kafka resources](../.gitbook/assets/screen-xray.png)
+
+### Built for the Enterprise
+
+kPow comes from a practical application of Kafka to real-world requirements and provides:
+
+* **User Authentication** via DB, File, LDAP, SAML, or OpenID configuration.
+* **User Authorization** with Simple or Role Based Access Controls \(RBAC\).
+* **Data Policies** for masking and redaction of sensitive data like Credit Card or PII.
+* **Data Governance** with all user actions captured in the kPow audit log.
+* **Slack Integration** to have user actions sent to an operations channel as they happen.
+* **HTTPS** easily configured with your own certificates, or integrated with a reverse-proxy.
+* **Prometheus** endpoints to integrate with your preferred metrics and alerting systems.
+* **Multi-Cluster Monitoring** from a single installation for cost efficiency and simplicity.
+* **All data in local topics** makes kPow perfect for air-gapped environments.
+
+![kPow is easily configured with LDAP for User Authentication](../.gitbook/assets/screen-login.png)
 
