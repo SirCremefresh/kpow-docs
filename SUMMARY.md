@@ -9,12 +9,9 @@
 * [System Requirements](about/system-requirements.md)
 * [Trials and Licenses](about/trials-and-licenses.md)
 * [Releases](about/releases.md)
+* [Support](about/support.md)
 
 ## Installation
 
 * [Quick Start](installation/quick-start.md)
-
----
-
-* [Support](support.md)
 
