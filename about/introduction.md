@@ -26,11 +26,15 @@ Search **tens of thousands of messages a second** with kPow’s unique, custom i
 
 **kJQ** works with JSON or JSON-like data including Apache Avro®, Transit, EDN, and even Protobuf messages where you have configured custom serdes to output JSON formatted text.
 
-![](../.gitbook/assets/screen-data.png)
+![Search tens of thousands of messages a second with kJQ](../.gitbook/assets/screen-data.png)
 
 ### Compute Console to Control and Monitor Streams
 
+Brokers, topics, and the data on them tell only one part of the Kafka story.
 
+kPow Compute provides access to your consumer \(and soon, _Kafka Streams_\) topologies allowing **visualization of message throughput and lag** at point of consumption and the ability to **reset consumption** at a group, host, member, topic, or assignment level.
+
+![kPow Compute provides visualization and control of consumption](../.gitbook/assets/screen-compute.png)
 
 ### Built for the Enterprise
 
@@ -47,4 +51,8 @@ kPow comes from a practical application of Kafka to real-world requirements and 
 * **All data in local topics** makes kPow perfect for air-gapped environments.
 
 ![kPow is easily configured with LDAP for User Authentication](../.gitbook/assets/screen-login.png)
+
+### And Much More..
+
+**Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from kPow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this guide.
 
