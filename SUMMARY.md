@@ -9,7 +9,5 @@
 
 ## Installation
 
----
-
-* [Quick Start](quick-start.md)
+* [Quick Start](installation/quick-start.md)
 

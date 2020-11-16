@@ -28,6 +28,10 @@ Search **tens of thousands of messages a second** with kPow’s unique, custom i
 
 ![](../.gitbook/assets/screen-data.png)
 
+### Compute Console to Control and Monitor Streams
+
+
+
 ### Built for the Enterprise
 
 kPow comes from a practical application of Kafka to real-world requirements and provides:
