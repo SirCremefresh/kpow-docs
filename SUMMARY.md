@@ -18,4 +18,5 @@
 ## Configuration
 
 * [Kafka Cluster](configuration/kafka-cluster.md)
+* [HTTPS Connections](configuration/https-connections.md)
 
