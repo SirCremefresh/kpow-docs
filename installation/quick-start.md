@@ -80,7 +80,7 @@ ALLOW_TOPIC_DELETE=true \
 ALLOW_TOPIC_EDIT=true \
 ALLOW_TOPIC_INSPECT=true \
 ALLOW_TOPIC_PRODUCE=true \
-java -jar -Xmx1G ./operatr.jar
+java -jar -Xmx1G ./kpow-latest.jar
 ```
 
 * Run **`chmod +x start-kpow.sh`** then **`./start-kpow.sh`**
