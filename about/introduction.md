@@ -20,6 +20,14 @@ kPow offers full support for controlling and monitoring Kafka Connect clusters a
 
 ![kPow provides x-ray vision of Kafka resources](../.gitbook/assets/screen-xray.png)
 
+### Deep Data Inspect with kJQ
+
+Search **tens of thousands of messages a second** with kPow’s unique, custom implementation of JQ-like queries for Kafka topics. 
+
+**kJQ** works with JSON or JSON-like data including Apache Avro®, Transit, EDN, and even Protobuf messages where you have configured custom serdes to output JSON formatted text.
+
+![](../.gitbook/assets/screen-data.png)
+
 ### Built for the Enterprise
 
 kPow comes from a practical application of Kafka to real-world requirements and provides:
