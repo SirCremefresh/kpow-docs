@@ -1,5 +1,5 @@
 ---
-description: Get started with kPow in two minutes.
+description: Get started with kPow for in two minutes.
 ---
 
 # Quick Start
