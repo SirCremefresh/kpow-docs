@@ -20,7 +20,7 @@ Take a quick look at [**Our Team**](about/our-team.md) ****to understand why we 
 
 Grab the latest of our [**Releases**](about/releases.md), check the [**System Requirements**](about/system-requirements.md), then get started with a [**Free Trial**](about/trials-and-licenses.md).
 
-Finally, dive into all of kPows **Features** and find out how to get [**Support**](about/support.md) from our team.
+Finally, dive into all of kPow's **Features** and find out how to get [**Support**](about/support.md) from our team.
 
 
 
