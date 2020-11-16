@@ -4,6 +4,7 @@
 
 ## About
 
+* [Introduction](about/introduction.md)
 * [Releases](about/latest.md)
 
 ## Installation
