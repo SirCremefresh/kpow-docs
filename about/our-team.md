@@ -4,7 +4,9 @@ description: The Who of kPow
 
 # Our Team
 
-kPow is built by the team at [Operatr.IO.](https://operatr.io)
+kPow is [**built by the team at Operatr.IO**](https://operatr.io).
+
+{% embed url="https://operatr.io/articles/evolve-with-apache-kafka/" %}
 
 We are a company of engineers who started working with Kafka in 2012 and have decades of experience delivering Enterprise systems. Our tools come from a practical application of Kafka to real-world requirements and problems.
 
