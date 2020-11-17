@@ -14,6 +14,24 @@ RBAC_CONFIGURATION_FILE=/path/to/rbac-config.yaml
 
 RBAC provides **fine-grained control** of user actions on specific resources determined by a user's roles.
 
+## Authorized Roles
+
+kPow will restrict UI access to users who have **at least one role** defined in the RBAC configuration.
+
+You may override this behaviour by providing a **specific list of `authorized_roles`** in your config.
+
+```yaml
+## Allow all users access to the UI ("*" is a role held by everyone)
+authorized_roles:
+  - "*"
+  
+## Or, allow users with specific roles access to the UI
+authorized_roles:
+  - "kafka-user"
+  - "kafka-admin"
+  - "ops-support"
+```
+
 ## RBAC Policies
 
 An RBAC Policy contains:
