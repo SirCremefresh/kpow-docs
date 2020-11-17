@@ -4,7 +4,7 @@ description: Authenticate Users with Jetty JAAS LdapLoginModule
 
 # LdapLoginModule
 
-Configure kPow to read authentication and role information from a LDAP.
+Configure kPow to read authentication and role information from LDAP.
 
 {% hint style="info" %}
 **In Depth:** For specifics on JAAS / LDAP configuration see the [**Jetty LdapLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) ****docs.
