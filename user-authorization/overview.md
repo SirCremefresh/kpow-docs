@@ -4,7 +4,7 @@ description: Secure kPow with User Authorization
 
 # Overview
 
-kPow supports two methods of controlling user access to **actions**.
+kPow supports two methods of controlling user access to [**User Actions**](overview.md#user-actions).
 
 * \*\*\*\*[**Simple Access Control**](simple-access-control.md) ****creates global access controls from environment variable config
 * \*\*\*\*[**Role Based Access Control**](role-based-access-control.md) ****integrates with [**User Authentication**](../user-authentication/overview.md) and respects role based controls
