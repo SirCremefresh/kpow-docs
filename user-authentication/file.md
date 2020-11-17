@@ -31,7 +31,7 @@ To enable PropertyFileLoginModule authentication you must:
 
 ### JAAS Configuration
 
-* Create a JAAS configuration file \(the **kpow** realm is very important\).
+Create a JAAS PropertyFile configuration file \(the **kpow** realm is very important\).
 
 ```text
 kpow {
@@ -40,7 +40,7 @@ kpow {
       };
 ```
 
-* Create a users property file **at the path configured in your JAAS config**.
+Create a users property file **at the path configured in your JAAS config**.
 
 ```text
 # This file defines users passwords and roles for a HashUserRealm

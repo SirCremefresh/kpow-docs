@@ -30,7 +30,7 @@ To enable LdapLoginModule authentication you must:
 
 ### JAAS Configuration
 
-* Create a JAAS configuration file \(the **kpow** realm is very important\).
+Create a JAAS LDAP configuration file \(the **kpow** realm is very important\).
 
 ```text
 kpow {

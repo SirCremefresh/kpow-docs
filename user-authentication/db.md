@@ -30,29 +30,21 @@ To enable LdapLoginModule authentication you must:
 
 ### JAAS Configuration
 
-* Create a JAAS configuration file \(the **kpow** realm is very important\).
+Create a JAAS JDBC configuration file \(the **kpow** realm is very important\).
 
 ```text
 kpow {
-  org.eclipse.jetty.jaas.spi.LdapLoginModule required
-  useLdaps="false"
-  contextFactory="com.sun.jndi.ldap.LdapCtxFactory"
-  hostname="your.ldap.host"
-  port="your.ldap.port"
-  bindDn="CN=YourCN,OU=YourOU,DC=YourDC,DC=com"
-  bindPassword="*******"
-  authenticationMethod="simple"
-  forceBindingLogin="true"
-  userBaseDn="OU=UserOU,OU=UserOU,DC=UserDC,DC=UserDC"
-  userRdnAttribute="UserRDN"
-  userIdAttribute="UserID"
-  userPasswordAttribute="UserPW"
-  userObjectClass="user"
-  roleBaseDn="OU=RoleOU,DC=RoleDC,DC=RoleDC"
-  roleNameAttribute="cn"
-  roleMemberAttribute="member"
-  roleObjectClass="group";
-};
+      org.eclipse.jetty.jaas.spi.JDBCLoginModule required
+      dbUrl="jdbc:hsqldb:."
+      dbUserName="sa"
+      dbDriver="org.hsqldb.jdbcDriver"
+      userTable="myusers"
+      userField="myuser"
+      credentialField="mypassword"
+      userRoleTable="myuserroles"
+      userRoleUserField="myuser"
+      userRoleRoleField="myrole";
+      };
 ```
 
 ### Environment Configuration
