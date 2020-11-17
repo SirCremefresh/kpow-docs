@@ -28,10 +28,7 @@
 
 ## User Authorization
 
-* [Overview](user-authorization/overview/README.md)
-  * [Simple Access Controls](user-authorization/overview/simple-access-controls.md)
-
----
-
-* [Role Based Access Controls](role-based-access-controls.md)
+* [Overview](user-authorization/overview.md)
+* [Simple Access Control](user-authorization/simple-access-control.md)
+* [Role Based Access Control](user-authorization/role-based-access-control.md)
 
