@@ -32,3 +32,7 @@
 * [Simple Access Control](user-authorization/simple-access-control.md)
 * [Role Based Access Control](user-authorization/role-based-access-control.md)
 
+## Features
+
+* [Data Governance](features/data-governance.md)
+

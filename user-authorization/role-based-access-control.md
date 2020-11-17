@@ -4,7 +4,7 @@ description: Secure kPow with RBAC
 
 # Role Based Access Control
 
-Role Based Access Control \(RBAC\) integrates with [**User Authentication**](../user-authentication/overview.md), leveraging roles that you have assigned to users in the credentials system of your choice. 
+Role Based Access Control \(RBAC\) integrates with [**User Authentication**](../user-authentication/overview.md), leveraging roles assigned to users in the credentials system of your choice. 
 
 RBAC configuration is defined in a YAML file and configured with an environment variable:
 
@@ -80,7 +80,7 @@ All remaining actions are **implicitly denied** actions to all users on all reso
 
 ## Resources
 
-Resources are defined within a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy_%28biology%29) that describes the hierarchy of objects in Operatr:
+Resources are defined within a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy_%28biology%29) that describes **the hierarchy of objects** in kPow.
 
 ```text
 [DOMAIN_TYPE, DOMAIN_ID, OBJECT_TYPE?, OBJECT_ID?]
@@ -89,11 +89,11 @@ Resources are defined within a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy
 Where:
 
 * **Domain Type**: The top-level resource, either **cluster**, **schema**, or **connect**
-* **Domain ID:** Unique identifier of the domain, **\*** for all/wildcard
-* **Object Type:** Either either **topic, group, connector, subject,** or **broker**
-* **Object ID:** Unique identified of the object. Wildcard not supported
+* **Domain ID:** Unique identifier of the domain or "**\*" for all/wildcard**
+* **Object Type:** Either **topic, group, connector, subject,** or **broker**
+* **Object ID:** Unique identified of the object. **Wildcard not supported**
 
-Specifying the object is optional, if not provided the resource includes all objects within a domain.
+**Specifying the object is optional.** If not provided the resource includes all objects within a domain.
 
 ### Example Resources
 
@@ -102,11 +102,15 @@ Specifying the object is optional, if not provided the resource includes all obj
 ["cluster", "*", "topic"] - all topics on all clusters
 ["cluster", "N9xnGujkR32eYxHICeaHuQ"] - all objects in a cluster
 ["cluster", "*", "topic", "tx-events"] - named topic in all clusters
+["schema", "*"] - all schema registries and all objects
+["schema", "*", "subject", "tx-events"] - named subject in all schema registries
+["connect", "*"] - all connect clusters and all objects
+["connect", "*", "connector", "csv-in"] - named connector in all connect clusters
 ```
 
 ### Resource IDs
 
-Operatr logs the IDs of all top-level resources at startup:
+kPow **logs the IDs of all top-level domains** at startup.
 
 ```text
  Connected to [2] Kafka clusters:
@@ -121,14 +125,14 @@ Operatr logs the IDs of all top-level resources at startup:
 In the example above we have four **domain** resources:
 
 * Two Kafka Clusters \(`g10tMLohRLKthriTt0749g`, `lkc-lo0o9`\)
-* One Kafka Connect \(`g10tMLohRLKthriTt0749g`\)
+* One Kafka Connect Cluster \(`g10tMLohRLKthriTt0749g`\)
 * One Schema Registry \(`a2f06a916672d71d675f`\)
 
 #### Resource ID Definitions
 
-* `Kafka Cluster` - the ID of the Kafka cluster as returned by a broker
-* `Kafka Connect` - the ID of the Kafka cluster associated with the Kafka Connect installation
-* `Schema Registry` - a SHA256 hash of the Schema Registry endpoint
+* **Kafka Cluster:** - the ID of the Kafka cluster as returned by a broker
+* **Kafka Connect:** the ID of the Kafka cluster associated with the Kafka Connect installation
+* **Schema Registry:** a SHA256 hash of the Schema Registry endpoint
 
 ## Effects
 
@@ -138,91 +142,23 @@ Where no matching policy exists the effect is an **implicit deny.**
 
 ## Actions
 
-Operatr supports this list of user actions:
-
-* `TOPIC_CREATE` - create new topics
-* `TOPIC_DELETE` - delete topics
-* `TOPIC_INSPECT` - view full message data \(key and value\)
-* `TOPIC_PRODUCE` - edit topic configuration and delete topics
-* `TOPIC_EDIT` - edit topic configuration and delete topics
-* `GROUP_EDIT` - reset group offsets and delete consumer groups
-* `SCHEMA_EDIT` - edit and delete schema subjects
-* `SCHEMA_CREATE` - create new schemas
-* `BROKER_EDIT` - edit broker configuration
-* `CONNECT_CREATE` - create new connectors
-* `CONNECT_EDIT` - edit, delete, pause, and restart connectors
-* `ACL_EDIT` - create, edit, and delete ACLs
+See: [**User Actions**](overview.md#user-actions).
 
 ## Roles
 
 Define a user role to which you would like to allow or deny access.
 
-Can be a wildcard \(**\***\) to specify the policy is for all roles.
+Can be a wildcard \(**\***\) to **specify the policy is for all roles**.
 
 ### Role Evaluation
 
-To determine if a user has access to an action on a resource we gather the policies for all roles assigned to that user and evaluate them with the following logic:
+User access to an action on a resource is determined by gathering all policies for roles assigned to a user and evaluating them with the following logic.
 
-![rbac\_evaluation\_logic.png](https://support.operatr.io/hc/article_attachments/900002827323/rbac_evaluation_logic.png)
+![](../.gitbook/assets/rbac-evaluation.png)
 
 ## User Access Governance
 
-Operatr captures all user actions in an audit log, this log is retained in an internal topic called `__oprtr_audit_log` with recent actions being shown in the Operatr UI.
 
-The audit log captures requests and responses related to each user action, as well as the metadata associated with the request.
-
-### Example Audit Record
-
-Consider a request to create a new Kafka topic named `tx-events`.
-
-Operatr has been configured with Github SSO and the following RBAC policy:
-
-```text
-policies:
-  - resource: ["cluster", "Enpl9Kw4QK6pwK0LaRVssQ"]
-    effect:   "Allow"
-    actions:  ["TOPIC_INSPECT", "TOPIC_EDIT", "TOPIC_PRODUCE"]
-    role:     "*"
-```
-
-The request to create Kafka topic `tx-events` will result in the following record on the `__oprtr_audit_log` topic:
-
-```text
-{:data
- {:user
-  {:provider :github,
-   :email "john@mycorp.org",
-   :name "John Smith",
-   :login "JohnSmithGithub",
-   :id "e69002ee-467d-4d6f-8236-054c58b2a00c"},
-  :event
-  [:mutation/create-topic
-   {:topic-name "MyNewTopic",
-    :replication-factor "1",
-    :partitions "1",
-    :config-items {},
-    :request/ctx {:cluster-id "Enpl9Kw4QK6pwK0LaRVssQ"}}],
-  :rbac
-  {:success? true,
-   :action "TOPIC_CREATE",
-   :policies
-   ({:resource [:cluster "*"],
-     :role "*",
-     :effect "Allow",
-     :actions
-     #{"TOPIC_INSPECT" "TOPIC_EDIT" "TOPIC_PRODUCE"}})}},
- :ctx {:cluster-id "Enpl9Kw4QK6pwK0LaRVssQ"}, 
- :type :mutation/request}
-```
-
-The audit log record contains the following details:
-
-* The contents of the request itself \(topic create request\)
-* Metadata about the user who made the request \(John Smith\)
-* Authorization results:
-  * Whether the user was authorized to perform the request
-  * The matching policies that were evaluated against the request
-  * The action required to perform the mutation \(`TOPIC_CREATE`\)
 
 ## Role Mapping
 
