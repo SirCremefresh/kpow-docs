@@ -12,7 +12,7 @@ Configure kPow to read authentication and role information from LDAP.
 
 ## Form or Basic Authentication?
 
-kPow supports both form and basic \(browser default\) authentication.
+kPow supports both form-based and basic authentication.
 
 **Form authentication is the default.** To basic authentication, set the environment variable:
 
