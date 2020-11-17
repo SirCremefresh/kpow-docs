@@ -47,9 +47,3 @@ The list of connection variables follows, many are optional. Consult the **Kafka
 | **SSL\_PROTOCOL** | TLS, TLSv1.1, or TLSv1.2 |
 | **SSL\_ENABLED\_PROTOCOLS** | The list of protocols enabled for SSL |
 
-
-
-| SECURITY\_PROTOCOL | SASL\_SSL | PLAINTEXT, SSL, SASL\_PLAINTEXT, or SASL\_SSL |
-| :--- | :--- | :--- |
-
-
