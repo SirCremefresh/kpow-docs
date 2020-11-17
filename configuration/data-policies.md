@@ -4,7 +4,7 @@ description: Declarative Redaction of Sensitive Data
 
 # Data Policies
 
-kPow supports configurable redaction of Data Inspection results with Data Policies.
+kPow supports **configurable redaction of Data Inspection results** with Data Policies.
 
 Data policies are defined in a YAML file and configured with an environment variable:
 
@@ -12,13 +12,22 @@ Data policies are defined in a YAML file and configured with an environment vari
 DATA_POLICY_CONFIGURATION_FILE=/path/to/masking/config.yml
 ```
 
-Data policies are a declarative way to define how redactions are applied.
+Data policies are a declarative way of defining how redactions are applied to query results.
 
-kPow supports redactions on **both the key and value** attributes of records and supports redaction of scalar types \(eg: strings\) or structured data types \(eg: maps, collections\).
+kPow supports redactions on **both the key and value** attributes of records and supports redaction of scalar types \(eg: strings\) or within structured data types \(eg: maps, collections\).
 
-Structured data redaction currently supports AVRO, JSON, Transit, and EDN serdes.
+Structured data redaction currently supports AVRO, JSON, Transit, and EDN data formats.
 
-**Note:** If data masking policies are configured the ability to inspect with String serdes is restricted.
+{% hint style="warning" %}
+**String serdes are removed** from Data Inspect when Data Policies are configured as they could be used to circumvent redaction.
+{% endhint %}
+
+Define **exclusions:** in your Data Policies YAML file to exclude specific topics from redaction and allow them to be inspected with String serdes.
+
+```yaml
+exclusions:
+  topics: ["tx_meta", "tx_metrics"]
+```
 
 ## Data Policies
 
@@ -33,7 +42,11 @@ The YAML configuration defines policies, each policy contains:
 
 ### Example YAML
 
-```text
+{% hint style="success" %}
+**Example:** A **Credit Card** policy that shows only the last four digits of specific fields in all topics.
+{% endhint %}
+
+```yaml
 policies:
   - name: Credit Card
     category: PII
@@ -64,8 +77,9 @@ Where:
 
 ### Example Resources
 
-| `["cluster", "*"]` | All clusters and topics  |
+| Resource | Effect |
 | :--- | :--- |
+| `["cluster", "*"]` | All clusters and topics |
 | `["cluster", "N9xnGujkR32eYxHICeaHuQ"]` | All topics for a specific cluster |
 | `["cluster", "*", "topic", "MyTopic"]` | Specific topic on all clusters \(key and value\) |
 | `["cluster", "*", "topic", "MyTopic", "key"]` | Specific topic on all clusters \(key only\)  |
@@ -77,24 +91,28 @@ Supported redaction functions include:
 
 | Redaction | Description | Example Data | Example Result |
 | :--- | :--- | :--- | :--- |
-| Full | Fully redact the matched value | John Smith | \*\*\*\*\*\*\*\*\*\*\*\* |
-| SHAHash | Apply a SHA512 hash to the value | John Smith | ed014a19bb67a85f9d... |
-| ShowEmailHost | Only show the email host | [johnsmith@corp.org](mailto:johnsmith@corp.org) | \*\*\*\*\*\*\*\*\*@corp.org |
-| ShowEmailPart | Show the email host and the first character of the email | [johnsmith@corp.org](mailto:johnsmith@corp.org) | j\*\*\*\*\*\*\*\*@corp.org |
-| ShowFirst | Only show the first character | John Smith | J\*\*\*\*\*\*\*\*\* |
-| ShowFirst2 | Only show the first two characters | John Smith | Jo\*\*\*\*\*\*\*\* |
-| ShowFirst4 | Only show the first four characters | John Smith | John\*\*\*\*\*\* |
-| ShowFirst6 | Only show the first six characters | John Smith | John S\*\*\*\* |
-| ShowLast | Only show the last character | John Smith | \*\*\*\*\*\*\*\*\*h |
-| ShowLast2 | Only show the last two characters | John Smith | \*\*\*\*\*\*\*\*th |
-| ShowLast4 | Only show the last four characters | John Smith | \*\*\*\*\*\*mith |
-| ShowLast6 | Only show the last six characters | John Smith | \*\*\*\* Smith |
+| **Full** | Fully redact the matched value | John Smith | \*\*\*\*\*\*\*\*\*\*\*\* |
+| **SHAHash** | Apply a SHA512 hash to the value | John Smith | ed014a19bb67a.. |
+| **ShowEmailHost** | Show the email host | [johnsmith@corp.org](mailto:johnsmith@corp.org) | \*\*\*\*\*\*\*\*\*@corp.org |
+| **ShowEmailPart** | Show first character and host | [johnsmith@corp.org](mailto:johnsmith@corp.org) | j\*\*\*\*\*\*\*\*@corp.org |
+| **ShowFirst** | Show the first character | John Smith | J\*\*\*\*\*\*\*\*\* |
+| **ShowFirst2** | Show the first two characters | John Smith | Jo\*\*\*\*\*\*\*\* |
+| **ShowFirst4** | Show the first four characters | John Smith | John\*\*\*\*\*\* |
+| **ShowFirst6** | Show the first six characters | John Smith | John S\*\*\*\* |
+| **ShowLast** | Show the last character | John Smith | \*\*\*\*\*\*\*\*\*h |
+| **ShowLast2** | Show the last two characters | John Smith | \*\*\*\*\*\*\*\*th |
+| **ShowLast4** | Show the last four characters | John Smith | \*\*\*\*\*\*mith |
+| **ShowLast6** | Show the last six characters | John Smith | \*\*\*\* Smith |
 
 ###  Nested Redaction
 
-kPow supports redaction of nested data structures, for example if we apply the Credit Card policy to a topic with the following JSON message:
+kPow supports redaction of nested data structures.
 
-```text
+{% hint style="success" %}
+**Example:** Applying the example **Credit Card** policy to a JSON message.
+{% endhint %}
+
+```javascript
 { 
   "user_details": { 
     "email_address": "a@user.com",
@@ -105,9 +123,9 @@ kPow supports redaction of nested data structures, for example if we apply the C
 }
 ```
 
-The data would be masked accordingly when displayed in Data Inspect search results: 
+The data is masked accordingly when displayed in Data Inspect search results: 
 
-```text
+```javascript
 { 
   "user_details": { 
     "email_address": "a@user.com",
@@ -120,7 +138,7 @@ The data would be masked accordingly when displayed in Data Inspect search resul
 
 kPow is **conservative** when applying data policies. Given a field where the selected redaction function cannot apply, the fallback is to use the **Full** redaction policy, e.g:
 
-```text
+```javascript
 { 
   "user_details": { 
     "email_address": "a@user.com",
@@ -140,7 +158,7 @@ Applying the same Credit Card policy to this data incurs a **Full** redaction at
 
 The result is effectively truncated:
 
-```text
+```javascript
 { 
   "user_details": { 
     "email_address": "a@user.com",
@@ -153,14 +171,12 @@ The result is effectively truncated:
 
 ### Data Policy Sandbox
 
-You can test your data policies from within kPow using the Data Policies sandbox.
+kPow comes with a built in **Data Policies Sandbox** to experiment with your currently configured policies or to create and test new configuration.
 
-Inside kPow, navigate to **Admin -&gt; Data Policies**:
+To access the Data Policies Sandbox navigate to **Admin -&gt; Data Policies**
 
-[![dp-sandbox.png](https://support.operatr.io/hc/article_attachments/900003409283/dp-sandbox.png)](https://github.com/operatr-io/operatr/blob/60fc2e0ce5684f29718755c8871c56f9171a6a05/docs/data-policies-sandbox.png)
+![kPow provides a Data Policies sandbox](../.gitbook/assets/screen-policies.png)
 
-The Data Policies admin UI also gives a read-only view into your defined policies, with the ability to test each policy within the sandbox.
-
-[![dp-policies.png](https://support.operatr.io/hc/article_attachments/900003409303/dp-policies.png)](https://github.com/operatr-io/operatr/blob/60fc2e0ce5684f29718755c8871c56f9171a6a05/docs/data-policies-table.png)  
+  
 
 
