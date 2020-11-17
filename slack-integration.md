@@ -6,6 +6,8 @@ description: Integrate the kPow Audit Log and Slack
 
 kPow can send [**Audit Log**](features/data-governance.md) records to your Slack, all you need to do is configure a webhook.
 
+![](.gitbook/assets/snippet-slack.png)
+
 ## Configuration
 
 1. Add an [**Incoming Webhooks**](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks) integration to your Slack.
