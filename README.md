@@ -20,7 +20,7 @@ Take a quick look at [**Our Team**](about/our-team.md) ****to understand why we 
 
 Grab the latest of our [**Releases**](about/releases.md), check the [**System Requirements**](about/system-requirements.md), then get started with a [**Free Trial**](about/trials-and-licenses.md).
 
-Dive into kPow features like [**User Authentication**](user-authentication/overview.md), [**Role Based Access Control**](user-authorization/role-based-access-control.md), [**HTTPS Connections**](configuration/https-connections.md), and [**Data Policies**](configuration/data-policies.md), or just ****find out how to get [**Support**](about/support.md) from our team.
+Dive into kPow features like [**User Authentication**](user-authentication/overview.md), [**Role Based Access Control**](user-authorization/role-based-access-control.md), [**HTTPS Connections**](configuration/https-connections.md), and [**Data Policies**](features/data-policies.md), or just ****find out how to get [**Support**](about/support.md) from our team.
 
 
 

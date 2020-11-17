@@ -19,7 +19,6 @@
 
 * [Kafka Cluster](configuration/kafka-cluster.md)
 * [HTTPS Connections](configuration/https-connections.md)
-* [Data Policies](configuration/data-policies.md)
 
 ## User Authentication
 
@@ -35,4 +34,5 @@
 ## Features
 
 * [Data Governance](features/data-governance.md)
+* [Data Policies](features/data-policies.md)
 
