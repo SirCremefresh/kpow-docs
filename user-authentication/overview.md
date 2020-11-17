@@ -20,10 +20,10 @@ kPow is built on the [**Eclipse Jetty Web Server**](https://www.eclipse.org/jett
 
 Jetty provides a number of JAAS \(Java Authentication and Authorization\) integrations including:
 
-* **JDBCLoginModule:** user credentials are stored in a DB accessed via JDBC.
-* **DataSourceLoginModule:** similar to JDBC but uses a JNDI Datasource to connect to the DB.
 * **PropertyFileLoginModule:** user credentials are stored in a property file.
 * **LdapLoginModule:** user credentials are stored in LDAP.
+* **JDBCLoginModule:** user credentials are stored in a DB accessed via JDBC.
+* **DataSourceLoginModule:** similar to JDBC but uses a JNDI Datasource to connect to the DB.
 
 kPow supports **all of these Jetty JAAS integrations.** Details of each are in this guide.
 
