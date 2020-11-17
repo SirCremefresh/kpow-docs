@@ -26,3 +26,7 @@
 * [Overview](user-authentication/overview.md)
 * [PropertyFileLoginModule](user-authentication/propertyfileloginmodule.md)
 
+## User Authorization
+
+* [Overview](user-authorization/overview.md)
+
