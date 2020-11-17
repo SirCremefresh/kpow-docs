@@ -22,6 +22,8 @@ Structured data redaction currently supports AVRO, JSON, Transit, and EDN data f
 **String serdes are removed** from Data Inspect when Data Policies are configured as they could be used to circumvent redaction.
 {% endhint %}
 
+## Exclusions
+
 Define **exclusions:** in your Data Policies YAML file to exclude specific topics from redaction and allow them to be inspected with String serdes.
 
 ```yaml
