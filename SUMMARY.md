@@ -22,8 +22,9 @@
 ## User Authentication
 
 * [Overview](user-authentication/overview.md)
-* [LdapLoginModule](user-authentication/ldaploginmodule.md)
-* [PropertyFileLoginModule](user-authentication/propertyfileloginmodule.md)
+* [LdapLoginModule](user-authentication/ldap.md)
+* [PropertyFileLoginModule](user-authentication/file.md)
+* [JDBCLoginModule](user-authentication/db.md)
 
 ## User Authorization
 
