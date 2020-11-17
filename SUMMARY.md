@@ -21,3 +21,7 @@
 * [HTTPS Connections](configuration/https-connections.md)
 * [Data Policies](configuration/data-policies.md)
 
+## User Authentication
+
+* [Overview](user-authentication/overview.md)
+

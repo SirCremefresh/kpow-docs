@@ -1,0 +1,41 @@
+---
+description: Secure kPow with User Authentication
+---
+
+# Overview
+
+kPow supports the following mechanisms for authenticating users.
+
+{% hint style="warning" %}
+**Note:** When running kPow with a reverse-proxy for HTTPS termination \(rather than [**HTTPS Connections**](../configuration/https-connections.md)\) care must be taken the the **scheme** of configured authentication URI.
+{% endhint %}
+
+## Jetty Authentication
+
+kPow is built on the [**Eclipse Jetty Web Server**](https://www.eclipse.org/jetty/)**.**
+
+{% hint style="info" %}
+**See:** The [**Jetty JAAS Documentation**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) for a full description of authentication options.
+{% endhint %}
+
+Jetty provides a number of JAAS \(Java Authentication and Authorization\) integrations including:
+
+* **JDBCLoginModule:** user credentials are stored in a DB accessed via JDBC.
+* **DataSourceLoginModule:** similar to JDBC but uses a JNDI Datasource to connect to the DB.
+* **PropertyFileLoginModule:** user credentials are stored in a property file.
+* **LdapLoginModule:** user credentials are stored in LDAP.
+
+kPow supports **all of these Jetty JAAS integrations.** Details of each are in this guide.
+
+## SAML Authentication
+
+kPow is easily configured to be a **Service Provider** and integrates with any SAML **Identity Provider**, we include specific guides for **Azure AD** and **AWS SSO** in this guide.
+
+## OpenID and OAuth 2.0 Authentication
+
+kPow supports integration with **Okta** \(OpenID\) and **Github** \(OAuth 2.0\) SSO providers.
+
+{% hint style="success" %}
+**Need a Provider Added?** Just email **support@operatr.io** and we'll estimate delivery.
+{% endhint %}
+
