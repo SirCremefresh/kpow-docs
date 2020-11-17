@@ -22,7 +22,7 @@ Grab the latest of our [**Releases**](about/releases.md), check the [**System Re
 
 Dive into kPow features like [**User Authentication**](user-authentication/overview.md), [**Role Based Access Control**](user-authorization/role-based-access-control.md), [**HTTPS Connections**](features/https-connections.md), and [**Data Policies**](features/data-policies.md) for configurable redaction of sensitive data.
 
-Discover how kPow supports good [**Data Governance**](features/data-governance.md) ****and even provides **Slack Integration**.
+Discover how kPow supports good [**Data Governance**](features/data-governance.md) ****and even provides [**Slack Integration**](features/slack-integration.md).
 
 If you need help - ****find out how to get [**Support**](about/support.md) from our friendly team
 

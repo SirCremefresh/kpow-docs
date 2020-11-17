@@ -32,11 +32,8 @@
 
 ## Features
 
-* [HTTPS Connections](features/https-connections.md)
 * [Data Governance](features/data-governance.md)
 * [Data Policies](features/data-policies.md)
-
----
-
-* [Slack Integration](slack-integration.md)
+* [HTTPS Connections](features/https-connections.md)
+* [Slack Integration](features/slack-integration.md)
 
