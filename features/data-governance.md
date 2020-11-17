@@ -4,7 +4,7 @@ kPow **captures all user actions in an audit log.**
 
 The audit log is retained in an internal topic, **`__oprtr_audit_log`** and displayed in the kPow UI.
 
-kPow provides **Slack Integration** to have user actions sent to the slack channel of your choosing.
+kPow provides [**Slack Integration** ](slack-integration.md)to have user actions sent to the slack channel of your choosing.
 
 The audit log captures requests and responses related to each user action, as well as the metadata associated with the request.
 
