@@ -162,7 +162,7 @@ All actions are retained in the kPow Audit Log. See: [**Data Governance**](../fe
 
 ## Role Mapping
 
-Operatr integrates with a number of OpenID and SAML SSO providers. In order to configure RBAC, you must ensure that authenticated users contain role information.
+To use RBAC you must configure [**User Authentication**](../user-authentication/overview.md) ****and ensure users have assigned roles.
 
 ### Github SSO
 
