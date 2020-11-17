@@ -32,7 +32,7 @@ authorized_roles:
   - "ops-support"
 ```
 
-## RBAC Policies
+## Policies
 
 An RBAC Policy contains:
 
@@ -45,7 +45,7 @@ Then either:
 * **Role:** The user role that this policy applies to
 * **Roles:** The list of user roles that this policy applies to
 
-### Example Policies
+### Example Configuration
 
 The following configuration applies controls to three roles and **permits all authenticated users access**.
 
