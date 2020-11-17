@@ -29,15 +29,22 @@ Then either:
 
 ### Example Policies
 
-The following policy configuration applies controls to two roles:
+The following configuration applies controls to three roles and **permits all authenticated users access**.
 
-**user:developer** is allowed to inspect, produce, and edit actions to all topics of a particular cluster, then explicitly denied produce and edit actions to one of those topics. **Deny** always takes precedence.
+**`kafka-admin`** is allowed to inspect, produce, and edit all topics **in a specific cluster**, then explicitly denied produce and edit actions to **one specific topic in that same cluster**. 
 
-**user:support** is allowed to edit actions to all groups on all clusters.
+{% hint style="info" %}
+**Note:** Where multiple policies apply to one resource, **Deny** effects take precedence.
+{% endhint %}
 
-All remaining users/roles are **implicitly denied** actions to all resources.
+**`kafka-admin`** and **`kafka-user`** are then permitted group edit permissions on all clusters.
 
-```text
+All remaining actions are **implicitly denied** actions to all users on all resources.
+
+```yaml
+authorized_roles:
+  - "*"
+  
 policies:
   - resource: ["cluster", "N9xnGujkR32eYxHICeaHuQ"] 
     effect:   "Allow" 
@@ -46,7 +53,7 @@ policies:
   - resource: ["cluster", "N9xnGujkR32eYxHICeaHuQ", "topic", "tx_audit"]
     effect:   "Deny"
     actions:  ["TOPIC_PRODUCE", "TOPIC_EDIT"]
-    role:     "kafka-data-entry"
+    role:     "kafka-admin"
   - resource: ["cluster", "*"]
     effect:   "Allow" 
     actions:  ["GROUP_EDIT"] 
