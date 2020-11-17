@@ -171,9 +171,9 @@ The result is effectively truncated:
 
 ### Data Policy Sandbox
 
-kPow comes with a built in **Data Policies Sandbox** to experiment with your currently configured policies or to create and test new configuration.
+kPow comes with a built in **Data Policy Sandbox** to experiment with your currently configured policies or to create and test new configuration.
 
-To access the Data Policies Sandbox navigate to **Admin -&gt; Data Policies**
+To access the Data Policy Sandbox navigate to **Admin -&gt; Data Policies**
 
 ![kPow provides a Data Policies sandbox](../.gitbook/assets/screen-policies.png)
 
