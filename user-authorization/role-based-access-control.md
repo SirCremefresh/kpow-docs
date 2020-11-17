@@ -49,6 +49,10 @@ Then either:
 
 The following configuration applies controls to three roles and **permits all authenticated users access**.
 
+{% hint style="info" %}
+**Note:** Where multiple policies apply to one resource, **Deny** effects take precedence.
+{% endhint %}
+
 ```yaml
 authorized_roles:
   - "*"
@@ -69,10 +73,6 @@ policies:
 ```
 
 **`kafka-admin`** is allowed to inspect, produce, and edit all topics **in a specific cluster**, then explicitly denied produce and edit actions to **one specific topic in that same cluster**. 
-
-{% hint style="info" %}
-**Note:** Where multiple policies apply to one resource, **Deny** effects take precedence.
-{% endhint %}
 
 **`kafka-admin`** and **`kafka-user`** are then permitted group edit permissions on all clusters.
 
