@@ -37,6 +37,7 @@
 * [Data Governance](features/data-governance.md)
 * [Data Policies](features/data-policies.md)
 * [HTTPS Connections](features/https-connections.md)
+* [Live Mode](features/live-mode.md)
 * [Multi-Cluster Management](features/multi-cluster.md)
 * [Slack Integration](features/slack-integration.md)
 
