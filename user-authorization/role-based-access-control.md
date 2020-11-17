@@ -158,7 +158,7 @@ User access to an action on a resource is determined by gathering all policies f
 
 ## User Access Governance
 
-
+All actions are retained in the kPow Audit Log. See: [**Data Governance**](../features/data-governance.md)**.**
 
 ## Role Mapping
 

@@ -8,7 +8,7 @@ kPow provides **Slack Integration** to have user actions sent to the slack chann
 
 The audit log captures requests and responses related to each user action, as well as the metadata associated with the request.
 
-### Audit Record
+### Sample Audit Record
 
 Consider a request to create a new Kafka topic named `tx-events`.
 
