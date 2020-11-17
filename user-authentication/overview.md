@@ -39,3 +39,19 @@ kPow supports integration with **Okta** \(OpenID\) and **Github** \(OAuth 2.0\) 
 **Need a Provider Added?** Just email **support@operatr.io** and we'll estimate delivery.
 {% endhint %}
 
+## kPow and User Authentication
+
+With authentication configured kPow requires all users to authenticate prior to accessing the UI.
+
+{% hint style="warning" %}
+**Note:** Access to Prometheus endpoints remains **unauthenticated.**
+{% endhint %}
+
+When **Jetty Authentication** is configured users will be prompted with form-based or basic login prompts.
+
+![](../.gitbook/assets/screen-login.png)
+
+Regardless of the mechanism used for authentication, all users can view their profile information.
+
+![](../.gitbook/assets/screen-profile.png)
+
