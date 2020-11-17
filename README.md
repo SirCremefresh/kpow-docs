@@ -24,7 +24,7 @@ Dive into kPow features like [**User Authentication**](user-authentication/overv
 
 Discover how kPow supports good [**Data Governance**](features/data-governance.md) ****and even provides **Slack Integration**.
 
-If you need a hand - ****find out how to get [**Support**](about/support.md) from our friendly team
+If you need help - ****find out how to get [**Support**](about/support.md) from our friendly team
 
 
 

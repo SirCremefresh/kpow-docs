@@ -36,3 +36,7 @@
 * [Data Governance](features/data-governance.md)
 * [Data Policies](features/data-policies.md)
 
+---
+
+* [Slack Integration](slack-integration.md)
+
