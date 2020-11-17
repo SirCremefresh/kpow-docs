@@ -7,7 +7,7 @@ description: Authenticate Users with Jetty JAAS PropertyFileLoginModule
 Configure kPow to read authentication and role information from a property file.
 
 {% hint style="info" %}
-**In Depth:** Read the [**Jetty PropertyFileLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) ****docs.
+**In Depth:** For more information see the [**Jetty PropertyFileLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) ****docs.
 {% endhint %}
 
 ## Form or Basic Authentication?
