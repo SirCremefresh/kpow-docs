@@ -7,7 +7,7 @@ description: Secure kPow with User Authentication
 kPow supports the following mechanisms for authenticating users.
 
 {% hint style="warning" %}
-**Note:** When running kPow with a reverse-proxy for HTTPS termination \(rather than [**HTTPS Connections**](../configuration/https-connections.md)\) care must be taken the the **scheme** of configured authentication URI.
+**Note:** When running kPow with a reverse-proxy for HTTPS termination \(rather than [**HTTPS Connections**](../features/https-connections.md)\) care must be taken the the **scheme** of configured authentication URI.
 {% endhint %}
 
 ## Jetty Authentication
