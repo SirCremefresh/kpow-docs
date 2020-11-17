@@ -11,6 +11,10 @@ kPow supports two methods of controlling user access to **actions**.
 
 ## User Actions
 
+{% hint style="info" %}
+**Note:** User Actions apply to specific **Domains**. This is important for **RBAC.**
+{% endhint %}
+
 The following actions are supported by both methods of access control.
 
 | Domain | Action | Control \(when TRUE\) |
