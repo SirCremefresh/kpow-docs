@@ -7,7 +7,7 @@ description: Authenticate Users with Jetty JAAS LdapLoginModule
 Configure kPow to read authentication and role information from a LDAP.
 
 {% hint style="info" %}
-**In Depth:** Read the [**Jetty LdapLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) ****docs.
+**In Depth:** For specifics on JAAS / LDAP configuration see the [**Jetty LdapLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) ****docs.
 {% endhint %}
 
 ## Form or Basic Authentication?
@@ -22,10 +22,9 @@ JETTY_AUTH_METHOD=basic
 
 ## Configuration
 
-To enable PropertyFileLoginModule authentication you must:
+To enable LdapLoginModule authentication you must:
 
 * Create a JAAS configuration file
-* Create a users property file
 * Set the **`AUTH_PROVIDER_TYPE=jetty`** environment variable.
 * Start the JAR or Docker container with `-Djava.security.auth.login.config=/path/to/jaas.conf`
 
@@ -35,37 +34,25 @@ To enable PropertyFileLoginModule authentication you must:
 
 ```text
 kpow {
-        org.eclipse.jetty.jaas.spi.PropertyFileLoginModule required
-        file="/opt/kpow/user.props";
-      };
-```
-
-* Create a users property file **at the path configured in your JAAS config**.
-
-```text
-# This file defines users passwords and roles for a HashUserRealm
-#
-# The format is
-#  <username>: <password>[,<rolename> ...]
-#
-# Passwords may be clear text, obfuscated or checksummed.  The class
-# org.eclipse.jetty.util.security.Password should be used to generate obfuscated
-# passwords or password checksums
-#
-# If DIGEST Authentication is used, the password must be in a recoverable
-# format, either plain text or OBF:.
-#
-# Credentials are jetty/jetty, admin/admin, other/other, plain/plain,
-#                 user/password, and digest/digest
-#
-jetty: MD5:164c88b302622e17050af52c89945d44,kafka-users
-admin: CRYPT:adpexzg3FUZAk,kafka-admins
-other: OBF:1xmk1w261u9r1w1c1xmq,kafka-admins,kafka-users
-plain: plain,content-administrators
-user: password,kafka-users
-# This entry is for digest auth.  The credential is a MD5 hash of
-# username:realmname:password
-digest: MD5:6e120743ad67abfbc385bc2bb754e297,kafka-users
+  org.eclipse.jetty.jaas.spi.LdapLoginModule required
+  useLdaps="false"
+  contextFactory="com.sun.jndi.ldap.LdapCtxFactory"
+  hostname="your.ldap.host"
+  port="your.ldap.port"
+  bindDn="CN=YourCN,OU=YourOU,DC=YourDC,DC=com"
+  bindPassword="*******"
+  authenticationMethod="simple"
+  forceBindingLogin="true"
+  userBaseDn="OU=UserOU,OU=UserOU,DC=UserDC,DC=UserDC"
+  userRdnAttribute="UserRDN"
+  userIdAttribute="UserID"
+  userPasswordAttribute="UserPW"
+  userObjectClass="user"
+  roleBaseDn="OU=RoleOU,DC=RoleDC,DC=RoleDC"
+  roleNameAttribute="cn"
+  roleMemberAttribute="member"
+  roleObjectClass="group";
+};
 ```
 
 ### Environment Configuration
