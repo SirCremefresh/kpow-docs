@@ -30,3 +30,7 @@
 
 * [Overview](user-authorization/overview.md)
 
+---
+
+* [Simple Access Controls](simple-access-controls.md)
+
