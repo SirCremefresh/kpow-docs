@@ -34,7 +34,7 @@ authorized_roles:
 
 ## Policies
 
-An RBAC Policy contains:
+An RBAC policy contains:
 
 * **Resource**: The resource that this policy controls access to
 * **Effect**: Whether to **deny** or **allow** access to the **Resource**

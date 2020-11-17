@@ -13,19 +13,19 @@ kPow supports two methods of controlling user access to **actions**.
 
 The following actions are supported by both methods of access control.
 
-| Action | Control \(when TRUE\) |
-| :--- | :--- |
-| **TOPIC\_INSPECT** | Allow users to read topic key and value data |
-| **TOPIC\_PRODUCE** | Allow users to write new messages to topics |
-| **TOPIC\_CREATE** | Allow users to create new topics |
-| **TOPIC\_EDIT** | Allow users to edit topic configuration |
-| **TOPIC\_DELETE** | Allow users to delete topics |
-| **GROUP\_EDIT** | Allow users to delete consumer groups and reset consumer offsets |
-| **BROKER\_EDIT** | Allow users to edit broker configuration |
-| **SCHEMA\_CREATE** | Allow users to create new schemas and subjects |
-| **SCHEMA\_EDIT** | Allow users to edit schemas and subjects |
-| **CONNECT\_CREATE** | Allow users to create new connectors |
-| **CONNECT\_EDIT** | Allow users to edit, pause, stop, and restart connectors and tasks |
+| Domain | Action | Control \(when TRUE\) |
+| :--- | :--- | :--- |
+| **CLUSTER** | **TOPIC\_INSPECT** | Allow users to read topic key and value data |
+|  | **TOPIC\_PRODUCE** | Allow users to write new messages to topics |
+|  | **TOPIC\_CREATE** | Allow users to create new topics |
+|  | **TOPIC\_EDIT** | Allow users to edit topic configuration |
+|  | **TOPIC\_DELETE** | Allow users to delete topics |
+|  | **GROUP\_EDIT** | Allow users to delete consumer groups and reset consumer offsets |
+|  | **BROKER\_EDIT** | Allow users to edit broker configuration |
+| **SCHEMA** | **SCHEMA\_CREATE** | Allow users to create new schemas and subjects |
+|  | **SCHEMA\_EDIT** | Allow users to edit schemas and subjects |
+| **CONNECT** | **CONNECT\_CREATE** | Allow users to create new connectors |
+|  | **CONNECT\_EDIT** | Allow users to edit, pause, stop, and restart connectors and tasks |
 
 ## User Permissions
 
