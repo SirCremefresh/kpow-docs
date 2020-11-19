@@ -18,6 +18,8 @@
 ## Configuration
 
 * [Kafka Cluster](configuration/kafka-cluster.md)
+* [Schema Registry](configuration/schema-registry.md)
+* [Kafka Connect](configuration/kafka-connect.md)
 
 ## User Authentication
 
@@ -40,8 +42,4 @@
 * [Live Mode](features/live-mode.md)
 * [Multi-Cluster Management](features/multi-cluster.md)
 * [Slack Integration](features/slack-integration.md)
-
----
-
-* [Schema Registry](schema-registry.md)
 
