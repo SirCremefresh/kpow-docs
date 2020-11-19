@@ -41,3 +41,7 @@
 * [Multi-Cluster Management](features/multi-cluster.md)
 * [Slack Integration](features/slack-integration.md)
 
+---
+
+* [Schema Registry](schema-registry.md)
+
