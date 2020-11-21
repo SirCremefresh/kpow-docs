@@ -4,7 +4,7 @@ description: Get started with kPow for in two minutes.
 
 # Quick Start
 
-This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR** ](quick-start.md#jar-quick-start)installations
+This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR** ](quick-start.md#jar-quick-start)installations.
 
 ## Docker Quick Start
 
