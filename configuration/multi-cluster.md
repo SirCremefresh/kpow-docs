@@ -16,7 +16,7 @@ When configuring multiple clusters, the **first configured cluster is your prima
 
 The primary cluster holds the kPow internal topics. You can switch the primary cluster at any time.
 
-#### Configuration example:
+## Configuration
 
 To configure multiple clusters, simply repeat the connection configuration with \_2, \_3, \_4 suffixes:
 
