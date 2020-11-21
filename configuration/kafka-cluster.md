@@ -26,6 +26,10 @@ kPow is capable of integrating with FIPS compliant Kafka clusters.
 
 Contact [support@operatr.io](mailto:support@operatr.io) for assistance.
 
+## Access Control
+
+User permissions to Kafka cluster resources are defined by [**Cluster actions.**](../user-authorization/overview.md#user-actions)\*\*\*\*
+
 ## Configuration
 
 kPow connects to a Kafka cluster with **exactly the same configuration** as a Kafka consumer or producer.
