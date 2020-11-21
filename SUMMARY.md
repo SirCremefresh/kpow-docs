@@ -41,5 +41,6 @@
 * [Data Policies](features/data-policies.md)
 * [HTTPS Connections](features/https-connections.md)
 * [Live Mode](features/live-mode.md)
+* [Prometheus Integration](features/prometheus.md)
 * [Slack Integration](features/slack-integration.md)
 
