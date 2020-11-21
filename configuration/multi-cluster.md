@@ -4,7 +4,7 @@ description: Manage Multiple Kafka Resources from One kPow Instance
 
 # Multi-Cluster Management
 
-One instance of kPow can manage multiple Apache Kafka clusters.
+One instance of kPow can manage multiple Apache Kafka clusters \(and their associated resources\).
 
 {% hint style="info" %}
 **Tip:** Name your environments with the ENVIRONMENT\_NAME variable for visibility in the UI
@@ -15,6 +15,14 @@ Multi-cluster **does not mean multi-region,** install kPow in proximity to your 
 When configuring multiple clusters, the **first configured cluster is your primary cluster.**
 
 The primary cluster holds the kPow internal topics. You can switch the primary cluster at any time.
+
+## Resources
+
+kPow will manage as many clusters as your license permits - you may have to increase the memory and CPU to ensure that the regular snapshotting process executes within thirty seconds.
+
+Information on snapshotting performance of each cluster is available at 'admin/about'.
+
+
 
 ## Configuration
 
@@ -29,7 +37,7 @@ SECURITY_PROTOCOL=SASL_PLAINTEXT
 SASL_MECHANISM=PLAIN
 SASL_JAAS_CONFIG=org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin-secret";
 
-# Cluster 2, Confluent Cloud
+# Cluster 2, Confluent Cloud + Schema Registry
 
 ENVIRONMENT_NAME_2=Outbound Payments (Staging)
 BOOTSTRAP_2=pkc-1234.us-east-1.aws.confluent.cloud:9092
