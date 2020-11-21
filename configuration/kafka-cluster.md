@@ -24,7 +24,7 @@ kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.
 
 kPow is capable of integrating with FIPS compliant Kafka clusters.
 
-Contact support@operatr.io for assistance.
+Contact [support@operatr.io](mailto:support@operatr.io) for assistance.
 
 ## Configuration
 
