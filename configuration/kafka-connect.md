@@ -4,9 +4,9 @@ description: Create and Control Connectors and Tasks with kPow
 
 # Kafka Connect
 
-## Requirements
-
+{% hint style="info" %}
 kPow will manage **one Connect cluster per configured Kafka cluster.**
+{% endhint %}
 
 ## Access Control
 
