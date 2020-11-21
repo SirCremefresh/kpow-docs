@@ -22,8 +22,6 @@ kPow will manage as many clusters as your license permits - you may have to incr
 
 Information on snapshotting performance of each cluster is available at 'admin/about'.
 
-
-
 ## Configuration
 
 To configure multiple clusters, simply repeat the connection configuration with \_2, \_3, \_4 suffixes:
