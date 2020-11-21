@@ -4,6 +4,10 @@ description: Connect kPow to Apache Kafka®
 
 # Kafka Cluster
 
+{% hint style="info" %}
+Set the **ENVIRONMENT\_NAME** variable to provide a UI friendly name for your Kafka cluster.
+{% endhint %}
+
 ## Requirements
 
 kPow requires **at least one configured Kafka cluster** to operate.
