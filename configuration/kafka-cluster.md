@@ -6,9 +6,11 @@ description: Connect kPow to Apache Kafka®
 
 ## Requirements
 
-kPow requires **at least on Kafka cluster** to operate.
+kPow requires **at least one configured Kafka cluster** to operate.
 
-When configuring **Multi-Cluster** installations the first cluster configured is your **Primary Cluster** and contains all the snapshot, metrics, and audit metadata for the installation.
+When configuring [**Multi-Cluster**](multi-cluster.md) ****installations the first cluster configured is your **Primary Cluster** and contains all the snapshot, metrics, and audit metadata for the installation.
+
+Each configured Kafka cluster can have **one** associated Schema registry and/or Kafka connect cluster.
 
 ## Compatibility
 
