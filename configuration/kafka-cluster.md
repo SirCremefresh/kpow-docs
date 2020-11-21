@@ -20,6 +20,12 @@ kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.
 
 **\***Some disk related metrics and telemetry are not available when using kPow with Confluent Cloud.
 
+## FIPS
+
+kPow is capable of integrating with FIPS compliant Kafka clusters.
+
+Contact support@operatr.io for assistance.
+
 ## Configuration
 
 kPow connects to a Kafka cluster with **exactly the same configuration** as a Kafka consumer or producer.
