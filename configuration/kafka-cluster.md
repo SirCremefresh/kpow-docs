@@ -40,6 +40,7 @@ The list of connection variables follows, many are optional. Consult the **Kafka
 
 | **Variable** | Description |
 | :--- | :--- |
+| **ENVIRONMENT\_NAME** | UI friendly label for this cluster and resources |
 | **BOOTSTRAP** | The Kafka cluster bootstrap URL |
 | **SECURITY\_PROTOCOL** | PLAINTEXT, SSL, SASL\_PLAINTEXT, or SASL\_SSL |
 | **SASL\_MECHANISM** | GSSAPI, AUTHBEARER, SCRAM, PLAIN, |
