@@ -18,7 +18,7 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">PORT</td>
       <td style="text-align:left">3000</td>
       <td style="text-align:left">long</td>
-      <td style="text-align:left">The kPow UI port (will serve HTTPS traffic if so configured)</td>
+      <td style="text-align:left">The kPow server port (will serve HTTPS traffic if so configured)</td>
     </tr>
     <tr>
       <td style="text-align:left">ENABLE_GZIP</td>
@@ -327,7 +327,7 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">DATA_POLICY_CONFIGURATION_FILE</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left">The path to your Operatr Data Policy Configuration</td>
+      <td style="text-align:left">The path to your kPow Data Policy Configuration</td>
     </tr>
     <tr>
       <td style="text-align:left">SLACK_WEBHOOK_URL</td>
