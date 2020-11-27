@@ -2,7 +2,7 @@
 description: Integrate kPow with the OpenID authentication protocol
 ---
 
-# OpenID
+# OpenID/OAuth 2.0
 
 kPow currently supports OpenID authentication with the following providers:
 

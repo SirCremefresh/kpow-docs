@@ -17,6 +17,7 @@
 
 ## Configuration
 
+* [Environment Variable Glossary](configuration/environment-variable-glossary.md)
 * [Kafka Cluster](configuration/kafka-cluster.md)
 * [Schema Registry](configuration/schema-registry.md)
 * [Kafka Connect](configuration/kafka-connect.md)
@@ -28,7 +29,7 @@
 * [LdapLoginModule](user-authentication/ldap.md)
 * [PropertyFileLoginModule](user-authentication/file.md)
 * [JDBCLoginModule](user-authentication/db.md)
-* [OpenID](user-authentication/openid/README.md)
+* [OpenID/OAuth 2.0](user-authentication/openid/README.md)
   * [GitHub](user-authentication/openid/github.md)
   * [Okta](user-authentication/openid/okta.md)
 * [SAML](user-authentication/saml/README.md)
