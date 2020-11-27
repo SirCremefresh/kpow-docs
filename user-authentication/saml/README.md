@@ -37,7 +37,16 @@ We have integration guides for common providers:
 
 ### Debugging SAML
 
-If you would like to debug SAML while setting up the integration, you can set the environment variable `DEBUG_SAML=true`
+Start kPow with the environment variable `DEBUG_SAML=true` to debug SAML configurations.
 
-This will log the SAMLAssertion payload and other interactions which can be used to verify that kPow is correctly parsing your assertions.
+This will log the `SAMLResponse` payload from your IdP. You can use a tool like [samltool.com](https://www.samltool.com/decode.php) to inspect and verify your IdP is correctly forwarding your configured claims/attributes.
+
+kPow provides an endpoint for inspecting the state of the currently authenticated user. `kpow_host/me` returns a JSON payload like:
+
+```text
+{"provider": "saml", 
+ "email": "user@corp.com",
+ "name": "User",
+ "roles": ["admin"]}
+```
 

@@ -48,3 +48,15 @@ Set the following environment variables and start kPow:
 
 kPow will now authenticate users with Okta \(OpenID\).
 
+## User Authorization \(RBAC\)
+
+See the guide to [Role Based Access Control](https://support.operatr.io/hc/en-us/articles/900002019823) for full configuration details.
+
+#### Integration
+
+When RBAC is enabled kPow will request `groups` scope to view the groups associated with an authenticated user. kPow considers Okta groups as roles in your RBAC configuration.
+
+You will need to configure a relevant [group claim filter](https://developer.okta.com/docs/guides/customize-tokens-returned-from-okta/create-groups-claim/) for the kPow OpenID integration:
+
+![](../../.gitbook/assets/rbac-okta-group-filter-1-.png)
+
