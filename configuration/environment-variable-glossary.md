@@ -4,6 +4,8 @@ description: A glossary of all configuration options available to kPow
 
 # Environment Variable Glossary
 
+
+
 <table>
   <thead>
     <tr>
@@ -68,7 +70,8 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">PROMETHEUS_EGRESS</td>
       <td style="text-align:left">false</td>
       <td style="text-align:left">bool</td>
-      <td style="text-align:left">Enable Prometheus endpoints for metrics and offsets egress</td>
+      <td style="text-align:left">Enable Prometheus endpoints for metrics and offsets egress. See: <a href="../features/prometheus.md">Promethus Integration</a>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">PROMETHEUS_LABEL_ENV</td>
@@ -81,7 +84,8 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left"></td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">eg: <code>io.operatr.SerdeOne,io.operatr.SerdeTwo</code>Comma separated
-        names of custom serdes found on the classpath</td>
+        names of custom serdes found on the classpath. See: <a href="../features/data-inspect/serdes.md#configuring-serdes">Custom Serdes</a>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">DEFAULT_KEY_SERDES</td>
@@ -115,7 +119,11 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">AUTH_PROVIDER_TYPE</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">enum</td>
-      <td style="text-align:left">The OPENID provider configured for SSO, eg: <code>github</code>, <code>okta</code>
+      <td style="text-align:left">
+        <p>The OPENID provider configured for SSO, eg: <code>github</code>, <code>okta </code>
+        </p>
+        <p>See: <a href="../user-authentication/openid/">OpenID/Oauth 2.0</a>
+        </p>
       </td>
     </tr>
     <tr>
@@ -177,7 +185,11 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">SAML_RELYING_PARTY_IDENTIFIER</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left">You Operatr Application ID</td>
+      <td style="text-align:left">
+        <p>You Operatr Application ID</p>
+        <p>See: <a href="../user-authentication/saml/">SAML</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">SAML_ACS_URL</td>
@@ -243,7 +255,11 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">ENABLE_HTTPS</td>
       <td style="text-align:left">false</td>
       <td style="text-align:left">bool</td>
-      <td style="text-align:left">Serve kPow content via HTTPS</td>
+      <td style="text-align:left">
+        <p>Serve kPow content via HTTPS</p>
+        <p>See: <a href="../features/https-connections.md">HTTPS Connections</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">HTTPS_KEYSTORE_LOCATION</td>
@@ -291,7 +307,11 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">LIVE_MODE_ENABLED</td>
       <td style="text-align:left">true</td>
       <td style="text-align:left">bool</td>
-      <td style="text-align:left">Allow your users to switch to Live Mode</td>
+      <td style="text-align:left">
+        <p>Allow your users to switch to Live Mode</p>
+        <p>See: <a href="../features/live-mode.md">Live Mode</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">LIVE_MODE_PERIOD_MS</td>
@@ -327,13 +347,21 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">DATA_POLICY_CONFIGURATION_FILE</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left">The path to your kPow Data Policy Configuration</td>
+      <td style="text-align:left">
+        <p>The path to your kPow Data Policy Configuration.</p>
+        <p>See: <a href="../features/data-policies.md">Data Policies</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">SLACK_WEBHOOK_URL</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left">Send Audit Log messages to Slack</td>
+      <td style="text-align:left">
+        <p>Send Audit Log messages to Slack.</p>
+        <p>See: <a href="../features/slack-integration.md">Slack Integration</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">SLACK_WEBHOOK_AUDIT_LOG</td>
@@ -342,11 +370,10 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">CONNECT_TIMEOUT_MS</td>
-      <td style="text-align:left">5000</td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">The timeout value in ms for all HTTP requests made to a Kafka Connect
-        cluster</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left">SHOW_SPLASH</td>
