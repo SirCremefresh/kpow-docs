@@ -58,7 +58,7 @@ kPow will now authenticate users with Azure AD.
 
 ## User Authorization
 
-See the guide to [Role Based Access Control](https://support.operatr.io/hc/en-us/articles/900002019823) for full configuration details.
+See the guide to [Role Based Access Control](../../user-authorization/role-based-access-control.md) for full configuration details.
 
 ### Integrate Azure AD and kPow RBAC
 
