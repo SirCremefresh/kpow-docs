@@ -349,10 +349,10 @@ description: A glossary of all configuration options available to kPow
         cluster</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">SHOW_SPLASH</td>
+      <td style="text-align:left">true</td>
+      <td style="text-align:left">bool</td>
+      <td style="text-align:left">Turn off the initial page splash screen</td>
     </tr>
   </tbody>
 </table>
