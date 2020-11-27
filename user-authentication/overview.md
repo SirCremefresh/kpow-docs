@@ -29,11 +29,11 @@ kPow supports **all of these Jetty JAAS integrations.** Details of each are in t
 
 ## SAML Authentication
 
-kPow is easily configured to be a **Service Provider** and integrates with any SAML **Identity Provider**, we include specific guides for **Azure AD** and **AWS SSO** in this guide.
+kPow is easily configured to be a **Service Provider** and integrates with any SAML **Identity Provider**, we include specific guides for [**Azure AD**](saml/azure-ad-integration.md), ****[**Okta**](saml/okta-integration.md) ****and [**AWS SSO**](saml/aws-sso-integration.md) ****in this guide.
 
 ## OpenID and OAuth 2.0 Authentication
 
-kPow supports integration with **Okta** \(OpenID\) and **Github** \(OAuth 2.0\) SSO providers.
+kPow supports integration with [**Okta**](openid/okta.md) ****\(OpenID\) and [**Github**](openid/github.md) ****\(OAuth 2.0\) SSO providers.
 
 {% hint style="success" %}
 **Need a Provider Added?** Just email **support@operatr.io** and we'll estimate delivery.
