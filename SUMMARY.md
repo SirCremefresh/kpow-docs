@@ -51,6 +51,7 @@
 * [Live Mode](features/live-mode.md)
 * [Data inspect](features/data-inspect/README.md)
   * [Serdes](features/data-inspect/serdes.md)
-* [Prometheus Integration](features/prometheus.md)
+* [Prometheus Integration](features/prometheus/README.md)
+  * [Metrics Glossary](features/prometheus/metrics-glossary.md)
 * [Slack Integration](features/slack-integration.md)
 
