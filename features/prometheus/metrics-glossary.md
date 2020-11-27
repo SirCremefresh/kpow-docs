@@ -1,5 +1,5 @@
 ---
-description: A reference of all prometheus metric
+description: A reference of all Prometheus metric
 ---
 
 # Metrics Glossary
