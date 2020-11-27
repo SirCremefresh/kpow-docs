@@ -28,6 +28,13 @@
 * [LdapLoginModule](user-authentication/ldap.md)
 * [PropertyFileLoginModule](user-authentication/file.md)
 * [JDBCLoginModule](user-authentication/db.md)
+* [OpenID](user-authentication/openid/README.md)
+  * [GitHub](user-authentication/openid/github.md)
+  * [Okta](user-authentication/openid/okta.md)
+* [SAML](user-authentication/saml/README.md)
+  * [Okta integration](user-authentication/saml/okta-integration.md)
+  * [AWS SSO integration](user-authentication/saml/aws-sso-integration.md)
+  * [Azure AD integration](user-authentication/saml/azure-ad-integration.md)
 
 ## User Authorization
 
