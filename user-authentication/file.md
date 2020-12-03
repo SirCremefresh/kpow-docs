@@ -91,10 +91,16 @@ java -Djava.security.auth.login.config=/opt/kpow/jaas.conf -jar /opt/kpow/latest
 ### Docker Container Startup
 
 {% hint style="info" %}
-**Note:** The JVM provides an environment variable called `JAVA_TOOL_OPTIONS` that can be used in place of system properties. We use this the thread the JAAS config to Docker.
+**Note:** The JVM provides an environment variable called `JAVA_TOOL_OPTIONS` that can be used in place of system properties. We use this to thread the JAAS config to Docker.
 {% endhint %}
 
 Set the env var `JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/path/to/jaas.conf`
+
+{% hint style="info" %}
+**Note:** If your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount:
+
+**`docker run --volume="/config/path:/config/path/" -p 3000:3000 --env-file ...`**
+{% endhint %}
 
 When starting the docker container you will see logging output similar to:
 
