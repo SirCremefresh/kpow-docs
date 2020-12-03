@@ -49,7 +49,7 @@
 * [Data Policies](features/data-policies.md)
 * [HTTPS Connections](features/https-connections.md)
 * [Live Mode](features/live-mode.md)
-* [Data inspect](features/data-inspect/README.md)
+* [Data Inspect](features/data-inspect/README.md)
   * [Serdes](features/data-inspect/serdes.md)
 * [Prometheus Integration](features/prometheus/README.md)
   * [Metrics Glossary](features/prometheus/metrics-glossary.md)

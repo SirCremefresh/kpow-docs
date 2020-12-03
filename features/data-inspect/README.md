@@ -1,2 +1,2 @@
-# Data inspect
+# Data Inspect
 

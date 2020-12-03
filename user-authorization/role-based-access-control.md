@@ -164,7 +164,7 @@ All actions are retained in the kPow Audit Log. See: [**Data Governance**](../fe
 
 To use RBAC you must configure [**User Authentication**](../user-authentication/overview.md) ****and ensure users have assigned roles.
 
-### Integration guides
+### Integration Guides
 
 Below are integration guides for common authentication providers:
 
@@ -174,7 +174,7 @@ Below are integration guides for common authentication providers:
 * [AWS SSO SAML](../user-authentication/saml/aws-sso-integration.md#user-authorization)
 * [Azure AD SAML](../user-authentication/saml/azure-ad-integration.md#user-authorization)
 
-### SAML integration \(generic\)
+### SAML Integration \(Generic\)
 
 Operatr can integrate with your SAML IdP as a service provider.
 
