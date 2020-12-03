@@ -97,7 +97,7 @@ java -Djava.security.auth.login.config=/opt/kpow/jaas.conf -jar /opt/kpow/latest
 Set the env var `JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/path/to/jaas.conf`
 
 {% hint style="info" %}
-**Note:** If your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount:
+**Note:** When your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount so that kPow can read that configuration:
 
 **`docker run --volume="/config/path:/config/path/" -p 3000:3000 --env-file ...`**
 {% endhint %}
