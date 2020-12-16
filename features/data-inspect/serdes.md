@@ -114,6 +114,16 @@ serdes:
 Serdes default to String format and are available to keys and values where no config provided
 {% endhint %}
 
+On startup you will see details logged of each custom serdes:
+
+```text
+INFO operatr.kafka.serdes – initializing custom serdes: kpow.serdes.CustomSerdesExample
+INFO operatr.kafka.serdes – found kpow/serdes/CustomSerdesExample.yml
+INFO operatr.kafka.serdes – serde configuration: Custom Serde!
+WARN operatr.kafka.serdes – environment variable $SOME_ENV not set
+INFO operatr.kafka.serdes – config 'Custom Serde!', isKey?: null, format: json, config: ("bootstrap" "limit" "display" "abc").
+```
+
 #### Custom Serdes + Data Policies
 
 [Data policies](../data-policies.md) apply to custom serdes whose format is specified as either `json` or `clojure`
