@@ -46,8 +46,16 @@ Eg: `AVAILABLE_VALUE_SERDES=JSON,AVRO` to only ever show JSON or AVRO serdes fro
 ## Custom Serdes
 
 {% hint style="info" %}
-kPow can be configured with any [`org.apache.kafka.common.serialization.Serde`](https://kafka.apache.org/0102/javadoc/org/apache/kafka/common/serialization/Serde.html)
+kPow works with custom `org.apache.kafka.common.serialization.Serdes<String>`
 {% endhint %}
+
+#### Why &lt;String&gt;?
+
+kPow expects your custom serdes to provide String key/value output when deserializing messages and will interpret that String key/value output according to the serdes format you configure.
+
+kPow will provide your custom serdes with String input when your users select a custom serdes to produce data to a topic, it is up to you how you interpret and encode that data for serialization.
+
+Serdes with `json` or `clojure` format will have [Data Policies](../data-policies.md) applied and can be used with kJQ.
 
 #### Setup
 
@@ -123,12 +131,4 @@ INFO operatr.kafka.serdes – serde configuration: Custom Serde!
 WARN operatr.kafka.serdes – environment variable $SOME_ENV not set
 INFO operatr.kafka.serdes – config 'Custom Serde!', isKey?: null, format: json, config: ("bootstrap" "limit" "display" "abc").
 ```
-
-#### Custom Serdes + Data Policies
-
-[Data policies](../data-policies.md) apply to custom serdes whose format is specified as either `json` or `clojure`
-
-#### Custom Serdes + kJQ
-
-kJQ filters are available to custom serdes whose format is specified as either `json` or `clojure`
 
