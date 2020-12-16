@@ -51,7 +51,7 @@ kPow can be configured with any [`org.apache.kafka.common.serialization.Serde`](
 
 #### Setup
 
-1. Provide your custom serdes on the kPow classpath \(see [How to add a Jar to the Classpath](https://docs.oracle.com/javase/tutorial/deployment/jar/downman.html)\).
+1. Provide your custom serdes on the kPow classpath \(see [How to add a Jar to the Classpath](https://stackoverflow.com/questions/15930782/call-java-jar-myfile-jar-with-additional-classpath-option)\).
 2. Configure kPow with the `CUSTOM_SERDES` environment variable:
 
 ```text
