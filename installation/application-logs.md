@@ -4,9 +4,7 @@ description: Configure kPow Application Logs
 
 # Application Logs
 
-kPow uses the common Java logging library [Logback](http://logback.qos.ch/) to record application logs.
-
-By default kPow writes these logs to **sysout.** 
+kPow uses [**Logback**](http://logback.qos.ch/) to record application logs to **sysout**.
 
 Configure kPow to write application logs to disk \(or any other supported Logback appender\) and control the log levels by providing a Logback configuration file**:**
 
