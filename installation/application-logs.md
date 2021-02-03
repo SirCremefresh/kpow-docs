@@ -6,7 +6,13 @@ description: Configure kPow Application Logs
 
 kPow uses [**Logback**](http://logback.qos.ch/) to record application logs to **sysout**.
 
-Configure kPow to write application logs to disk \(or any other supported Logback appender\) and control the log levels by providing a Logback configuration file**:**
+Configure kPow to write application logs to disk \(or any other supported Logback appender\) and control the log levels by providing a Logback configuration file.
+
+{% hint style="info" %}
+**Note:** Kafka logging verbose, we recommend tuning it to ERROR only in custom configuration.
+{% endhint %}
+
+This example **turns on Jetty JAAS debug logging** and writes logs to a file called kpow-log.txt:
 
 ```markup
 <configuration>
@@ -28,11 +34,7 @@ Configure kPow to write application logs to disk \(or any other supported Logbac
 </configuration>
 ```
 
-{% hint style="info" %}
-**Note:** Kafka logging verbose, we recommend tuning it to ERROR only in custom configuration.
-{% endhint %}
-
-Once you have a custom Logback configuration file, provide it to kPow as a Java system variable:
+Provide your custom Logback configuration to kPow as a Java system variable:
 
 ```bash
 java -Dlogback.configurationFile=/kpow/custom-logback.xml -jar /kpow/kpow-latest.jar
@@ -44,7 +46,9 @@ The kPow Docker Container can be configured with the `JAVA_TOOL_OPTIONS` environ
 JAVA_TOOL_OPTIONS=-Dlogback.configurationFile=/kpow/custom-logback.xml
 ```
 
-In this specific example we turn on debug logging for Jetty JAAS authentication methods \(LDAP, etc.\), to put JAAS into debug mode also requires **debug="true"** in your JAAS config file, like so:
+In this specific example we turn on debug logging for Jetty JAAS authentication methods \(LDAP, etc.\). 
+
+To put JAAS into debug mode also requires **debug="true"** in your JAAS config file:
 
 ```text
 kpow {
