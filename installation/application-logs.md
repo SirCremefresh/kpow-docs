@@ -9,7 +9,7 @@ kPow uses [**Logback**](http://logback.qos.ch/) to record application logs to **
 Configure kPow to write application logs to disk \(or any other supported Logback appender\) and control the log levels by providing a Logback configuration file.
 
 {% hint style="info" %}
-**Note:** Kafka logging verbose, we recommend tuning it to ERROR only in custom configuration.
+**Note:** Kafka logging is verbose, we recommend tuning it to ERROR logs only.
 {% endhint %}
 
 This example **turns on Jetty JAAS debug logging** and writes logs to a file called kpow-log.txt:
@@ -75,5 +75,5 @@ Once configured, application logs are written to file and JAAS debug output is v
 09:30:05.257 INFO  [OperatrScheduler_Worker-5] operatr.observe.kafka – R9AvkXfHTsCiI8g3E_5EVA: [38] kafka telemetry snapshots captured in 250 ms
 ```
 
-See the [Logback](http://logback.qos.ch/) site for full information on configuration options.
+See the [Logback](http://logback.qos.ch/) site for full information on configuration options like rolling file appenders.
 
