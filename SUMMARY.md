@@ -14,6 +14,7 @@
 ## Installation
 
 * [Quick Start](installation/quick-start.md)
+* [Application Logs](installation/application-logs.md)
 
 ## Configuration
 
