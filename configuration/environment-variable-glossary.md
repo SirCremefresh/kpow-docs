@@ -269,20 +269,6 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>RIEMANN_HOST</b>
-      </td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">The Riemann host for metrics egress</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>RIEMANN_PORT</b>
-      </td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">The Riemann port for metrics egress</td>
-    </tr>
-    <tr>
       <td style="text-align:left"><b>ENABLE_HTTPS</b>
       </td>
       <td style="text-align:left">false</td>
