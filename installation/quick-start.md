@@ -67,6 +67,10 @@ To connect the latest [kPow JAR](https://operatr.io/releases) to a single, unsec
 
 **Note:** Quoting may be required for some variables
 
+{% hint style="info" %}
+Some variables may require quotes, and each line ends with a `\` character.
+{% endhint %}
+
 ```text
 BOOTSTRAP="kafka-1:9092,kafka-2:9092,kafka-3:9092" \
 LICENSE_ID=1c99v4-f690-4a4f-b144-73de2369444a \
