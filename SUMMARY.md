@@ -56,4 +56,5 @@
 * [Prometheus Integration](features/prometheus/README.md)
   * [Metrics Glossary](features/prometheus/metrics-glossary.md)
 * [Slack Integration](features/slack-integration.md)
+* [Kafka Streams](features/kafka-streams.md)
 
