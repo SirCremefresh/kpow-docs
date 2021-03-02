@@ -28,7 +28,9 @@ We receive the standard Google Analytics data set \(page views, location, etc\).
 
 No. 
 
-The telemetry we capture is restricted to product specific information like page view or user action. 
+The telemetry we capture is restricted to product specific information like page view or user action.
+
+Page views **do not include query strings or url fragments** \(which do contain sensitive data\).
 
 We do not capture any specifics of your Kafka cluster/s or anything beyond standard google analytics and your interaction with our product user interface.
 
