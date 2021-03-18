@@ -10,11 +10,13 @@ Each kPow release is documented in a blog post, [**see our site for details**](h
 
 ## Docker Container
 
-Each release of kPow is [available in Dockerhub](https://hub.docker.com/u/operatr/).
+Each release of kPow is [available in Dockerhub](https://hub.docker.com/u/operatr/):
 
 ```
 docker pull operatr/kpow:latest
 ```
+
+Dockerfile's are built from the [operatr-io/kpow-docker GitHub repository](https://github.com/operatr-io/kpow-docker)
 
 ## JAR File
 
