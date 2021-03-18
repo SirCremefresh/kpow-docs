@@ -24,6 +24,9 @@
 * [Schema Registry](configuration/schema-registry.md)
 * [Kafka Connect](configuration/kafka-connect.md)
 * [Multi-Cluster Management](configuration/multi-cluster.md)
+* [Azure Event Hubs](configuration/azure-event-hubs.md)
+* [Confluent Cloud](configuration/confluent-cloud.md)
+* [Redpanda](configuration/redpanda.md)
 
 ## User Authentication
 
