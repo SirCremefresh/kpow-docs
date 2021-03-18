@@ -8,6 +8,10 @@ This page provides Quick Start instructions for [**Docker**](quick-start.md#dock
 
 ## Docker Quick Start
 
+{% hint style="info" %}
+kPow Docker images are hosted at [Docker Hub](https://hub.docker.com/r/operatr/kpow)
+{% endhint %}
+
 To connect the latest kPow Docker image to a single, unsecured Kafka Cluster:
 
 * Get a [**Free Trial License**](../about/trials-and-licenses.md).
