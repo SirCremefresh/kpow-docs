@@ -10,7 +10,7 @@ Redpanda is a Kafka® compatible event streaming platform. No Zookeeper®, no JV
 
 Read more about Red Panda [here](https://vectorized.io/)
 
-Because kPow does not use JMX metrics or require a Zookeeper® connection, all of kPow's metrics are fully supported with Redpanda!
+Because kPow does not use Kafka's JMX metrics or require a Zookeeper® connection, all of kPow's metrics are fully supported with Redpanda!
 
 ## Configuration
 
