@@ -6,7 +6,7 @@ description: Use kPow to monitor your Confluent Cloud clusters
 
 kPow works out of the box with Confluent Cloud, simply follow our [Kafka Cluster](kafka-cluster.md) configuration documentation to get started.
 
-Extra configuration is required for kPow monitoring multiple Confluent Cloud clusters that share the same bootstrap url, but have different authentication details. Read on to configure kPow for multi-tenancy.
+Extra configuration is required for kPow when monitoring multiple Confluent Cloud clusters that share the same bootstrap url, but have different authentication details. Read on to configure kPow in a multi-tenant scenario.
 
 ## Multi-Tenant Confluent Cloud
 

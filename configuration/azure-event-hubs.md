@@ -9,15 +9,15 @@ description: Use kPow with your Azure Event Hubs namespace.
 kPow can connect to your Azure Event Hubs namespace\(s\) if you have enabled Kafka Surface.   
 You can read about using Event Hubs with Kafka [here](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview).
 
-You can verify that Kafka Surface has been enabled, by navigating to your Event Hubs namespace overview:
+You can verify that Kafka Surface has been enabled, by navigating to your Event Hubs namespace overview inside the Microsoft Azure portal:
 
 ![Verifying Kafka Surface is enabled](../.gitbook/assets/screen-shot-2021-03-16-at-3.46.10-pm.png)
 
 ## Configuration 
 
-Once you have verified Kafka Surface has been enabled, visit the [Security and authentication](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#security-and-authentication) section of Azure's documentation to find Kafka configuration properties for each type of authentication mechanism.
+Once you have verified Kafka Surface is enabled, visit the [Security and authentication](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#security-and-authentication) section of Azure's documentation to find Kafka configuration properties for each type of authentication mechanism.
 
-For example, if you were to use [**Shared Access Signature \(SAS\)**](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#shared-access-signature-sas), the environment variables passed to kPow would look like:
+For example, if you were to use [**Shared Access Signature \(SAS\)**](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#shared-access-signature-sas) ****connection details, the environment variables passed to kPow would look like:
 
 ```text
 BOOTSTRAP=NAMESPACENAME.servicebus.windows.net:9093
