@@ -20,7 +20,7 @@ Each configured Kafka cluster can have **one** associated Schema registry and/or
 
 kPow is compatible with **Apache Kafka 1.0+.**
 
-kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.org/), [Red Had AMQ Streams](https://www.redhat.com/en/resources/amq-streams-datasheet), [Aiven Managed Kafka](https://aiven.io/kafka), [Instaclustr Managed Kafka](https://www.instaclustr.com/products/managed-apache-kafka/), [Confluent Platform](https://www.confluent.io/product/confluent-platform) and [Confluent Cloud](https://www.confluent.io/confluent-cloud)**\*,** [Azure Event Hubs\*](https://azure.microsoft.com/en-us/services/event-hubs/), [Redpanda\*](https://vectorized.io/redpanda).
+kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.org/), [Amazon MSK](https://aws.amazon.com/msk/), [Red Had AMQ Streams](https://www.redhat.com/en/resources/amq-streams-datasheet), [Aiven Managed Kafka](https://aiven.io/kafka), [Instaclustr Managed Kafka](https://www.instaclustr.com/products/managed-apache-kafka/), [Confluent Platform](https://www.confluent.io/product/confluent-platform) and [Confluent Cloud](https://www.confluent.io/confluent-cloud)**\*,** [Azure Event Hubs\*](https://azure.microsoft.com/en-us/services/event-hubs/), [Redpanda\*](https://vectorized.io/redpanda).
 
 **\***Some disk related metrics and telemetry are not available when using kPow with Confluent Cloud, Azure Event Hubs or Redpanda.
 
