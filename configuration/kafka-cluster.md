@@ -48,6 +48,7 @@ The list of connection variables follows, many are optional. Consult the **Kafka
 | **CLUSTER\_ID** | Optional, unique identifier for the cluster. Required when connecting to [Azure Event Hubs](azure-event-hubs.md) or [Redpanda](redpanda.md). |
 | **BOOTSTRAP** | The Kafka cluster bootstrap URL |
 | **REDPANDA** | Optional, set to `true` if you are connecting to a [Redpanda](redpanda.md) cluster. |
+| **AZURE\_EVENT\_HUBS** | Optional, set to `true` if you are connecting to an [Azure Event Hubs](azure-event-hubs.md) cluster |
 | **SECURITY\_PROTOCOL** | PLAINTEXT, SSL, SASL\_PLAINTEXT, or SASL\_SSL |
 | **SASL\_MECHANISM** | GSSAPI, AUTHBEARER, SCRAM, PLAIN, |
 | **SASL\_JAAS\_CONFIG** | Java Authentication and Authorization Service config |
