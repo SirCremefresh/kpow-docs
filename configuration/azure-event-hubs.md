@@ -31,7 +31,7 @@ AZURE_EVENT_HUBS=true
 **Note**: an extra environment variable `CLUSTER_ID` is required, as Azure event hubs does not provide a cluster ID when making an admin client request.   
 The `CLUSTER_ID` must be unique across all clusters defined in kPow, and can be any unique identifier \(eg, the namespace name of your event hub\) 
 
-The `AZURE_EVENT_HUBS` environment variable must be set to `true` as Event Hubs does not support the topic configuration of `retention.ms` set to `-1` \(which is set by kPow's audit log + Kafka Streams internal topics\). Topics that normally have infinite retention will have a 7 day retention set in Event Hubs.
+The `AZURE_EVENT_HUBS` environment variable must be set to `true` as Event Hubs does not support the topic configuration of `retention.ms` set to `-1` \(which is set by kPow's [audit log](../features/data-governance.md) + Kafka Streams internal topics\). Topics that normally have infinite retention will have a 7 day retention set in Event Hubs.
 
 ## Event Hubs limitations
 
