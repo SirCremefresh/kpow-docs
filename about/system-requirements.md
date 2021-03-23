@@ -68,6 +68,10 @@ kPow must be connected to **at least on Kafka Cluster**.
 
 ### Minimum Kafka ACL Permissions
 
+{% hint style="info" %}
+You can skip this section if you do not have Kafka ACLS enabled in your cluster/s
+{% endhint %}
+
 kPow checks for the following internal topics in your **primary cluster** \(the first bootstrap in your configuration\) on startup and will attempt to create them if required:
 
 ```text
