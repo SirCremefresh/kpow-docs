@@ -16,11 +16,11 @@ Beyond at least one Kafka cluster kPow has **no further dependencies.**
 
 kPow can run with as little as **256MB** memory and **0.25** CPU.
 
-We recommend **1GB** memory and **0.5** CPU for a standard installation but encourage you to experiment with constraining resources as much as possible.
+We recommend **2GB** memory and **1** CPU for a standard installation but encourage you to experiment with constraining resources as much as possible.
 
 ## Memory Constraints
 
-The Docker container starts the JAR file with **initial and max memory constraints** set to 80% of the resources provided to the container.
+Our Docker container starts the JAR file with **initial and max memory constraints** set to 80% of the resources provided to the container.
 
 ```text
 CMD java -XX:InitialRAMPercentage=80 -XX:MaxRAMPercentage=80 -jar /opt/operatr/lib/kpow.jar
@@ -32,7 +32,7 @@ Make sure you to set the memory available to the container on startup \(**-m1G**
 docker run -p 3000:3000 -m1G --env-file ./kpow.env operatr/kpow:latest
 ```
 
-When running in Kubernetes **ensure that your pod resources are set**. Preferably run with **pod QOS class guaranteed** by setting both the min and max memory and CPU to the same desired values.
+If running in Kubernetes **ensure that your pod resources are set**. Preferably run with **pod QOS class guaranteed** by setting both the min and max memory and CPU to the same desired values.
 
 When using the JAR file directly **ensure you set suitable memory constraints** with -Xmx and -Xms:
 
@@ -54,15 +54,70 @@ kPow must be installed in reasonably close proximity to your ****Kafka resources
 
 **Multi-Region Multi-Cluster** installations are not officially supported, though we are aware users have configured such installations with some success.
 
-## Provisioning
+## Requirements and Permissions
 
-kPow is built for simplicity and built entirely from Kafka primitives \(and [Clojure](https://clojure.org)\).
+kPow uses the following resources:
 
-Ideal for containerized deployments, kPow thrives in Fargate, ECS, EC2, EKS, Kubernetes, and more.
+* A Kafka AdminClient to snapshot and update Kafka Cluster resources
+* A SchemaRegistryClient to snapshot and update Schema and Subject resources
+* The Connect REST API to snapshot and update Kafka Connect resources
+* A Kafka Consumer to inspect data on topics
+* A Kafka Producer to produce data to topics
 
-Consumable as a JAR file with no further resources and able to run fully air-gapped, kPow is ideal for enterprise installations.
+kPow must be connected to **at least on Kafka Cluster**.
 
-See our installation guides for more.
+### Minimum Requirements
+
+kPow checks for the following internal topics in your **primary cluster** \(the first bootstrap in your configuration\) on startup and will attempt to create them if required:
+
+```text
+__oprtr_metric_pt1m
+__oprtr_snapshot_state
+__oprtr_audit_log
+oprtr.compute.metrics.v2-oprtr_metric_v2_pt1m-changelog
+oprtr.compute.snapshots.v2-oprtr_snapshot_materialized_v2-repartition
+```
+
+You can manually create these topics if you prefer, each with a replication factor of **3** and **12** partitions.
+
+Once started, kPow creates two internal streaming compute applications:
+
+```text
+oprtr.compute.metrics.v2
+oprtr.compute.snapshots.v2
+```
+
+At a minimum, kPow must be able to read and write to and from these internal topics, must be able to read as those groups, and must have permissions to describe clusters, topics, configuration, and groups.
+
+A simple set of Kafka ACL that allows kPow to operate provides **ALLOW** on the following:
+
+| Kafka Resource | Kafka ACL | Detail |
+| :--- | :--- | :--- |
+| Cluster | Describe | `*` |
+| Cluster | DescribeConfigs | `*` |
+| Cluster | Create | `* (if not manually creating internal topics)` |
+| Topic | Describe | `*` |
+| Topic | DescribeConfigs | `*` |
+| Topic | Read | `* or internal topics only` |
+| Topic | Write | `* or internal topics only` |
+| Group | Describe | `*` |
+| Group | Read | `* or internal groups only` |
+
+kPow **does not read from or write to topics other than internal ones** as a part of normal operation.
+
+### Feature Specific ACLS
+
+See User Authorization for a description of kPow feature controls.
+
+| Kafka Resource | Kafka ACL | Feature |
+| :--- | :--- | :--- |
+| Cluster | Alter |  |
+
+
+
+
+
+
 
 ## 
 
