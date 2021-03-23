@@ -1,5 +1,5 @@
 ---
-description: Built for Simplicity from Kafka and Clojure
+description: 'Dependencies, Resources, and Minimum Kafka ACLs.'
 ---
 
 # System Requirements
