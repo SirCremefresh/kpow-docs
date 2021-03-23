@@ -124,3 +124,42 @@ See [User Authorization](../user-authorization/overview.md#user-actions) for a d
 | Topic | Write | `TOPIC_PRODUCE` |
 | Group | Read / Delete | `GROUP_EDIT` |
 
+### Configuring Kafka ACLS
+
+Kafka ACLs can be set with the kafka-acls.sh script provided by Apache Kafka.
+
+An example command to add the DescribeConfigs Topic permission is:
+
+```text
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 \
+  --command-config client.conf 
+  --allow-principal User:kpow \
+  --operation DescribeConfigs \
+  --topic '*'
+  --add \
+  
+Adding ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
+```
+
+The simple set of ACLS described above for basic operation of kPow can be listed like so:
+
+```text
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config command.conf --list
+
+Current ACLs for resource `ResourcePattern(resourceType=CLUSTER, name=kafka-cluster, patternType=LITERAL)`:
+ 	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=CREATE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
+
+Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=WRITE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=READ, permissionType=ALLOW)
+
+Current ACLs for resource `ResourcePattern(resourceType=GROUP, name=*, patternType=LITERAL)`:
+ 	(principal=User:kpow, host=*, operation=READ, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
+```
+
