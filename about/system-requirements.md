@@ -107,15 +107,20 @@ kPow **does not read from or write to topics other than internal ones** as a par
 
 ### Feature Specific ACLS
 
-See User Authorization for a description of kPow feature controls.
+The following ACLS are optional and only required if you intend to permit the associated kPow action.
 
-| Kafka Resource | Kafka ACL | Feature |
+See [User Authorization](../user-authorization/overview.md#user-actions) for a description of kPow User Actions and Controls.
+
+| Kafka Resource | Kafka ACL | Required for User Action |
 | :--- | :--- | :--- |
-| Cluster | Alter |  |
-
-
-
-
+| Cluster | AlterConfigs | `BROKER_EDIT` |
+| Cluster | Create | `TOPIC_CREATE` |
+| Topic | AlterConfigs | `TOPIC_EDIT` |
+| Topic | Create | `TOPIC_CREATE` |
+| Topic | Delete | `TOPIC_DELETE` |
+| Topic | Read | `TOPIC_INSPECT` |
+| Topic | Write | `TOPIC_PRODUCE` |
+| Group | Read / Delete | `GROUP_EDIT` |
 
 
 
