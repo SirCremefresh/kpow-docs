@@ -66,7 +66,7 @@ kPow uses the following resources:
 
 kPow must be connected to **at least on Kafka Cluster**.
 
-### Minimum Requirements
+### Minimum Kafka ACL Permissions
 
 kPow checks for the following internal topics in your **primary cluster** \(the first bootstrap in your configuration\) on startup and will attempt to create them if required:
 
@@ -121,8 +121,4 @@ See [User Authorization](../user-authorization/overview.md#user-actions) for a d
 | Topic | Read | `TOPIC_INSPECT` |
 | Topic | Write | `TOPIC_PRODUCE` |
 | Group | Read / Delete | `GROUP_EDIT` |
-
-
-
-## 
 
