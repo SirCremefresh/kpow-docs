@@ -10,7 +10,7 @@ kPow is provided as either a single Docker container or a JAR file.
 
 kPow connects to your Kafka cluster \(and other Kafka resources\) to snapshot them every minute. Those snapshots are computed into metrics. Snapshots, metrics, an audit log, and any other data kPow requires to operate is held in local topics in your cluster.
 
-Beyond at least on Kafka cluster kPow has **no further dependencies.**
+Beyond at least one Kafka cluster kPow has **no further dependencies.**
 
 ## Memory and CPU
 
