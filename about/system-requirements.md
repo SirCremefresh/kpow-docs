@@ -78,7 +78,7 @@ oprtr.compute.metrics.v2-oprtr_metric_v2_pt1m-changelog
 oprtr.compute.snapshots.v2-oprtr_snapshot_materialized_v2-repartition
 ```
 
-You can manually create these topics if you prefer, each with a replication factor of **3** and **12** partitions.
+You can manually create these topics if you prefer, each with a replication factor of **3** and **12** partitions. 
 
 Once started, kPow creates two internal streaming compute applications:
 
@@ -86,6 +86,8 @@ Once started, kPow creates two internal streaming compute applications:
 oprtr.compute.metrics.v2
 oprtr.compute.snapshots.v2
 ```
+
+See [this guide](https://docs.confluent.io/platform/current/streams/developer-guide/security.html) to understand the importance of creating the internal topics with the right configuration.
 
 At a minimum, kPow must be able to read and write to and from these internal topics, must be able to read as those groups, and must have permissions to describe clusters, topics, configuration, and groups.
 
