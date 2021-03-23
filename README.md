@@ -1,5 +1,5 @@
 ---
-description: Get to work with the ultimate engineering toolkit for Apache Kafka®.
+description: Keep Kafka Simple with kPow for Apache Kafka®
 ---
 
 # kPow User Guide
