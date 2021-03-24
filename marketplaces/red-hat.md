@@ -1,5 +1,5 @@
 ---
-description: kPow Operator on the Red Hat Marketplace.
+description: Quick start guide for the kPow Operator on the Red Hat Marketplace.
 ---
 
 # Red Hat
