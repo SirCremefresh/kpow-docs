@@ -16,11 +16,7 @@
 
 * [Quick Start](installation/quick-start.md)
 * [Application Logs](installation/application-logs.md)
-
-## Marketplaces
-
-* [Red Hat](marketplaces/red-hat.md)
-* [OpenShift](marketplaces/openshift.md)
+* [OpenShift](installation/openshift.md)
 
 ## Configuration
 
