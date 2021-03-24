@@ -1,5 +1,5 @@
 ---
-description: Quick start guide for the kPow Operator on OpenShift
+description: Quick start guide to running kPow on OpenShift
 ---
 
 # OpenShift
