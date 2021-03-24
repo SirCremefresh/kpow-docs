@@ -18,36 +18,36 @@
 * [Application Logs](install/application-logs.md)
 * [OpenShift](install/openshift.md)
 
-## Configuration
+## Configuration <a id="config"></a>
 
-* [Environment Variable Glossary](configuration/environment-variable-glossary.md)
-* [Kafka Cluster](configuration/kafka-cluster.md)
-* [Schema Registry](configuration/schema-registry.md)
-* [Kafka Connect](configuration/kafka-connect.md)
-* [Multi-Cluster Management](configuration/multi-cluster.md)
-* [Azure Event Hubs](configuration/azure-event-hubs.md)
-* [Confluent Cloud](configuration/confluent-cloud.md)
-* [Redpanda](configuration/redpanda.md)
+* [Environment Variable Glossary](config/environment-variable-glossary.md)
+* [Kafka Cluster](config/kafka-cluster.md)
+* [Schema Registry](config/schema-registry.md)
+* [Kafka Connect](config/kafka-connect.md)
+* [Multi-Cluster Management](config/multi-cluster.md)
+* [Azure Event Hubs](config/azure-event-hubs.md)
+* [Confluent Cloud](config/confluent-cloud.md)
+* [Redpanda](config/redpanda.md)
 
-## User Authentication
+## User Authentication <a id="authentication"></a>
 
-* [Overview](user-authentication/overview.md)
-* [LdapLoginModule](user-authentication/ldap.md)
-* [PropertyFileLoginModule](user-authentication/file.md)
-* [JDBCLoginModule](user-authentication/db.md)
-* [OpenID/OAuth 2.0](user-authentication/openid/README.md)
-  * [GitHub](user-authentication/openid/github.md)
-  * [Okta](user-authentication/openid/okta.md)
-* [SAML](user-authentication/saml/README.md)
-  * [Okta integration](user-authentication/saml/okta-integration.md)
-  * [AWS SSO integration](user-authentication/saml/aws-sso-integration.md)
-  * [Azure AD integration](user-authentication/saml/azure-ad-integration.md)
+* [Overview](authentication/overview.md)
+* [LdapLoginModule](authentication/ldap.md)
+* [PropertyFileLoginModule](authentication/file.md)
+* [JDBCLoginModule](authentication/db.md)
+* [OpenID/OAuth 2.0](authentication/openid/README.md)
+  * [GitHub](authentication/openid/github.md)
+  * [Okta](authentication/openid/okta.md)
+* [SAML](authentication/saml/README.md)
+  * [Okta integration](authentication/saml/okta-integration.md)
+  * [AWS SSO integration](authentication/saml/aws-sso-integration.md)
+  * [Azure AD integration](authentication/saml/azure-ad-integration.md)
 
-## User Authorization
+## User Authorization <a id="authorization"></a>
 
-* [Overview](user-authorization/overview.md)
-* [Simple Access Control](user-authorization/simple-access-control.md)
-* [Role Based Access Control](user-authorization/role-based-access-control.md)
+* [Overview](authorization/overview.md)
+* [Simple Access Control](authorization/simple-access-control.md)
+* [Role Based Access Control](authorization/role-based-access-control.md)
 
 ## Features
 

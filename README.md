@@ -20,7 +20,7 @@ Take a quick look at [**Our Team**](about/our-team.md) ****to understand why we 
 
 Grab the latest of our [**Releases**](about/releases.md), check the [**System Requirements**](about/system-requirements.md), then get started with a [**Free Trial**](about/trials-and-licenses.md).
 
-Dive into kPow features like [**User Authentication**](user-authentication/overview.md), [**Role Based Access Control**](user-authorization/role-based-access-control.md), [**Live Mode**](features/live-mode.md), [**HTTPS Connections**](features/https-connections.md), [**Multi-Cluster Management,** ](configuration/multi-cluster.md)and [**Data Policies**](features/data-policies.md) for configurable redaction of sensitive data.
+Dive into kPow features like [**User Authentication**](authentication/overview.md), [**Role Based Access Control**](authorization/role-based-access-control.md), [**Live Mode**](features/live-mode.md), [**HTTPS Connections**](features/https-connections.md), [**Multi-Cluster Management,** ](config/multi-cluster.md)and [**Data Policies**](features/data-policies.md) for configurable redaction of sensitive data.
 
 Discover how kPow supports good [**Data Governance**](features/data-governance.md) ****and even provides [**Slack Integration**](features/slack-integration.md).
 

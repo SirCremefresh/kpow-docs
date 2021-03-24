@@ -115,7 +115,7 @@ kPow **does not read from or write to topics other than internal ones** as a par
 
 The following ACLS are optional and only required if you intend to permit the associated kPow action.
 
-See [User Authorization](../user-authorization/overview.md#user-actions) for a description of kPow User Actions and Controls.
+See [User Authorization](../authorization/overview.md#user-actions) for a description of kPow User Actions and Controls.
 
 | Kafka Resource | Kafka ACL | Required for User Action |
 | :--- | :--- | :--- |
