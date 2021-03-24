@@ -1,8 +1,8 @@
 ---
-description: kPow on the Red Hat Marketplace and OperatorHub.io
+description: kPow Operator on the Red Hat Marketplace.
 ---
 
 # Red Hat
 
-Get up and running with the kPow Operator.
+Quick Start Guide for running the Red Hat Marketplace kPow Operator.
 
