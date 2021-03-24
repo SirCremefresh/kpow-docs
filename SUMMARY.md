@@ -12,11 +12,11 @@
 * [Support](about/support.md)
 * [Data Collection](about/data-collection.md)
 
-## Installation
+## Installation <a id="install"></a>
 
-* [Quick Start](installation/quick-start.md)
-* [Application Logs](installation/application-logs.md)
-* [OpenShift](installation/openshift.md)
+* [Quick Start](install/quick-start.md)
+* [Application Logs](install/application-logs.md)
+* [OpenShift](install/openshift.md)
 
 ## Configuration
 

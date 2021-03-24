@@ -6,7 +6,7 @@ description: Keep Kafka Simple with kPow for Apache Kafka®
 
 ## Try kPow Today
 
-Sign-up for a [**free 30-day trial**](https://kpow.io/try) and see our [**Quick Start**](installation/quick-start.md) guide to get up and running in minutes.
+Sign-up for a [**free 30-day trial**](https://kpow.io/try) and see our [**Quick Start**](install/quick-start.md) guide to get up and running in minutes.
 
 {% hint style="info" %}
 **Need Help?** Email [**support@operatr.io**](mailto:support@operatr.io) ****or [**book a video call**](about/support.md)**.**
