@@ -28,3 +28,17 @@ If you purchase kPow on the Red Hat Marketplace a license will automatically be 
 
 kPow requires at least one Kafka Cluster bootstrap URL in order to start correctly
 
+All configuration beyond License and Bootstrap is optional.
+
+## Red Hat Marketplace
+
+{% hint style="info" %}
+Register your OpenShift cluster to purchase kPow on the Red Hat Marketplace
+{% endhint %}
+
+Installation of kPow from the Red Hat Marketplace requires the OpenShift cluster to be registered to the Marketplace Portal, including the roll out of the PullSecret in your cluster. 
+
+Failure to register will result in an image pull authentication failure with the Red Hat registry.
+
+
+
