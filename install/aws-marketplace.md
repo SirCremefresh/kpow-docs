@@ -74,3 +74,7 @@ Once you have selected a product, simply click **'Continue to Subscribe'**:
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-4.56.45-pm.png)
 
+Then review and accept the Operatr.IO EULA:
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-4.57.47-pm.png)
+
