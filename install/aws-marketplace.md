@@ -1,5 +1,5 @@
 ---
-description: Purchase kPow on the AWS Marketplace
+description: Purchase and Provision kPow on the AWS Marketplace
 ---
 
 # AWS Marketplace
