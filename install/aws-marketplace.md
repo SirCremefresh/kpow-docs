@@ -181,7 +181,7 @@ $ aws eks describe-cluster --region [EKS-REGION] --name [EKS-CLUSTER-NAME] --que
 #### **Create an OIDC identity provider in the IAM console**
 
 {% hint style="success" %}
-Use the output from the previous step to [**enable IAM roles for Service Accounts.**](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html)\*\*\*\*
+Use the output from the previous step to [**Create an IAM OIDC provider for your Cluster**](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html).
 {% endhint %}
 
 
