@@ -15,9 +15,9 @@
 ## Installation <a id="install"></a>
 
 * [Quick Start](install/quick-start.md)
-* [Application Logs](install/application-logs.md)
 * [OpenShift](install/openshift.md)
 * [AWS Marketplace](install/aws-marketplace.md)
+* [Application Logs](install/application-logs.md)
 
 ## Configuration <a id="config"></a>
 
