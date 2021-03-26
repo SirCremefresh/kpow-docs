@@ -96,7 +96,9 @@ Select **Resources / kPow**
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-10.03.00-pm.png)
 
-\*\*\*\*
+Click the **Location** URL to navigate to kPow and start using the product
+
+![](../.gitbook/assets/kpow-overview.png)
 
 \*\*\*\*
 
