@@ -64,6 +64,14 @@ The AWS Marketplace container must be run in an ECS task \(including Fargate\) o
 
 The AWS Marketplace container must run with an IAM role with permissions to call the AWSMarketplaceMetering/registerUsage API. Details for EKS and ECS follow.
 
+### Request a BYOL License
+
+Some customers pay for kPow via the AWS Marketplace but find the requirement to configure IAM Roles and to run in EKS / ECS / Fargate prohibitive or impossible. 
+
+We offer subscription licenses alongside the hourly metered option for this exact use-case. If you chose a Team or Corporate Subscription but do not want to implement IAM Roles for your kPow containers then contact [**support@operatr.io**](mailto:support@operatr.io) ****and once we have verified your subscription we will provide you a **Bring Your Own License** \(BYOL\) license for the Marketplace container that averts the call to registerUsage and allows you to run kPow without configuring IAM roles and in environments other than EKS / ECS / Fargate.
+
+With this option AWS acts solely as a billing agent for your usage of kPow.
+
 ## Start a Subscription to kPow on the AWS Marketplace
 
 Getting started is easy, just choose a product from our [Marketplace Seller Profile](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0):
