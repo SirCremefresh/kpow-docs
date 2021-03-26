@@ -44,6 +44,10 @@ Select the install options. kPow instances are stateless, all data is stored in 
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-9.31.11-pm.png)
 
+kPow is now available as an installed Operator in your OpenShift cluster
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-9.32.35-pm.png)
+
 ## Red Hat Marketplace
 
 {% hint style="info" %}
