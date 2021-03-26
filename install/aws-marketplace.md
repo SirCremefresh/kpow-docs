@@ -70,3 +70,7 @@ Getting started is easy, just choose a product from our [Marketplace Seller Prof
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-4.51.28-pm.png)
 
+Once you have selected a product, simply click **'Continue to Subscribe'**:
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-4.56.45-pm.png)
+
