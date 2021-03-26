@@ -42,7 +42,7 @@ Select **kPow** and click **Install**
 
 Select the install options. kPow instances are stateless, all data is stored in your Kafka Cluster, and we are committed to seamless upgrades - we recommend you select Automatic approval strategy.
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.23.55-pm.png)
+![](../.gitbook/assets/screen-shot-2021-03-26-at-9.31.11-pm.png)
 
 ## Red Hat Marketplace
 
