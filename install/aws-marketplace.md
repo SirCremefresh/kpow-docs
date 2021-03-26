@@ -110,5 +110,30 @@ Pull the docker image listed at the bottom of the instruction into your own dock
 Check your subscription regularly for new releases of kPow and update accordingly!
 {% endhint %}
 
+## Required IAM Role
 
+The kPow Marketplace container must be run with an IAM role with the correct policy attached.
+
+The **AWSMarketplaceMeteringRegisterUsage** policy allows the container to check your subscription and meter your usage if you are using kPow \(Pro\).
+
+```text
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "aws-marketplace:RegisterUsage"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+## **Deploying kPow to ECS**
+
+Use the Docker container obtained from your marketplace subscription to configure an ECS task with the correct IAM Role and Policy, then simply launch that task in either Fargate or EC2.
+
+See our [Quick Start CloudFormation templates](https://github.com/operatr-io/infra/tree/master/aws-marketplace) for an example of launching kPow in ECS/Fargate with the IAM Role and Policy automatically created and attached to the task.
 
