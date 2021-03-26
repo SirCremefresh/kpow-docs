@@ -28,7 +28,7 @@ If you purchase kPow on the Red Hat Marketplace a license will automatically be 
 
 kPow requires at least one Kafka Cluster bootstrap URL in order to start correctly
 
-All configuration beyond License and Bootstrap is optional.
+All configuration beyond License and Kafka bootstrap URL is optional.
 
 ## Red Hat Marketplace
 
