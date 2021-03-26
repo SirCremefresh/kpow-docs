@@ -100,7 +100,9 @@ Click the **Location** URL to navigate to kPow and start using the product
 
 ![](../.gitbook/assets/kpow-overview.png)
 
-\*\*\*\*
+## Get Help!
+
+If you need any assistance installing or configuring kPow on OpenShift contact **support@operatr.io**
 
 ## Red Hat Marketplace
 
