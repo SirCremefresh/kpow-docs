@@ -66,7 +66,7 @@ The AWS Marketplace container must run with an IAM role with permissions to call
 
 ## Start a Subscription to kPow on the AWS Marketplace
 
-Getting started is easy, just choose a product from our [Selling Profile](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0):
+Getting started is easy, just choose a product from our [Marketplace Seller Profile](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0):
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-4.51.28-pm.png)
 
