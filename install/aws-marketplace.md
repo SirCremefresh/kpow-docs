@@ -48,7 +48,7 @@ This product is precisely the same as kPow \(Team\) but licensed for up to twelv
 
 Usage is not metered and the subscriber AWS account is billed monthly at the corporate subscription price of **$940/mo.**
 
-### **Technical Requirements of the kPow Marketplace Container**
+### **Technical Requirements**
 
 The kPow Marketplace container makes a call to [AWSMarketplaceMetering/registerUsage](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html) when kPow starts. This is required by AWS so they may check your marketplace subscription and meter your usage if you have chose to use kPow \(Pro\). This causes the following requirements:
 
