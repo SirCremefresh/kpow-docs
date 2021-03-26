@@ -78,7 +78,17 @@ See the kPow Operator summary for details on advanced configuration options and 
 
 After setting the YAML options, click **Create**
 
-\*\*\*\*
+#### **View Installed Operators**
+
+Validate that the kPow instance is deployed successfully:
+
+**Operators &gt; Installed Operators &gt; kPow for Apache Kafka &gt; Kpow**
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-9.48.24-pm.png)
+
+#### View the kPow UI
+
+Select 
 
 \*\*\*\*
 
