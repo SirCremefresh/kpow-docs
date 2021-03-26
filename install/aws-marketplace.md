@@ -36,7 +36,7 @@ Each kPow product is functionally the same, only the billing and licensing chang
 
 Subscribe to [kPow \(Pro\)](https://aws.amazon.com/marketplace/pp/B084BTWJHD?ref_=srh_res_product_title) to gain access to a Marketplace kPow container that can connect to a single Kafka Cluster and associated Schema Registries and Kafka Connect clusters.
 
-Start as many instances of kPow as you need from the provided container. Usage of each instance is metered and billed by the hour at the kPow headline price of **$0.16c/hr**. 
+Start as many instances of kPow as you need from the provided container. Usage of each instance is metered and billed by the hour at the kPow metered rate of **$0.16c/hr**. 
 
 kPow \(Pro\) allows you to pay only for the kPow hours you use with no ongoing commitment.
 
