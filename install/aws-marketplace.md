@@ -184,5 +184,149 @@ $ aws eks describe-cluster --region [EKS-REGION] --name [EKS-CLUSTER-NAME] --que
 Use the output from the previous step to [**Create an IAM OIDC provider for your Cluster**](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html).
 {% endhint %}
 
+#### Create the Service Account IAM Role
 
+{% hint style="success" %}
+Follow the instructions to [**Create a Service Account IAM Policy and Role**](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html)\*\*\*\*
+{% endhint %}
+
+The attached policy should be **AWSMarketplaceMeteringRegisterUsage:**
+
+```text
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "aws-marketplace:RegisterUsage"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+The trust policy of your created role should look similar to:
+
+```text
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::[YOUR-ACCOUNT-ID]:oidc-provider/[ISSUER-HOSTPATH]"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.us-east-1.amazonaws.com/id/086F0892931ED09F5D966F5353D1A18F:sub": "system:serviceaccount:default:kpow-service"
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Create a Service Account YAML
+
+Using the ARN of the IAM Role:
+
+```text
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kpow-service
+  namespace: default
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::[YOUR-ACCOUNT-ID]:role/[YOUR-EKS-REGISTER-USAGE-ROLE]
+```
+
+#### Make the Service Account available
+
+```text
+$ kubectl apply -f kpow-service-account.yaml
+
+> serviceaccount/oprtr-service created
+
+$ kubectl describe serviceaccounts
+
+> Name:                oprtr-service
+> Namespace:           default
+> Labels:              
+> Annotations:         eks.amazonaws.com/role-arn: arn:aws:iam::[YOUR-ACCOUNT]:role/[YOUR-ROLE]
+>                      kubectl.kubernetes.io/last-applied-configuration:
+>                        {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{"eks.amazonaws.com/role-arn":"arn:aws:iam::[YOUR-ACCOUNT]:role/OP-EKS-...
+> Image pull secrets:  
+> Mountable secrets:   oprtr-service-token-xkmwt
+> Tokens:              oprtr-service-token-xkmwt
+> Events:              
+```
+
+#### Create a kPow Deployment YAML
+
+Using the Service Account created above:
+
+```text
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kpow-io
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kpow-io
+  template:
+    metadata:
+      labels:
+        app: kpow-io
+    spec:
+      serviceAccountName: kpow-service
+      containers:
+        - name: kpow-io
+          image: [AWS-MARKETPLACE-CONTAINER-URL]
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: 1
+              memory: 2Gi
+            requests:
+              cpu: 1
+              memory: 2Gi
+          env:
+            - name: AWS_REGION
+              value: "us-east-1"
+            - name: BOOTSTRAP
+              value: "YOUR BOOTSTRAP URL"
+            - name: FURTHER_CONFIGURATION
+              value: "YOUR FURTHER CONFIGURATION"
+      securityContext:
+        fsGroup: 1337
+```
+
+#### Deploy kPow to EKS!
+
+```text
+$ kubectl create -f kpow-container.yaml
+
+> deployment.apps/kpow-io created
+
+$ kubectl describe pods
+
+> Name:           kpow-io-7ff67bf946-n4hm2
+> Namespace:      default
+
+> kubectl logs kpow-io-7ff67bf946-n4hm2
+
+```
+
+You have now deployed kPow to EKS using a Service Account with an IAM Role and attached AWSMarketplaceMeteringRegisterUsage policy. Congrats!
+
+## Get Help!
+
+For assistance installing and configuring kPow on the AWS Marketplace contact **support@operatr.io**
 
