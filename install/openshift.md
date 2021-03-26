@@ -10,7 +10,7 @@ description: Quick start guide to running kPow on OpenShift
 kPow is compatible with **Red Hat AMQ Streams**
 {% endhint %}
 
-kPow is available as an Operator on the Red Hat Marketplace and OperatorHub.io.
+kPow is available as an Operator on the Red Hat Marketplace and OperatorHub.
 
 Installed in one click and requiring little configuration, kPow will manage and monitor your Kafka resources \(including Clusters, Schema Registries, and Connect Installations\) security and safely with all data stored in local topics within your cluster.
 
@@ -29,6 +29,12 @@ If you purchase kPow on the Red Hat Marketplace a license will automatically be 
 kPow requires at least one Kafka Cluster bootstrap URL in order to start correctly
 
 All configuration beyond License and Kafka bootstrap URL is optional.
+
+## OperatorHub
+
+Select the `OperatorHub` from the `Operators` menu and search for **kPow.**
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-9.15.42-pm.png)
 
 ## Red Hat Marketplace
 
