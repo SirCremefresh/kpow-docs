@@ -56,17 +56,29 @@ Select the kPow for Apache Kafka Operator
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-9.35.33-pm.png)
 
-### Obtain a kPow License
+#### Obtain a kPow License
 
 kPow requires a license to run. You can start a 30-day free trial by following the link in the Operator summary \(above\). A trial license will be emailed to you within minutes of signing up.
 
-### Create a kPow Instance
+#### Create a kPow Instance
 
 kPow is configured almost entirely via environment variables.
 
 There are some small number of optional configuration files \(yaml and keystores\) that you may need to configure depending on your requirements and/or environment. In each case you will provide those files to the kPow instance via secrets. Details of creating secrets and configuring files are in the Operator summary.
 
-When you have a license and the bootstrap of your Kafka Cluster, click **Create Instance**
+When you have a license and the bootstrap of your Kafka Cluster, click **Create Instance** then **YAML View**
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-9.41.44-pm.png)
+
+#### **Configure the kPow Instance**
+
+The minimum configuration required to launch a kPow is **licence** and **bootstrap** details.
+
+See the kPow Operator summary for details on advanced configuration options and secrets.
+
+After setting the YAML options, click **Create**
+
+\*\*\*\*
 
 \*\*\*\*
 
