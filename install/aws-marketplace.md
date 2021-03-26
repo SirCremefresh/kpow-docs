@@ -135,5 +135,54 @@ The **AWSMarketplaceMeteringRegisterUsage** policy allows the container to check
 
 Use the Docker container obtained from your marketplace subscription to configure an ECS task with the correct IAM Role and Policy, then simply launch that task in either Fargate or EC2.
 
-See our [Quick Start CloudFormation templates](https://github.com/operatr-io/infra/tree/master/aws-marketplace) for an example of launching kPow in ECS/Fargate with the IAM Role and Policy automatically created and attached to the task.
+See our [**Quick Start CloudFormation templates**](https://github.com/operatr-io/infra/tree/master/aws-marketplace) for an example of launching kPow in ECS/Fargate with the IAM Role and Policy automatically created and attached to the task.
+
+## Deploying kPow to EKS
+
+To deploy the Dockerhub kPow container to EKS see our [**Quick Start Helm Chart for kPow**](%20https://github.com/operatr-io/infra/tree/master/kubernetes/helm).
+
+Deploying the Marketplace kPow container to EKS is slightly more complicated due to the requirement to run the container with the correct IAM Role and Policy - this means configuring a Service Account that has the correct IAM role. Fine grained IAM roles for Service Accounts are [available in EKS Clusters v1.14+.](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
+
+{% hint style="warning" %}
+Remember: You can avoid these requirements with a Team or Corporate BYOL license.
+{% endhint %}
+
+### Configure your EKS Cluster and Deploy kPow
+
+The following steps guide you through a simple installation of kPow in EKS. 
+
+See [this article](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/) for further background reading on Fine Grained IAM Roles for Service Accounts.
+
+#### Update your KubeConfig
+
+```text
+$ aws eks --region [EKS-REGION] update-kubeconfig --name [EKS-CLUSTER-NAME]
+
+> Added new context arn:aws:eks:us-east-1:[YOUR-ACCOUNT-ID]:cluster/[EKS-CLUSTER-NAME] to /Users/you/.kube/config
+```
+
+#### Test you Cluster Connectivity
+
+```text
+$ kubectl get svc
+
+> NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AG
+> kubernetes ClusterIP 10.100.0.1 443/TCP 3h34m
+```
+
+#### Enable IAM Roles for Service Accounts
+
+```text
+$ aws eks describe-cluster --region [EKS-REGION] --name [EKS-CLUSTER-NAME] --query "cluster.identity.oidc.issuer" --output text
+
+> https://oidc.eks.us-east-1.amazonaws.com/id/086F0892931ED09F5D966F5353D1A18F
+```
+
+#### **Create an OIDC identity provider in the IAM console**
+
+{% hint style="success" %}
+Use the output from the previous step to [**enable IAM roles for Service Accounts.**](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html)\*\*\*\*
+{% endhint %}
+
+
 
