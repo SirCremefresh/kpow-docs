@@ -8,6 +8,8 @@ kPow is available to purchase via the AWS Marketplace.
 
 kPow works beautifully with Amazon MSK and runs perfectly in ECS / Fargate / EKS.
 
+Subscribe to kPow on the AWS Marketplace and get an **automatically licensed** container billed to your AWS account monthly with the freedom to update to the latest kPow whenever you like.
+
 {% hint style="info" %}
 See our [**AWS Marketplace Seller Profile**](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0) to see every option for purchasing kPow on AWS.
 {% endhint %}
