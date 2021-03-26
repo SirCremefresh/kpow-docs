@@ -36,6 +36,10 @@ Select the `OperatorHub` from the `Operators` menu and search for **kPow.**
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-9.15.42-pm.png)
 
+Select **kPow** and click **Install**
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-9.18.20-pm.png)
+
 ## Red Hat Marketplace
 
 {% hint style="info" %}
