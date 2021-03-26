@@ -4,7 +4,7 @@ description: Purchase and Provision kPow on the AWS Marketplace
 
 # AWS Marketplace
 
-kPow is available to purchase via the AWS Marketplace.
+kPow is available to [purchase via the AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0).
 
 kPow works beautifully with Amazon MSK and runs perfectly in ECS / Fargate / EKS.
 
@@ -21,6 +21,8 @@ When you subscribe to a [kPow product on the AWS Marketplace](https://aws.amazon
 The AWS Marketplace container makes a single call to [AWSMarketplaceMetering/registerUsage](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html) when kPow starts, allowing AWS to check your subscription and meter your usage if you have chosen the hourly-metered product.
 
 The kPow AWS Marketplace container is **automatically licensed** to the AWS account that subscribes to a product and that account is billed monthly for the subscription. You **do not need to arrange a separate license with us directly** if you subscribe to a kPow product on the AWS Marketplace. It just works.
+
+We update each kPow product on the AWS Marketplace with every major release, simply check your subscription details to find the latest container and update whenever you like.
 
 ## The Products
 
