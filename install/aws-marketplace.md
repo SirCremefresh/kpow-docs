@@ -24,11 +24,23 @@ The kPow AWS Marketplace container is **automatically licensed** to the AWS acco
 
 There are three kPow products on the AWS Marketplace.
 
+{% hint style="info" %}
+Each kPow product is functionally the same, only the billing and licensing change.
+{% endhint %}
+
 ### [kPow \(Pro\) - Hourly Metered](https://aws.amazon.com/marketplace/pp/B084BTWJHD?ref_=srh_res_product_title)
 
 Subscribe to [kPow \(Pro\)](https://aws.amazon.com/marketplace/pp/B084BTWJHD?ref_=srh_res_product_title) to gain access to a Marketplace kPow container that can connect to a single Kafka Cluster and associated Schema Registries and Kafka Connect clusters.
 
-Start as many instances of kPow as you need from the provided container. Usage of each instance is metered and billed by the hour at the kPow headline price of **US0.16c/hr**.
+Start as many instances of kPow as you need from the provided container. Usage of each instance is metered and billed by the hour at the kPow headline price of **$0.16c/hr**. 
+
+kPow \(Pro\) allows you to pay only for the kPow hours you use with no ongoing commitment.
+
+### [kPow \(Team\) - Monthly Subscription](https://aws.amazon.com/marketplace/pp/B08KFQGJSZ?ref_=srh_res_product_title)
+
+Subscribe to [kPow \(Team\) ](https://aws.amazon.com/marketplace/pp/B08KFQGJSZ?ref_=srh_res_product_title)to gain access to a Marketplace kPow container that can connect to up to six Kafka Clusters and their associated Schema Registries and Kafka Connect clusters at once.
+
+kPow Team comes with a license to use the kPow container with at most six Kafka clusters, regardless of how many separate instances of kPow you start. Usage is not metered and the subscriber AWS account is billed monthly at the team subscription price of **$540/mo**.
 
 
 
