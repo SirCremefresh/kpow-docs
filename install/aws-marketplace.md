@@ -70,11 +70,11 @@ Getting started is easy, just choose a product from our [Marketplace Seller Prof
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-4.51.28-pm.png)
 
-Once you have selected a product, simply click **'Continue to Subscribe'**:
+Selected a product and click **'Continue to Subscribe'**:
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-4.56.45-pm.png)
 
-Then review and accept the Operatr.IO EULA:
+Review and accept the Operatr.IO EULA:
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-4.57.47-pm.png)
 
@@ -82,7 +82,9 @@ Once your subscription is activated, click **'Continue to Configuration':**
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-5.00.22-pm.png)
 
-Then choose **'Operatr for Apache Kafka \(Pro\)'** as the delivery method, and the latest version available, then click **'Continue to Launch':**
+Choose **'Operatr for Apache Kafka \(Pro\)'** as the delivery method, and the latest version available.
+
+Click **'Continue to Launch':**
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-5.02.07-pm.png)
 
@@ -90,11 +92,15 @@ Click **'View container image details'** at the bottom of the launch page:
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-5.03.59-pm.png)
 
-You will see **'Pull Command Instructions'** giving you access to the kPow container for your subscription.
+See **'Pull Command Instructions'** giving you access to the kPow container for your subscription.
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-5.05.35-pm.png)
 
-You can pull the docker image listed at the bottom of the instruction into your own docker repository, or simply use it directly in a ECS / Fargate / EKS to launch kPow instances with the correct IAM permissions.
+Pull the docker image listed at the bottom of the instruction into your own docker repository, or simply use it directly in a ECS / Fargate / EKS to launch kPow instances with the correct IAM permissions.
+
+{% hint style="warning" %}
+Check your subscription regularly for new releases of kPow and update accordingly!
+{% endhint %}
 
 
 
