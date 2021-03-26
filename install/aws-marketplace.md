@@ -52,7 +52,7 @@ This product is precisely the same as kPow \(Team\) but licensed for up to twelv
 
 Usage is not metered and the subscriber AWS account is billed monthly at the corporate subscription price of **$940/mo.**
 
-### **Technical Requirements**
+## **Technical Requirements**
 
 The kPow Marketplace container makes a call to [AWSMarketplaceMetering/registerUsage](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html) when kPow starts. This is required by AWS so they may check your marketplace subscription and meter your usage if you have chose to use kPow \(Pro\). This causes the following requirements:
 
@@ -64,7 +64,7 @@ The AWS Marketplace container must be run in an ECS task \(including Fargate\) o
 
 The AWS Marketplace container must run with an IAM role with permissions to call the AWSMarketplaceMetering/registerUsage API. Details for EKS and ECS follow.
 
-### Request a BYOL License
+## Request a BYOL License
 
 Some customers pay for kPow via the AWS Marketplace but find the requirement to configure IAM Roles and to run in EKS / ECS / Fargate prohibitive or impossible. 
 
