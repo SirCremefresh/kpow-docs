@@ -135,13 +135,13 @@ The **AWSMarketplaceMeteringRegisterUsage** policy allows the container to check
 
 ## **Deploying kPow to ECS**
 
-Use the Docker container obtained from your marketplace subscription to configure an ECS task with the correct IAM Role and Policy, then simply launch that task in either Fargate or EC2.
+Use the Marketplace container obtained from your marketplace subscription to configure an ECS task with the correct IAM Role and Policy, then simply launch that task in either Fargate or EC2.
 
 See our [**Quick Start CloudFormation templates**](https://github.com/operatr-io/infra/tree/master/aws-marketplace) for an example of launching kPow in ECS/Fargate with the IAM Role and Policy automatically created and attached to the task.
 
 ## Deploying kPow to EKS
 
-To deploy the Dockerhub kPow container to EKS see our [**Quick Start Helm Chart for kPow**](%20https://github.com/operatr-io/infra/tree/master/kubernetes/helm).
+To deploy the [**Dockerhub kPow container**](https://hub.docker.com/r/operatr/kpow) to EKS see our [**Quick Start Helm Chart for kPow**](%20https://github.com/operatr-io/infra/tree/master/kubernetes/helm).
 
 Deploying the Marketplace kPow container to EKS is slightly more complicated due to the requirement to run the container with the correct IAM Role and Policy - this means configuring a Service Account that has the correct IAM role. Fine grained IAM roles for Service Accounts are [available in EKS Clusters v1.14+.](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
 
