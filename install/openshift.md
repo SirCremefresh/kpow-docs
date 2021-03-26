@@ -32,6 +32,8 @@ All configuration beyond License and Kafka bootstrap URL is optional.
 
 ## OperatorHub
 
+### Install the kPow Operator
+
 Select the `OperatorHub` from the `Operators` menu and search for **kPow.**
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-9.15.42-pm.png)
@@ -44,9 +46,15 @@ Select the install options. kPow instances are stateless, all data is stored in 
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-9.31.11-pm.png)
 
-kPow is now available as an installed Operator in your OpenShift cluster
+kPow is now available as an installed Operator in your OpenShift cluster!
 
 ![](../.gitbook/assets/screen-shot-2021-03-26-at-9.32.35-pm.png)
+
+### Launch a kPow Instance
+
+Select the kPow for Apache Kafka Operator
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-9.35.33-pm.png)
 
 ## Red Hat Marketplace
 
