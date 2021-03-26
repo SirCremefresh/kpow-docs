@@ -88,7 +88,15 @@ Validate that the kPow instance is deployed successfully:
 
 #### View the kPow UI
 
-Select 
+Select the installed kPow instance from the list of kPows
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-10.01.38-pm.png)
+
+Select **Resources / kPow**
+
+![](../.gitbook/assets/screen-shot-2021-03-26-at-10.03.00-pm.png)
+
+\*\*\*\*
 
 \*\*\*\*
 
