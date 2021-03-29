@@ -8,7 +8,7 @@ description: Use kPow to monitor your Redpanda clusters
 
 Redpanda is a Kafka® compatible event streaming platform. No Zookeeper®, no JVM, and no code changes required. Read more about Red Panda [here](https://vectorized.io/)
 
-kPow is fully compatible with Redpanda clusters since we do not use Zookeeper or JMX metrics.
+kPow has no reliance on Zookeeper or the JVM and is fully compatible with Redpanda.
 
 ## Quick Start
 
