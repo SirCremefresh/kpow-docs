@@ -6,35 +6,29 @@ description: Use kPow to monitor your Redpanda clusters
 
 ## What is Redpanda?
 
-Redpanda is a Kafka® compatible event streaming platform. No Zookeeper®, no JVM, and no code changes required.
+Redpanda is a Kafka® compatible event streaming platform. No Zookeeper®, no JVM, and no code changes required. Read more about Red Panda [here](https://vectorized.io/)
 
-Read more about Red Panda [here](https://vectorized.io/)
+kPow is fully compatible with Redpanda clusters since we do not use Zookeeper or JMX metrics.
 
-Because kPow does not use Kafka's JMX metrics or require a Zookeeper® connection, all of kPow's metrics are fully supported when using Redpanda!
+## Quick Start
 
-## Configuration
-
-Example kPow configuration when connecting to a single-node Redpanda cluster running inside Docker:
+Start a single-node Redpanda cluster with the Docker container provided by Vectorized.
 
 ```
 docker run -ti -p 9092:9092 vectorized/redpanda:latest
 ```
 
+Configure kPow to connect to the local Redpanda cluster.
+
 ```text
  BOOTSTRAP="127.0.0.1:9092"
  REPLICATION_FACTOR="1"
  CLUSTER_ID="red-panda"
- REDPANDA="true"
 ```
 
-**Note**: an extra environment variable `CLUSTER_ID` is required, as Redpanda does not provide a cluster ID when making an admin client request.   
-The `CLUSTER_ID` must be unique across all clusters defined in kPow, and can be any unique identifier.
+**Note**: an extra environment variable `CLUSTER_ID` is required, as Redpanda does not provide a cluster ID when making an admin client request. The `CLUSTER_ID` must be unique across all clusters defined in kPow, and can be any unique identifier.
 
-The `REDPANDA` environment variable is required to get around the open issue that Redpanda does not support the `message.timestamp.type = LogAppendTime` topic configuration value, which kPow requires internally for its snapshot topics. Once [this issue](https://github.com/vectorizedio/redpanda/issues/626) has been resolved, this environment variable will become deprecated.
+Start your kPow instance and navigate to the UI.
 
-## Limitations
-
-The vast majority of kPow's features work with Redpanda, with the exception of:
-
-* Broker disk information/metrics - as the admin client request does not return any log details
+![](../.gitbook/assets/kpow-overview.png)
 
