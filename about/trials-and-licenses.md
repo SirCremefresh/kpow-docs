@@ -6,7 +6,7 @@ description: Start a Free 30-Day Trial Today
 
 ## Free Trial
 
-Sign-up for a [**free 30-day trial**](https://kpow.io/try) and see our [**Quick Start**](../install/quick-start.md) guide to get up and running in minutes.
+Sign-up for a [**free 30-day trial**](https://kpow.io/try) and see our [**Quick Start**](../installation/quick-start.md) guide to get up and running in minutes.
 
 ## Paid Licenses
 

@@ -12,12 +12,12 @@
 * [Support](about/support.md)
 * [Data Collection](about/data-collection.md)
 
-## Installation <a id="install"></a>
+## Installation
 
-* [Quick Start](install/quick-start.md)
-* [OpenShift](install/openshift.md)
-* [AWS Marketplace](install/aws-marketplace.md)
-* [Application Logs](install/application-logs.md)
+* [Quick Start](installation/quick-start.md)
+* [OpenShift](installation/openshift.md)
+* [AWS Marketplace](installation/aws-marketplace.md)
+* [Application Logs](installation/application-logs.md)
 
 ## Configuration <a id="config"></a>
 
