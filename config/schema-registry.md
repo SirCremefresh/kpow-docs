@@ -24,7 +24,7 @@ kPow connects to a Schema registry with **environment variables**.
 ### Configuring Multiple Schema Registries
 
 {% hint style="info" %}
-This feature is in pre-release. Email support@operatr.io if you would like to receive a pre-release JAR!
+Multiple Schema Registries is GA in kPow v71. [Download the pre-release JAR](https://releases.operatr.io/operatr-2021-03-31-17-33.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1632724432&Signature=Uql3dmhsjO4rraEw6hwgGlJed%2Fk%3D) for early access
 {% endhint %}
 
 This feature is in pre-release. Email support@operatr.io if you would like to receive a pre-release JAR!
