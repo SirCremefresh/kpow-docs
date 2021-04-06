@@ -58,7 +58,7 @@ kPow will now authenticate users with Github via OAuth2.
 
 See the guide to [Role Based Access Control](../../authorization/role-based-access-control.md) for full configuration details.
 
-### Integrate Okta SSO \(OpenID\) and RBAC
+### Integrate Github SSO and RBAC
 
 When RBAC is enabled kPow will request `orgs:read` scope to view the roles associated with an authenticated user.
 
