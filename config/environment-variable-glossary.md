@@ -402,6 +402,14 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">bool</td>
       <td style="text-align:left">Turn off the initial page splash scre</td>
     </tr>
+    <tr>
+      <td style="text-align:left"><b>STREAMS_ERROR_STRATEGY</b>
+      </td>
+      <td style="text-align:left">LOG_EXCEPTION</td>
+      <td style="text-align:left">enum</td>
+      <td style="text-align:left">The strategy to use when kPow&apos;s internal Kafka Streams instance enters
+        an ERROR state. Possible values: LOG_EXCEPTION, LOG_AND_EXIT</td>
+    </tr>
   </tbody>
 </table>
 

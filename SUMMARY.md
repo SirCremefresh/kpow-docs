@@ -18,6 +18,7 @@
 * [OpenShift](installation/openshift.md)
 * [AWS Marketplace](installation/aws-marketplace.md)
 * [Application Logs](installation/application-logs.md)
+* [Deployment Notes](installation/deployment-notes.md)
 * [Troubleshooting](installation/troubleshooting/README.md)
   * [Websocket Connections](installation/troubleshooting/websocket-connections.md)
 
