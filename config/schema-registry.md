@@ -23,10 +23,6 @@ kPow connects to a Schema registry with **environment variables**.
 
 ### Configuring Multiple Schema Registries
 
-{% hint style="info" %}
-Multiple Schema Registries is GA in kPow v71. [Download the pre-release JAR](https://releases.operatr.io/operatr-2021-03-31-17-33.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1632724432&Signature=Uql3dmhsjO4rraEw6hwgGlJed%2Fk%3D) for early access
-{% endhint %}
-
 kPow supports multiple Schema Registries associated to a single Kafka cluster. 
 
 To configure multiple Schema Registries, use the environment variable `SCHEMA_REGISTRY_RESOURCE_IDS` to define a comma separated list of Schema Registries. kPow uses the resource ID as a prefix in the environment variable.

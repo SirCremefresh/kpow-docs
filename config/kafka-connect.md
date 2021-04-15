@@ -25,10 +25,6 @@ kPow connects to a Connect cluster with **environment variables**.
 
 ### Configuring Multiple Connect Clusters
 
-{% hint style="info" %}
-Multiple Connect Clusters is GA in kPow v71. [Download the pre-release JAR](https://releases.operatr.io/operatr-2021-03-31-17-33.jar?AWSAccessKeyId=AKIAXNNKGCAKDUQSTKG4&Expires=1632724432&Signature=Uql3dmhsjO4rraEw6hwgGlJed%2Fk%3D) for early access.
-{% endhint %}
-
 kPow supports multiple Kafka Connect clusters associated to a single Kafka cluster. 
 
 To configure multiple Kafka Connect clusters, use the environment variable `CONNECT_RESOURCE_IDS` to define a comma separated list of Connect clusters. kPow uses the resource ID as a prefix in the environment variable.
