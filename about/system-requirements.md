@@ -101,13 +101,13 @@ A simple set of Kafka ACL that allows kPow to operate provides **ALLOW** on the 
 | :--- | :--- | :--- |
 | Cluster | Describe | `*` |
 | Cluster | DescribeConfigs | `*` |
-| Cluster | Create | `* (if not manually creating internal topics)` |
+| Cluster | Create | `* (if not manually creating kpow topics)` |
 | Topic | Describe | `*` |
 | Topic | DescribeConfigs | `*` |
-| Topic | Read | `* or internal topics only` |
-| Topic | Write | `* or internal topics only` |
+| Topic | Read | `* or kpow topics only` |
+| Topic | Write | `* or kpow topics only` |
 | Group | Describe | `*` |
-| Group | Read | `* or internal groups only` |
+| Group | Read | `* or kpow groups only` |
 
 kPow **does not read from or write to topics other than internal ones** as a part of normal operation.
 
