@@ -14,11 +14,11 @@ The [operatr-io/infra GitHub repository](https://github.com/operatr-io/infra) co
 * Kubernetes + Helm
 * Red Hat Openshift \(more notes found in our [OpenShift](openshift.md) guide\)
 
-## Resource limits
+## Resource Limits
 
 See [System Requirements](../about/system-requirements.md) for notes on configuring CPU/memory limits for kPow
 
-## Liveness and Readiness endpoints
+## Liveness and Readiness Endpoints
 
 kPow's healthcheck endpoint is served as a GET request at `/healthy`. This path can be used as a liveness probe from within your orchestration platform of choice.
 
@@ -28,7 +28,7 @@ kPow's healthcheck endpoint is served as a GET request at `/healthy`. This path 
 
 The `/up` endpoint can be used for readiness probes. It always returns a `200` status when kPow's HTTP server is up and reachable.
 
-## Error states + strategies
+## Error States + Strategies
 
 kPow runs an internal [Kafka Streams](https://kafka.apache.org/documentation/streams/) resource that may enter an `ERROR` state in certain scenarios where a Kafka Cluster becomes unavailable for a duration longer than the configured timeout+heartbeat. 
 
@@ -59,7 +59,7 @@ Generally, most reverse proxies and load balancers should work out of the box wi
 See [HTTPS Connections](../features/https-connections.md) for documentation on how to configure HTTPS traffic for kPow
 {% endhint %}
 
-### Nginx
+### NGINX Configuration
 
 #### Standard Configuration 
 
@@ -85,7 +85,7 @@ A standard `nginx.conf`
 }
 ```
 
-#### kPow served at a custom path
+#### Custom Path Configuration
 
 This configuration might be useful if you want to serve kPow at a custom path such as `/kpow` . This scenario might be useful if your company has a suite of tools that you want to have grouped at a single HTTP endpoint.
 
