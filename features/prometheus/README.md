@@ -33,5 +33,23 @@ kPow logs the path to each Prometheus endpoint on startup
 * GET /metrics/v1/schema/a2f06a916672d71d675f - metrics for schema registry
 ```
 
+## Sample Scraper Configuration
 
+Sample Prometheus scraper configuration that we use to test kPow:
+
+```text
+scrape_configs:
+  - job_name: 'operatr'
+    metrics_path: '/metrics/v1'
+    static_configs:
+      - targets: ['host.docker.internal:3000']
+  - job_name: 'operatr_streams'
+    metrics_path: '/streams/v1'
+    static_configs:
+      - targets: ['host.docker.internal:3000']
+  - job_name: 'operatr_offsets'
+    metrics_path: '/offsets/v1'
+    static_configs:
+      - targets: ['host.docker.internal:3000']
+```
 
