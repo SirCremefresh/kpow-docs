@@ -55,6 +55,20 @@ kpow {
 };
 ```
 
+### JAAS Debugging
+
+There are two steps to debugging JAAS LDAP connections, first add `debug="true"` to your config:
+
+```text
+kpow {
+  org.eclipse.jetty.jaas.spi.LdapLoginModule required
+  debug="true"
+  ...
+  ...
+```
+
+Then turn on Jetty JAAS debug-level logging, see [Application Logs](../installation/application-logs.md) for example configuration.
+
 ### Environment Configuration
 
 To activate Jetty JAAS authentication set the environment variable **`AUTH_PROVIDER_TYPE=jetty`**
