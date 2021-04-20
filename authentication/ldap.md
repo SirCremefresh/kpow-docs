@@ -69,6 +69,8 @@ kpow {
 
 Then turn on Jetty JAAS debug-level logging, see [Application Logs](../installation/application-logs.md) for example configuration.
 
+Once configured you will find debug log lines in your application logs that provide insight into how the LdapLoginModule is operating.
+
 ### Environment Configuration
 
 To activate Jetty JAAS authentication set the environment variable **`AUTH_PROVIDER_TYPE=jetty`**
