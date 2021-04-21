@@ -1,7 +1,5 @@
 ---
-description: >-
-  Deployment notes for running kPow on container platforms such as Kubernetes,
-  ECS/Fargate
+description: Run kPow on platforms such as Kubernetes and ECS/Fargate
 ---
 
 # Deployment Notes
@@ -12,11 +10,7 @@ The [operatr-io/infra GitHub repository](https://github.com/operatr-io/infra) co
 
 * ECS/Fargate \(more notes found in our [AWS Marketplace](aws-marketplace.md) guide\)
 * Kubernetes + Helm
-* Red Hat Openshift \(more notes found in our [OpenShift](openshift.md) guide\)
-
-## Resource Limits
-
-See [System Requirements](system-requirements.md) for notes on configuring CPU/memory limits for kPow
+* Red Hat Openshift \(more notes found in our [OpenShift](openshift.md) guide
 
 ## Liveness and Readiness Endpoints
 

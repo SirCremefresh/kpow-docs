@@ -16,6 +16,7 @@
 * [Quick Start](installation/quick-start.md)
 * [System Requirements](installation/system-requirements.md)
 * [Deployment Notes](installation/deployment-notes.md)
+* [Minimum ACL Permissions](installation/minimum-acl-permissions.md)
 * [Application Logs](installation/application-logs.md)
 * [OpenShift](installation/openshift.md)
 * [AWS Marketplace](installation/aws-marketplace.md)
