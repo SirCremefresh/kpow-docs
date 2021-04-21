@@ -16,11 +16,11 @@ The [operatr-io/infra GitHub repository](https://github.com/operatr-io/infra) co
 
 ## Resource Limits
 
-See [System Requirements](../about/system-requirements.md) for notes on configuring CPU/memory limits for kPow
+See [System Requirements](system-requirements.md) for notes on configuring CPU/memory limits for kPow
 
 ## Liveness and Readiness Endpoints
 
-kPow's healthcheck endpoint is served as a GET request at `/healthy`. This path can be used as a liveness probe from within your orchestration platform of choice.
+kPow's health check endpoint is served as a GET request at `/healthy`. This path can be used as a liveness probe from within your orchestration platform of choice.
 
 * The `/healthy` endpoint returns a `200` status code if the kPow instance is healthy. 
 * The `/healthy` endpoint returns a `503` status code if the kPow instance is unhealthy \(see: [Error states + strategies](deployment-notes.md#error-states-strategies)\)

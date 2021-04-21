@@ -6,7 +6,6 @@
 
 * [Introduction](about/introduction.md)
 * [Our Team](about/our-team.md)
-* [System Requirements](about/system-requirements.md)
 * [Trials and Licenses](about/trials-and-licenses.md)
 * [Releases](about/releases.md)
 * [Support](about/support.md)
@@ -15,10 +14,11 @@
 ## Installation
 
 * [Quick Start](installation/quick-start.md)
+* [System Requirements](installation/system-requirements.md)
+* [Deployment Notes](installation/deployment-notes.md)
+* [Application Logs](installation/application-logs.md)
 * [OpenShift](installation/openshift.md)
 * [AWS Marketplace](installation/aws-marketplace.md)
-* [Application Logs](installation/application-logs.md)
-* [Deployment Notes](installation/deployment-notes.md)
 * [Troubleshooting](installation/troubleshooting/README.md)
   * [Websocket Connections](installation/troubleshooting/websocket-connections.md)
 
