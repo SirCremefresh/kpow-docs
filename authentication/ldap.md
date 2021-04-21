@@ -7,7 +7,7 @@ description: Authenticate Users with Jetty JAAS LdapLoginModule
 Configure kPow to read authentication and role information from LDAP.
 
 {% hint style="info" %}
-**In Depth:** For specifics on JAAS / LDAP configuration see the [**Jetty LdapLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) ****docs.
+**In Depth:** For specifics on JAAS / LDAP configuration see the [**Jetty LdapLoginModule**](https://www.eclipse.org/jetty/documentation/jetty-9/index.php) ****docs.
 {% endhint %}
 
 ## Form or Basic Authentication?
