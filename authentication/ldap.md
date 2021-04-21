@@ -33,22 +33,24 @@ To enable LdapLoginModule authentication you must:
 Create a JAAS LDAP configuration file \(the **kpow** realm is very important\).
 
 ```text
+## Your configuration will vary depending on your LDAP setup
+
 kpow {
   org.eclipse.jetty.jaas.spi.LdapLoginModule required
   useLdaps="false"
   contextFactory="com.sun.jndi.ldap.LdapCtxFactory"
   hostname="your.ldap.host"
-  port="your.ldap.port"
-  bindDn="CN=YourCN,OU=YourOU,DC=YourDC,DC=com"
-  bindPassword="*******"
+  port="389"
+  bindDn="CN=Admin_User,OU=Service-Accounts,DC=your-corp,DC=com"
+  bindPassword="********"
   authenticationMethod="simple"
   forceBindingLogin="true"
-  userBaseDn="OU=UserOU,OU=UserOU,DC=UserDC,DC=UserDC"
-  userRdnAttribute="UserRDN"
-  userIdAttribute="UserID"
-  userPasswordAttribute="UserPW"
+  userBaseDn="OU=Service-Accounts,DC=your-corp,DC=com"
+  userRdnAttribute="sAMAccountName"
+  userIdAttribute="sAMAccountName"
+  userPasswordAttribute="userPassword"
   userObjectClass="user"
-  roleBaseDn="OU=RoleOU,DC=RoleDC,DC=RoleDC"
+  roleBaseDn="OU=Global-Groups,DC=your-corp,DC=com"
   roleNameAttribute="cn"
   roleMemberAttribute="member"
   roleObjectClass="group";
@@ -69,7 +71,7 @@ kpow {
 
 Then turn on Jetty JAAS debug-level logging, see [Application Logs](../installation/application-logs.md) for example configuration.
 
-Finally to debug LDAP connection errors enabled Jetty IGNORE logs by starting kPow with the following Java system variable:
+Finally to \(optionally\) debug LDAP connection errors, enable Jetty IGNORE level logs by starting kPow with the following Java system variable:
 
 ```text
 -Dorg.eclipse.jetty.util.log.IGNORED=true
