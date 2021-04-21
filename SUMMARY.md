@@ -20,8 +20,7 @@
 * [Application Logs](installation/application-logs.md)
 * [OpenShift](installation/openshift.md)
 * [AWS Marketplace](installation/aws-marketplace.md)
-* [Troubleshooting](installation/troubleshooting/README.md)
-  * [Websocket Connections](installation/troubleshooting/websocket-connections.md)
+* [Troubleshooting](installation/troubleshooting.md)
 
 ## Configuration <a id="config"></a>
 
