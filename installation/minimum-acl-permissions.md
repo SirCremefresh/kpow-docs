@@ -5,7 +5,7 @@ description: Configuration to run kPow secured with Kafka ACLs
 # Minimum ACL Permissions
 
 {% hint style="info" %}
-You can skip this page if you do not have Kafka ACLS enabled in your cluster/s
+You can skip this page if you do not have Kafka ACLs enabled in your cluster/s
 {% endhint %}
 
 ### Minimum Kafka ACL Permissions
