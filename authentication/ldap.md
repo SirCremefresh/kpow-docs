@@ -57,7 +57,7 @@ kpow {
 
 ### JAAS Debugging
 
-There are two steps to debugging JAAS LDAP connections, first add `debug="true"` to your config:
+There are three steps to debugging JAAS LDAP connections, first add `debug="true"` to your config:
 
 ```text
 kpow {
@@ -68,6 +68,12 @@ kpow {
 ```
 
 Then turn on Jetty JAAS debug-level logging, see [Application Logs](../installation/application-logs.md) for example configuration.
+
+Finally to debug LDAP connection errors enabled Jetty IGNORE logs by starting kPow with the following Java system variable:
+
+```text
+-Dorg.eclipse.jetty.util.log.IGNORED=true
+```
 
 Once configured you will find debug log lines in your application logs that provide insight into how the LdapLoginModule is operating.
 
