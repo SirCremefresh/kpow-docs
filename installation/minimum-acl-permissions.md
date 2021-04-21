@@ -8,8 +8,6 @@ description: Configuration to run kPow secured with Kafka ACLs
 You can skip this page if you do not have Kafka ACLs enabled in your cluster/s
 {% endhint %}
 
-### Minimum Kafka ACL Permissions
-
 kPow checks for the following internal topics in your **primary cluster** \(the first bootstrap in your configuration\) on startup and will attempt to create them if required:
 
 ```text
