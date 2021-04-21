@@ -31,7 +31,7 @@ See [this guide](https://docs.confluent.io/platform/current/streams/developer-gu
 
 At a minimum, kPow must be able to read and write to and from these internal topics, must be able to read as those groups, and must have permissions to describe clusters, topics, configuration, and groups.
 
-A simple set of Kafka ACL that allows kPow to operate provides **ALLOW** on the following:
+A **basic set** of Kafka ACLs that allows kPow to operate provides **ALLOW** on the following:
 
 | Kafka Resource | Kafka ACL | Detail |
 | :--- | :--- | :--- |
@@ -66,23 +66,37 @@ See [User Authorization](../authorization/overview.md#user-actions) for a descri
 
 ### Configuring Kafka ACLS
 
-Kafka ACLs can be set with the kafka-acls.sh script provided by Apache Kafka.
+{% hint style="info" %}
+Creating ACLs on a cluster with no existing ACL configuration can cause issues. 
 
-An example command to add the DescribeConfigs Topic permission is:
+Consult your cluster provider documentation first.
+
+For example the [**Amazon MSK ACL Guide**](https://docs.aws.amazon.com/msk/latest/developerguide/msk-acls.html) ****warns not to set CLUSTER level ACLs and describes how to restrict access to topics while still allowing inter-broker replication.
+{% endhint %}
+
+Create a file containing client configuration for a user who has permissions to create ACLs.
 
 ```text
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 \
-  --command-config client.conf 
-  --allow-principal User:kpow \
-  --operation DescribeConfigs \
-  --topic '*'
-  --add \
-  
-Adding ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
- 	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
+security.protocol=SASL_PLAINTEXT
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin-secret";
 ```
 
-The simple set of ACLS described above for basic operation of kPow can be listed like so:
+The following commands use the kafka-acls.sh script provided by Apache Kafka to create the **basic set** of ACLs described above that allows kpow to operate.
+
+```text
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --cluster '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs  --cluster '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Create --cluster '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Write --topic '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Read --topic '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --topic '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs --topic '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --group '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Read --group '*'
+```
+
+That set of ACLs can then be listed using kafka-acls.sh.
 
 ```text
 ./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config command.conf --list
