@@ -7,7 +7,7 @@ description: A glossary of all configuration options available to kPow
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Env Var</th>
+      <th style="text-align:left">Variable</th>
       <th style="text-align:left">Default</th>
       <th style="text-align:left">Type</th>
       <th style="text-align:left">Comment</th>
