@@ -16,5 +16,5 @@ Connection lost. Retrying in 5 seconds.
 
 The most common cause of this error is a reverse-proxy between your machine and the kPow back-end service that has not been configured to allow websocket traffic. Firewalls may also block this traffic.
 
-See our [guide to configuring a reverse-proxy to allow websocket traffic.](websocket-connections.md)
+See our guide to [configuring a reverse-proxy to allow websocket traffic](../deployment-notes.md#reverse-proxies-load-balancers).
 
