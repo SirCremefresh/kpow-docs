@@ -24,8 +24,6 @@ This example **turns on Jetty JAAS debug logging** and writes logs to a file cal
         </encoder>
     </appender>
     
-    <logger name="kafka" level="ERROR"/>
-    <logger name="org.apache.kafka" level="ERROR"/>
     <logger name="org.eclipse.jetty.jaas" level="DEBUG"/> 
     <logger name="org.eclipse.jetty.security.authentication" level="DEBUG"/>
 
