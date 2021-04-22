@@ -40,7 +40,7 @@ kPow connects to a Kafka cluster with **exactly the same configuration** as a Ka
 
 This configuration may be familiar to you, and is provided to kPow by **environment variables.**
 
-The list of connection variables follows, many are optional. Consult the **Kafka client docs** for more info.
+The list of connection variables follows, many are optional. Consult the [**Kafka client docs**](https://kafka.apache.org/documentation/#adminclientconfigs) for more info.
 
 <table>
   <thead>
