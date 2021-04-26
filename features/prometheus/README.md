@@ -4,6 +4,10 @@ description: kPow Exposes Prometheus Endpoints for Alerting and Reporting
 
 # Prometheus Integration
 
+{% hint style="info" %}
+kPow's metrics egress endpoints follow the [OpenMetrics](https://openmetrics.io/) standard. This allows for kPow to integrate with your favourite observability tools such as [Prometheus](https://prometheus.io/docs/prometheus/latest/getting_started/), [New Relic](https://docs.newrelic.com/docs/integrations/prometheus-integrations/) or [Grafana](https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/) 
+{% endhint %}
+
 Use your favourite enterprise monitoring platform for alerting and to retain long-term Kafka telemetry.
 
 ## Configuration
