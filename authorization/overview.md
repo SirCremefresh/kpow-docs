@@ -26,6 +26,7 @@ The following actions are supported by both methods of access control.
 |  | **TOPIC\_DELETE** | Allow users to delete topics |
 |  | **GROUP\_EDIT** | Allow users to delete consumer groups and reset consumer offsets |
 |  | **BROKER\_EDIT** | Allow users to edit broker configuration |
+|  | **ACL\_EDIT** | Allow users to create and delete Kafka ACLs |
 | **SCHEMA** | **SCHEMA\_CREATE** | Allow users to create new schemas and subjects |
 |  | **SCHEMA\_EDIT** | Allow users to edit schemas and subjects |
 | **CONNECT** | **CONNECT\_CREATE** | Allow users to create new connectors |
