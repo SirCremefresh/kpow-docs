@@ -55,6 +55,7 @@ See [User Authorization](../authorization/overview.md#user-actions) for a descri
 
 | Kafka Resource | Kafka ACL | Required for User Action |
 | :--- | :--- | :--- |
+| Cluster | Alter | `ACL_EDIT` |
 | Cluster | AlterConfigs | `BROKER_EDIT` |
 | Cluster | Create | `TOPIC_CREATE` |
 | Topic | AlterConfigs | `TOPIC_EDIT` |
@@ -71,7 +72,7 @@ Creating ACLs on a cluster with no existing ACL configuration can cause issues.
 
 Consult your cluster provider documentation first.
 
-For example the [**Amazon MSK ACL Guide**](https://docs.aws.amazon.com/msk/latest/developerguide/msk-acls.html) ****warns not to set CLUSTER level ACLs and describes how to restrict access to topics while still allowing inter-broker replication.
+For example the [**Amazon MSK ACL Guide**](https://docs.aws.amazon.com/msk/latest/developerguide/msk-acls.html) ****describes extra ACLs required to allow inter-broker replication, and suggests not to set CLUSTER level ACLs.
 {% endhint %}
 
 Create a file containing client configuration for a user who has permissions to create ACLs.
@@ -82,7 +83,7 @@ sasl.mechanism=PLAIN
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin-secret";
 ```
 
-The following commands use the kafka-acls.sh script provided by Apache Kafka to create the **basic set** of ACLs described above that allows kPow to operate.
+The following commands use the kafka-acls.sh script provided by Apache Kafka to create the **basic set** of ACLs described above that allows kPow to operate plus the ALTER CLUSTER ACL that allows kPow to create and delete ACLs.
 
 ```text
 ./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --cluster '*'
@@ -94,6 +95,7 @@ The following commands use the kafka-acls.sh script provided by Apache Kafka to 
 ./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs --topic '*'
 ./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --group '*'
 ./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Read --group '*'
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation ALTER --cluster '*'
 ```
 
 That set of ACLs can then be listed using kafka-acls.sh.
