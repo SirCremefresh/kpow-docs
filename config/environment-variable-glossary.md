@@ -410,6 +410,15 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">The strategy to use when kPow&apos;s internal Kafka Streams instance enters
         an ERROR state. Possible values: LOG_EXCEPTION, LOG_AND_EXIT</td>
     </tr>
+    <tr>
+      <td style="text-align:left"><b>STREAMS_TASK_TIMEOUT_MS</b>
+      </td>
+      <td style="text-align:left">300000</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">Configures kPow&apos;s internal streams <code>task.timeout.ms</code> value.
+        See: <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-572%3A+Improve+timeouts+and+retries+in+Kafka+Streams">KIP-572</a> for
+        more information</td>
+    </tr>
   </tbody>
 </table>
 

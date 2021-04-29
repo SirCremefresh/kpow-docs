@@ -7,6 +7,7 @@ description: Configuration of serdes for data inspect
 By default, kPow ships with the following serdes available from data inspect:
 
 * JSON
+* JSON Schema
 * AVRO
 * String
 * EDN
@@ -19,9 +20,9 @@ By default, kPow ships with the following serdes available from data inspect:
 * Transit / JSON-Verbose
 * Transit / Msgpack
 
-## AVRO
+## Schema Registry Serdes \(AVRO + JSON Schema\)
 
-kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO serdes to be used in data inspect
+kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO + JSON Schema serdes to be used in data inspect
 
 See the [Schema Registry](https://app.gitbook.com/@operatr-io/s/kpow/~/drafts/-MN6L_-tcDmaE5R2dq-T/configuration/schema-registry) page for documentation on how to configure Confluent Schema Registry with kPow.
 
