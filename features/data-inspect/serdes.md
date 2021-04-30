@@ -9,6 +9,7 @@ By default, kPow ships with the following serdes available from data inspect:
 * JSON
 * JSON Schema
 * AVRO
+* Protobuf
 * String
 * EDN
 * Double
@@ -20,9 +21,13 @@ By default, kPow ships with the following serdes available from data inspect:
 * Transit / JSON-Verbose
 * Transit / Msgpack
 
-## Schema Registry Serdes \(AVRO + JSON Schema\)
+## Schema Registry Serdes \(AVRO, JSON Schema + Protobuf\)
 
-kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO + JSON Schema serdes to be used in data inspect
+{% hint style="info" %}
+Schema registry serdes in kPow follow the wire format documented [here](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#wire-format). If you use Protobuf without the schema registry, look to our [Custom Serdes](serdes.md#custom-serdes) section for configuration.
+{% endhint %}
+
+kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO, JSON Schema + Protobuf serdes to be used in data inspect
 
 See the [Schema Registry](https://app.gitbook.com/@operatr-io/s/kpow/~/drafts/-MN6L_-tcDmaE5R2dq-T/configuration/schema-registry) page for documentation on how to configure Confluent Schema Registry with kPow.
 
