@@ -4,7 +4,7 @@ description: Where to find the latest release of kPow for Apache Kafka®
 
 # Releases
 
-## Documentation
+## Release Notes
 
 Each kPow release is documented in a blog post, [**see our site for details**](https://kpow.io/releases/).
 

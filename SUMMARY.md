@@ -66,3 +66,12 @@
   * [Metrics Glossary](features/prometheus/metrics-glossary.md)
 * [Slack Integration](features/slack-integration.md)
 
+## Kafka Management <a id="mutations"></a>
+
+* [Topics](mutations/topic-actions.md)
+* [Groups](mutations/group-actions.md)
+* [Brokers](mutations/broker-actions.md)
+* [ACLs](mutations/acl-actions.md)
+* [Connect](mutations/connect-actions.md)
+* [Schema Registry](mutations/schema-actions.md)
+
