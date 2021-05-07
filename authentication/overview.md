@@ -22,6 +22,10 @@ kPow is built on the [**Eclipse Jetty Web Server**](https://www.eclipse.org/jett
 **See:** The ****[Application Logs](../installation/application-logs.md) guide to enable Jetty JAAS Debug Logging.
 {% endhint %}
 
+{% hint style="warning" %}
+Set `HTTP_FORWARDED=true` when running kPow behind a proxy with Jetty Authentication
+{% endhint %}
+
 Jetty provides a number of JAAS \(Java Authentication and Authorization\) integrations including:
 
 * **PropertyFileLoginModule:** user credentials are stored in a property file.
