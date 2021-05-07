@@ -22,6 +22,13 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">The kPow server port (will serve HTTPS traffic if so configured)</td>
     </tr>
     <tr>
+      <td style="text-align:left"><b>HTTP_FORWADED</b>
+      </td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">bool</td>
+      <td style="text-align:left">Set when kPow is running behind a revers proxy.</td>
+    </tr>
+    <tr>
       <td style="text-align:left"><b>ENABLE_GZIP</b>
       </td>
       <td style="text-align:left">true</td>
