@@ -4,18 +4,14 @@ description: Secure kPow with User Authentication
 
 # Overview
 
-kPow supports the following mechanisms for authenticating users.
-
-{% hint style="warning" %}
-**Note:** When running kPow with a reverse-proxy for HTTPS termination \(rather than [**HTTPS Connections**](../features/https-connections.md)\) care must be taken the the **scheme** of configured authentication URI.
-{% endhint %}
+kPow supports Jetty \(File, LDAP, DB, etc\), SAML, and OpenID mechanisms for authenticating users.
 
 ## Jetty Authentication
 
 kPow is built on the [**Eclipse Jetty Web Server**](https://www.eclipse.org/jetty/)**.**
 
 {% hint style="info" %}
-**See:** The [**Jetty JAAS Documentation**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) for a full description of authentication options.
+**See:** The [**Jetty JAAS Documentation**](https://www.eclipse.org/jetty/documentation/jetty-9/index.html#configuring-security) for a full description of authentication options.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -38,6 +34,10 @@ kPow supports **all of these Jetty JAAS integrations.** Details of each are in t
 ## SAML Authentication
 
 kPow is easily configured to be a **Service Provider** and integrates with any SAML **Identity Provider**, we include specific guides for [**Azure AD**](saml/azure-ad-integration.md), ****[**Okta**](saml/okta-integration.md) ****and [**AWS SSO**](saml/aws-sso-integration.md) ****in this guide.
+
+{% hint style="warning" %}
+**Note:** When running kPow with a reverse-proxy for HTTPS termination \(rather than [**HTTPS Connections**](../features/https-connections.md)\) care must be taken with the **scheme** of configured authentication URI.
+{% endhint %}
 
 ## OpenID and OAuth 2.0 Authentication
 
