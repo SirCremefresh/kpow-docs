@@ -23,7 +23,7 @@ You can specify the starting point for where data inspect will scan for records 
 ### Serdes
 
 {% hint style="info" %}
-By default, the `TOPIC_INSPECT` access policy is disabled. To view the contents of messages in the data inspect UI, read our [Data Policies](../data-policies.md) documentation to configure.
+By default, the `TOPIC_INSPECT` access policy is disabled. To view the contents of messages in the data inspect UI, see the [configuration](./#serdes-1) section of this document.
 {% endhint %}
 
 See the [Serdes](serdes.md) section for more information about using Data Inspect serdes.
@@ -88,7 +88,18 @@ The default configuration _should be suitable for most installations_.
 
 ### Serdes
 
-See the [Serdes](serdes.md) section for details on how to configure custom serdes and more for data inspect.  
+#### Custom serdes + serdes configuration
+
+See the [Serdes](serdes.md) section for details on how to configure custom serdes, integrate schema registry and more for data inspect.
+
+#### TOPIC\_INSPECT authorization
+
+To enable inspection of key/value/header contents of records, set the `TOPIC_INSPECT` environment variable to `true`. If you are using role-based access control, view our guide [here](https://docs.kpow.io/authorization/role-based-access-control#example-configuration).
+
+#### Data policies/redaction
+
+To configure data policies \(configurable redaction of Data Inspection results**\)** view our [Data Policies guide](../data-policies.md).
+
   
 
 
