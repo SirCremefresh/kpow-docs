@@ -61,6 +61,7 @@
 * [HTTPS Connections](features/https-connections.md)
 * [Live Mode](features/live-mode.md)
 * [Data Inspect](features/data-inspect/README.md)
+  * [kJQ Filters](features/data-inspect/kjq-filters.md)
   * [Serdes](features/data-inspect/serdes.md)
 * [Prometheus Integration](features/prometheus/README.md)
   * [Metrics Glossary](features/prometheus/metrics-glossary.md)
