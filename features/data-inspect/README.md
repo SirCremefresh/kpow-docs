@@ -74,3 +74,21 @@ Clicking the **"Show metadata"** button ****in the results toolbar will expand t
 * **Remaining Records**: the number of records that remain in the query window.
 * **Consumed:** the percentage of overall records consumed ****for this partition**.**
 
+## Configuration
+
+### Engine
+
+`SAMPLER_CONSUMER_THREADS` - kPow creates a connection pool of consumers when querying with data inspect. This environment variables specifies the number of consumer threads globally available in the pol. Default: 6.
+
+`SAMPLER_TIMEOUT_MS` - a query will finish querying once 100 **positively matched** records have been found or after a timeout \(default 7s\). You can always progress the query and continue scanning by clicking "Continue Consuming".
+
+Increase the sampler timeout to run longer queries and the consumer threads to query more partitions in parallel.
+
+The default configuration _should be suitable for most installations_.
+
+### Serdes
+
+See the [Serdes](serdes.md) section for details on how to configure custom serdes and more for data inspect.  
+  
+
+
