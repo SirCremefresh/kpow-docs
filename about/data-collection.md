@@ -18,6 +18,8 @@ Licensed users can configure the following environment variable to opt out of pr
 ALLOW_UI_ANALYTICS="false"
 ```
 
+When that environment variable is configured kPow does not record or send any product telemetry.
+
 ## How Do We Collect Product Telemetry?
 
 The kPow UI records product usage with [Google Analytics](https://marketingplatform.google.com/about/analytics/).
