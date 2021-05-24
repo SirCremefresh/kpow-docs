@@ -68,11 +68,6 @@ The list of connection variables follows, many are optional. Consult the [**Kafk
       <td style="text-align:left">The Kafka cluster bootstrap URL</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>REDPANDA</b>
-      </td>
-      <td style="text-align:left">Optional, set to <code>true</code> if you are connecting to a <a href="redpanda.md">Redpanda</a> cluster.</td>
-    </tr>
-    <tr>
       <td style="text-align:left"><b>AZURE_EVENT_HUBS</b>
       </td>
       <td style="text-align:left">Optional, set to <code>true</code> if you are connecting to an <a href="azure-event-hubs.md">Azure Event Hubs</a> cluster</td>
