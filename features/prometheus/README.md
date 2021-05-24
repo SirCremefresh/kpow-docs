@@ -18,6 +18,10 @@ To enable Prometheus endpoints set the following **environment variable.**
 PROMETHEUS_EGRESS=true
 ```
 
+## Getting Started
+
+[This blog post](https://kpow.io/how-to/kafka-alerting-with-kpow-prometheus-and-alertmanager/) covers an introduction to alerting and monitoring with kPow + Prometheus + AlertManager.
+
 ## Endpoints
 
 kPow provides Prometheus endpoints all metrics, all offsets, and the same by resource.
