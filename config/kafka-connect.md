@@ -19,6 +19,7 @@ kPow connects to a Connect cluster with **environment variables**.
 | **CONNECT\_BASIC\_AUTH\_USER** | Username if basic authentication is configured |
 | **CONNECT\_BASIC\_AUTH\_PASS** | Password if basic authentication is configured |
 | **CONNECT\_OFFSET\_STORAGE\_TOPIC** | \(Optional\) Topic that holds connect offsets |
+| **CONNECT\_GROUP\_ID** | \(Optional\) Unique string identifying worker cluster group |
 | **CONNECT\_PERMISSIVE\_SSL** | True if SSL certificate validation should be disabled |
 | **CONNECT\_TIMEOUT\_MS** | The timeout value in ms for all HTTP requests made to a Kafka Connect cluster. Default: 5000 |
 | **CONNECT\_RESOURCE\_IDS** | Optional, comma separated list of unique ids. Only specify when configuring multiple [connect clusters](kafka-connect.md#configuring-multiple-connect-clusters) |
