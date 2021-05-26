@@ -6,10 +6,14 @@ description: Get started with kPow for in two minutes.
 
 This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR** ](quick-start.md#jar-quick-start)installations.
 
+{% hint style="success" %}
+Use our [**Helm and CloudFormation Quick-Starts**](https://github.com/operatr-io/kpow) to get up and running in minutes.
+{% endhint %}
+
 ## Docker Quick Start
 
 {% hint style="info" %}
-kPow Docker images are hosted at [Docker Hub](https://hub.docker.com/r/operatr/kpow)
+kPow Docker images are hosted at [**Docker Hub**](https://hub.docker.com/r/operatr/kpow)**.**
 {% endhint %}
 
 To connect the latest kPow Docker image to a single, unsecured Kafka Cluster:
