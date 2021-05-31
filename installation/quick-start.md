@@ -7,7 +7,7 @@ description: Get started with kPow for in two minutes.
 This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR** ](quick-start.md#jar-quick-start)installations.
 
 {% hint style="success" %}
-Use our [**Helm and CloudFormation Quick-Starts**](https://github.com/operatr-io/kpow) to get up and running in minutes.
+Use our [**Helm**](https://github.com/operatr-io/kpow-helm-charts) and [**CloudFormation**](https://github.com/operatr-io/kpow-cloudformation) guides to get up and running in minutes.
 {% endhint %}
 
 ## Docker Quick Start
