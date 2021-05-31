@@ -8,19 +8,27 @@ description: Start a Free 30-Day Trial Today
 
 Sign-up for a [**free 30-day trial**](https://kpow.io/try) and see our [**Quick Start**](../installation/quick-start.md) guide to get up and running in minutes.
 
+## Cluster Credits
+
+kPow is a paid-for commercial product with a [**simple and transparent pricing model**.](https://kpow.io/pricing/)
+
+We sell kPow on a **per-Kafka-Cluster** basis, [**starting at $0.16c.hr**](https://kpow.io/pricing/).
+
+You can purchase an annual kPow license for any number of **Cluster Credits**, where one Cluster Credit is equivalent to running kPow with one Kafka Cluster continuously for 365 days.
+
+Each paid kPow license comes with **unlimited users** and **unlimited features.**
+
 ## Paid Licenses
 
-kPow is a paid-for commercial product with a [simple and transparent pricing model.](https://kpow.io/pricing/)
+kPow can be purchased at an hourly metered price \(or Monthly Subscription\) on the [**AWS Marketplace**](../installation/aws-marketplace.md)**.**
 
-A license allows you to use kPow with a set number of Kafka clusters \(and their associated resources\), discounts apply as the number of clusters rises.
+Annual kPow licenses are also available to purchase on the [**Red Hat Marketplace**](../installation/openshift.md)**.**
 
-Our pre-packaged licenses can be bought online:
+To request a quote for _any number of Cluster Credits_ please contact [**sales@operatr.io**](mailto:sales@operatr.io).
 
-* \*\*\*\*[**Pro License**](https://kpow.io/pricing/pro/) ****- 1 Cluster
-* \*\*\*\*[**Team License**](https://kpow.io/pricing/team/) ****- 6 Clusters
-* \*\*\*\*[**Corporate License**](https://kpow.io/pricing/corporate/) - 12 Clusters
+Pre-packaged licenses for a set number of Cluster Credits can be bought online:
 
-These licenses are also available per-hour or as monthly subscriptions on the [**AWS Marketplace**](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0).
-
-To request a quote for any number of Kafka Cluster please contact [sales@operatr.io](mailto:sales@operatr.io).
+* \*\*\*\*[**Pro License**](https://kpow.io/pricing/pro/) ****- 1 Cluster Credit
+* \*\*\*\*[**Team License**](https://kpow.io/pricing/team/) ****- 6 Clusters Credits
+* \*\*\*\*[**Corporate License**](https://kpow.io/pricing/corporate/) - 12 Clusters Credits
 
