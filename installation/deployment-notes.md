@@ -4,13 +4,9 @@ description: Run kPow on platforms such as Kubernetes and ECS/Fargate
 
 # Deployment Notes
 
-## Templates
-
-The [operatr-io/infra GitHub repository](https://github.com/operatr-io/infra) contains example configurations for deploying kPow to orchestration platforms such as:
-
-* ECS/Fargate \(more notes found in our [AWS Marketplace](aws-marketplace.md) guide\)
-* Kubernetes + Helm
-* Red Hat Openshift \(more notes found in our [OpenShift](openshift.md) guide
+{% hint style="success" %}
+Use our [**Helm**](https://github.com/operatr-io/kpow-helm-charts) and [**CloudFormation**](https://github.com/operatr-io/kpow-cloudformation) guides to get up and running in minutes.
+{% endhint %}
 
 ## Liveness and Readiness Endpoints
 
