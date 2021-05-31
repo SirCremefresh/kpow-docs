@@ -4,6 +4,10 @@ description: Quick start guide to running kPow on OpenShift
 
 # OpenShift
 
+{% hint style="info" %}
+kPow is available to purchase on the [**Red Hat Marketplace**](https://marketplace.redhat.com/en-us/products/operatr-for-apache-kafka)**.**
+{% endhint %}
+
 ## Basics
 
 {% hint style="success" %}
