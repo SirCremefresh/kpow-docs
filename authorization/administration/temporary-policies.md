@@ -20,7 +20,7 @@ From within the **Settings** page an administrator can navigate to the **Tempora
 
 ![](../../.gitbook/assets/screen-shot-2021-06-11-at-11.05.12-am.png)
 
-You can view all current escalations and remove temporary policies before they expire.
+You can view all current temporary policies and remove temporary policies before they expire.
 
 ### Notifications
 
