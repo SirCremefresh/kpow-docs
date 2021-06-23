@@ -59,7 +59,7 @@
 ## Features
 
 * [Kafka Streams](features/kafka-streams.md)
-* [Data Governance](features/data-governance.md)
+* [Data Governance \(Audit Log\)](features/data-governance.md)
 * [Data Policies](features/data-policies.md)
 * [HTTPS Connections](features/https-connections.md)
 * [Live Mode](features/live-mode.md)

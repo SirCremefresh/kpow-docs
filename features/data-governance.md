@@ -1,4 +1,4 @@
-# Data Governance
+# Data Governance \(Audit Log\)
 
 kPow **captures all user actions in an audit log.**
 
@@ -7,6 +7,18 @@ The audit log is retained in an internal topic, **`__oprtr_audit_log`** and disp
 kPow provides [**Slack Integration** ](slack-integration.md)to have user actions sent to the slack channel of your choosing.
 
 The audit log captures requests and responses related to each user action, as well as the metadata associated with the request.
+
+## Audit Log
+
+[Administrators](../authorization/administration/) in kPow can view the last seven days of audit logs from within the application by navigating to the "Audit Log" section within "Settings":
+
+![](../.gitbook/assets/screen-shot-2021-06-23-at-2.54.13-pm.png)
+
+## User Log
+
+Users can view their last seven days worth of activity from within the application by navigating to the "User Log" section with "Settings":
+
+![](../.gitbook/assets/screen-shot-2021-06-23-at-3.00.32-pm.png)
 
 ### Sample Audit Record
 
