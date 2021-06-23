@@ -32,6 +32,17 @@ authorized_roles:
   - "ops-support"
 ```
 
+## Admin Roles
+
+You can optionally provide `admin_roles`, a list of roles considered to be admins in kPow.
+
+You can learn more about administration in kPow [here](administration/).
+
+```yaml
+admin_roles:
+  - "kafka-admin"
+```
+
 ## Policies
 
 An RBAC policy contains:
@@ -136,7 +147,7 @@ In the example above we have four **domain** resources:
 
 ## Effects
 
-Specify `Allow` or `Deny` to indicate whether the policy allows or denies access to a resource.
+Specify `Allow`, `Deny` or `Stage` to indicate whether the policy allows or denies access to a resource. View [Staged mutations](administration/#staging-mutations) documentation to learn about the `Stage` effect. 
 
 Where no matching policy exists the effect is an **implicit deny.**
 
