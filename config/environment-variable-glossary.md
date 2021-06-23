@@ -325,6 +325,14 @@ description: A glossary of all configuration options available to kPow
       <td style="text-align:left">SSL Truststore password</td>
     </tr>
     <tr>
+      <td style="text-align:left"><b>HTTPS_SNI_HOST_CHECK</b>
+      </td>
+      <td style="text-align:left">false</td>
+      <td style="text-align:left">bool</td>
+      <td style="text-align:left">When SSL configured, whether the certificate sent to the client matches
+        the Host header.</td>
+    </tr>
+    <tr>
       <td style="text-align:left"><b>RBAC_CONFIGURATION_FILE</b>
       </td>
       <td style="text-align:left"></td>
