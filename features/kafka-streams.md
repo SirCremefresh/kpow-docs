@@ -24,7 +24,7 @@ kPow's streams agent is accessible as a Java class that lives on your applicatio
 <dependency>
   <groupId>io.operatr</groupId>
   <artifactId>kpow-streams-agent</artifactId>
-  <version>0.2.3</version>
+  <version>0.2.4</version>
   <type>bundle</type>
 </dependency>
 ```
