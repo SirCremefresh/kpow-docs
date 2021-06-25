@@ -8,7 +8,12 @@ description: Administration in kPow
 
 You can configure roles from your authentication provider to be kPow's admins when setting up role-based access control. More details are [here](../role-based-access-control.md#administrator-roles).
 
-Administration is represented by the [RBAC action](../overview.md#user-actions) `KPOW_ADMIN`
+Within your RBAC yaml definition:
+
+```yaml
+admin_roles:
+  - "kafka-admin"
+```
 
 ## Features
 
