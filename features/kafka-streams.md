@@ -9,7 +9,7 @@ Configure the [kPow Streams Agent](https://github.com/operatr-io/kpow-streams-ag
 * Visualise Kafka Streams topologies in the kPow Streams UI.
 * Monitor Kafka Streams metrics \(e.g Stream-Thread, State Store, RocksDB, etc\).
 * See summaries of Kafka Streams activity for your Kafka cluster\(s\).
-* Expose Kafka Streams metrics in the kPow [Prometheus Endpoints](https://docs.kpow.io/features/prometheus) \(for alerting, etc\).
+* Expose Kafka Streams metrics via kPow [Prometheus Endpoints](https://docs.kpow.io/features/prometheus) \(for alerting, etc\).
 * \(Soon\) View kPow Insights of your Kafka Streams applications \(outlier metrics, etc\).
 
 ![The kPow Streams UI](../.gitbook/assets/topology-ui.png)
