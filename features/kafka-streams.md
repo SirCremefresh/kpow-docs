@@ -1,20 +1,18 @@
 ---
-description: Instrument Kafka Streams applications
+description: Monitor Kafka Streams applications with kPow
 ---
 
 # Kafka Streams
 
-{% hint style="info" %}
-Kafka Streams monitoring is currently in feature preview.  
-{% endhint %}
+Configure the [kPow Streams Agent](https://github.com/operatr-io/kpow-streams-agent) to unlock the following features:
 
-## Overview
+* Visualise Kafka Streams topologies in the kPow Streams UI.
+* Monitor Kafka Streams metrics \(e.g Stream-Thread, State Store, RocksDB, etc\).
+* See summaries of Kafka Streams activity for your Kafka cluster\(s\).
+* Expose Kafka Streams metrics in the kPow [Prometheus Endpoints](https://docs.kpow.io/features/prometheus) \(for alerting, etc\).
+* \(Soon\) View kPow Insights of your Kafka Streams applications \(outlier metrics, etc\).
 
-kPow can instrument and monitor your running [Kafka Streams](https://kafka.apache.org/documentation/streams/) applications. 
-
-Users of kPow can monitor their Streams application with our [open source agent](https://github.com/operatr-io/kpow-streams-agent). 
-
-With kPow's Kafka Streams agent installed, your streams topology becomes visually explorable from within kPow.
+![The kPow Streams UI](../.gitbook/assets/topology-ui.png)
 
 ## Installing the agent
 
