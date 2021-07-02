@@ -6,7 +6,7 @@ description: Create and Control Connectors and Tasks with kPow
 
 ## Access Control
 
-User permissions to Kafka cluster resources are defined by [**Connect actions.**](../authorization/overview.md#user-actions)\*\*\*\*
+User permissions to Kafka cluster resources are defined by [**Connect actions.**](../authorization/overview.md#user-actions) ****
 
 ## **Configuration**
 
