@@ -86,36 +86,37 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 The following commands use the kafka-acls.sh script provided by Apache Kafka to create the **basic set** of ACLs described above that allows kPow to operate plus the ALTER CLUSTER ACL that allows kPow to create and delete ACLs.
 
 ```text
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --cluster '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs  --cluster '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Create --cluster '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Write --topic '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Read --topic '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --topic '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs --topic '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --group '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Read --group '*'
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Alter --cluster '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --cluster '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs  --cluster '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Create --cluster '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Write --topic '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Read --topic '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --topic '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs --topic '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --group '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Read --group '*'
+./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Alter --cluster '*'
 ```
 
 That set of ACLs can then be listed using kafka-acls.sh.
 
 ```text
-./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config command.conf --list
-
-Current ACLs for resource `ResourcePattern(resourceType=CLUSTER, name=kafka-cluster, patternType=LITERAL)`:
- 	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
-	(principal=User:kpow, host=*, operation=CREATE, permissionType=ALLOW)
-	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
-
-Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
- 	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
-	(principal=User:kpow, host=*, operation=WRITE, permissionType=ALLOW)
-	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
-	(principal=User:kpow, host=*, operation=READ, permissionType=ALLOW)
+./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --list
 
 Current ACLs for resource `ResourcePattern(resourceType=GROUP, name=*, patternType=LITERAL)`:
  	(principal=User:kpow, host=*, operation=READ, permissionType=ALLOW)
 	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
+
+Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:kpow, host=*, operation=READ, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=WRITE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
+
+Current ACLs for resource `ResourcePattern(resourceType=CLUSTER, name=kafka-cluster, patternType=LITERAL)`:
+ 	(principal=User:kpow, host=*, operation=DESCRIBE_CONFIGS, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=CREATE, permissionType=ALLOW)
+	(principal=User:kpow, host=*, operation=ALTER, permissionType=ALLOW)
 ```
 
