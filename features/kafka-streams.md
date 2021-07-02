@@ -162,8 +162,6 @@ registry.register(paymentStreams, paymentTopology);
 registry.register(dedupeStreams, dedupeTopology);
 ```
 
-
-
 ## Viewing Streams Topologies
 
 After installing the agent, you will be able to monitor your streams application and dive deep into your streams performance. RocksDB metrics, internal streams metrics and the underlying changelog topic consumption/production metrics are all exposed.
@@ -172,7 +170,7 @@ You can view your streams topology and associated metrics from the "Consumers" p
 
 ![](../.gitbook/assets/screen-shot-2021-06-24-at-3.57.31-pm.png)
 
-## Prometheus egress
+## Prometheus Egress
 
 If you have enabled kPow's [Prometheus integration](prometheus/), all Kafka Streams metrics collected from your running agents will be available from the endpoint `/streams/v1`
 
