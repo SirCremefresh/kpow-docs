@@ -1,10 +1,12 @@
+---
+description: Simple Workflow for Kafka Configuration Changes
+---
+
 # Staged Mutations
 
-## Staged mutations
+Staged mutations allow for an approval step on specific mutation actions. Staged mutations are configured through [Role Based Access Control](../role-based-access-control.md).
 
-Staged mutations allow for an approval step on specific mutation actions. Staged mutations are configured through [Role Based Access Control](../role-based-access-control.md)
-
-For example: a regular kPow user requests to create a topic and an administrator approves or denies this request. Once approved, the topic will be created on the Kafka cluster.
+For example, a regular kPow user requests to create a topic and an administrator approves or denies this request. Once approved, the topic will be created on the Kafka cluster.
 
 ```yaml
 admin_roles:
