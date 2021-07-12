@@ -1,5 +1,5 @@
 ---
-description: Manage Temporary Access to Kafka Resources with kPow
+description: Manage Temporary Access to Kafka Resources
 ---
 
 # Temporary Policies
