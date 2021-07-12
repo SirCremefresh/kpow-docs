@@ -4,11 +4,9 @@ description: Manage Temporary Access to Kafka Resources
 
 # Temporary Policies
 
-Temporary Policies allow an admin to create temporary RBAC policies.
+Temporary Policies allow a [kPow Admin](./#administrators) to create temporary RBAC policies.
 
 For example a Temporary Policy may grant `GROUP_EDIT` on a specific consumer group for a specific cluster for 30 minutes to a specific user role. 
-
-Setting temporary policies is a feature available to [kPow Admins](./#administrators).
 
 **Note**: an admin cannot assign temporary policies above their own permissions. For example, if creating a temporary policy for `GROUP_EDIT` , the admin must also be allowed to invoke `GROUP_EDIT` actions.
 

@@ -1,14 +1,18 @@
 ---
-description: Administration in kPow
+description: Learn About The kPow Admin Role
 ---
 
 # Administration
 
-## Administrators
+## kPow Admins
 
-You can configure roles from your authentication provider to be kPow's admins when setting up role-based access control. More details are [here](../role-based-access-control.md#administrator-roles).
+User roles can be specified as administrators of kPow.
 
-Within your RBAC yaml definition:
+kPow Admins have access to the full kPow Admin UI and admin specific features like creating temporary RBAC policies and managing staged mutation requests.
+
+![](../../.gitbook/assets/admin-ui.png)
+
+Admin roles are specified within your [Role Based Access Control](../role-based-access-control.md#admin-roles) configuration.
 
 ```yaml
 admin_roles:
