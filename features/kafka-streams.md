@@ -12,7 +12,7 @@ Configure the [kPow Streams Agent](https://github.com/operatr-io/kpow-streams-ag
 * Aggregate and Expose Kafka Streams metrics via kPow [Prometheus Endpoints](https://docs.kpow.io/features/prometheus) \(for alerting, etc\).
 * \(Soon\) View kPow Insights of your Kafka Streams applications \(outlier metrics, etc\).
 
-![The kPow Streams UI](../.gitbook/assets/topology-ui.png)
+![The kPow Streams UI](../.gitbook/assets/streams-ui.png)
 
 ## Installation
 
@@ -162,13 +162,11 @@ registry.register(paymentStreams, paymentTopology);
 registry.register(dedupeStreams, dedupeTopology);
 ```
 
-## Viewing Streams Topologies
+## View Streams Topologies
 
-After installing the agent, you will be able to monitor your streams application and dive deep into your streams performance. RocksDB metrics, internal streams metrics and the underlying changelog topic consumption/production metrics are all exposed.
+Each Kafka Streams application configured with the kPow Streams Agent is visible in the kPow Streams UI, navigate to the 'Workflows' tab for full topology visualisation.
 
-You can view your streams topology and associated metrics from the "Consumers" page. From there navigate to the "Workflows" tab and select the consumer group name of the streams application you wish to monitor.
-
-![](../.gitbook/assets/screen-shot-2021-06-24-at-3.57.31-pm.png)
+![](../.gitbook/assets/topology-ui%20%281%29.png)
 
 ## Prometheus Egress
 
