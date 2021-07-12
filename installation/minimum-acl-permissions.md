@@ -15,6 +15,7 @@ __oprtr_metric_pt1m
 __oprtr_snapshot_state
 __oprtr_audit_log
 oprtr.compute.metrics.v2-oprtr_metric_v2_pt1m-changelog
+oprtr.compute.snapshots.v2-oprtr_snaphot_state_v2-changelog
 oprtr.compute.snapshots.v2-oprtr_snapshot_materialized_v2-repartition
 ```
 
