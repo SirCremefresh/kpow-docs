@@ -2,9 +2,11 @@
 
 ## Temporary Policies
 
-Temporary Policies allow an admin to assign access policies to a role for a temporary duration \(up to an hour\). 
+Temporary Policies allow an admin to create temporary RBAC policies.
 
-For example, the ability temporarily grant `GROUP_EDIT` on a specific consumer group for a specific cluster. Setting temporary policies are available to [kPow admins](./#administrators).
+For example a Temporary Policy may grant `GROUP_EDIT` on a specific consumer group for a specific cluster for 30 minutes to a specific user role. 
+
+Setting temporary policies is a feature available to [kPow Admins](./#administrators).
 
 **Note**: an admin cannot assign temporary policies above their own permissions. For example, if creating a temporary policy for `GROUP_EDIT` , the admin must also be allowed to invoke `GROUP_EDIT` actions.
 
