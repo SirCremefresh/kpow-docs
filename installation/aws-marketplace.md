@@ -50,7 +50,7 @@ Subscribe to [kPow \(Team\) ](https://aws.amazon.com/marketplace/pp/B08KFQGJSZ?r
 
 kPow Team comes with a license to use the kPow container with at most six Kafka clusters, regardless of how many separate instances of kPow you start. Usage is not metered and the subscriber AWS account is billed monthly at the team subscription price of **$540/mo**.
 
-### kPow \(Corporate\) - Monthly Subscription
+### [kPow \(Corporate\) - Monthly Subscription](https://aws.amazon.com/marketplace/pp/prodview-fxp4i5gvix2w2)
 
 This product is the same as kPow \(Team\) but licensed for up to twelve Kafka Clusters and their associated Schema Registries and Kafka Connect clusters.
 
