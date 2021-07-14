@@ -57,6 +57,35 @@ See HTTPS Connections for documentation on how to configure HTTPS traffic for kP
 Configure `HTTP_FORWARDED` in conjunction with Jetty Authentication to ensure that redirects to the login page maintain the correct connection scheme.
 {% endhint %}
 
+### K8s ingress
+
+**Custom Path configuration**
+
+This configuration might be useful if you want to serve kPow at a custom path such as `/kpow` . This scenario might be useful if your company has a suite of tools that you want to have grouped at a single host.
+
+```yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/proxy-redirect-from: http://kpow.info:80/
+    nginx.ingress.kubernetes.io/proxy-redirect-to: /kpow/
+  name: kpow-ingress
+  namespace: operatr-io
+spec:
+  rules:
+  - host: kpow.info
+    http:
+      paths:
+      - backend:
+          serviceName: kpow
+          servicePort: 3000
+        path: /kpow(/|$)(.*)
+```
+
+In this example, kPow will be served at `http://kpow.info/kpow`
+
 ### NGINX Configuration
 
 #### Standard Configuration 
