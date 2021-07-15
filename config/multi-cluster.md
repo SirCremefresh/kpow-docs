@@ -10,6 +10,8 @@ Multi-cluster **does not mean multi-region,** install kPow in proximity to your 
 
 One instance of kPow can manage multiple Apache Kafka clusters \(and their associated resources\).
 
+![kPow Switch Clusters UI](../.gitbook/assets/cluster-switch.png)
+
 When configuring multiple clusters, the **first configured cluster is your primary cluster.**
 
 The primary cluster holds the kPow internal topics. You can switch the primary cluster at any time.
