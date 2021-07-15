@@ -20,7 +20,7 @@ The primary cluster holds the kPow internal topics. You can switch the primary c
 
 kPow will manage as many clusters as your license permits - you may have to increase the memory and CPU to ensure that the regular snapshotting process executes within thirty seconds.
 
-Information on snapshotting performance of each cluster is available at 'admin/about'.
+Information on snapshotting performance of each cluster is available at 'settings -&gt; performance'.
 
 ## Configuration
 
