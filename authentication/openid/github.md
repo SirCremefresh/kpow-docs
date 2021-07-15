@@ -1,5 +1,5 @@
 ---
-description: Configure kPow with Github SSO (OAuth2) to authenticate and authorize users.
+description: Secure kPow with Github SSO (OAuth2) and RBAC
 ---
 
 # GitHub
