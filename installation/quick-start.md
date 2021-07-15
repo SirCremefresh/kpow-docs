@@ -99,3 +99,19 @@ java -jar -Xmx2G ./kpow-latest.jar
 * Run **`chmod +x start-kpow.sh`** then **`./start-kpow.sh`**
 * kPow is now running on **`http://localhost:3000`**
 
+#### Java Commands
+
+In general we recommend starting kPow with a Java command similar to our [Dockerfile](https://github.com/operatr-io/kpow/blob/main/dockerfile/kpow/Dockerfile):
+
+```text
+java -jar -Xmx2G ./kpow-latest.jar
+```
+
+However `java -jar` strips any classpath parameters you pass to the command which might be a problem in certain installation cases or when configuring [Custom Serdes](../features/data-inspect/serdes.md#custom-serdes).
+
+To pass extra classpath parameters to kPow, or simply to start with the plain `java` command you can:
+
+```text
+java -cp ./kpow-latest.jar:another.jar operatr.kpow
+```
+
