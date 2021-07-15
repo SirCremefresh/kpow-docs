@@ -1,10 +1,10 @@
 ---
-description: >-
-  This integration configures OpenID Connect as the authentication mechanism
-  with Okta as the identity provider (IdP) and kPow as the relying party.
+description: Secure kPow with Okta SSO and RBAC
 ---
 
 # Okta
+
+This integration configures OpenID Connect as the authentication mechanism with Okta as the identity provider \(IdP\) and kPow as the relying party.
 
 ## Create an Okta OpenID Application
 
