@@ -24,7 +24,9 @@ Information on snapshotting performance of each cluster is available at 'setting
 
 ## Configuration
 
-To configure multiple clusters, simply repeat the connection configuration with \_2, \_3, \_4 suffixes:
+To configure multiple clusters, simply repeat the connection configuration with \_2, \_3, \_4 suffixes.
+
+ENVIRONMENT\_NAME for each resource-set is displayed in the kPow UI when switching cluster.
 
 ```text
 # Cluster 1, Vanilla Apache Kafka
