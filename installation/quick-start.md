@@ -112,6 +112,6 @@ However `java -jar` strips any classpath parameters you pass to the command whic
 To pass extra classpath parameters to kPow, or simply to start with the plain `java` command you can:
 
 ```text
-java -cp ./kpow-latest.jar:another.jar operatr.kpow
+java -Xmx2G -cp ./kpow-latest.jar:another.jar operatr.kpow
 ```
 
