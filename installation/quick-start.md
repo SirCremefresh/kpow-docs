@@ -61,7 +61,7 @@ ALLOW_TOPIC_PRODUCE=true
 * Start the latest kPow container with your **`config.env`** file.
 
 ```text
-docker run -p 3000:3000 -m1G --env-file ./config.env operatr/kpow:latest
+docker run -p 3000:3000 -m2G --env-file ./config.env operatr/kpow:latest
 ```
 
 * kPow is now running on **`http://localhost:3000`**
@@ -93,7 +93,7 @@ ALLOW_TOPIC_DELETE=true \
 ALLOW_TOPIC_EDIT=true \
 ALLOW_TOPIC_INSPECT=true \
 ALLOW_TOPIC_PRODUCE=true \
-java -jar -Xmx1G ./kpow-latest.jar
+java -jar -Xmx2G ./kpow-latest.jar
 ```
 
 * Run **`chmod +x start-kpow.sh`** then **`./start-kpow.sh`**
