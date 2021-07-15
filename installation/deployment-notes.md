@@ -34,28 +34,26 @@ Note: it is recommended to configure a [liveness probe](deployment-notes.md#live
 ## Availability
 
 {% hint style="info" %}
-Highly available + distributed kPow is in the backlog and coming soon!
+Highly Available + Distributed kPow is in the backlog and coming soon!
 {% endhint %}
 
 At the moment, kPow is designed to be run as a single instance. When defining your task definition for kPow please ensure that the maximum number of instances does not exceed one.
 
 ## Reverse Proxies + Load Balancers
 
-Set the `HTTP_FORWARDED=true` environment variable to ensure that redirects respect the correct scheme when terminating SSL at the proxy.
-
-{% hint style="info" %}
-kPow serves all of its HTTP traffic at the specified`PORT`\(defaulting to 3000\). 
+{% hint style="warning" %}
+Configure `HTTP_FORWARDED=true` in conjunction with Jetty Authentication or when terminating SSL at a proxy to ensure that redirects maintain the correct connection scheme.
 {% endhint %}
 
-This port serves both websockets connections and general HTTP traffic.
+{% hint style="info" %}
+kPow serves all UI traffic at the specified`PORT`\(default: 3000\). 
+{% endhint %}
+
+This port serves both websockets connections and general HTTP/S traffic.
 
 Most reverse proxies and load balancers work out of the box with kPow, but special consideration is needed when configuring websockets, or when the reverse proxy is responsible for SSL termination.
 
-See HTTPS Connections for documentation on how to configure HTTPS traffic for kPow.
-
-{% hint style="warning" %}
-Configure `HTTP_FORWARDED` in conjunction with Jetty Authentication to ensure that redirects to the login page maintain the correct connection scheme.
-{% endhint %}
+See [HTTPS Connections](../features/https-connections.md) for documentation on how to configure HTTPS traffic for kPow.
 
 ### K8s ingress
 
