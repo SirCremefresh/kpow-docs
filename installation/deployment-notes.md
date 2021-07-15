@@ -1,5 +1,5 @@
 ---
-description: Run kPow on platforms such as Kubernetes and ECS/Fargate
+description: 'Liveness Endpoints, Reverse Proxies, Error Strategies, and more.'
 ---
 
 # Deployment Notes
