@@ -14,6 +14,8 @@ kPow has no reliance on Zookeeper or the JVM and is fully compatible with Redpan
 
 Start a single-node Redpanda cluster with the Docker container provided by Vectorized.
 
+See: [https://vectorized.io/docs/quick-start-docker/](https://vectorized.io/docs/quick-start-docker/) for details of multi-broker setups.
+
 ```
 docker run -d --pull=always --name=redpanda-1 --rm \
 -p 9092:9092 \
