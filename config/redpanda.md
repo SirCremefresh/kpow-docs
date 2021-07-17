@@ -15,18 +15,30 @@ kPow has no reliance on Zookeeper or the JVM and is fully compatible with Redpan
 Start a single-node Redpanda cluster with the Docker container provided by Vectorized.
 
 ```
-docker run -ti -p 9092:9092 vectorized/redpanda:latest
+docker run -d --pull=always --name=redpanda-1 --rm \
+-p 9092:9092 \
+docker.vectorized.io/vectorized/redpanda:latest \
+redpanda start \
+--overprovisioned \
+--smp 1  \
+--memory 1G \
+--reserve-memory 0M \
+--node-id 0 \
+--check=false
 ```
 
 Configure kPow to connect to the local Redpanda cluster.
 
+{% hint style="warning" %}
+You must provide a unique **CLUSTER\_ID** for each Redpanda Bootstrap configured
+{% endhint %}
+
 ```text
+ENVIRONMENT_NAME=Redpanda
 BOOTSTRAP=127.0.0.1:9092
 REPLICATION_FACTOR=1
-CLUSTER_ID=red-panda
+CLUSTER_ID=red-panda-1
 ```
-
-**Note**: an extra environment variable `CLUSTER_ID` is required, as Redpanda does not provide a cluster ID when making an admin client request. The `CLUSTER_ID` must be unique across all clusters defined in kPow, and can be any unique identifier.
 
 Start your kPow instance and navigate to the UI.
 
