@@ -20,7 +20,7 @@ Use the exact configuration in this guide to restrict access to the following us
 
 ## Configuration
 
-To enable PropertyFileLoginModule authentication you must:
+To enable PropertyFileLoginModule authentication:
 
 * Create a JAAS configuration file
 * Create a users property file
