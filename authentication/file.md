@@ -22,8 +22,8 @@ Use the exact configuration in this guide to restrict access to the following us
 
 To enable PropertyFileLoginModule authentication:
 
-* Create a JAAS configuration file
-* Create a users property file
+* Create a JAAS configuration file that tells the JVM what JAAS Module is in use.
+* Create a users property file containing information on users, passwords, and roles.
 * Set the **`AUTH_PROVIDER_TYPE=jetty`** environment variable.
 * Start the JAR or Docker container with `-Djava.security.auth.login.config=/path/to/jaas.conf`
 
