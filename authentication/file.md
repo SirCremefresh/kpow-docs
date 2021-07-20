@@ -6,19 +6,17 @@ description: Authenticate Users with Jetty JAAS PropertyFileLoginModule
 
 Configure kPow to read authentication and role information from a property file.
 
+Use the exact configuration in this guide to restrict access to the following user/password/roles:
+
+* admin/admin/kafka-admins
+* jetty/jetty/kafka-users
+* other/other/kafka-admins+kafka-users
+* plain/plain/content-administrators
+* user/password/kafka-users
+
 {% hint style="info" %}
-**In Depth:** For more information see the [**Jetty PropertyFileLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html) ****docs.
+**See:** [**Jetty PropertyFileLoginModule**](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-propertyfileloginmodule) ****guide to update user and password configuration.
 {% endhint %}
-
-## Form or Basic Authentication?
-
-kPow supports both form-based and basic authentication.
-
-**Form authentication is the default.** To basic authentication, set the environment variable:
-
-```text
-JETTY_AUTH_METHOD=basic
-```
 
 ## Configuration
 
@@ -106,6 +104,16 @@ When starting the docker container you will see logging output similar to:
 
 ```bash
 Picked up JAVA_TOOL_OPTIONS: -Djava.security.auth.login.config=/path/to/jaas.conf
+```
+
+## Form or Basic Authentication?
+
+kPow supports both form-based and basic authentication.
+
+**Form authentication is the default.** To basic authentication, set the environment variable:
+
+```text
+JETTY_AUTH_METHOD=basic
 ```
 
 ## User Experience
