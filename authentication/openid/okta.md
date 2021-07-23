@@ -9,14 +9,15 @@ This integration configures OpenID Connect as the authentication mechanism with 
 ## Create an Okta OpenID Application
 
 1. Login to your Okta account.
-2. Navigate to **Admin &gt; Applications &gt; Add Application &gt; Create New App.**
-3. In **Create a New Application Integration** set these values and click **Create:**
-   * **Platform**: Web
-   * **Sign on method**: OpenID Connect
+2. Navigate to **Admin &gt; Applications &gt; Create App Integration**
+3. In **Create a New Application Integration** popup set these values and click **Create:**
+   * **Sign on method**: OIDC - OpenID Connect
+   * **Application type**: Web Application
 4. In **Create OpenID Connect Integration** set these values and click **Save**:
-   * **Application name**: The name of your kPow instance, e.g. 'kPow Staging'.
-   * **Login redirect URIs**: The absolute kPow callback URI, e.g.  `https://kpow-staging.mycorp.org/oauth2/okta/callback`
-5. You will be redirected to the applications settings page.
+   * **App integration name**: The name of your kPow instance, e.g. 'kPow Staging'.
+   * **Sign-in redirect URIs**: The absolute kPow callback URI, e.g.  `https://kpow-staging.mycorp.org/oauth2/okta/callback`
+   * **Sign-out redirect URIs**: The absolute URI of where kPow is hosted, e.g. `https://kpow-staging.mycorp.org`
+5. Click **Save** and next you will be redirected to the applications settings page.
 6. Navigate to **General Settings &gt; Edit**, and configure:  
    **Initiate login URI**: The absolute kPow login URI, e.g:  
    `https://kpow-staging.mycorp.org/oauth2/okta`  
@@ -35,6 +36,10 @@ This integration configures OpenID Connect as the authentication mechanism with 
 
 7. Make note of the **Client Credentials** section that appears below.
 8. Click **Assignments** and assign users to kPow.
+
+![Okta OpenID Connect application setup for kPow](../../.gitbook/assets/screen-shot-2021-07-23-at-3.15.45-pm.png)
+
+
 
 ## Integrate kPow with Okta OpenID
 
@@ -56,7 +61,7 @@ See the guide to [Role Based Access Control](../../authorization/role-based-acce
 
 When RBAC is enabled kPow will request `groups` scope to view the groups associated with an authenticated user. kPow considers Okta groups as roles in your RBAC configuration.
 
-You will need to configure a relevant [group claim filter](https://developer.okta.com/docs/guides/customize-tokens-returned-from-okta/create-groups-claim/) for the kPow OpenID integration:
+You will need to configure a relevant [group claim filter](https://developer.okta.com/docs/guides/customize-tokens-groups-claim/overview/) for the kPow OpenID integration:
 
-![](../../.gitbook/assets/rbac-okta-group-filter-1-.png)
+![](../../.gitbook/assets/screen-shot-2021-07-23-at-3.20.29-pm.png)
 
