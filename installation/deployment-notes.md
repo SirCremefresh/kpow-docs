@@ -55,11 +55,11 @@ Most reverse proxies and load balancers work out of the box with kPow, but speci
 
 See [HTTPS Connections](../features/https-connections.md) for documentation on how to configure HTTPS traffic for kPow.
 
-### K8s ingress
+### K8s Ingress Configuration
 
-**Custom Path configuration**
+**Custom Path Configuration**
 
-This configuration might be useful if you want to serve kPow at a custom path such as `/kpow` . This scenario might be useful if your company has a suite of tools that you want to have grouped at a single host.
+This configuration serves kPow at a custom path such as `/kpow`. This scenario might be useful if your company has a suite of tools that you want to have grouped at a single host.
 
 ```yaml
 apiVersion: networking.k8s.io/v1beta1
@@ -112,7 +112,7 @@ A standard `nginx.conf`
 
 #### Custom Path Configuration
 
-This configuration might be useful if you want to serve kPow at a custom path such as `/kpow` . This scenario might be useful if your company has a suite of tools that you want to have grouped at a single HTTP endpoint.
+This configuration serves kPow at a custom path such as `/kpow` . This scenario might be useful if your company has a suite of tools that you want to have grouped at a single HTTP endpoint.
 
 ```text
 server {
