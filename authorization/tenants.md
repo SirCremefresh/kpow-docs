@@ -46,7 +46,7 @@ Only users who has been assigned the role `connect-admins` will be
 
 The `name` field will be the assigned name of the tenant used within kPow's UI. It must be unique.
 
-### Description
+### description
 
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
