@@ -52,6 +52,7 @@
 * [Overview](authorization/overview.md)
 * [Simple Access Control](authorization/simple-access-control.md)
 * [Role Based Access Control](authorization/role-based-access-control.md)
+* [Tenants](authorization/tenants.md)
 * [Administration](authorization/administration/README.md)
   * [Temporary Policies](authorization/administration/temporary-policies.md)
   * [Staged Mutations](authorization/administration/staged-mutations.md)
