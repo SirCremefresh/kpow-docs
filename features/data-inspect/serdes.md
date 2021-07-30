@@ -65,13 +65,13 @@ Serdes with `json` or `clojure` format will have [Data Policies](../data-policie
 
 #### Setup
 
-1. Provide your custom serdes on the kPow classpath \(see [How to add a Jar to the Classpath](https://stackoverflow.com/questions/15930782/call-java-jar-myfile-jar-with-additional-classpath-option)\).
+Provide your custom serdes on the kPow classpath \(see [How to add a Jar to the Classpath](https://stackoverflow.com/questions/15930782/call-java-jar-myfile-jar-with-additional-classpath-option)\).
 
 Use a plain Java command similar to below to start kpow with a set classpath, note **operatr.kpow**.
 
 `java -Xmx2G -cp /opt/kpow/lib/kpow.jar:/opt/org/custom-serdes.jar operatr.kpow`
 
-1. Configure kPow with the `CUSTOM_SERDES` environment variable:
+Configure kPow with the `CUSTOM_SERDES` environment variable:
 
 ```text
 # CUSTOM_SERDES accepts a comma-separated list of serdes classes
@@ -81,7 +81,7 @@ CUSTOM_SERDES=org.corp.XMLSerde,org.corp.MyCustomSerde
 
 #### Configuration
 
-Include a YAML configuration file in your jar to configure custom serdes further \(Optional\).
+Include a YAML configuration file in your jar file to configure custom serdes further \(Optional\).
 
 **E.g.** `org.corp.XMLSerde` can be configured with `org/corp/XMLSerde.yml`
 
@@ -93,7 +93,7 @@ The following fields are available to configure your serdes:
 * `config` - a map of config values passed into the serdes `configure` method 
 
 `Config` is converted to String/String and passed to your Serdes/configure method.   
-`Config` values starting with $ are resolved as environment variables. \(e.g. $SOME\_ENV below\)
+`Config` values starting with $ are resolved as environment variables. \(e.g. $BOOTSTRAP below\)
 
 **E.g.** Single Serdes Configuration \(json format, available to key and value fields\).
 
@@ -101,7 +101,7 @@ The following fields are available to configure your serdes:
 name: PROTO
 format: json
 config:
-  bootstrap: "some-value"
+  bootstrap: $BOOTSTRAP
   limit: 22
   display: another-value
   abc: $SOME_ENV
