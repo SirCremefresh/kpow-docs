@@ -66,7 +66,12 @@ Serdes with `json` or `clojure` format will have [Data Policies](../data-policie
 #### Setup
 
 1. Provide your custom serdes on the kPow classpath \(see [How to add a Jar to the Classpath](https://stackoverflow.com/questions/15930782/call-java-jar-myfile-jar-with-additional-classpath-option)\).
-2. Configure kPow with the `CUSTOM_SERDES` environment variable:
+
+Use a plain Java command similar to below to start kpow with a set classpath, note **operatr.kpow**.
+
+`java -Xmx2G -cp /opt/kpow/lib/kpow.jar:/opt/org/custom-serdes.jar operatr.kpow`
+
+1. Configure kPow with the `CUSTOM_SERDES` environment variable:
 
 ```text
 # CUSTOM_SERDES accepts a comma-separated list of serdes classes
