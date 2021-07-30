@@ -21,19 +21,19 @@ By default, kPow ships with the following serdes available from data inspect:
 * Transit / JSON-Verbose
 * Transit / Msgpack
 
-## Schema Registry Serdes \(AVRO, JSON Schema + Protobuf\)
+## AVRO, JSON Schema, and Protobuf
 
 {% hint style="info" %}
-Schema registry serdes in kPow follow the wire format documented [here](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#wire-format). 
+Schema Registry serdes in kPow follow the wire format documented [here](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#wire-format). 
 {% endhint %}
 
-{% hint style="info" %}
-See: [Custom Serdes](serdes.md#custom-serdes) to use kPow with Protobuf messages without the Schema Registry.
+{% hint style="warning" %}
+See: [Custom Serdes](serdes.md#custom-serdes) to use kPow with Protobuf ****messages _without the Schema Registry._
 {% endhint %}
 
-kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO, JSON Schema and Protobuf serdes to be used in data inspect
+kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO, JSON Schema and Protobuf serdes to be used in data inspect.
 
-See the [Schema Registry](https://app.gitbook.com/@operatr-io/s/kpow/~/drafts/-MN6L_-tcDmaE5R2dq-T/configuration/schema-registry) page for documentation on how to configure Confluent Schema Registry with kPow.
+See [Schema Registry](https://app.gitbook.com/@operatr-io/s/kpow/~/drafts/-MN6L_-tcDmaE5R2dq-T/configuration/schema-registry) for more on how to configure Confluent Schema Registry with kPow.
 
 Once configured, from within the data inspect UI you will now be able to select the schema and subject strategy when searching for records by key:
 
