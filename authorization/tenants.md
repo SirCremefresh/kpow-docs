@@ -22,21 +22,39 @@ Within your [RBAC yaml configuration file](role-based-access-control.md) you can
 
 ```yaml
 tenants:
-  - name: "Connect"
-    description: "Access to Connect Clusters + Connect Resources"
-    roles:
-      - connect-admins
+  - name: "Default"
+    description: "All Kafka Resources."
     resources:
-      - include: ["connect",  "*"]
-      - exclude: ["cluster", "*", "topic", "connect_pii_topic"]
-      - include: ["cluster", "*", "group", "connect*"]
-      - include: ["cluster", "*", "topic", "connect*"]
-      - include: ["cluster", "*", "topic", "kpow-connect*"]
+      - include:
+          - [ "*" ]
+    roles:
+      - "kafka-admins"
+  - name: "Admins"
+    description: "Data belonging to the admins."
+    resources:
+      - include:
+          - [ "cluster", "*", "topic", "oprtr*" ]
+          - [ "cluster", "*", "topic", "__oprtr*" ]
+          - [ "cluster", "*", "group", "oprtr*" ]
+          - [ "connect", "*" ]
+          - [ "schema", "*" ]
+    roles:
+      - "kafka-admins"
+  - name: "Users"
+    description: "Data belonging to users."
+    resources:
+      - include:
+          - [ "cluster", "*" ]
+      - exclude:
+          - [ "cluster", "*", "group", "oprtr.compute.metrics.v2"]
+          - [ "cluster", "*", "topic", "oprtr*" ]
+    roles:
+      - "kafka-users"
 ```
 
-In this particular example we have create a tenant named Connect that has access to all Kafka Connect clusters, any topic matching `connect*` or `kpow-connect*`, and any consumer group matching `connect*`. The topic `connect_pii_topic` will be excluded from kPow's UI/metrics calculation. 
+These tenants relate to internal kPow topics and groups for demonstration purposes and use the same  roles as our Jetty PropertyFileLoginModule example.
 
-Only users who has been assigned the role `connect-admins` will be 
+Kafka Admins have two tenants to choose from, Default contains all resources, Admins contains a subset of resources. Kafka Users has one tenant that is automatically selected for them with an even smaller subset of resources included.
 
 ### name
 
