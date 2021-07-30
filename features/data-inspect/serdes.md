@@ -28,7 +28,7 @@ Schema Registry serdes in kPow follow the wire format documented [here](https://
 {% endhint %}
 
 {% hint style="warning" %}
-See: [Custom Serdes](serdes.md#custom-serdes) to use kPow with Protobuf ****messages _without the Schema Registry._
+See: [Custom Serdes](serdes.md#custom-serdes) to use kPow with Protobuf ****messages _without a Schema Registry._
 {% endhint %}
 
 kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO, JSON Schema and Protobuf serdes to be used in data inspect.
