@@ -53,6 +53,8 @@ This port serves both websockets connections and general HTTP/S traffic.
 
 Most reverse proxies and load balancers work out of the box with kPow, but special consideration is needed when configuring websockets, or when the reverse proxy is responsible for SSL termination.
 
+See the [NGINX Websocket Guide](https://www.nginx.com/blog/websocket-nginx/) for information specific to NGINX and Websockets.
+
 See [HTTPS Connections](../features/https-connections.md) for documentation on how to configure HTTPS traffic for kPow.
 
 ### K8s Ingress Configuration
