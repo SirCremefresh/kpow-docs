@@ -1,5 +1,5 @@
 ---
-description: Configure multi-tenancy for your kPow instance
+description: Restrict Visibility of Kafka Resources with kPow
 ---
 
 # Tenants
@@ -8,15 +8,33 @@ description: Configure multi-tenancy for your kPow instance
 
 **What is Multi-Tenancy?**
 
-kPow now allows you to define tenants. A tenant describes the set of Kafka resources that are visible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
+A tenant describes the set of Kafka resources that are visible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
 
-**Example**
+Specifically a Tenant can:
 
-A kPow is connected to three Kafka Clusters \(Dev, UAT, Prod\), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****You can create a tenant that:
+* Include or exclude specific topics or topic prefixes, e.g. tx-topic, tx-top\*
+* Include or exclude specific groups or group prefixes, e.g. tx-group, tx-grou\*
+* Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
+
+Where a user has multiple tenants they are provided the options to choose a tenant to access.
+
+![](../.gitbook/assets/kpow-select-tenant.png)
+
+Once a tenant is selected the user the chooses a cluster \(if multi-cluster is configured\)
+
+![](../.gitbook/assets/kpow-select-cluster.png)
+
+A user can switch tenants at any time by selecting the top-left user context menu
+
+![](../.gitbook/assets/kpow-switch-tenant.png)
+
+**Example Tenancy Scenario**
+
+kPow is connected to three Kafka Clusters \(Dev, UAT, Prod\), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****You can create a tenant that:
 
 * Contains only Kafka resources connected to or within Dev and UAT \(or any combination of clusters\)
 * Contains only specific topics or groups, or matches them with a prefix. E.g `my-topic` or `my-grou*`
-* Includes or Excludes Connect or Schema resource in their entirety \(we will offer more granular control here shortly\)
+* Includes or Excludes Connect or Schema resource in their entirety \(more granular control shortly\)
 * Any combination of the above.
 
 ## Configuration
