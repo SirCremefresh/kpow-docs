@@ -4,10 +4,6 @@ description: Configure multi-tenancy for your kPow instance
 
 # Tenants
 
-{% hint style="info" %}
-Multi-tenancy is currently in feature preview. Contact [support@operatr.io](mailto:support@operatr.io) to get access! 
-{% endhint %}
-
 ## Introduction
 
 **What is Multi-Tenancy?**
