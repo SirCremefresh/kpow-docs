@@ -6,15 +6,22 @@ description: Restrict Visibility of Kafka Resources with kPow
 
 ## Introduction
 
-**What is Multi-Tenancy?**
+### **What is Multi-Tenancy?**
 
-A tenant describes the set of Kafka resources that are visible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
+A tenant restricts the set of Kafka resources that are accessible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
 
-Specifically a Tenant can:
+Tenancy configuration is provided within your Role Based Access Configuration YAML file.
+
+### What is a Tenant?
+
+A tenant is defined in configuration, specifically it can:
 
 * Include or exclude specific topics or topic prefixes, e.g. tx-topic, tx-top\*
 * Include or exclude specific groups or group prefixes, e.g. tx-group, tx-grou\*
 * Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
+* Be assigned to one or many user roles
+
+### What is 
 
 Where a user has multiple tenants they are provided the options to choose a tenant to access.
 
@@ -93,14 +100,6 @@ The `name` field will be the assigned name of the tenant used within kPow's UI. 
 
 The optional `description` field will be used within kPow's UI as a description when switching tenants. 
 
-###   roles
-
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-| roles | Y | List | The list of roles assigned to this tenant. |
-
-The `roles` field describes which roles \(specified from your [authentication provider](../authentication/overview.md#kpow-and-user-authentication)\) are assigned to this tenant.
-
 ### resources
 
 | Key | Required | Type | Description |
@@ -114,6 +113,14 @@ Each item in the list is a map of either `include: [resource...]` or `exclude: [
 Where the resource refers to the path of the object you wish to include/exclude. 
 
 For example: `["cluster",  "*", "topic", "tx_*"]`refers to any topic matching `tx_*`for any Kafka cluster defined in kPow.
+
+### roles
+
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
+| roles | Y | List | The list of roles assigned to this tenant. |
+
+The `roles` field describes which roles \(specified from your [authentication provider](../authentication/overview.md#kpow-and-user-authentication)\) are assigned to this tenant.
 
 For more details about resources refer to the [RBAC documentation](role-based-access-control.md#resources). 
 
