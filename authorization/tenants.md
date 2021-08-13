@@ -10,11 +10,18 @@ Multi-tenancy is currently in feature preview. Contact [support@operatr.io](mail
 
 ## Introduction
 
-Tenancy represents the top level in your hierarchy. You can define the resources available to each tenant, such as Kafka clusters, topics or groups.
+**What is Multi-Tenancy?**
 
-For example, there might be three different teams sharing the same Kafka cluster. Each team might only want to view metrics+resources that relate to their Kafka topics + consumer groups. 
+kPow now allows you to define tenants. A tenant describes the set of Kafka resources that are visible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
 
-You can assign a tenant to multiple roles that come in from your specified [authentication provider](../authentication/overview.md#kpow-and-user-authentication). 
+**Example**
+
+A kPow is connected to three Kafka Clusters \(Dev, UAT, Prod\), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****You can create a tenant that:
+
+* Contains only Kafka resources connected to or within Dev and UAT \(or any combination of clusters\)
+* Contains only specific topics or groups, or matches them with a prefix. E.g `my-topic` or `my-grou*`
+* Includes or Excludes Connect or Schema resource in their entirety \(we will offer more granular control here shortly\)
+* Any combination of the above.
 
 ## Configuration
 
