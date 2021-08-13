@@ -10,7 +10,35 @@ description: Restrict Visibility of Kafka Resources with kPow
 
 A tenant restricts the set of Kafka resources that are accessible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
 
+When operating within a tenant a user can only see resources included by that tenant, they will also see a fully consistent synthetic cluster-view of their aggregated resources. The overall user experience is simply of a restricted set of Kafka resources as if they were truly the only resources in the system.
+
+{% hint style="info" %}
+Tenancy restricts more that visibility, a user can also only **create** resources valid to their tenant.
+{% endhint %}
+
 Tenancy configuration is provided within your Role Based Access Configuration YAML file.
+
+### What is Multi-Tenancy for?
+
+Primarily to provide different views of Kafka resources to different teams within your organisation.
+
+Consider the following scenario:
+
+kPow is connected to three Kafka Clusters \(Dev, UAT, Prod\), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****You can create a tenant that:
+
+* Contains only Kafka resources connected to or within Dev and UAT \(or any combination of clusters\)
+* Contains only specific topics or groups, or matches them with a prefix. E.g `my-topic` or `my-grou*`
+* Includes or excludes Connect or Schema resource in their entirety \(more granular control shortly\)
+* Any combination of the above.
+
+The secondary use is to exclude groups and topics of no interest to your organisation.
+
+For example, kPow provides two default tenants when you have none specifically configured: 
+
+* Global: All Kafka resources
+* kPow Hidden: All Kafka resources with kPow internal groups and topics excluded
+
+
 
 ### What is a Tenant?
 
@@ -21,9 +49,9 @@ A tenant is defined in configuration, specifically it can:
 * Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
 * Be assigned to one or many user roles
 
-### What is 
+### Tenancy User Experience
 
-Where a user has multiple tenants they are provided the options to choose a tenant to access.
+
 
 ![](../.gitbook/assets/kpow-select-tenant.png)
 
@@ -34,15 +62,6 @@ Once a tenant is selected the user the chooses a cluster \(if multi-cluster is c
 A user can switch tenants at any time by selecting the top-left user context menu
 
 ![](../.gitbook/assets/kpow-switch-tenant.png)
-
-**Example Tenancy Scenario**
-
-kPow is connected to three Kafka Clusters \(Dev, UAT, Prod\), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****You can create a tenant that:
-
-* Contains only Kafka resources connected to or within Dev and UAT \(or any combination of clusters\)
-* Contains only specific topics or groups, or matches them with a prefix. E.g `my-topic` or `my-grou*`
-* Includes or Excludes Connect or Schema resource in their entirety \(more granular control shortly\)
-* Any combination of the above.
 
 ## Configuration
 
@@ -120,7 +139,7 @@ For example: `["cluster",  "*", "topic", "tx_*"]`refers to any topic matching `t
 | :--- | :--- | :--- | :--- |
 | roles | Y | List | The list of roles assigned to this tenant. |
 
-The `roles` field describes which roles \(specified from your [authentication provider](../authentication/overview.md#kpow-and-user-authentication)\) are assigned to this tenant.
+The `roles` field describes which roles \(specified by your [auth provider](../authentication/overview.md#kpow-and-user-authentication)\) are assigned to this tenant.
 
 For more details about resources refer to the [RBAC documentation](role-based-access-control.md#resources). 
 
