@@ -65,6 +65,8 @@ tenants:
   - name: "kPow Hidden"
     description: "All configured Kafka resources except internal kPow resources and __consumer_offsets."
     resources:
+      - include:
+          - [ "*" ]    
       - exclude:
           - [ "cluster", "*", "topic", "oprtr*" ]
           - [ "cluster", "*", "topic", "__oprtr*" ]
