@@ -47,7 +47,7 @@ A tenant is defined in configuration, specifically it can:
 * Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
 * Be assigned to one or many user roles
 
-## Tenant Configuration
+## Configuration
 
 Within your [RBAC yaml configuration file](role-based-access-control.md) you can specify a top-level `tenants` key:
 
@@ -118,7 +118,7 @@ The `roles` field describes which roles \(specified by your [auth provider](../a
 
 For more details about resources refer to the [RBAC documentation](role-based-access-control.md#resources). 
 
-### Tenancy User Experience
+## User Experience
 
 kPow users with a single tenant are automatically entered into that tenant on session start.
 
