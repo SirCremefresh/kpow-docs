@@ -4,8 +4,6 @@ description: Continuously Search and Filter Kafka Topics
 
 # Streaming Search
 
-kPow Data Inspect executes queries for at most seven seconds, or until 100 results are returned.
-
 kPow Streaming Search allows you to **automatically continue queries** until:
 
 * The number of results returned matches 'Result Limit' \(default 100\)
