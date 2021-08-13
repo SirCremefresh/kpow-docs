@@ -1,5 +1,5 @@
 ---
-description: Restrict Visibility of Kafka Resources with kPow
+description: Restrict Access to Kafka Resources by User Role
 ---
 
 # Multi-Tenancy
