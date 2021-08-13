@@ -1,5 +1,5 @@
 ---
-description: Search and Filter Continuously through Kafka Topics
+description: Continuously Search and Filter Kafka Topics
 ---
 
 # Streaming Search
