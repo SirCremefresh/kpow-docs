@@ -2,7 +2,7 @@
 description: Restrict Visibility of Kafka Resources with kPow
 ---
 
-# Tenants
+# Multi-Tenancy
 
 ## Introduction
 
