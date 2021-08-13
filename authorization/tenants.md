@@ -38,8 +38,6 @@ For example, kPow provides two default tenants when you have none specifically c
 * Global: All Kafka resources
 * kPow Hidden: All Kafka resources with kPow internal groups and topics excluded
 
-
-
 ### What is a Tenant?
 
 A tenant is defined in configuration, specifically it can:
@@ -49,59 +47,36 @@ A tenant is defined in configuration, specifically it can:
 * Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
 * Be assigned to one or many user roles
 
-### Tenancy User Experience
-
-
-
-![](../.gitbook/assets/kpow-select-tenant.png)
-
-Once a tenant is selected the user the chooses a cluster \(if multi-cluster is configured\)
-
-![](../.gitbook/assets/kpow-select-cluster.png)
-
-A user can switch tenants at any time by selecting the top-left user context menu
-
-![](../.gitbook/assets/kpow-switch-tenant.png)
-
-## Configuration
+## Tenant Configuration
 
 Within your [RBAC yaml configuration file](role-based-access-control.md) you can specify a top-level `tenants` key:
 
+This configuration matches the **default tenants** that kPow provides if you have none configured.
+
 ```yaml
 tenants:
-  - name: "Default"
-    description: "All Kafka Resources."
+  - name: "Global"
+    description: "All configured Kafka resources."
     resources:
       - include:
           - [ "*" ]
     roles:
-      - "kafka-admins"
-  - name: "Admins"
-    description: "Data belonging to the admins."
+      - "*"
+  - name: "kPow Hidden"
+    description: "All configured Kafka resources except internal kPow resources and __consumer_offsets."
     resources:
-      - include:
+      - exclude:
           - [ "cluster", "*", "topic", "oprtr*" ]
           - [ "cluster", "*", "topic", "__oprtr*" ]
+          - [ "cluster", "*", "topic", "__consumer_offsets" ]
           - [ "cluster", "*", "group", "oprtr*" ]
-          - [ "connect", "*" ]
-          - [ "schema", "*" ]
     roles:
-      - "kafka-admins"
-  - name: "Users"
-    description: "Data belonging to users."
-    resources:
-      - include:
-          - [ "cluster", "*" ]
-      - exclude:
-          - [ "cluster", "*", "group", "oprtr.compute.metrics.v2"]
-          - [ "cluster", "*", "topic", "oprtr*" ]
-    roles:
-      - "kafka-users"
+      - "*"
 ```
 
-These tenants relate to internal kPow topics and groups for demonstration purposes and use the same  roles as our Jetty PropertyFileLoginModule example.
+### Fields
 
-Kafka Admins have two tenants to choose from, Default contains all resources, Admins contains a subset of resources. Kafka Users has one tenant that is automatically selected for them with an even smaller subset of resources included.
+Each tenant is configured with a name, description, resources, and roles.
 
 ### name
 
@@ -127,7 +102,7 @@ The optional `description` field will be used within kPow's UI as a description 
 
 The `resources` field defines which resources are either included or excluded for this tenant.
 
-Each item in the list is a map of either `include: [resource...]` or `exclude: [resouce... ]` 
+Each item in the list is a map of either `include: [resource...]` or `exclude: [resouce...]` 
 
 Where the resource refers to the path of the object you wish to include/exclude. 
 
@@ -142,4 +117,20 @@ For example: `["cluster",  "*", "topic", "tx_*"]`refers to any topic matching `t
 The `roles` field describes which roles \(specified by your [auth provider](../authentication/overview.md#kpow-and-user-authentication)\) are assigned to this tenant.
 
 For more details about resources refer to the [RBAC documentation](role-based-access-control.md#resources). 
+
+### Tenancy User Experience
+
+kPow users with a single tenant are automatically entered into that tenant on session start.
+
+kPow users with multiple tenants have the option of choosing and switching tenant:
+
+![](../.gitbook/assets/kpow-select-tenant.png)
+
+Once a tenant is selected the user the chooses a cluster \(if multi-cluster is configured\)
+
+![](../.gitbook/assets/kpow-select-cluster.png)
+
+A user can switch tenants at any time by selecting the top-left user context menu
+
+![](../.gitbook/assets/kpow-switch-tenant.png)
 
