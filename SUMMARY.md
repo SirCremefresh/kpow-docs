@@ -6,8 +6,8 @@
 
 * [Introduction](about/introduction.md)
 * [Our Team](about/our-team.md)
-* [Trials and Licenses](about/trials-and-licenses.md)
-* [Releases](about/releases.md)
+* [Releases](about/releases/README.md)
+  * [Trials and Licenses](about/releases/trials-and-licenses.md)
 * [Support](about/support.md)
 * [Data Collection](about/data-collection.md)
 
@@ -65,6 +65,7 @@
 * [HTTPS Connections](features/https-connections.md)
 * [Live Mode](features/live-mode.md)
 * [Data Inspect](features/data-inspect/README.md)
+  * [Streaming Search](features/data-inspect/streaming-search.md)
   * [kJQ Filters](features/data-inspect/kjq-filters.md)
   * [Serdes](features/data-inspect/serdes.md)
 * [Prometheus Integration](features/prometheus/README.md)

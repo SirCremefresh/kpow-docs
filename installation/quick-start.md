@@ -18,7 +18,7 @@ kPow Docker images are hosted at [**Docker Hub**](https://hub.docker.com/r/opera
 
 To connect the latest kPow Docker image to a single, unsecured Kafka Cluster:
 
-* Get a [**Free Trial License**](../about/trials-and-licenses.md).
+* Get a [**Free Trial License**](../about/releases/trials-and-licenses.md).
 * Create a **`config.env`** file containing your connection, license, and feature variables.
 
 ```text
@@ -70,7 +70,7 @@ docker run -p 3000:3000 -m2G --env-file ./config.env operatr/kpow:latest
 
 To connect the latest [kPow JAR](https://operatr.io/releases) to a single, unsecured Kafka cluster:
 
-* Get a [**Free Trial License**](../about/trials-and-licenses.md).
+* Get a [**Free Trial License**](../about/releases/trials-and-licenses.md).
 * Download [**the latest kPow JAR**](https://kpow.io/releases/).
 * Create a**`start-kpow.sh`** that sets environment variables and starts the JAR
 
