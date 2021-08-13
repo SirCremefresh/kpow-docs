@@ -6,8 +6,8 @@
 
 * [Introduction](about/introduction.md)
 * [Our Team](about/our-team.md)
-* [Releases](about/releases/README.md)
-  * [Trials and Licenses](about/releases/trials-and-licenses.md)
+* [Releases](about/releases.md)
+* [Trials and Licenses](about/trials-and-licenses.md)
 * [Support](about/support.md)
 * [Data Collection](about/data-collection.md)
 
