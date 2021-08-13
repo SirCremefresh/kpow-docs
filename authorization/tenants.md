@@ -134,3 +134,25 @@ A user can switch tenants at any time by selecting the top-left user context men
 
 ![](../.gitbook/assets/kpow-switch-tenant.png)
 
+Once a tenant is selected the user is presented an internally consistent view of a synthetic set of Kafka resources that matches the tenant exactly.
+
+Here is an example of the Cluster view in two tenants in our demo environment.
+
+Each tenant provides a different synthetic view of the Kafka resources configured with kPow.
+
+### **Global Tenant**
+
+This tenant has 230 topics, 3.9GB replica disk and is receiving 762 writes/s
+
+![](../.gitbook/assets/kpow-demo-tenant-1.png)
+
+### Transaction Tenant
+
+This tenant has 200 topics, 86.8MB replica disk and is receiving 1.75 writes/s.
+
+It looks strikingly different because `tx-*` topics are generated event topics in our demo environment.
+
+![](../.gitbook/assets/kpow-demo-tenant-2.png)
+
+
+
