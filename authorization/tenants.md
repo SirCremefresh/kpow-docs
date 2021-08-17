@@ -6,7 +6,11 @@ description: Restrict Access to Kafka Resources by User Role
 
 ## Introduction
 
-### **What is Multi-Tenancy?**
+Multi-Tenancy allows you to configure kPow to restrict visibility of Kafka resources.
+
+See the article [How to manage Kafka visibility with Multi-Tenancy](https://kpow.io/how-to/manage-kafka-visibility-with-multi-tenancy/) for an overview.
+
+### **About Tenants**
 
 A tenant restricts the set of Kafka resources that are accessible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
 
@@ -16,15 +20,35 @@ When operating within a tenant a user can only see resources included by that te
 Tenancy restricts more that visibility, a user can also only **create** resources valid to their tenant.
 {% endhint %}
 
-Tenancy configuration is provided within your Role Based Access Configuration YAML file.
+Tenant configuration is defined within your Role Based Access Configuration YAML file.
 
-### What is Multi-Tenancy for?
+A tenant can:
 
-Primarily to provide different views of Kafka resources to different teams within your organisation.
+* Include or exclude specific topics or topic prefixes, e.g. tx-topic, tx-top\*
+* Include or exclude specific groups or group prefixes, e.g. tx-group, tx-grou\*
+* Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
+* Be assigned to one or many user roles
 
-Consider the following scenario:
+#### Inferred Resources
 
-kPow is connected to three Kafka Clusters \(Dev, UAT, Prod\), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****You can create a tenant that:
+Most resources are evaluated atomically as included or excluded.
+
+Where a group is included, any topics that group consumes from are automatically included. This is in order to keep the synthetic cluster-view consistent. These resources are called **inferred** resources.
+
+#### Resource Evaluation
+
+A tenant determines what resources are visible with the following logic:
+
+* Initially, all resources are implicitly excluded.
+* Explicitly included resources are added.
+* Inferred resources are added.
+* Exclusions are applied last.
+
+### Multi-Tenancy Use Cases
+
+The primary use for multi-tenancy is to provide different views of Kafka resources to different teams within your organisation.
+
+Consider a kPow that is connected to three Kafka Clusters \(Dev, UAT, Prod\), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****You can create tenants that:
 
 * Contains only Kafka resources connected to or within Dev and UAT \(or any combination of clusters\)
 * Contains only specific topics or groups, or matches them with a prefix. E.g `my-topic` or `my-grou*`
@@ -37,15 +61,6 @@ For example, kPow provides two default tenants when you have none specifically c
 
 * Global: All Kafka resources
 * kPow Hidden: All Kafka resources with kPow internal groups and topics excluded
-
-### What is a Tenant?
-
-A tenant is defined in configuration, specifically it can:
-
-* Include or exclude specific topics or topic prefixes, e.g. tx-topic, tx-top\*
-* Include or exclude specific groups or group prefixes, e.g. tx-group, tx-grou\*
-* Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
-* Be assigned to one or many user roles
 
 ## Configuration
 
