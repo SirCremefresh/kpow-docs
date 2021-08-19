@@ -16,7 +16,7 @@ Use our [**Helm**](https://github.com/operatr-io/kpow-helm-charts) and [**CloudF
 kPow Docker images are hosted at [**Docker Hub**](https://hub.docker.com/r/operatr/kpow)**.**
 {% endhint %}
 
-To connect the latest kPow Docker image to a single, unsecured Kafka Cluster:
+To connect the latest kPow Docker image to a Kafka Cluster:
 
 * Get a [**Free Trial License**](../about/trials-and-licenses.md).
 * Create a **`config.env`** file containing your connection, license, and feature variables.
@@ -68,7 +68,7 @@ docker run -p 3000:3000 -m2G --env-file ./config.env operatr/kpow:latest
 
 ## JAR Quick Start
 
-To connect the latest [kPow JAR](https://operatr.io/releases) to a single, unsecured Kafka cluster:
+To connect the latest [kPow JAR](https://operatr.io/releases) to a Kafka cluster:
 
 * Get a [**Free Trial License**](../about/trials-and-licenses.md).
 * Download [**the latest kPow JAR**](https://kpow.io/releases/).
