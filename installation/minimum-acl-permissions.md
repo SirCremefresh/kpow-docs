@@ -4,9 +4,17 @@ description: Configuration to run kPow secured with Kafka ACLs
 
 # Minimum ACL Permissions
 
+Kafka has the ability to restrict access to objects and operations within a cluster through the use of [Kafka Access Control Lists](https://kafka.apache.org/documentation/#security_authz) \(ACLs\). This is different to kPow's own [Role Based Access Controls](../authorization/role-based-access-control.md).
+
 {% hint style="info" %}
 You can skip this page if you do not have Kafka ACLs enabled in your cluster/s
 {% endhint %}
+
+When your cluster is secured with Kafka ACLs the Kafka user identified by the cluster connection credentials provided to kPow will need to have a minimum level of permissions for kPow to operate.
+
+### kPow Required Permissions
+
+kPow needs the ability to read and write internal topics and read internal groups.
 
 kPow checks for the following internal topics in your **primary cluster** \(the first bootstrap in your configuration\) on startup and will attempt to create them if required:
 
@@ -19,7 +27,7 @@ oprtr.compute.snapshots.v2-oprtr_snaphot_state_v2-changelog
 oprtr.compute.snapshots.v2-oprtr_snapshot_materialized_v2-repartition
 ```
 
-You can manually create these topics if you prefer, each with a replication factor of **3** and **12** partitions. 
+You can manually create these topics if you prefer, see [Create kPow Topics](minimum-acl-permissions.md#create-kpow-topics).
 
 Once started, kPow creates two internal streaming compute applications:
 
@@ -27,8 +35,6 @@ Once started, kPow creates two internal streaming compute applications:
 oprtr.compute.metrics.v2
 oprtr.compute.snapshots.v2
 ```
-
-See [this guide](https://docs.confluent.io/platform/current/streams/developer-guide/security.html) to understand the importance of creating the internal topics with the right configuration.
 
 At a minimum, kPow must be able to read and write to and from these internal topics, must be able to read as those groups, and must have permissions to describe clusters, topics, configuration, and groups.
 
@@ -119,5 +125,62 @@ Current ACLs for resource `ResourcePattern(resourceType=CLUSTER, name=kafka-clus
 	(principal=User:kpow, host=*, operation=DESCRIBE, permissionType=ALLOW)
 	(principal=User:kpow, host=*, operation=CREATE, permissionType=ALLOW)
 	(principal=User:kpow, host=*, operation=ALTER, permissionType=ALLOW)
+```
+
+### Create kPow Topics
+
+Using the same client configuration file as above, the following script correctly creates the required internal kPow topics. You can run this script and create these topics on the **primary cluster** in which you expect kPow to keep data.
+
+```text
+./kafka-topics.sh --create \
+         --bootstrap-server 127.0.0.1:9092 \
+         --command-config client.conf \
+         --topic __oprtr_audit_log \
+         --config compression.type=gzip \
+         --config segment.bytes=104857600 \
+         --config retention.ms=-1
+./kafka-topics.sh --create \
+         --bootstrap-server 127.0.0.1:9092 \
+         --command-config client.conf \
+         --topic __oprtr_metric_pt1m \
+         --config compression.type=gzip \
+         --config segment.bytes=104857600 \
+         --config retention.ms=86400000 \
+         --config segment.ms=43200000
+./kafka-topics.sh --create \
+         --bootstrap-server 127.0.0.1:9092 \
+         --command-config client.conf \
+         --topic __oprtr_snapshot_state \
+         --config compression.type=gzip \
+         --config segment.bytes=104857600 \
+         --config retention.ms=86400000 \
+         --config message.timestamp.type=LogAppendTime \
+         --config segment.ms=43200000
+./kafka-topics.sh --create \
+         --bootstrap-server 127.0.0.1:9092 \
+         --command-config client.conf \
+         --topic oprtr.compute.metrics.v2-oprtr_metric_v2_pt1m-changelog \
+         --config cleanup.policy=compact,delete \
+         --config segment.bytes=52428800 \
+         --config retention.ms=5400000 \
+         --config message.timestamp.type=CreateTime \
+         --config segment.ms=1800000
+./kafka-topics.sh --create \
+         --bootstrap-server 127.0.0.1:9092 \
+         --command-config client.conf \
+         --topic oprtr.compute.snapshots.v2-oprtr_snaphot_state_v2-changelog \
+         --config cleanup.policy=compact,delete \
+         --config segment.bytes=26214400 \
+         --config retention.ms=604800000 \
+         --config message.timestamp.type=CreateTime \
+         --config segment.ms=604800000
+./kafka-topics.sh --create \
+         --bootstrap-server 127.0.0.1:9092 \
+         --command-config client.conf \
+         --topic oprtr.compute.snapshots.v2-oprtr_snapshot_materialized_v2-repartition \
+         --config cleanup.policy=delete \
+         --config segment.bytes=52428800 \
+         --config retention.ms=-1 \
+         --config message.timestamp.type=CreateTime
 ```
 
