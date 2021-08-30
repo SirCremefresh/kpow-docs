@@ -12,6 +12,8 @@ Configure the [kPow Streams Agent](https://github.com/operatr-io/kpow-streams-ag
 * Aggregate and Expose Kafka Streams metrics via kPow [Prometheus Endpoints](https://docs.kpow.io/features/prometheus) \(for alerting, etc\).
 * \(Soon\) View kPow Insights of your Kafka Streams applications \(outlier metrics, etc\).
 
+See the [kPow Kafka Streams Spring Word Count Example](https://github.com/operatr-io/kpow-streams-agent-example-spring) for an integration of Kafka, Spring, and kPow.
+
 ![The kPow Streams UI](../.gitbook/assets/streams-ui.png)
 
 ## Installation
