@@ -1,5 +1,5 @@
 ---
-description: Manage cluster ACLs from within kPow
+description: Manage Kafka ACLs with kPow
 ---
 
 # ACLs
@@ -20,7 +20,7 @@ Within the security page, there are four tables for ACL management:
 * Resources
 * Controls
 
-![ACL principals table](../.gitbook/assets/screen-shot-2021-05-05-at-11.54.47-am.png)
+![kPow ACL Management UI](../.gitbook/assets/kpow-acls.png)
 
 ### ACL actions
 
