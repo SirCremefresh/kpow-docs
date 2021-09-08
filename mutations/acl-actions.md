@@ -4,6 +4,10 @@ description: Manage Kafka ACLs with kPow
 
 # ACLs
 
+kPow provides a complete management interface to Kafka ACLs.
+
+All ACL actions \(create, clone, delete\) are recorded in the kPow Audit Log.
+
 ## Prerequisites
 
 * You have setup the correct [access control permissions](../authorization/overview.md) in kPow to allow `ACL_EDIT` 
