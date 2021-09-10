@@ -4,6 +4,12 @@ description: A glossary of all configuration options available to kPow
 
 # Environment Variable Glossary
 
+## Kafka
+
+* See [Kafka Cluster](kafka-cluster.md) for Kafka environment variable reference
+* See [Kafka Connect](kafka-connect.md) for Connect environment variable reference
+* See [Schema Registry](schema-registry.md) for Schema registry environment variable reference
+
 ## Web Server 
 
 ### PORT
@@ -275,8 +281,6 @@ Note: see [User Authentication](../authentication/overview.md) for more details
 | **RBAC\_CONFIGURATION\_FILE** |  | string | The path to your Operatr RBAC Configuration \(optional, expects SSO enabled\) |
 
 **Note:** see [Authorization](../authorization/role-based-access-control.md) for more details
-
-## Kafka
 
 ## kPow
 
