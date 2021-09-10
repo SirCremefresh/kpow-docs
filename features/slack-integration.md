@@ -16,3 +16,11 @@ kPow can send [**Audit Log**](data-governance.md) records to your Slack, all you
 4. Set the environment variable **`SLACK_WEBHOOK_URL`** with the value from the previous step.
 5. Restart kPow, now audit items are posted to your slack!
 
+### Verbosity
+
+You can configure the verbosity with the `SLACK_WEBHOOK_VERBOSITY` environment variable. Options are:
+
+* `MUTATIONS` \(default\) - only mutations will be sent via the webhook
+* `QUERIES` - only data inspect queries will be send via the webhook
+* `ALL` - both mutations and queries will be sent via the webhook
+

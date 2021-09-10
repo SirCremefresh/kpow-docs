@@ -86,3 +86,19 @@ github:
   org: operatr-io
 ```
 
+#### Role mapping
+
+By default, kPow will use the authenticated users role in the GitHub organisation as the role in kPow. 
+
+kPow can use the [teams](https://docs.github.com/en/rest/reference/teams) associated with the authenticated user as roles in kPow. You can do this by specifying a custom `roles_field` in the RBAC yaml:
+
+```text
+# Specifically restrict Auth to a single Github Organization
+github:
+  org: operatr-io
+  roles_field: teams
+```
+
+Once enabled, kPow will use the [list teams API call](https://docs.github.com/en/rest/reference/teams#list-teams-for-the-authenticated-user) to query for roles.   
+**Note**: this API call requires extra Oauth scopes: `user` and `repo`
+

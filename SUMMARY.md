@@ -68,6 +68,7 @@
   * [Streaming Search](features/data-inspect/streaming-search.md)
   * [kJQ Filters](features/data-inspect/kjq-filters.md)
   * [Serdes](features/data-inspect/serdes.md)
+* [Data Produce](features/data-produce.md)
 * [Prometheus Integration](features/prometheus/README.md)
   * [Metrics Glossary](features/prometheus/metrics-glossary.md)
 * [Slack Integration](features/slack-integration.md)
