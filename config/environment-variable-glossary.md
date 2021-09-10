@@ -260,18 +260,6 @@ Note: see [User Authentication](../authentication/overview.md) for more details
   </tbody>
 </table>
 
-### **JETTY\_AUTH\_TYPE**
-
-| Env Var | Default | Type | Description |
-| :--- | :--- | :--- | :--- |
-| **JETTY\_AUTH\_TYPE** | jaas | enum |  |
-
-### HASH\_USER\_FILE
-
-| Env Var | Default | Type | Description |
-| :--- | :--- | :--- | :--- |
-| **HASH\_USER\_FILE** |  | string |  |
-
 ## Authorization
 
 ### **RBAC\_CONFIGURATION\_FILE**
