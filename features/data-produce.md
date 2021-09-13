@@ -6,9 +6,11 @@ description: Data production within kPow
 
 ## Introduction
 
-kPow's data produce UI allows you to bulk-produce multiple records to a single topic. The data produce form is **idempotent**.
+kPow's data produce UI allows you to bulk-produce multiple records to a single topic. 
 
-Once a record has been successfully produced, metadata about the produced record will appear in the footer.  
+The data produce form is **idempotent**. Once a record has been produced it won't be retried.
+
+Metadata about the record appears in the footer once it has been produced.  
 
 ![](../.gitbook/assets/screen-shot-2021-09-10-at-11.23.25-am.png)
 
@@ -16,13 +18,13 @@ If a record was unsuccessfully produced, information about the error will appear
 
 ![](../.gitbook/assets/screen-shot-2021-09-10-at-11.25.30-am.png)
 
-You can use the toolbar to filter down to just erroring records, or clear any produced records from the form:
+Use the toolbar to filter down to just erroring records, or clear any produced records from the form:
 
 ![](../.gitbook/assets/screen-shot-2021-09-10-at-11.26.49-am.png)
 
 ## Importing records
 
-You can load records from a CSV, JSON or EDN file into the data produce form by clicking the "Import Records" button on the control pane.
+Load records from a CSV, JSON or EDN file into the data produce form by clicking the "Import Records" button on the control pane.
 
 ### CSV 
 
