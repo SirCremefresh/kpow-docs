@@ -14,6 +14,8 @@ Data Inspect supports JQ-like filters on Kafka topics. We call this kJQ!
 
 kJQ is **fast**, easily scanning tens of thousands of messages from a Kafka topic each second.
 
+The kJQ input field provides context highlighting, auto-completion, command memory \(press **up-arrow** to view previous filters\) and fast-execution \(press **shift-enter** to execute the search\).
+
 Normally your kJQ filters will start with **.key .value or .header** but you can search on any field returned with a Kafka record, including topic, offset, etc.
 
 kPow implements a subset of JQ allowing you to search [**JSON**, **Avro**, **Transit**, **EDN**, **String**, and **Custom Serdes**](serdes.md) with complex queries on structured data.
