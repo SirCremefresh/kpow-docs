@@ -8,11 +8,11 @@ description: An introduction to filtering queries with kJQ
 
 [**JQ**](https://stedolan.github.io/jq/) is a popular, practical language described as 'like sed for JSON data'. 
 
-Data Inspect supports JQ-like filters on Kafka topics. We call this kJQ!
-
-![Sample KJQ Query](../../.gitbook/assets/kjq.png)
+Data Inspect supports JQ-like filters on Kafka topics. We call this kJQ.
 
 kJQ is **fast**, easily scanning tens of thousands of messages from a Kafka topic each second.
+
+![Sample KJQ Query](../../.gitbook/assets/kjq.png)
 
 The kJQ input field provides context highlighting, auto-completion, command memory \(press **up-arrow** to view previous filters\) and fast-execution \(press **shift-enter** to execute the search\).
 
@@ -98,7 +98,9 @@ e.g. `| not`
 .foo
 ```
 
-Matches where the selector is not null \(eg `{"foo": true}` or `{"foo": 1}` will match, `{"bar": true}` will not match\)
+Matches where the selector is not null.
+
+E.g `{"foo": true}` or `{"foo": 1}` will match, `{"bar": true}` will not match
 
 ###  Scalar Comparator Filter
 
