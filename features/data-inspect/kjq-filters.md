@@ -52,6 +52,14 @@ e.g `.foo.[:he*llo]` matches an explicit Clojure keyword `{"foo" {:he*llo 2}}`
 
 Simple dot notation selectors match both String or \(Clojure\) Keyword keys.
 
+#### Transforms
+
+A _transform_ converts the value of a field, often in use with a comparator or function.
+
+Valid transforms: `length`, `to-long`, `to-double`, `from-date`, `min`, `max`
+
+E.g. `| to-long`, `| min`
+
 #### Comparators
 
 A _comparator_ is an _operator_ followed by a _selector_ or a _scalar._
