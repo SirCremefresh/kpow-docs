@@ -66,15 +66,15 @@ When RBAC is enabled kPow will request `orgs:read` scope to view a user's roles.
 
 ![](../../.gitbook/assets/screen-shot-2020-08-07-at-12.03.11-pm.png)
 
-Github Organisation roles are restricted to `admin` or `member` so they are the two roles you can configure with kPow RBAC when using Github SSO by default. 
+### Default Github Roles
 
-See **role mapping** below to see how to configure kPow to use Github Teams as roles. 
+Github Organisation roles are restricted to `admin` or `member` so they are the two default roles you can configure with kPow RBAC when using Github SSO. To configure teams as user roles see [Using Github Teams as Roles](github.md#using-github-teams-for-roles) below.
 
 When authenticating a user kPow makes a request to the [GitHub API](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user) for user membership state and role information by querying  `GET /orgs/:org/memberships/:username`.
 
 Specify the `github` key inside your `rbac-config.yaml` to define the Github Organisation to query for role information.
 
-#### Configuration
+### Configuration
 
 In this example we grant `admin` users of the `operatr-io` Github Organisation actions `TOPIC_INSPECT` and `TOPIC_PRODUCE` for cluster `N9xnGujkR32eYxHICeaHuQ`.
 
@@ -90,7 +90,7 @@ github:
   org: operatr-io
 ```
 
-#### Using Github Teams for Roles
+### Using Github Teams for Roles
 
 {% hint style="info" %}
 **Note**: Github Teams configuration requires extra OAuth scopes: `user` and `repo`
