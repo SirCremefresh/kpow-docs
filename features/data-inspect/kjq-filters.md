@@ -6,9 +6,15 @@ description: An introduction to filtering queries with kJQ
 
 ## Overview
 
-[**JQ**](https://stedolan.github.io/jq/) is a popular, practical language described as 'like sed for JSON data'. Data inspect supports JQ-like filters on Kafka topics. We call this kJQ!
+[**JQ**](https://stedolan.github.io/jq/) is a popular, practical language described as 'like sed for JSON data'. 
+
+Data Inspect supports JQ-like filters on Kafka topics. We call this kJQ!
 
 ![Sample KJQ Query](../../.gitbook/assets/kjq.png)
+
+kJQ is **fast**, easily scanning tens of thousands of messages from a Kafka topic each second.
+
+Normally your kJQ filters will start with **.key .value or .header** but you can search on any field returned with a Kafka record, including topic, offset, etc.
 
 kPow implements a subset of JQ allowing you to search [**JSON**, **Avro**, **Transit**, **EDN**, **String**, and **Custom Serdes**](serdes.md) with complex queries on structured data.
 
@@ -44,13 +50,11 @@ e.g**:** `| startswith("text")`, `| endswith("text")`, `| contains("text")`
 
 ### kJQ Query Evaluation
 
-Multiple comma-separated kJQ filters are evaluated **in isolation** and then combined into a single query predicate with a _reduction._
+Multiple kJQ filters can be joined with a logical **AND** or **OR**, just like normal JQ.
 
-Strict filter isolation means the behaviour of kJQ is slightly different from JQ, particularly regarding _pipe_ precedence.
+kJQ also supports standard explicit logical operator precedence with parenthesis.
 
-The default _reduction_ is **all**, which is a logical **and** of your filters. You can explicitly set a query reduction to **any**, or **all**, which is a logical **or** of your filters.
-
-e.g. `| any | all`
+e.g. `(.key.id or .key.currency == "GBP) and .value.tx.discount | to-double < 20.20`
 
 ### kJQ Query Negation
 
@@ -109,48 +113,34 @@ Matches where the selector does not contain text
 
 kJQ understands quoted and Clojure data
 
-### Multiple Filters + \(Default\) All
+### Multiple Filters \(And\)
 
 ```text
-.foo.bar > 10,
-.foo.bar == .foo.zoo,
+.foo.bar > 10 and
+.foo.bar == .foo.zoo and
 .foo.baz[0] | contains("IDDQD")
-```
-
-Matches where **every** filter is true \(default\). \(eg `{"foo": {"bar": 12, "zoo": 12, "baz": ["IDDQDXXXXX"]}}` will match\)
-
-### Multiple Filters + Explicit All
-
-```text
-.foo.bar > 10,
-.foo.bar == .foo.zoo,
-.foo.baz[0] | contains("IDDQD")
-| all
 ```
 
 Matches where **every** filter is true.
 
-### Multiple Filters + Any
+### Multiple Filters \(Or\)
 
 ```text
-.foo.bar == .foo.zoo,
+.foo.bar == .foo.zoo or
 .foo.baz[0] | contains("IDDQD")
-| any
 ```
 
-Matches where **any** filter is true. \(eg, `{"foo: {"baz": ["IDDQDXXX"]}}` will match\)  
+Matches where **any** filter is true.
 
+### Multiple Filters \(Mixed\)
 
-**Multiple Filters + Any + Negated**
+Combine multiple filters with **and**, **or, and explicit precedence.**
 
 ```text
-.foo.bar > 10,
-.foo.bar == .foo.zoo,
-.foo.baz[0] | contains("IDDQD")
-| any
-| not
+(.key.currency == "GBP" and
+ .value.tx.price | to-double < 16.50 and
+ .value.tx.pan | endswith("8649")) or 
+(.key.currency == "GBP" and 
+ .value.tx.discount == "3.98")
 ```
-
-Matches where **any filter is false**  
-
 
