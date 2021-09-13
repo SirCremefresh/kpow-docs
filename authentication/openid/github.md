@@ -4,7 +4,9 @@ description: Secure kPow with Github SSO (OAuth2) and RBAC
 
 # GitHub
 
-**Note:** Github Enterprise SSO integrations will limit user sign-in to your organization. When integrating with standard Github SSO you must configure RBAC w/Github org set to ensure the same organization level restriction is met.
+{% hint style="warning" %}
+Configure RBAC and set the organisation field to restrict access to your organisation.
+{% endhint %}
 
 ### User Authentication
 
