@@ -78,7 +78,9 @@ Matches where the selector is not null \(eg `{"foo": true}` or `{"foo": 1}` will
 .foo.bar > 10
 ```
 
-Matches where the selector &gt; 10 \(eg, `{"foo": {"bar": 11}}` will match, `{"foo": {"bar": 8}}` will not\)
+Matches where the selector &gt; 10 
+
+E.g. `{"foo": {"bar": 11}}` will match, `{"foo": {"bar": 8}}` will not
 
 ### Selector Comparator Filter
 
@@ -86,7 +88,9 @@ Matches where the selector &gt; 10 \(eg, `{"foo": {"bar": 11}}` will match, `{"f
 .foo.bar == .foo.zoo
 ```
 
-Matches where both selectors are equal \(eg `{"foo": {"bar": 10, "zoo": 10}}` will match, `{"foo": {"bar": 10, "zoo": 7}}` will not\)
+Matches where both selectors are equal.
+
+E.g. `{"foo": {"bar": 10, "zoo": 10}}` will match, `{"foo": {"bar": 10, "zoo": 7}}` will not
 
 ### Function Filter
 
@@ -94,7 +98,9 @@ Matches where both selectors are equal \(eg `{"foo": {"bar": 10, "zoo": 10}}` wi
 .foo.baz[0] | contains("IDDQD")
 ```
 
-Matches where the selector contains text \(eg `{"foo": {"baz": ["IDDQDXXXXX"]}}` will match, `{"foo": {"baz": ["XXXXX"]}}` will not\)
+Matches where the selector contains text
+
+E.g. `{"foo": {"baz": ["IDDQDXXXXX"]}}` will match, `{"foo": {"baz": ["XXXXX"]}}` will not.
 
 ### Negated Filter
 
@@ -102,7 +108,7 @@ Matches where the selector contains text \(eg `{"foo": {"baz": ["IDDQDXXXXX"]}}`
 .[0].foo | contains("IDDQD") | not
 ```
 
-Matches where the selector does not contain text
+Matches where the selector does not contain text.
 
 ### Quoted and Clojure Selectors / Scalars
 
