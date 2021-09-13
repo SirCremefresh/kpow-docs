@@ -40,7 +40,7 @@ See the [kJQ Filters](kjq-filters.md) section for documentation on the query lan
 
 ### Headers
 
-Select a Headers Deserializer in the Data Inspect for to include Message Headers in your results.
+Select a Headers Deserializer in the Data Inspect form to include Message Headers in your results.
 
 ## Query Results
 
