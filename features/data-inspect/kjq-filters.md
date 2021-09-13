@@ -74,7 +74,7 @@ A _function_ is a _pipe_ followed by a _function-name_ with _text, keyword, numb
 
 Valid function names: `startswith`, `endswith`, `inside`, `has`, `test`, `within`, `contains`
 
-e.g**:** `| startswith("text")`, `| endswith("text")`, `| contains("text")`
+e.g**:** `| test(".*tx")`, `| startswith("text")`, `| endswith("text")`, `| contains("text")`
 
 ### kJQ Query Evaluation
 
