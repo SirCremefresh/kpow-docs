@@ -8,15 +8,15 @@ description: Secure kPow with Github SSO (OAuth2) and RBAC
 Configure RBAC and set the organisation field to restrict access to your organisation.
 {% endhint %}
 
-### User Authentication
+## User Authentication
 
-#### Create a Github OAuth2 Application
+### Create a Github OAuth2 Application
 
 1. Login to [GitHub](https://github.com/) and navigate to the organisation you wish to integrate with kPow.
 2. Navigate to **Settings &gt; Developer Settings &gt; OAuth Apps &gt; New Oath Application**
 3. Fill out the **Register a new OAuth application** form:
    * **Application Name**: The name of your kPow instance, e.g. 'kPow Staging'.
-   * **Homepage URL**: The absolute URL to your kPow instance, e.g. `https://kpow.stage.mycorp.com` 
+   * **Homepage URL**: The absolute URL to your kPow instance, e.g. `https://kpow.stage.mycorp.com`
    * **Authorization callback URL**: The absolute URL for authorization callback, e.g. `https://kpow.stage.mycorp.com/oauth2/github/callback`
 4. Open your freshly created OAuth App and make note of the **Client ID** and **Client Secret**.
 
@@ -66,7 +66,7 @@ When RBAC is enabled kPow will request `orgs:read` scope to view the roles assoc
 
 ![](../../.gitbook/assets/screen-shot-2020-08-07-at-12.03.11-pm.png)
 
-Github Organisation roles are restricted to `admin` or `member` so they are the two roles you can configure with kPow RBAC when using Github SSO. 
+Github Organisation roles are restricted to `admin` or `member` so they are the two roles you can configure with kPow RBAC when using Github SSO by default. See **role mapping** below to see how to configure kPow to use Github Teams as roles. 
 
 When authenticating a user kPow makes a request to the [GitHub API](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user) for user membership state and role information by querying  `GET /orgs/:org/memberships/:username`.
 
@@ -96,6 +96,7 @@ kPow can use the [teams](https://docs.github.com/en/rest/reference/teams) associ
 
 ```text
 # Specifically restrict Auth to a single Github Organization
+# Specify that a user's teams field should be used to identify roles
 github:
   org: operatr-io
   roles_field: teams
