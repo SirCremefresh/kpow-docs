@@ -70,33 +70,13 @@ When RBAC is enabled kPow will request `orgs:read` scope to view a user's roles.
 
 Github Organisation roles are restricted to `admin` or `member` so they are the two default roles you can configure with kPow RBAC when using Github SSO. 
 
-To configure Github teams as user roles see [Using Github Teams as Roles](github.md#using-github-teams-for-roles), below.
-
 kPow makes a request to the [GitHub API](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user) for user membership state and role information by querying  `GET /orgs/:org/memberships/:username`. Specify the `github` key inside your `rbac-config.yaml` to define the Github Organisation to query for role information, and optional role\_field to use.
-
-### Configuration
-
-In this example we grant `admin` users of the `operatr-io` Github Organisation actions `TOPIC_INSPECT` and `TOPIC_PRODUCE` for cluster `N9xnGujkR32eYxHICeaHuQ`.
-
-```text
-policies:
-  - resource: ["cluster", "N9xnGujkR32eYxHICeaHuQ"]
-    effect:   "Allow"
-    actions:  ["TOPIC_INSPECT", "TOPIC_PRODUCE"]
-    role:     "admin"
-
-# Specifically restrict Auth to a single Github Organization
-github:
-  org: operatr-io
-```
 
 ### Using Github Teams for Roles
 
 {% hint style="info" %}
-**Note**: Github Teams configuration requires extra OAuth scopes: `user` and `repo`
+**Note**: Github Teams configuration requires extra OAuth scopes: `user` and `repo` 
 {% endhint %}
-
-By default, kPow will use the authenticated users role in the GitHub organisation as the role in kPow. 
 
 kPow can use the [teams](https://docs.github.com/en/rest/reference/teams) associated with the authenticated user as roles in kPow. You can do this by specifying a custom `roles_field` in the RBAC yaml:
 
@@ -109,4 +89,39 @@ github:
 ```
 
 Once enabled, kPow will use the [list teams API call](https://docs.github.com/en/rest/reference/teams#list-teams-for-the-authenticated-user) to query for roles. 
+
+### Configuration
+
+This sample configuration specifies:
+
+* Who may access kPow
+* Which users are kPow admins
+* What RBAC policies are in place
+* Access is restricted to one Github organisation
+* Github Teams are used as user-roles for RBAC
+
+See: [Role Based Access Control](../../authorization/role-based-access-control.md) for more information.
+
+```text
+# Allow all users who can authenticate access to kPow
+authorized_roles:
+  - "*"
+  
+# Specify that users with 'admin' role are kPow Admins  
+admin_roles:
+  - "admin"
+  
+# Define some RBAC policies
+policies:
+  - resource: ["cluster", "N9xnGujkR32eYxHICeaHuQ"]
+    effect:   "Allow"
+    actions:  ["TOPIC_INSPECT", "TOPIC_PRODUCE"]
+    role:     "admin"
+
+# Specifically restrict Auth to a single Github Organization
+# Specify that a user's teams field should be used to identify roles
+github:
+  org: operatr-io
+  roles_field: teams
+```
 
