@@ -22,31 +22,49 @@ kPow implements a subset of JQ allowing you to search [**JSON**, **Avro**, **Tra
 
 ## Language
 
-In simple terms kJQ supports multiple comma-separated _filters,_ one optional _reduction,_ one optional _negation,_ in that order.
+kJQ filters can be applied to keys, values, and headers. 
 
-kJQ filters can be applied to keys, values, and headers. kPow will scan **tens of thousands of messages a second** to find matching data.
+kPow will scan **tens of thousands of messages a second** to find matching data.
 
 kJQ is **not whitespace sensitive.**
 
 ### kJQ Grammar
 
-A kJQ filter is a limited version of [a basic JQ filter](https://stedolan.github.io/jq/manual/v1.4/#Basicfilters)
+A kJQ filter is a limited version of [a basic JQ filter](https://stedolan.github.io/jq/manual/v1.4/#Basicfilters).
 
-A _filter_ consists of a _selector_ optionally followed by either a _comparator_ or a _function._
+#### Filters
+
+A _filter_ consists of a _selector_ optionally followed by __a _transform_ then either a _comparator_ or a _function._
+
+A filter can optionally be _negated ****_and joined with other filters with a logical operator.
+
+#### Selectors
 
 A _selector_ is a JQ dot notation Object Index or **zero-based** Array Index.
 
-e.g. `.foo.bar, .[1], .foo[1].bar`
+e.g. `.foo.bar, .[0], .foo[1].bar`
+
+A _selector_ can also be a quoted string or generic object index, just like normal JQ.
+
+e.g. `.foo."bar.foo"`  matches a key containing a period, i.e. `{"foo": {"bar.foo": 1}}`
+
+e.g `.foo.[:he*llo]` matches an explicit Clojure keyword `{"foo" {:he*llo 2}}`
+
+Simple dot notation selectors match both String or \(Clojure\) Keyword keys.
+
+#### Comparators
 
 A _comparator_ is an _operator_ followed by a _selector_ or a _scalar._
 
 Valid operators: `==`, `!=`, `<`, `<=`, `>`, `>=`
 
-e.g. `>= 10`, `!= false`, `== "text"`, `< .foo.baz`
+e.g. `>= 10`, `!= false`, `== "text"`, `== nil`, `!= null`, `< .foo.baz`
 
-A _function_ is a _pipe_ followed by a _function-name_ with _text_ parameter.
+#### Function
 
-Valid function names: `startswith`, `endswith`, `contains`
+A _function_ is a _pipe_ followed by a _function-name_ with _text, keyword, number, or regex_ parameter.
+
+Valid function names: `startswith`, `endswith`, `inside`, `has`, `test`, `within`, `contains`
 
 e.g**:** `| startswith("text")`, `| endswith("text")`, `| contains("text")`
 
@@ -60,7 +78,7 @@ e.g. `(.key.id or .key.currency == "GBP) and .value.tx.discount | to-double < 20
 
 ### kJQ Query Negation
 
-A kJQ query predicate can be negated, this is the logical negation of the combined predicate.
+A kJQ query filter can be negated. Negation can be applied to logically combined filters.
 
 e.g. `| not`
 
@@ -103,6 +121,16 @@ E.g. `{"foo": {"bar": 10, "zoo": 10}}` will match, `{"foo": {"bar": 10, "zoo": 7
 Matches where the selector contains text
 
 E.g. `{"foo": {"baz": ["IDDQDXXXXX"]}}` will match, `{"foo": {"baz": ["XXXXX"]}}` will not.
+
+### Regex Tests
+
+Just like JQ you can test if a regex matches a field
+
+```text
+.key.id | test(".*p")
+```
+
+True when the .key.id matches the regex `#.*p`
 
 ### Negated Filter
 
