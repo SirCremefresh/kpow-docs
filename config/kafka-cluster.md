@@ -34,6 +34,16 @@ Contact [support@operatr.io](mailto:support@operatr.io) for assistance.
 
 User permissions to Kafka cluster resources are defined by [**Cluster actions.**](../authorization/overview.md#user-actions)\*\*\*\*
 
+## **AWS IAM Integration**
+
+kPow supports [IAM Access Control for AWS MSK](https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/).
+
+Simply set your kPow connection fields appropriately, e.g.
+
+```text
+SASL_JAAS_CONFIG="software.amazon.msk.auth.iam.IAMLoginModule required; sasl.client.callback.handler.class=software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+```
+
 ## Configuration
 
 kPow connects to a Kafka cluster with **exactly the same configuration** as a Kafka consumer or producer.
