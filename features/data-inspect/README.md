@@ -10,13 +10,15 @@ description: Data inspect allows users to efficiently search across multiple Kaf
 
 Data Inspect has three different modes when searching topics:
 
-* **Sample**: this will scan for records across an even distribution of partitions. You can use the [result metadata](./#result-metadata-table-explanation) from the search results to see which partitions have been scanned.
-* **Partition**: this allows for records to be scanned across a specific partition and optional offset.
-* **Key**: this will scan for absolute matches of the key text provided. The search will only scan the partition the key belongs to.
+* **Sample**: scan for records across an even distribution of partitions.
+* **Partition**: scan for records within a specific partition and optional offset.
+* **Key**: scan for absolute matches of the key text provided.
 
 ### Window
 
-You can specify the starting point for where data inspect will scan for records on a topic. By default kPow will search for recent messages on a topic. From the "Window" dropdown you can specify a custom timestamp or datetime for your starting point.
+Specify the starting point for where data inspect will scan for records on a topic. 
+
+By default kPow will search for recent messages on a topic. From the "Window" dropdown you can specify a custom timestamp or datetime for your starting point.
 
 ![Specifying a custom datetime](../../.gitbook/assets/screen-shot-2021-05-20-at-11.41.52-am.png)
 
@@ -30,13 +32,15 @@ See the [Serdes](serdes.md) section for more information about using Data Inspec
 
 ### Filtering
 
-If you have selected a key or value serdes for the data inspect query, you can also apply an optional filter to your query. See the [kJQ Filters](kjq-filters.md) section for documentation on the query language.
+kPow offers very fast JQ-like filters for search data on topics. These filters are compiled and executed on the server, allowing you to search tens of thousands of messages a second.
 
-![Apply a key and value filter to the query](../../.gitbook/assets/screen-shot-2021-05-20-at-11.44.35-am.png)
+See the [kJQ Filters](kjq-filters.md) section for documentation on the query language.
+
+![Search with kJQ Filters](../../.gitbook/assets/kjq.png)
 
 ### Headers
 
-If you check **"Include Message Headers?"** in the data inspect form, data inspect will also return the contents of each records header, deserialized as a JSON map. You can also filter headers in the same way as any key/value kJQ filters.
+Select a Headers Deserializer in the Data Inspect for to include Message Headers in your results.
 
 ## Query Results
 
