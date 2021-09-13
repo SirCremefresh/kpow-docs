@@ -8,6 +8,8 @@ description: An introduction to filtering queries with kJQ
 
 [**JQ**](https://stedolan.github.io/jq/) is a popular, practical language described as 'like sed for JSON data'. Data inspect supports JQ-like filters on Kafka topics. We call this kJQ!
 
+![Sample KJQ Query](../../.gitbook/assets/kjq.png)
+
 kPow implements a subset of JQ allowing you to search [**JSON**, **Avro**, **Transit**, **EDN**, **String**, and **Custom Serdes**](serdes.md) with complex queries on structured data.
 
 ## Language
