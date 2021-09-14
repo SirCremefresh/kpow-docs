@@ -85,7 +85,7 @@ kPow can use the [teams](https://docs.github.com/en/rest/reference/teams) associ
 # Specify that a user's teams field should be used to identify roles
 github:
   org: operatr-io
-  roles_field: teams
+  role_field: teams
 ```
 
 Once enabled, kPow will use the [list teams API call](https://docs.github.com/en/rest/reference/teams#list-teams-for-the-authenticated-user) to query for roles. 
@@ -122,6 +122,6 @@ policies:
 # Specify that a user's teams field should be used to identify roles
 github:
   org: operatr-io
-  roles_field: teams
+  role_field: teams
 ```
 
