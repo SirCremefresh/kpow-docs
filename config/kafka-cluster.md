@@ -36,13 +36,19 @@ User permissions to Kafka cluster resources are defined by [**Cluster actions.**
 
 ## **AWS IAM Integration**
 
-kPow supports [IAM Access Control for AWS MSK](https://aws.amazon.com/blogs/big-data/securing-apache-kafka-is-easy-and-familiar-with-iam-access-control-for-amazon-msk/).
+kPow supports [IAM Access Control for AWS MSK](https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html).
 
 Simply set your kPow connection fields appropriately, e.g.
 
 ```text
-SASL_JAAS_CONFIG="software.amazon.msk.auth.iam.IAMLoginModule required; sasl.client.callback.handler.class=software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+SSL_TRUSTSTORE_LOCATION=<PATH_TO_TRUST_STORE_FILE>
+SECURITY_PROTOCOL=SASL_SSL
+SASL_MECHANISM=AWS_MSK_IAM
+SASL_JAAS_CONFIG=software.amazon.msk.auth.iam.IAMLoginModule required;
+SASL_CLIENT_CALLBACK_HANDLER_CLASS=software.amazon.msk.auth.iam.IAMClientCallbackHandler
 ```
+
+See the AWS documentation for more information, including JAAS config for named profiles.
 
 ## Configuration
 
