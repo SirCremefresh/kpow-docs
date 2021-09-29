@@ -10,7 +10,11 @@ User permissions to Kafka cluster resources are defined by [**Schema actions.**]
 
 ## **Configuration**
 
+kPow supports [Confluent Schema Registry](https://github.com/confluentinc/schema-registry) and [AWS Glue Schema Registry](https://github.com/awslabs/aws-glue-schema-registry).
+
 kPow connects to a Schema registry with **environment variables**.
+
+### Confluent Scheme Registry
 
 | Variable | Description |
 | :--- | :--- |
@@ -20,6 +24,14 @@ kPow connects to a Schema registry with **environment variables**.
 | **SCHEMA\_REGISTRY\_USER** | Username if basic authentication is configured |
 | **SCHEMA\_REGISTRY\_PASSWORD** | Password if basic authentication is configured |
 | **SCHEMA\_REGISTRY\_RESOURCE\_IDS** | Optional, comma separated list of unique ids. Only specify when configuring multiple [s](kafka-connect.md#configuring-multiple-connect-clusters)chema registries. |
+
+### AWS Glue Schema Registry
+
+| Variable | Description |
+| :--- | :--- |
+| **SCHEMA\_REGISTRY\_NAME** | UI and logs friendly name for this Schema registry |
+| **SCHEMA\_REGISTRY\_ARN** | The ARN of your AWS Glue Schema Registry |
+| **SCHEMA\_REGISTRY\_REGION** | The Region of your AWS Glue Schema Registry \(default: us-east-1\) |
 
 ### Configuring Multiple Schema Registries
 
