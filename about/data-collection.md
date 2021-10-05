@@ -10,9 +10,9 @@ Data collection is subject to our [EULA](https://kpow.io/eula/) and [Privacy Pol
 
 ## How Do I Opt Out?
 
-Trial users cannot opt out of product telemetry.
+Users with a 30-day trial license cannot opt out of product telemetry.
 
-Licensed users can configure the following environment variable to opt out of product telemetry.
+Users with any other license can opt out of product telemetry by setting the environment variable:
 
 ```text
 ALLOW_UI_ANALYTICS="false"
