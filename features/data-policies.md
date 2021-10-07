@@ -73,7 +73,7 @@ Where:
 * `DOMAIN_ID`: the ID of the cluster or `*` for all clusters.
 * `OBJECT_TYPE`: always `topic` for data policies
 * `OBJECT_ID`: the name of the topic, wildcard not supported
-* `OBJECT_RESOURCE`: either `key` or `value`
+* `OBJECT_RESOURCE`: either `key`, `header` or `value`
 
 **Specifying a topic, key, or value is optional.**
 
@@ -86,6 +86,7 @@ Where:
 | `["cluster", "*", "topic", "MyTopic"]` | Specific topic on all clusters \(key and value\) |
 | `["cluster", "*", "topic", "MyTopic", "key"]` | Specific topic on all clusters \(key only\)  |
 | `["cluster", "*", "topic", "MyTopic", "value"]` | Specific topic on all clusters \(value only\) |
+| `["cluster", "*", "topic", "MyTopic", "header"]` | Specific topic on all clusters \(headers only\) |
 
 ###  Redaction Functions
 
