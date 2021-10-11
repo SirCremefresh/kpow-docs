@@ -4,7 +4,7 @@ description: Keep Kafka Simple with kPow for Apache Kafka®
 
 # kPow User Guide
 
-## Try kPow Today
+## ..Try kPow Today
 
 Sign-up for a [**free 30-day trial**](https://kpow.io/try) and see our [**Quick Start**](installation/quick-start.md) guide to get up and running in minutes.
 
@@ -24,7 +24,7 @@ Dive into kPow features like [**User Authentication**](authentication/overview.m
 
 Discover how kPow supports good [**Data Governance**](features/data-governance.md)** **and even provides [**Slack Integration**](features/slack-integration.md).
 
-If you need help -** **find out how to get [**Support**](about/support.md) from our friendly team
+If you need help -** **find out how to get [**Support**](about/support.md) from our friendly team.
 
 
 
