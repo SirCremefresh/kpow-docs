@@ -32,7 +32,7 @@ Search **tens of thousands of messages a second** with kPow’s unique, custom i
 
 Brokers, topics, and the data on them tell only one part of the Kafka story.
 
-kPow Compute provides access to your consumer \(and soon, _Kafka Streams_\) topologies allowing **visualization of message throughput and lag** at point of consumption and the ability to **reset consumption** at a group, host, member, topic, or assignment level.
+kPow Compute provides access to your consumer (and soon, _Kafka Streams_) topologies allowing **visualization of message throughput and lag** at point of consumption and the ability to **reset consumption** at a group, host, member, topic, or assignment level.
 
 ![kPow Compute provides visualization and control of consumption](../.gitbook/assets/screen-compute.png)
 
@@ -40,12 +40,12 @@ kPow Compute provides access to your consumer \(and soon, _Kafka Streams_\) topo
 
 kPow comes from a practical application of Kafka to real-world requirements and provides:
 
-* **User Authentication** via DB, File, LDAP, SAML, or OpenID configuration.
-* **User Authorization** with Simple or Role Based Access Controls \(RBAC\).
+* **User Authentication **via DB, File, LDAP, SAML, or OpenID configuration.
+* **User Authorization **with Simple or Role Based Access Controls (RBAC).
 * **Data Policies** for masking and redaction of sensitive data like Credit Card or PII.
-* **Data Governance** with all user actions captured in the kPow audit log.
-* **Slack Integration** to have user actions sent to an operations channel as they happen.
-* **HTTPS** easily configured with your own certificates, or integrated with a reverse-proxy.
+* **Data Governance **with all user actions captured in the kPow audit log.
+* **Slack Integration **to have user actions sent to an operations channel as they happen.
+* **HTTPS **easily configured with your own certificates, or integrated with a reverse-proxy.
 * **Prometheus** endpoints to integrate with your preferred metrics and alerting systems.
 * **Multi-Cluster Monitoring** from a single installation for cost efficiency and simplicity.
 * **All data in local topics** makes kPow perfect for air-gapped environments.
@@ -55,4 +55,3 @@ kPow comes from a practical application of Kafka to real-world requirements and 
 ### And Much More..
 
 **Live Mode** for real-time monitoring, **Multi-Dimensional Consumer Lag** insights from kPow's custom derived telemetry, **No Requirement for JMX** access, discover all of our features in this guide.
-

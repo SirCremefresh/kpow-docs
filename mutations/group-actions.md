@@ -25,7 +25,7 @@ Offsets can be reset in multiple ways:
 * By offset value
 * To the earliest offset
 * By time
-* By skipping an offset \(eg, incrementing the current offset\)
+* By skipping an offset (eg, incrementing the current offset)
 
 ### Offset actions
 
@@ -39,7 +39,7 @@ All offset management actions are available when clicking on a node:
 
 Once you have selected a node, the available group offset actions can be found under the **Mutations** section on the right-hand pane.
 
-![Resetting member offsets by time](../.gitbook/assets/screen-shot-2021-05-05-at-11.15.27-am.png)
+![Resetting member offsets by time](<../.gitbook/assets/Screen Shot 2021-05-05 at 11.15.27 am.png>)
 
 ### Scheduling a mutation
 
@@ -47,5 +47,4 @@ All group offset actions are scheduled, and will be invoked once all **prerequis
 
 By default, kPow will try to run the mutation for up to 15 minutes after it has been scheduled. You can cancel the mutation or view its current status by clicking on the **Mutations** tab.
 
-![Scheduling a mutation](../.gitbook/assets/out%20%283%29.gif)
-
+![Scheduling a mutation](<../.gitbook/assets/out (1).gif>)

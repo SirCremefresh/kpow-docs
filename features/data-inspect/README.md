@@ -20,7 +20,7 @@ Specify the starting point for where data inspect will scan for records on a top
 
 By default kPow will search for recent messages on a topic. From the "Window" dropdown you can specify a custom timestamp or datetime for your starting point.
 
-![Specifying a custom datetime](../../.gitbook/assets/screen-shot-2021-05-20-at-11.41.52-am.png)
+![Specifying a custom datetime](<../../.gitbook/assets/Screen Shot 2021-05-20 at 11.41.52 am.png>)
 
 ### Serdes
 
@@ -46,37 +46,37 @@ Select a Headers Deserializer in the Data Inspect form to include Message Header
 
 ### Results Toolbar
 
-![The query result toolbar](../../.gitbook/assets/screen-shot-2021-05-20-at-11.46.06-am.png)
+![The query result toolbar](<../../.gitbook/assets/Screen Shot 2021-05-20 at 11.46.06 am.png>)
 
 #### Query progress
 
-Data inspect queries have a **start and end cursor position.** The start is defined by the [window](./#window) of the query, and the end position is the time in which the query was first executed. Once a query has been executed, the query metadata has the notion of "progress": how many records you have scanned, and how many records remain for the query. The green progress bar above the toolbar represents the total progress of the query. You can always click **"Continue consuming"** to keep progressing your cursor.
+Data inspect queries have a** start and end cursor position. **The start is defined by the [window](./#window) of the query, and the end position is the time in which the query was first executed. Once a query has been executed, the query metadata has the notion of "progress": how many records you have scanned, and how many records remain for the query. The green progress bar above the toolbar represents the total progress of the query. You can always click **"Continue consuming" **to keep progressing your cursor.
 
 #### Data Policies 
 
 If you have any [Data policies](../data-policies.md) that apply to the query that was executed, the toolbar will show you what policies matches your queries, and the redactions applied.
 
-![](../../.gitbook/assets/screen-shot-2021-05-20-at-12.00.50-pm.png)
+![](<../../.gitbook/assets/Screen Shot 2021-05-20 at 12.00.50 pm.png>)
 
 
 
 ### Result Metadata Table
 
-Clicking the **"Show metadata"** button ****in the results toolbar will expand the Result Metadata Table, which is a table of your queries cursors across all partitions. 
+Clicking the **"Show metadata" **button** **in the results toolbar will expand the Result Metadata Table, which is a table of your queries cursors across all partitions. 
 
-![The Result Metadata Table](../../.gitbook/assets/screen-shot-2021-05-20-at-12.03.45-pm.png)
+![The Result Metadata Table](<../../.gitbook/assets/Screen Shot 2021-05-20 at 12.03.45 pm.png>)
 
 #### Result Metadata Table Explanation
 
-* **Partition:** the partition ****the row relates to
+* **Partition: **the partition** **the row relates to
 * **Partition start**: the earliest offset of this partition
 * **Partition end**: the most recent offset of this partition 
 * **Query start**: the offset that data inspect started scanning from for this partition. Calculated from the query window.
 * **Query end**: the offset that data inspect will scan up to. Calculated from the query window.
-* **Scanned Records:** the number of records in this partition that have been scanned
+* **Scanned Records: **the number of records in this partition that have been scanned
 * **Filtered Records**: the number of records that have positively matched the key or value filters specified in the query
 * **Remaining Records**: the number of records that remain in the query window.
-* **Consumed:** the percentage of overall records consumed ****for this partition**.**
+* **Consumed: **the percentage of overall records consumed** **for this partition**.**
 
 ## Configuration
 
@@ -84,7 +84,7 @@ Clicking the **"Show metadata"** button ****in the results toolbar will expand t
 
 `SAMPLER_CONSUMER_THREADS` - kPow creates a connection pool of consumers when querying with data inspect. This environment variables specifies the number of consumer threads globally available in the pol. Default: 6.
 
-`SAMPLER_TIMEOUT_MS` - a query will finish querying once 100 **positively matched** records have been found or after a timeout \(default 7s\). You can always progress the query and continue scanning by clicking "Continue Consuming".
+`SAMPLER_TIMEOUT_MS` - a query will finish querying once 100 **positively matched** records have been found or after a timeout (default 7s). You can always progress the query and continue scanning by clicking "Continue Consuming".
 
 Increase the sampler timeout to run longer queries and the consumer threads to query more partitions in parallel.
 
@@ -96,14 +96,12 @@ The default configuration _should be suitable for most installations_.
 
 See the [Serdes](serdes.md) section for details on how to configure custom serdes, integrate schema registry and more for data inspect.
 
-#### TOPIC\_INSPECT authorization
+#### TOPIC_INSPECT authorization
 
 To enable inspection of key/value/header contents of records, set the `TOPIC_INSPECT` environment variable to `true`. If you are using role-based access control, view our guide [here](https://docs.kpow.io/authorization/role-based-access-control#example-configuration).
 
 #### Data policies/redaction
 
-To configure data policies \(configurable redaction of Data Inspection results**\)** view our [Data Policies guide](../data-policies.md).
+To configure data policies (configurable redaction of Data Inspection results**) **view our [Data Policies guide](../data-policies.md).
 
-  
-
-
+\

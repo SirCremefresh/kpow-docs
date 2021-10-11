@@ -14,13 +14,13 @@ For example a Temporary Policy may grant `GROUP_EDIT` on a specific consumer gro
 
 From within the **Settings** page an administrator can navigate to the **Temporary Policies** tab.
 
-![](../../.gitbook/assets/screen-shot-2021-06-23-at-2.26.08-pm.png)
+![](<../../.gitbook/assets/Screen Shot 2021-06-23 at 2.26.08 pm.png>)
 
 ### Manage Temporary Policies
 
 From within the **Settings** page an administrator can navigate to the **Temporary Policies** tab.
 
-![](../../.gitbook/assets/screen-shot-2021-06-11-at-11.05.12-am.png)
+![](<../../.gitbook/assets/Screen Shot 2021-06-11 at 11.05.12 am.png>)
 
 You can view all current temporary policies and remove temporary policies before they expire.
 
@@ -29,4 +29,3 @@ You can view all current temporary policies and remove temporary policies before
 You can configure the [Slack Integration](../../features/slack-integration.md) to be notified when a new temporary policy has been made. 
 
 All temporary policies are persisted to the [Audit Log](../../features/data-governance.md).
-

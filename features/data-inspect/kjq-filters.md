@@ -14,7 +14,7 @@ kJQ is **fast**, easily scanning tens of thousands of messages from a Kafka topi
 
 ![Sample KJQ Query](../../.gitbook/assets/kjq.png)
 
-The kJQ input field provides context highlighting, auto-completion, command memory \(press **up-arrow** to view previous filters\) and fast-execution \(press **shift-enter** to execute the search\).
+The kJQ input field provides context highlighting, auto-completion, command memory (press **up-arrow **to view previous filters) and fast-execution (press **shift-enter** to execute the search).
 
 Normally your kJQ filters will start with **.key .value or .header** but you can search on any field returned with a Kafka record, including topic, offset, etc.
 
@@ -34,9 +34,9 @@ A kJQ filter is a limited version of [a basic JQ filter](https://stedolan.github
 
 #### Filters
 
-A _filter_ consists of a _selector_ optionally followed by __a _transform_ then either a _comparator_ or a _function._
+A _filter_ consists of a _selector_ optionally followed by_ _a_ transform_ then either a _comparator_ or a _function._
 
-A filter can optionally be _negated ****_and joined with other filters with a logical operator.
+A filter can optionally be _negated** **_and joined with other filters with a logical operator.
 
 #### Selectors
 
@@ -50,7 +50,7 @@ e.g. `.foo."bar.foo"`  matches a key containing a period, i.e. `{"foo": {"bar.fo
 
 e.g `.foo.[:he*llo]` matches an explicit Clojure keyword `{"foo" {:he*llo 2}}`
 
-Simple dot notation selectors match both String or \(Clojure\) Keyword keys.
+Simple dot notation selectors match both String or (Clojure) Keyword keys.
 
 #### Transforms
 
@@ -78,7 +78,7 @@ e.g**:** `| test(".*tx")`, `| startswith("text")`, `| endswith("text")`, `| cont
 
 ### kJQ Query Evaluation
 
-Multiple kJQ filters can be joined with a logical **AND** or **OR**, just like normal JQ.
+Multiple kJQ filters can be joined with a logical **AND **or **OR**, just like normal JQ.
 
 kJQ also supports standard explicit logical operator precedence with parenthesis.
 
@@ -94,7 +94,7 @@ e.g. `| not`
 
 ### Truthy Filter
 
-```text
+```
 .foo
 ```
 
@@ -104,17 +104,17 @@ E.g `{"foo": true}` or `{"foo": 1}` will match, `{"bar": true}` will not match
 
 ###  Scalar Comparator Filter
 
-```text
+```
 .foo.bar > 10
 ```
 
-Matches where the selector &gt; 10 
+Matches where the selector > 10 
 
 E.g. `{"foo": {"bar": 11}}` will match, `{"foo": {"bar": 8}}` will not
 
 ### Selector Comparator Filter
 
-```text
+```
 .foo.bar == .foo.zoo
 ```
 
@@ -124,7 +124,7 @@ E.g. `{"foo": {"bar": 10, "zoo": 10}}` will match, `{"foo": {"bar": 10, "zoo": 7
 
 ### Function Filter
 
-```text
+```
 .foo.baz[0] | contains("IDDQD")
 ```
 
@@ -136,7 +136,7 @@ E.g. `{"foo": {"baz": ["IDDQDXXXXX"]}}` will match, `{"foo": {"baz": ["XXXXX"]}}
 
 Just like JQ you can test if a regex matches a field
 
-```text
+```
 .key.id | test(".*p")
 ```
 
@@ -144,7 +144,7 @@ True when the .key.id matches the regex `#.*p`
 
 ### Negated Filter
 
-```text
+```
 .[0].foo | contains("IDDQD") | not
 ```
 
@@ -152,16 +152,16 @@ Matches where the selector does not contain text.
 
 ### Quoted and Clojure Selectors / Scalars
 
-```text
+```
 .foo/bar.baz > 10,
 .foo."field!" == :some-keyword
 ```
 
 kJQ understands quoted and Clojure data
 
-### Multiple Filters \(And\)
+### Multiple Filters (And)
 
-```text
+```
 .foo.bar > 10 and
 .foo.bar == .foo.zoo and
 .foo.baz[0] | contains("IDDQD")
@@ -169,24 +169,23 @@ kJQ understands quoted and Clojure data
 
 Matches where **every** filter is true.
 
-### Multiple Filters \(Or\)
+### Multiple Filters (Or)
 
-```text
+```
 .foo.bar == .foo.zoo or
 .foo.baz[0] | contains("IDDQD")
 ```
 
 Matches where **any** filter is true.
 
-### Multiple Filters \(Mixed\)
+### Multiple Filters (Mixed)
 
 Combine multiple filters with **and**, **or, and explicit precedence.**
 
-```text
+```
 (.key.currency == "GBP" and
  .value.tx.price | to-double < 16.50 and
  .value.tx.pan | endswith("8649")) or 
 (.key.currency == "GBP" and 
  .value.tx.discount == "3.98")
 ```
-

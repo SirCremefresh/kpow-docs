@@ -24,7 +24,7 @@ When you subscribe to a [kPow product on the AWS Marketplace](https://aws.amazon
 
 The AWS Marketplace container makes a single call to [AWSMarketplaceMetering/registerUsage](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html) when kPow starts, allowing AWS to check your subscription and meter your usage if you have chosen the hourly-metered product.
 
-The kPow AWS Marketplace container is **automatically licensed** to the AWS account that subscribes to a product and that account is billed monthly for the subscription. You **do not need to arrange a separate license with us directly** if you subscribe to a kPow product on the AWS Marketplace. It just works.
+The kPow AWS Marketplace container is **automatically licensed** to the AWS account that subscribes to a product and that account is billed monthly for the subscription. You **do not need to arrange a separate license with us directly **if you subscribe to a kPow product on the AWS Marketplace. It just works.
 
 We update each kPow product on the AWS Marketplace with every major release, simply check your subscription details to find the latest container and update whenever you like.
 
@@ -36,33 +36,33 @@ There are three kPow products on the AWS Marketplace.
 Each kPow product is functionally the same, only the billing and licensing change.
 {% endhint %}
 
-### [kPow \(Pro\) - Hourly Metered](https://aws.amazon.com/marketplace/pp/B084BTWJHD?ref_=srh_res_product_title)
+### [kPow (Pro) - Hourly Metered](https://aws.amazon.com/marketplace/pp/B084BTWJHD?ref\_=srh_res_product_title)
 
-Subscribe to [kPow \(Pro\)](https://aws.amazon.com/marketplace/pp/B084BTWJHD?ref_=srh_res_product_title) to gain access to a Marketplace kPow container that can connect to a single Kafka Cluster and associated Schema Registries and Kafka Connect clusters.
+Subscribe to [kPow (Pro)](https://aws.amazon.com/marketplace/pp/B084BTWJHD?ref\_=srh_res_product_title) to gain access to a Marketplace kPow container that can connect to a single Kafka Cluster and associated Schema Registries and Kafka Connect clusters.
 
 Start as many instances of kPow as you need from the provided container. Usage of each instance is metered and billed by the hour at the kPow metered rate of **$0.16c/hr**. 
 
-kPow \(Pro\) allows you to pay only for the kPow hours you use with no ongoing commitment.
+kPow (Pro) allows you to pay only for the kPow hours you use with no ongoing commitment.
 
-### [kPow \(Team\) - Monthly Subscription](https://aws.amazon.com/marketplace/pp/B08KFQGJSZ?ref_=srh_res_product_title)
+### [kPow (Team) - Monthly Subscription](https://aws.amazon.com/marketplace/pp/B08KFQGJSZ?ref\_=srh_res_product_title)
 
-Subscribe to [kPow \(Team\) ](https://aws.amazon.com/marketplace/pp/B08KFQGJSZ?ref_=srh_res_product_title)to gain access to a Marketplace kPow container that can connect to up to six Kafka Clusters and their associated Schema Registries and Kafka Connect clusters at once.
+Subscribe to [kPow (Team) ](https://aws.amazon.com/marketplace/pp/B08KFQGJSZ?ref\_=srh_res_product_title)to gain access to a Marketplace kPow container that can connect to up to six Kafka Clusters and their associated Schema Registries and Kafka Connect clusters at once.
 
 kPow Team comes with a license to use the kPow container with at most six Kafka clusters, regardless of how many separate instances of kPow you start. Usage is not metered and the subscriber AWS account is billed monthly at the team subscription price of **$540/mo**.
 
-### [kPow \(Corporate\) - Monthly Subscription](https://aws.amazon.com/marketplace/pp/prodview-fxp4i5gvix2w2)
+### [kPow (Corporate) - Monthly Subscription](https://aws.amazon.com/marketplace/pp/prodview-fxp4i5gvix2w2)
 
-This product is the same as kPow \(Team\) but licensed for up to twelve Kafka Clusters and their associated Schema Registries and Kafka Connect clusters.
+This product is the same as kPow (Team) but licensed for up to twelve Kafka Clusters and their associated Schema Registries and Kafka Connect clusters.
 
 Usage is not metered and the subscriber AWS account is billed monthly at the corporate subscription price of **$940/mo.**
 
 ## **Technical Requirements**
 
-The kPow Marketplace container makes a call to [AWSMarketplaceMetering/registerUsage](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html) when kPow starts. This is required by AWS so they may check your marketplace subscription and meter your usage if you have chose to use kPow \(Pro\). This causes the following requirements:
+The kPow Marketplace container makes a call to [AWSMarketplaceMetering/registerUsage](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html) when kPow starts. This is required by AWS so they may check your marketplace subscription and meter your usage if you have chose to use kPow (Pro). This causes the following requirements:
 
 #### ECS / Fargate / EKS Only
 
-The AWS Marketplace container must be run in an ECS task \(including Fargate\) or an EKS pod.
+The AWS Marketplace container must be run in an ECS task (including Fargate) or an EKS pod.
 
 #### IAM Roles
 
@@ -74,7 +74,7 @@ Some customers pay for kPow via the AWS Marketplace but find the requirement to 
 
 We offer the Team and Corporate monthly subscription licenses for this exact use-case. 
 
-If you chose a Team or Corporate Subscription but do not want to implement IAM Roles for your kPow containers then contact [**support@operatr.io**](mailto:support@operatr.io) ****and once we have verified your subscription we will provide you a **Bring Your Own License** \(BYOL\) license for the Marketplace container that averts the call to registerUsage and allows you to run kPow without configuring IAM roles and in environments other than EKS / ECS / Fargate.
+If you chose a Team or Corporate Subscription but do not want to implement IAM Roles for your kPow containers then contact [**support@operatr.io**](mailto:support@operatr.io)** **and once we have verified your subscription we will provide you a **Bring Your Own License** (BYOL) license for the Marketplace container that averts the call to registerUsage and allows you to run kPow without configuring IAM roles and in environments other than EKS / ECS / Fargate.
 
 With this option AWS acts solely as a billing agent for your usage of kPow.
 
@@ -82,33 +82,33 @@ With this option AWS acts solely as a billing agent for your usage of kPow.
 
 Getting started is easy, just choose a product from our [Marketplace Seller Profile](https://aws.amazon.com/marketplace/seller-profile?id=ab356f1d-3394-4523-b5d4-b339e3cca9e0):
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-4.51.28-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 4.51.28 pm.png>)
 
 Selected a product and click **'Continue to Subscribe'**:
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-4.56.45-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 4.56.45 pm.png>)
 
 Review and accept the Operatr.IO EULA:
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-4.57.47-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 4.57.47 pm.png>)
 
 Once your subscription is activated, click **'Continue to Configuration':**
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-5.00.22-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.00.22 pm.png>)
 
-Choose **'Operatr for Apache Kafka \(Pro\)'** as the delivery method, and the latest version available.
+Choose **'Operatr for Apache Kafka (Pro)' **as the delivery method, and the latest version available.
 
 Click **'Continue to Launch':**
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-5.02.07-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.02.07 pm.png>)
 
-Click **'View container image details'** at the bottom of the launch page:
+Click **'View container image details' **at the bottom of the launch page:
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-5.03.59-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.03.59 pm.png>)
 
-See **'Pull Command Instructions'** giving you access to the kPow container for your subscription.
+See **'Pull Command Instructions' **giving you access to the kPow container for your subscription.
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-5.05.35-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.05.35 pm.png>)
 
 Pull the docker image listed at the bottom of the instruction into your own docker repository, or simply use it directly in a ECS / Fargate / EKS to launch kPow instances with the correct IAM permissions.
 
@@ -120,9 +120,9 @@ Check your subscription regularly for new releases of kPow and update accordingl
 
 The kPow Marketplace container must be run with an IAM role with the correct policy attached.
 
-The **AWSMarketplaceMeteringRegisterUsage** policy allows the container to check your subscription and meter your usage if you are using kPow \(Pro\).
+The **AWSMarketplaceMeteringRegisterUsage** policy allows the container to check your subscription and meter your usage if you are using kPow (Pro).
 
-```text
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -145,7 +145,7 @@ See our [**Quick Start CloudFormation templates**](https://github.com/operatr-io
 
 ## Deploying kPow to EKS
 
-To deploy the [**Dockerhub kPow container**](https://hub.docker.com/r/operatr/kpow) to EKS see our [**Quick Start Helm Chart for kPow**](%20https://github.com/operatr-io/infra/tree/master/kubernetes/helm).
+To deploy the [**Dockerhub kPow container**](https://hub.docker.com/r/operatr/kpow) to EKS see our [**Quick Start Helm Chart for kPow**](https://github.com/operatr-io/infra/tree/master/kubernetes/helm).
 
 Deploying the Marketplace kPow container to EKS is slightly more complicated due to the requirement to run the container with the correct IAM Role and Policy - this means configuring a Service Account that has the correct IAM role. Fine grained IAM roles for Service Accounts are [available in EKS Clusters v1.14+.](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
 
@@ -161,7 +161,7 @@ See [this article](https://aws.amazon.com/blogs/opensource/introducing-fine-grai
 
 #### Update your KubeConfig
 
-```text
+```
 $ aws eks --region [EKS-REGION] update-kubeconfig --name [EKS-CLUSTER-NAME]
 
 > Added new context arn:aws:eks:us-east-1:[YOUR-ACCOUNT-ID]:cluster/[EKS-CLUSTER-NAME] to /Users/you/.kube/config
@@ -169,7 +169,7 @@ $ aws eks --region [EKS-REGION] update-kubeconfig --name [EKS-CLUSTER-NAME]
 
 #### Test you Cluster Connectivity
 
-```text
+```
 $ kubectl get svc
 
 > NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AG
@@ -178,7 +178,7 @@ $ kubectl get svc
 
 #### Enable IAM Roles for Service Accounts
 
-```text
+```
 $ aws eks describe-cluster --region [EKS-REGION] --name [EKS-CLUSTER-NAME] --query "cluster.identity.oidc.issuer" --output text
 
 > https://oidc.eks.us-east-1.amazonaws.com/id/086F0892931ED09F5D966F5353D1A18F
@@ -193,12 +193,12 @@ Use the output from the previous step to [**Create an IAM OIDC provider for your
 #### Create the Service Account IAM Role
 
 {% hint style="success" %}
-Follow the instructions to [**Create a Service Account IAM Policy and Role**](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html)\*\*\*\*
+Follow the instructions to [**Create a Service Account IAM Policy and Role**](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html)****
 {% endhint %}
 
 The attached policy should be **AWSMarketplaceMeteringRegisterUsage:**
 
-```text
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -215,7 +215,7 @@ The attached policy should be **AWSMarketplaceMeteringRegisterUsage:**
 
 The trust policy of your created role should look similar to:
 
-```text
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -239,7 +239,7 @@ The trust policy of your created role should look similar to:
 
 Using the ARN of the IAM Role:
 
-```text
+```
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -251,7 +251,7 @@ metadata:
 
 #### Make the Service Account available
 
-```text
+```
 $ kubectl apply -f kpow-service-account.yaml
 
 > serviceaccount/oprtr-service created
@@ -274,7 +274,7 @@ $ kubectl describe serviceaccounts
 
 Using the Service Account created above:
 
-```text
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -316,7 +316,7 @@ spec:
 
 #### Deploy kPow to EKS!
 
-```text
+```
 $ kubectl create -f kpow-container.yaml
 
 > deployment.apps/kpow-io created
@@ -335,4 +335,3 @@ You have now deployed kPow to EKS using a Service Account with an IAM Role and a
 ## Get Help!
 
 For assistance installing and configuring kPow on the AWS Marketplace contact **support@operatr.io**
-

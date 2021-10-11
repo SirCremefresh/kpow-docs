@@ -4,9 +4,9 @@ description: Configure kPow Application Logs
 
 # Application Logs
 
-kPow uses [**Logback**](http://logback.qos.ch/) to record application logs to **stdout**.
+kPow uses [**Logback**](http://logback.qos.ch) to record application logs to **stdout**.
 
-Configure kPow to write application logs to disk \(or any other supported Logback appender\) and control the log levels by providing a Logback configuration file.
+Configure kPow to write application logs to disk (or any other supported Logback appender) and control the log levels by providing a Logback configuration file.
 
 {% hint style="info" %}
 **Note:** Kafka logging is verbose, we recommend tuning it to ERROR logs only.
@@ -45,11 +45,11 @@ The kPow Docker Container can be configured with the `JAVA_TOOL_OPTIONS` environ
 JAVA_TOOL_OPTIONS=-Dlogback.configurationFile=/kpow/custom-logback.xml
 ```
 
-In this specific example we turn on debug logging for Jetty JAAS authentication methods \(LDAP, etc.\). 
+In this specific example we turn on debug logging for Jetty JAAS authentication methods (LDAP, etc.). 
 
-To put JAAS into debug mode also requires **debug="true"** in your JAAS config file:
+To put JAAS into debug mode also requires **debug="true" **in your JAAS config file:
 
-```text
+```
 kpow {
          org.eclipse.jetty.jaas.spi.PropertyFileLoginModule required
          debug="true"
@@ -59,7 +59,7 @@ kpow {
 
 Once configured, application logs are written to file and JAAS debug output is visible:
 
-```text
+```
 09:26:32.135 INFO  [oprtr.compute.snapshots.v2-44318b10-b719-46db-96ea-f97495cdce8f-StreamThread-2] operatr.compute-v2 – oprtr.compute.snapshots.v2: streams state changed from REBALANCING to RUNNING
 09:26:32.287 INFO  [oprtr.compute.metrics.v2-6126ee6c-0253-4a5d-8d66-cbd3b0a4b0bb-StreamThread-2] operatr.compute-v2 – oprtr.compute.metrics.v2: streams state changed from REBALANCING to RUNNING
 09:26:39.349 INFO  [OperatrScheduler_Worker-1] operatr.observe.kafka – R9AvkXfHTsCiI8g3E_5EVA: [9] configuration captured in 204 ms
@@ -74,5 +74,4 @@ Once configured, application logs are written to file and JAAS debug output is v
 09:30:05.257 INFO  [OperatrScheduler_Worker-5] operatr.observe.kafka – R9AvkXfHTsCiI8g3E_5EVA: [38] kafka telemetry snapshots captured in 250 ms
 ```
 
-See the [Logback](http://logback.qos.ch/) site for full information on configuration options like rolling file appenders.
-
+See the [Logback](http://logback.qos.ch) site for full information on configuration options like rolling file appenders.

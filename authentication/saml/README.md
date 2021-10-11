@@ -15,25 +15,23 @@ We have integration guides for common providers:
 ## Generic configuration
 
 * `AUTH_PROVIDER_TYPE=saml`
-* `SAML_RELYING_PARTY_IDENTIFIER=` the **Audience URI \(SP Entity ID\)**
-* `SAML_ACS_URL=` the **Single sign-on URL,** e.g.
+* `SAML_RELYING_PARTY_IDENTIFIER=` the **Audience URI (SP Entity ID)**
+*   `SAML_ACS_URL=` the **Single sign-on URL, **e.g.
 
-  ```text
-  https://kpow.corp.com/saml
-  ```
+    ```
+    https://kpow.corp.com/saml
+    ```
+*   `SAML_METADATA_FILE=` the path to the **IDP metadata **file, e.g.
 
-* `SAML_METADATA_FILE=` the path to the **IDP metadata** file, e.g.
+    ```
+    /var/saml/saml-idp-metadata.xml
+    ```
+*   `SAML_CERT=` the path to the SAML certificate. \
+    Note: This is optional, as it is most commonly bundled inside the IDP metdata XML
 
-  ```text
-  /var/saml/saml-idp-metadata.xml
-  ```
-
-* `SAML_CERT=` the path to the SAML certificate.   
-  Note: This is optional, as it is most commonly bundled inside the IDP metdata XML
-
-  ```text
-  /var/saml/saml-cert.pem
-  ```
+    ```
+    /var/saml/saml-cert.pem
+    ```
 
 ### Debugging SAML
 
@@ -43,10 +41,9 @@ This will log the `SAMLResponse` payload from your IdP. You can use a tool like 
 
 kPow provides an endpoint for inspecting the state of the currently authenticated user. `kpow_host/me` returns a JSON payload like:
 
-```text
+```
 {"provider": "saml", 
  "email": "user@corp.com",
  "name": "User",
  "roles": ["admin"]}
 ```
-

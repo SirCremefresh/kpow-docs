@@ -16,7 +16,7 @@ kPow is compatible with **Red Hat AMQ Streams**
 
 kPow is available as an Operator on the Red Hat Marketplace and OperatorHub.
 
-Installed in one click and requiring little configuration, kPow will manage and monitor your Kafka resources \(including Clusters, Schema Registries, and Connect Installations\) security and safely with all data stored in local topics within your cluster.
+Installed in one click and requiring little configuration, kPow will manage and monitor your Kafka resources (including Clusters, Schema Registries, and Connect Installations) security and safely with all data stored in local topics within your cluster.
 
 ## Prerequisites
 
@@ -40,39 +40,39 @@ All configuration beyond License and Kafka bootstrap URL is optional.
 
 Select the `OperatorHub` from the `Operators` menu and search for **kPow.**
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.15.42-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.15.42 pm.png>)
 
 Select **kPow** and click **Install**
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.18.20-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.18.20 pm.png>)
 
 Select the install options. kPow instances are stateless, all data is stored in your Kafka Cluster, and we are committed to seamless upgrades - we recommend you select Automatic approval strategy.
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.31.11-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.31.11 pm.png>)
 
 kPow is now available as an installed Operator in your OpenShift cluster!
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.32.35-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.32.35 pm.png>)
 
 ### Launch a kPow Instance
 
 Select the kPow for Apache Kafka Operator
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.35.33-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.35.33 pm.png>)
 
 #### Obtain a kPow License
 
-kPow requires a license to run. You can start a 30-day free trial by following the link in the Operator summary \(above\). A trial license will be emailed to you within minutes of signing up.
+kPow requires a license to run. You can start a 30-day free trial by following the link in the Operator summary (above). A trial license will be emailed to you within minutes of signing up.
 
 #### Create a kPow Instance
 
 kPow is configured almost entirely via environment variables.
 
-There are some small number of optional configuration files \(yaml and keystores\) that you may need to configure depending on your requirements and/or environment. In each case you will provide those files to the kPow instance via secrets. Details of creating secrets and configuring files are in the Operator summary.
+There are some small number of optional configuration files (yaml and keystores) that you may need to configure depending on your requirements and/or environment. In each case you will provide those files to the kPow instance via secrets. Details of creating secrets and configuring files are in the Operator summary.
 
-When you have a license and the bootstrap of your Kafka Cluster, click **Create Instance** then **YAML View**
+When you have a license and the bootstrap of your Kafka Cluster, click **Create Instance **then **YAML View**
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.41.44-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.41.44 pm.png>)
 
 #### **Configure the kPow Instance**
 
@@ -86,19 +86,19 @@ After setting the YAML options, click **Create**
 
 Validate that the kPow instance is deployed successfully:
 
-**Operators &gt; Installed Operators &gt; kPow for Apache Kafka &gt; Kpow**
+**Operators > Installed Operators > kPow for Apache Kafka > Kpow**
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-9.48.24-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.48.24 pm.png>)
 
 #### View the kPow UI
 
 Select the installed kPow instance from the list of kPows
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-10.01.38-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 10.01.38 pm.png>)
 
 Select **Resources / kPow**
 
-![](../.gitbook/assets/screen-shot-2021-03-26-at-10.03.00-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-03-26 at 10.03.00 pm.png>)
 
 Click the **Location** URL to navigate to kPow and start using the product
 
@@ -117,6 +117,4 @@ Register your OpenShift cluster to purchase kPow on the Red Hat Marketplace
 Installation of kPow from the Red Hat Marketplace requires the OpenShift cluster to be registered to the Marketplace Portal, including the roll out of the PullSecret in your cluster. 
 
 Failure to register will result in an image pull authentication failure with the Red Hat registry.
-
-
 

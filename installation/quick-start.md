@@ -4,7 +4,7 @@ description: Get started with kPow for Apache Kafka in under two minutes
 
 # Quick Start
 
-This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR** ](quick-start.md#jar-quick-start)installations.
+This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR **](quick-start.md#jar-quick-start)installations.
 
 {% hint style="success" %}
 Use our [**Helm**](https://github.com/operatr-io/kpow-helm-charts) and [**CloudFormation**](https://github.com/operatr-io/kpow-cloudformation) guides to get up and running in minutes.
@@ -21,7 +21,7 @@ To connect the latest kPow Docker image to a Kafka Cluster:
 * Get a [**Free Trial License**](../about/trials-and-licenses.md).
 * Create a **`config.env`** file containing your connection, license, and feature variables.
 
-```text
+```
 ## The Kafka Bootstrap URL for your cluster (Required).
 BOOTSTRAP=kafka-1:9092,kafka-2:9092,kafka-3:9092
 
@@ -58,9 +58,9 @@ ALLOW_TOPIC_PRODUCE=true
 ## ... etc (see guide for more configuration flags).
 ```
 
-* Start the latest kPow container with your **`config.env`** file.
+* Start the latest kPow container with your **`config.env` **file.
 
-```text
+```
 docker run -p 3000:3000 -m2G --env-file ./config.env operatr/kpow:latest
 ```
 
@@ -80,7 +80,7 @@ To connect the latest [kPow JAR](https://operatr.io/releases) to a Kafka cluster
 Some variables may require quotes, and each line ends with a `\` character.
 {% endhint %}
 
-```text
+```
 BOOTSTRAP="kafka-1:9092,kafka-2:9092,kafka-3:9092" \
 LICENSE_ID=1c99v4-f690-4a4f-b144-73de2369444a \
 LICENSE_CODE=TRIAL_30D \
@@ -103,7 +103,7 @@ java -jar -Xmx2G ./kpow-latest.jar
 
 In general we recommend starting kPow with a Java command similar to our [Dockerfile](https://github.com/operatr-io/kpow/blob/main/dockerfile/kpow/Dockerfile):
 
-```text
+```
 java -jar -Xmx2G ./kpow-latest.jar
 ```
 
@@ -111,7 +111,6 @@ However `java -jar` strips any classpath parameters you pass to the command whic
 
 To pass extra classpath parameters to kPow, or simply to start with the plain `java` command you can:
 
-```text
+```
 java -Xmx2G -cp ./kpow-latest.jar:another.jar operatr.kpow
 ```
-

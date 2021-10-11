@@ -5,10 +5,10 @@ description: Manage Multiple Kafka Resources from One kPow Instance
 # Multi-Cluster Management
 
 {% hint style="warning" %}
-Multi-cluster **does not mean multi-region,** install kPow in proximity to your Kafka resources.
+Multi-cluster **does not mean multi-region, **install kPow in proximity to your Kafka resources.
 {% endhint %}
 
-One instance of kPow can manage multiple Apache Kafka clusters \(and their associated resources\).
+One instance of kPow can manage multiple Apache Kafka clusters (and their associated resources).
 
 ![kPow Switch Clusters UI](../.gitbook/assets/cluster-switch.png)
 
@@ -20,15 +20,15 @@ The primary cluster holds the kPow internal topics. You can switch the primary c
 
 kPow will manage as many clusters as your license permits - you may have to increase the memory and CPU to ensure that the regular snapshotting process executes within thirty seconds.
 
-Information on snapshotting performance of each cluster is available at 'settings -&gt; performance'.
+Information on snapshotting performance of each cluster is available at 'settings -> performance'.
 
 ## Configuration
 
 To configure multiple clusters, simply repeat the connection configuration with \_2, \_3, \_4 suffixes.
 
-ENVIRONMENT\_NAME for each resource-set is displayed in the kPow UI when switching cluster.
+ENVIRONMENT_NAME for each resource-set is displayed in the kPow UI when switching cluster.
 
-```text
+```
 # Cluster 1, Vanilla Apache Kafka
 
 ENVIRONMENT_NAME=Trade Book (Staging)
@@ -52,4 +52,3 @@ SCHEMA_REGISTRY_PASSWORD_2=...
 
 # Cluster 3, etc.ENVIRONMENT_NAME_3=...
 ```
-

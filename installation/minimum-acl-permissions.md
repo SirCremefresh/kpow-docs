@@ -4,7 +4,7 @@ description: Configuration to run kPow secured with Kafka ACLs
 
 # Minimum ACL Permissions
 
-Kafka has the ability to restrict access to objects and operations within a cluster through the use of [Kafka Access Control Lists](https://kafka.apache.org/documentation/#security_authz) \(ACLs\). This is different to kPow's own [Role Based Access Controls](../authorization/role-based-access-control.md).
+Kafka has the ability to restrict access to objects and operations within a cluster through the use of [Kafka Access Control Lists](https://kafka.apache.org/documentation/#security_authz) (ACLs). This is different to kPow's own [Role Based Access Controls](../authorization/role-based-access-control.md).
 
 {% hint style="info" %}
 You can skip this page if you do not have Kafka ACLs enabled in your cluster/s
@@ -16,9 +16,9 @@ When your cluster is secured with Kafka ACLs the Kafka user identified by the cl
 
 kPow needs the ability to read and write internal topics and read internal groups.
 
-kPow checks for the following internal topics in your **primary cluster** \(the first bootstrap in your configuration\) on startup and will attempt to create them if required:
+kPow checks for the following internal topics in your **primary cluster **(the first bootstrap in your configuration) on startup and will attempt to create them if required:
 
-```text
+```
 __oprtr_metric_pt1m
 __oprtr_snapshot_state
 __oprtr_audit_log
@@ -31,7 +31,7 @@ You can manually create these topics if you prefer, see [Create kPow Topics](min
 
 Once started, kPow creates two internal streaming compute applications:
 
-```text
+```
 oprtr.compute.metrics.v2
 oprtr.compute.snapshots.v2
 ```
@@ -40,17 +40,17 @@ At a minimum, kPow must be able to read and write to and from these internal top
 
 A **basic set** of Kafka ACLs that allows kPow to operate provides **ALLOW** on the following:
 
-| Kafka Resource | Kafka ACL | Detail |
-| :--- | :--- | :--- |
-| Cluster | Describe | `*` |
-| Cluster | DescribeConfigs | `*` |
-| Cluster | Create | `* (if not manually creating kpow topics)` |
-| Topic | Describe | `*` |
-| Topic | DescribeConfigs | `*` |
-| Topic | Read | `* or kpow topics only` |
-| Topic | Write | `* or kpow topics only` |
-| Group | Describe | `*` |
-| Group | Read | `* or kpow groups only` |
+| Kafka Resource | Kafka ACL       | Detail                                     |
+| -------------- | --------------- | ------------------------------------------ |
+| Cluster        | Describe        | `*`                                        |
+| Cluster        | DescribeConfigs | `*`                                        |
+| Cluster        | Create          | `* (if not manually creating kpow topics)` |
+| Topic          | Describe        | `*`                                        |
+| Topic          | DescribeConfigs | `*`                                        |
+| Topic          | Read            | `* or kpow topics only`                    |
+| Topic          | Write           | `* or kpow topics only`                    |
+| Group          | Describe        | `*`                                        |
+| Group          | Read            | `* or kpow groups only`                    |
 
 kPow **does not read from or write to topics other than internal ones** as a part of normal operation.
 
@@ -60,17 +60,17 @@ The following ACLS are optional and only required if you intend to permit the as
 
 See [User Authorization](../authorization/overview.md#user-actions) for a description of kPow User Actions and Controls.
 
-| Kafka Resource | Kafka ACL | Required for User Action |
-| :--- | :--- | :--- |
-| Cluster | Alter | `ACL_EDIT` |
-| Cluster | AlterConfigs | `BROKER_EDIT` |
-| Cluster | Create | `TOPIC_CREATE` |
-| Topic | AlterConfigs | `TOPIC_EDIT` |
-| Topic | Create | `TOPIC_CREATE` |
-| Topic | Delete | `TOPIC_DELETE` |
-| Topic | Read | `TOPIC_INSPECT` |
-| Topic | Write | `TOPIC_PRODUCE` |
-| Group | Read / Delete | `GROUP_EDIT` |
+| Kafka Resource | Kafka ACL     | Required for User Action |
+| -------------- | ------------- | ------------------------ |
+| Cluster        | Alter         | `ACL_EDIT`               |
+| Cluster        | AlterConfigs  | `BROKER_EDIT`            |
+| Cluster        | Create        | `TOPIC_CREATE`           |
+| Topic          | AlterConfigs  | `TOPIC_EDIT`             |
+| Topic          | Create        | `TOPIC_CREATE`           |
+| Topic          | Delete        | `TOPIC_DELETE`           |
+| Topic          | Read          | `TOPIC_INSPECT`          |
+| Topic          | Write         | `TOPIC_PRODUCE`          |
+| Group          | Read / Delete | `GROUP_EDIT`             |
 
 ### Configuring Kafka ACLS
 
@@ -79,12 +79,12 @@ Creating ACLs on a cluster with no existing ACL configuration can cause issues.
 
 Consult your cluster provider documentation first.
 
-For example the [**Amazon MSK ACL Guide**](https://docs.aws.amazon.com/msk/latest/developerguide/msk-acls.html) ****describes extra ACLs required to allow inter-broker replication, and suggests not to set CLUSTER level ACLs.
+For example the [**Amazon MSK ACL Guide**](https://docs.aws.amazon.com/msk/latest/developerguide/msk-acls.html)** **describes extra ACLs required to allow inter-broker replication, and suggests not to set CLUSTER level ACLs.
 {% endhint %}
 
 Create a file containing client configuration for a user who has permissions to create ACLs.
 
-```text
+```
 security.protocol=SASL_PLAINTEXT
 sasl.mechanism=PLAIN
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin-secret";
@@ -92,7 +92,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 The following commands use the kafka-acls.sh script provided by Apache Kafka to create the **basic set** of ACLs described above that allows kPow to operate plus the ALTER CLUSTER ACL that allows kPow to create and delete ACLs.
 
-```text
+```
 ./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --cluster '*'
 ./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation DescribeConfigs  --cluster '*'
 ./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Create --cluster '*'
@@ -107,7 +107,7 @@ The following commands use the kafka-acls.sh script provided by Apache Kafka to 
 
 That set of ACLs can then be listed using kafka-acls.sh.
 
-```text
+```
 ./kafka-acls.sh -bootstrap-server 127.0.0.1:9092 --command-config client.conf --list
 
 Current ACLs for resource `ResourcePattern(resourceType=GROUP, name=*, patternType=LITERAL)`:
@@ -131,7 +131,7 @@ Current ACLs for resource `ResourcePattern(resourceType=CLUSTER, name=kafka-clus
 
 Using the same client configuration file as above, the following script correctly creates the required internal kPow topics. You can run this script and create these topics on the **primary cluster** in which you expect kPow to keep data.
 
-```text
+```
 ./kafka-topics.sh --create \
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
@@ -183,4 +183,3 @@ Using the same client configuration file as above, the following script correctl
          --config retention.ms=-1 \
          --config message.timestamp.type=CreateTime
 ```
-

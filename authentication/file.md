@@ -15,7 +15,7 @@ Use the exact configuration in this guide to restrict access to the following us
 * user/password/kafka-users
 
 {% hint style="info" %}
-**See:** [**Jetty PropertyFileLoginModule**](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-propertyfileloginmodule) ****guide to update user and password configuration.
+**See:** [**Jetty PropertyFileLoginModule**](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-propertyfileloginmodule)** **guide to update user and password configuration.
 {% endhint %}
 
 ## Configuration
@@ -24,14 +24,14 @@ To enable PropertyFileLoginModule authentication:
 
 * Create a JAAS configuration file that tells the JVM what JAAS Module is in use.
 * Create a users property file containing information on users, passwords, and roles.
-* Set the **`AUTH_PROVIDER_TYPE=jetty`** environment variable.
+* Set the **`AUTH_PROVIDER_TYPE=jetty` **environment variable.
 * Start the JAR or Docker container with `-Djava.security.auth.login.config=/path/to/jaas.conf`
 
 ### JAAS Configuration
 
-Create a JAAS PropertyFile configuration file \(the **kpow** realm is very important\).
+Create a JAAS PropertyFile configuration file (the **kpow** realm is very important).
 
-```text
+```
 kpow {
         org.eclipse.jetty.jaas.spi.PropertyFileLoginModule required
         file="/opt/kpow/user.props";
@@ -40,7 +40,7 @@ kpow {
 
 Create a users property file **at the path configured in your JAAS config**.
 
-```text
+```
 # This file defines users passwords and roles for a HashUserRealm
 #
 # The format is
@@ -77,7 +77,7 @@ Specify the JAAS config file by setting the following system property when start
   `-Djava.security.auth.login.config=/path/to/jaas.conf` 
 
 {% hint style="warning" %}
-**Note:** System properties must come after **java** but before **-jar**.
+**Note: **System properties must come after **java **but before **-jar**.
 {% endhint %}
 
 ```bash
@@ -89,13 +89,13 @@ java -Djava.security.auth.login.config=/opt/kpow/jaas.conf -jar /opt/kpow/latest
 ### Docker Container Startup
 
 {% hint style="info" %}
-**Note:** The JVM provides an environment variable called `JAVA_TOOL_OPTIONS` that can be used in place of system properties. We use this to thread the JAAS config to Docker.
+**Note: **The JVM provides an environment variable called `JAVA_TOOL_OPTIONS` that can be used in place of system properties. We use this to thread the JAAS config to Docker.
 {% endhint %}
 
 Set the env var `JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/path/to/jaas.conf`
 
 {% hint style="info" %}
-**Note:** When your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount so that kPow can read that configuration:
+**Note: **When your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount so that kPow can read that configuration:
 
 **`docker run --volume="/config/path:/config/path/" -p 3000:3000 --env-file ...`**
 {% endhint %}
@@ -112,7 +112,7 @@ kPow supports both form-based and basic authentication.
 
 **Form authentication is the default.** To basic authentication, set the environment variable:
 
-```text
+```
 JETTY_AUTH_METHOD=basic
 ```
 
@@ -121,4 +121,3 @@ JETTY_AUTH_METHOD=basic
 When configured your users will be prompted to authenticate on each new browser session.
 
 ![](../.gitbook/assets/screen-login.png)
-

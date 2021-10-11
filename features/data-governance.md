@@ -1,4 +1,4 @@
-# Data Governance \(Audit Log\)
+# Data Governance (Audit Log)
 
 kPow **captures all user actions in an audit log.**
 
@@ -12,13 +12,13 @@ The audit log captures requests and responses related to each user action, as we
 
 [Administrators](../authorization/administration/) in kPow can view the last seven days of audit logs from within the application by navigating to the "Audit Log" section within "Settings":
 
-![](../.gitbook/assets/screen-shot-2021-06-23-at-2.54.13-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-06-23 at 2.54.13 pm.png>)
 
 ## User Log
 
 Users can view their last seven days worth of activity from within the application by navigating to the "User Log" section with "Settings":
 
-![](../.gitbook/assets/screen-shot-2021-06-23-at-3.00.32-pm.png)
+![](<../.gitbook/assets/Screen Shot 2021-06-23 at 3.00.32 pm.png>)
 
 ### Sample Audit Record
 
@@ -36,7 +36,7 @@ policies:
 
 The request to create Kafka topic `tx-events` will result in the following audit record.
 
-```text
+```
 {:data
  {:user
   {:provider :github,
@@ -66,10 +66,9 @@ The request to create Kafka topic `tx-events` will result in the following audit
 
 The audit log record contains the following details:
 
-* The contents of the request itself \(topic create request\)
-* Metadata about the user who made the request \(John Smith\)
+* The contents of the request itself (topic create request)
+* Metadata about the user who made the request (John Smith)
 * Authorization results:
   * Whether the user was authorized to perform the request
   * The matching policies that were evaluated against the request
-  * The action required to perform the mutation \(`TOPIC_CREATE`\)
-
+  * The action required to perform the mutation (`TOPIC_CREATE`)

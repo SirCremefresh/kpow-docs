@@ -36,15 +36,14 @@ The above RBAC yaml describes how you would configure kPow for the scenario abov
 
 From within the **Settings** page an administrator can navigate to the **Staged Mutations** tab.
 
-![](../../.gitbook/assets/screen-shot-2021-06-11-at-10.42.57-am.png)
+![](<../../.gitbook/assets/Screen Shot 2021-06-11 at 10.42.57 am.png>)
 
 From within the UI, an administrator can either approve or deny the request. 
 
 After the mutation has been approved or denied, you can see the full history within the **Audit Log**
 
-![](../../.gitbook/assets/screen-shot-2021-06-11-at-10.44.30-am.png)
+![](<../../.gitbook/assets/Screen Shot 2021-06-11 at 10.44.30 am.png>)
 
 ### Notifications
 
 You can configure the [Slack integration](../../features/slack-integration.md) to be notified when a new mutation request has been made.
-
