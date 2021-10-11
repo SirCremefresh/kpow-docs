@@ -53,7 +53,7 @@ policies:
   - name: Credit Card
     category: PII
     resources:
-      - [ cluster, '*' ]
+      - [ 'cluster', '*', 'topic', '*', 'value']
     redaction: ShowLast4
     type: non-scalar
     fields: [ credit_card, creditcard, pan ]
@@ -72,8 +72,8 @@ Where:
 * `DOMAIN_TYPE`: always `cluster` for data policies
 * `DOMAIN_ID`: the ID of the cluster or `*` for all clusters.
 * `OBJECT_TYPE`: always `topic` for data policies
-* `OBJECT_ID`: the name of the topic, wildcard not supported
-* `OBJECT_RESOURCE`: either `key`, `header` or `value`
+* `OBJECT_ID`: the name of the topic or `*` for all topics.
+* `OBJECT_RESOURCE`: either `key`, `header` or `value `
 
 **Specifying a topic, key, or value is optional.**
 
