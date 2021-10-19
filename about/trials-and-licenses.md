@@ -14,7 +14,7 @@ kPow is a paid-for commercial product with a [**simple and transparent pricing m
 
 We sell kPow on a **per-Kafka-Cluster** basis, [**starting at $0.16c.hr**](https://kpow.io/pricing/).
 
-You can purchase an annual kPow license for any number of **Cluster Credits**, where one Cluster Credit is equivalent to running kPow with one Kafka Cluster continuously for 365 days.
+You can purchase an annual kPow license for any number of **Cluster Credits.**
 
 Each paid kPow license comes with **unlimited users** and **unlimited features.**
 
