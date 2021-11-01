@@ -6,7 +6,7 @@ description: Data inspect allows users to efficiently search across multiple Kaf
 
 ## Usage
 
-### Mode 
+### Mode&#x20;
 
 Data Inspect has three different modes when searching topics:
 
@@ -16,7 +16,7 @@ Data Inspect has three different modes when searching topics:
 
 ### Window
 
-Specify the starting point for where data inspect will scan for records on a topic. 
+Specify the starting point for where data inspect will scan for records on a topic.&#x20;
 
 By default kPow will search for recent messages on a topic. From the "Window" dropdown you can specify a custom timestamp or datetime for your starting point.
 
@@ -52,7 +52,7 @@ Select a Headers Deserializer in the Data Inspect form to include Message Header
 
 Data inspect queries have a** start and end cursor position. **The start is defined by the [window](./#window) of the query, and the end position is the time in which the query was first executed. Once a query has been executed, the query metadata has the notion of "progress": how many records you have scanned, and how many records remain for the query. The green progress bar above the toolbar represents the total progress of the query. You can always click **"Continue consuming" **to keep progressing your cursor.
 
-#### Data Policies 
+#### Data Policies&#x20;
 
 If you have any [Data policies](../data-policies.md) that apply to the query that was executed, the toolbar will show you what policies matches your queries, and the redactions applied.
 
@@ -62,7 +62,7 @@ If you have any [Data policies](../data-policies.md) that apply to the query tha
 
 ### Result Metadata Table
 
-Clicking the **"Show metadata" **button** **in the results toolbar will expand the Result Metadata Table, which is a table of your queries cursors across all partitions. 
+Clicking the **"Show metadata" **button** **in the results toolbar will expand the Result Metadata Table, which is a table of your queries cursors across all partitions.&#x20;
 
 ![The Result Metadata Table](<../../.gitbook/assets/Screen Shot 2021-05-20 at 12.03.45 pm.png>)
 
@@ -70,7 +70,7 @@ Clicking the **"Show metadata" **button** **in the results toolbar will expand t
 
 * **Partition: **the partition** **the row relates to
 * **Partition start**: the earliest offset of this partition
-* **Partition end**: the most recent offset of this partition 
+* **Partition end**: the most recent offset of this partition&#x20;
 * **Query start**: the offset that data inspect started scanning from for this partition. Calculated from the query window.
 * **Query end**: the offset that data inspect will scan up to. Calculated from the query window.
 * **Scanned Records: **the number of records in this partition that have been scanned
@@ -96,9 +96,9 @@ The default configuration _should be suitable for most installations_.
 
 See the [Serdes](serdes.md) section for details on how to configure custom serdes, integrate schema registry and more for data inspect.
 
-#### TOPIC_INSPECT authorization
+#### TOPIC\_INSPECT authorization
 
-To enable inspection of key/value/header contents of records, set the `TOPIC_INSPECT` environment variable to `true`. If you are using role-based access control, view our guide [here](https://docs.kpow.io/authorization/role-based-access-control#example-configuration).
+To enable inspection of key/value/header contents of records, set the `ALLOW_TOPIC_INSPECT` environment variable to `true`. If you are using role-based access control, view our guide [here](https://docs.kpow.io/authorization/role-based-access-control#example-configuration).
 
 #### Data policies/redaction
 
