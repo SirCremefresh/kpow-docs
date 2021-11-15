@@ -4,7 +4,7 @@ description: Use kPow with your Azure Event Hubs namespace.
 
 # Azure Event Hubs
 
-## Prerequisites 
+## Prerequisites&#x20;
 
 kPow can connect to your Azure Event Hubs namespace(s) if you have enabled Kafka Surface. \
 You can read about using Event Hubs with Kafka [here](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview).
@@ -13,7 +13,7 @@ You can verify that Kafka Surface has been enabled, by navigating to your Event 
 
 ![Verifying Kafka Surface is enabled](<../.gitbook/assets/Screen Shot 2021-03-16 at 3.46.10 pm.png>)
 
-## Configuration 
+## Configuration&#x20;
 
 Once you have verified Kafka Surface is enabled, visit the [Security and authentication](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#security-and-authentication) section of Azure's documentation to find Kafka configuration properties for each type of authentication mechanism.
 
@@ -29,9 +29,9 @@ AZURE_EVENT_HUBS=true
 ```
 
 **Note**: an extra environment variable `CLUSTER_ID` is required, as Azure event hubs does not provide a cluster ID when making an admin client request. \
-The `CLUSTER_ID` must be unique across all clusters defined in kPow, and can be any unique identifier (eg, the namespace name of your event hub) 
+The `CLUSTER_ID` must be unique across all clusters defined in kPow, and can be any unique identifier (eg, the namespace name of your event hub)&#x20;
 
-The `AZURE_EVENT_HUBS` environment variable must be set to `true` as Event Hubs does not support the topic configuration of `retention.ms` set to `-1` (which is set by kPow's [audit log](../features/data-governance.md) + Kafka Streams internal topics). Topics that normally have infinite retention will have a 7 day retention set in Event Hubs.
+The `KAFKA_VARIANT=EVENT_HUBS` environment variable must be set to `true` as Event Hubs does not support the topic configuration of `retention.ms` set to `-1` (which is set by kPow's [audit log](../features/data-governance.md) + Kafka Streams internal topics). Topics that normally have infinite retention will have a 7 day retention set in Event Hubs.
 
 ## Event Hubs limitations
 
@@ -39,3 +39,5 @@ The vast majority of kPow's features work with Azure Event Hubs, with the except
 
 * Broker disk information/metrics - as the admin client request does not return any log details
 * Broker configuration - as the admin client request does not return any broker configuration details
+
+Note: kPow is not officially supported with Azure Event Hubs.
