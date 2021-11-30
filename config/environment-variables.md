@@ -42,27 +42,27 @@ Serve the kPow UI via HTTPS (requires further configuration, below)
 
 ### **HTTPS\_SNI\_HOST\_CHECK**
 
-| Env Var                     | Default | Type | Description                                                                              |
-| --------------------------- | ------- | ---- | ---------------------------------------------------------------------------------------- |
-| **HTTPS\_SNI\_HOST\_CHECK** | false   | bool | When SSL configured, whether the certificate sent to the client matches the Host header. |
+**Type:** Boolean, **Default:** false
+
+When SSL is configured, confirm that the certificate sent to the client matches the Host header.
 
 ### **HTTPS\_KEYSTORE\_LOCATION**
 
-| Env Var                       | Default | Type   | Description                 |
-| ----------------------------- | ------- | ------ | --------------------------- |
-| **HTTPS\_KEYSTORE\_LOCATION** |         | string | eg: /ssl/https.keystore.jks |
+**Type:** String (e.g. /ssl/https.keystore.jks)
+
+Path to the SSL Keystore.
 
 ### **HTTPS\_KEYSTORE\_TYPE**
 
-| Env Var                   | Default | Type   |                              |
-| ------------------------- | ------- | ------ | ---------------------------- |
-| **HTTPS\_KEYSTORE\_TYPE** |         | string | Type of SSL Keystore, eg JKS |
+**Type:** String, **Default:** JKS
+
+Type of the SSL Keystore.
 
 ### **HTTPS\_KEYSTORE\_PASSWORD**
 
-| Env Var                       | Default | Type   | Description           |
-| ----------------------------- | ------- | ------ | --------------------- |
-| **HTTPS\_KEYSTORE\_PASSWORD** |         | string | SSL Keystore password |
+**Type:** String
+
+Password of the SSL Keystore.
 
 ### **HTTPS\_TRUSTSTORE\_LOCATION**
 
