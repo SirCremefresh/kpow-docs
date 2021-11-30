@@ -22,9 +22,9 @@
 * [AWS Marketplace](installation/aws-marketplace.md)
 * [Troubleshooting](installation/troubleshooting.md)
 
-## Configuration <a id="config"></a>
+## Configuration <a href="#config" id="config"></a>
 
-* [Environment Variable Glossary](config/environment-variable-glossary.md)
+* [Environment Variables](config/environment-variables.md)
 * [Kafka Cluster](config/kafka-cluster.md)
 * [Schema Registry](config/schema-registry.md)
 * [Kafka Connect](config/kafka-connect.md)
@@ -33,7 +33,7 @@
 * [Confluent Cloud](config/confluent-cloud.md)
 * [Redpanda](config/redpanda.md)
 
-## User Authentication <a id="authentication"></a>
+## User Authentication <a href="#authentication" id="authentication"></a>
 
 * [Overview](authentication/overview.md)
 * [LdapLoginModule](authentication/ldap.md)
@@ -47,7 +47,7 @@
   * [AWS SSO integration](authentication/saml/aws-sso-integration.md)
   * [Azure AD integration](authentication/saml/azure-ad-integration.md)
 
-## User Authorization <a id="authorization"></a>
+## User Authorization <a href="#authorization" id="authorization"></a>
 
 * [Overview](authorization/overview.md)
 * [Simple Access Control](authorization/simple-access-control.md)
@@ -60,7 +60,7 @@
 ## Features
 
 * [Kafka Streams](features/kafka-streams.md)
-* [Data Governance \(Audit Log\)](features/data-governance.md)
+* [Data Governance (Audit Log)](features/data-governance.md)
 * [Data Policies](features/data-policies.md)
 * [HTTPS Connections](features/https-connections.md)
 * [Live Mode](features/live-mode.md)
@@ -73,7 +73,7 @@
   * [Metrics Glossary](features/prometheus/metrics-glossary.md)
 * [Slack Integration](features/slack-integration.md)
 
-## Kafka Management <a id="mutations"></a>
+## Kafka Management <a href="#mutations" id="mutations"></a>
 
 * [Topics](mutations/topic-actions.md)
 * [Groups](mutations/group-actions.md)
@@ -81,4 +81,3 @@
 * [ACLs](mutations/acl-actions.md)
 * [Connect](mutations/connect-actions.md)
 * [Schema Registry](mutations/schema-actions.md)
-

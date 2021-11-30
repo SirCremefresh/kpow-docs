@@ -16,12 +16,12 @@ We have integration guides for common providers:
 
 * `AUTH_PROVIDER_TYPE=saml`
 * `SAML_RELYING_PARTY_IDENTIFIER=` the **Audience URI (SP Entity ID)**
-*   `SAML_ACS_URL=` the **Single sign-on URL, **e.g.
+*   `SAML_ACS_URL=` the **Single sign-on URL,** e.g.
 
     ```
     https://kpow.corp.com/saml
     ```
-*   `SAML_METADATA_FILE=` the path to the **IDP metadata **file, e.g.
+*   `SAML_METADATA_FILE=` the path to the **IDP metadata** file, e.g.
 
     ```
     /var/saml/saml-idp-metadata.xml

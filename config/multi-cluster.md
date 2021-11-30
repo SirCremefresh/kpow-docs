@@ -5,7 +5,7 @@ description: Manage Multiple Kafka Resources from One kPow Instance
 # Multi-Cluster Management
 
 {% hint style="warning" %}
-Multi-cluster **does not mean multi-region, **install kPow in proximity to your Kafka resources.
+Multi-cluster **does not mean multi-region,** install kPow in proximity to your Kafka resources.
 {% endhint %}
 
 One instance of kPow can manage multiple Apache Kafka clusters (and their associated resources).
@@ -26,7 +26,7 @@ Information on snapshotting performance of each cluster is available at 'setting
 
 To configure multiple clusters, simply repeat the connection configuration with \_2, \_3, \_4 suffixes.
 
-ENVIRONMENT_NAME for each resource-set is displayed in the kPow UI when switching cluster.
+ENVIRONMENT\_NAME for each resource-set is displayed in the kPow UI when switching cluster.
 
 ```
 # Cluster 1, Vanilla Apache Kafka

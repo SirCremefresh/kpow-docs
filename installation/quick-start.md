@@ -4,7 +4,7 @@ description: Get started with kPow for Apache Kafka in under two minutes
 
 # Quick Start
 
-This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR **](quick-start.md#jar-quick-start)installations.
+This page provides Quick Start instructions for [**Docker**](quick-start.md#docker-quick-start) and [**JAR** ](quick-start.md#jar-quick-start)installations.
 
 {% hint style="success" %}
 Use our [**Helm**](https://github.com/operatr-io/kpow-helm-charts) and [**CloudFormation**](https://github.com/operatr-io/kpow-cloudformation) guides to get up and running in minutes.
@@ -58,7 +58,7 @@ ALLOW_TOPIC_PRODUCE=true
 ## ... etc (see guide for more configuration flags).
 ```
 
-* Start the latest kPow container with your **`config.env` **file.
+* Start the latest kPow container with your **`config.env` ** file.
 
 ```
 docker run -p 3000:3000 -m2G --env-file ./config.env operatr/kpow:latest

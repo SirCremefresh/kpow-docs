@@ -24,11 +24,11 @@ By default, kPow ships with the following serdes available from data inspect:
 ## AVRO, JSON Schema, and Protobuf
 
 {% hint style="info" %}
-Schema Registry serdes in kPow follow the wire format documented [here](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#wire-format). 
+Schema Registry serdes in kPow follow the wire format documented [here](https://docs.confluent.io/platform/current/schema-registry/serdes-develop/index.html#wire-format).&#x20;
 {% endhint %}
 
 {% hint style="warning" %}
-See: [Custom Serdes](serdes.md#custom-serdes) to use kPow with Protobuf** **messages _without a Schema Registry._
+See: [Custom Serdes](serdes.md#custom-serdes) to use kPow with Protobuf **** messages _without a Schema Registry._
 {% endhint %}
 
 kPow integrates with Confluent [Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html) and allows for AVRO, JSON Schema and Protobuf serdes to be used in data inspect.
@@ -45,7 +45,7 @@ kPow offers some configuration on how serdes are presented in the UI.
 
 #### Default Serdes
 
-Set `DEFAULT_KEY_SERDES` or `DEFAULT_VALUE_SERDES` to specify which serdes should be selected from the dropdown by default when using data inspect. 
+Set `DEFAULT_KEY_SERDES` or `DEFAULT_VALUE_SERDES` to specify which serdes should be selected from the dropdown by default when using data inspect.&#x20;
 
 #### Available Serdes
 
@@ -94,12 +94,12 @@ The following fields are available to configure your serdes:
 * `name` - the display name to use in kPow's Data Inspect UI.
 * `format` - `json`, `clojure` or `string` (default)
 * `isKey` -  **true** for key data only, **false** for value data only, **leave unset** for both key/value data.
-* `config` - a map of config values passed into the serdes `configure` method 
+* `config` - a map of config values passed into the serdes `configure` method&#x20;
 
 `Config` is converted to String/String and passed to your Serdes/configure method. \
 `Config` values starting with $ are resolved as environment variables. (e.g. $BOOTSTRAP below)
 
-**E.g. **Single Serdes Configuration (json format, available to key and value fields).
+**E.g.** Single Serdes Configuration (json format, available to key and value fields).
 
 ```
 name: PROTO
@@ -111,7 +111,7 @@ config:
   abc: $SOME_ENV
 ```
 
-**E.g. **Multi Serdes Configuration (json format, separate configured serdes for key and value fields)
+**E.g.** Multi Serdes Configuration (json format, separate configured serdes for key and value fields)
 
 ```
 serdes:

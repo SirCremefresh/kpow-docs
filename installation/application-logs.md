@@ -45,9 +45,9 @@ The kPow Docker Container can be configured with the `JAVA_TOOL_OPTIONS` environ
 JAVA_TOOL_OPTIONS=-Dlogback.configurationFile=/kpow/custom-logback.xml
 ```
 
-In this specific example we turn on debug logging for Jetty JAAS authentication methods (LDAP, etc.). 
+In this specific example we turn on debug logging for Jetty JAAS authentication methods (LDAP, etc.).&#x20;
 
-To put JAAS into debug mode also requires **debug="true" **in your JAAS config file:
+To put JAAS into debug mode also requires **debug="true"** in your JAAS config file:
 
 ```
 kpow {

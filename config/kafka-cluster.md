@@ -5,16 +5,16 @@ description: Connect kPow to Apache Kafka®
 # Kafka Cluster
 
 {% hint style="info" %}
-The **ENVIRONMENT\_NAME **variable provides a UI friendly name for your Kafka cluster.
+The **ENVIRONMENT\_NAME** variable provides a UI friendly name for your Kafka cluster.
 {% endhint %}
 
 ## Requirements
 
 kPow requires **at least one configured Kafka cluster** to operate.
 
-When configuring [**Multi-Cluster**](multi-cluster.md)** **installations the first cluster configured is your **Primary Cluster** and contains all the snapshot, metrics, and audit metadata for the installation.
+When configuring [**Multi-Cluster**](multi-cluster.md) **** installations the first cluster configured is your **Primary Cluster** and contains all the snapshot, metrics, and audit metadata for the installation.
 
-A Kafka cluster can have **multiple **associated Schema registries and/or Kafka connect clusters.
+A Kafka cluster can have **multiple** associated Schema registries and/or Kafka connect clusters.
 
 ## Compatibility
 

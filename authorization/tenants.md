@@ -48,7 +48,7 @@ A tenant determines what resources are visible with the following logic:
 
 The primary use for multi-tenancy is to provide different views of Kafka resources to different teams within your organisation.
 
-Consider a kPow that is connected to three Kafka Clusters (Dev, UAT, Prod), each having 200 topics and 200 groups, two Connect installations and one Schema Registry.** **You can create tenants that:
+Consider a kPow that is connected to three Kafka Clusters (Dev, UAT, Prod), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. **** You can create tenants that:
 
 * Contains only Kafka resources connected to or within Dev and UAT (or any combination of clusters)
 * Contains only specific topics or groups, or matches them with a prefix. E.g `my-topic` or `my-grou*`
@@ -57,7 +57,7 @@ Consider a kPow that is connected to three Kafka Clusters (Dev, UAT, Prod), each
 
 The secondary use is to exclude groups and topics of no interest to your organisation.
 
-For example, kPow provides two default tenants when you have none specifically configured: 
+For example, kPow provides two default tenants when you have none specifically configured:&#x20;
 
 * Global: All Kafka resources
 * kPow Hidden: All Kafka resources with kPow internal groups and topics excluded
@@ -109,7 +109,7 @@ The `name` field will be the assigned name of the tenant used within kPow's UI. 
 | ----------- | -------- | ------ | ------------------------------ |
 | description | N        | String | The description of the tenant. |
 
-The optional `description` field will be used within kPow's UI as a description when switching tenants. 
+The optional `description` field will be used within kPow's UI as a description when switching tenants.&#x20;
 
 ### resources
 
@@ -119,9 +119,9 @@ The optional `description` field will be used within kPow's UI as a description 
 
 The `resources` field defines which resources are either included or excluded for this tenant.
 
-Each item in the list is a map of either `include: [resource...]` or `exclude: [resouce...]` 
+Each item in the list is a map of either `include: [resource...]` or `exclude: [resouce...]`&#x20;
 
-Where the resource refers to the path of the object you wish to include/exclude. 
+Where the resource refers to the path of the object you wish to include/exclude.&#x20;
 
 For example: `["cluster",  "*", "topic", "tx_*"]`refers to any topic matching `tx_*`for any Kafka cluster defined in kPow.
 
@@ -133,7 +133,7 @@ For example: `["cluster",  "*", "topic", "tx_*"]`refers to any topic matching `t
 
 The `roles` field describes which roles (specified by your [auth provider](../authentication/overview.md#kpow-and-user-authentication)) are assigned to this tenant.
 
-For more details about resources refer to the [RBAC documentation](role-based-access-control.md#resources). 
+For more details about resources refer to the [RBAC documentation](role-based-access-control.md#resources).&#x20;
 
 ## User Experience
 

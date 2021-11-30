@@ -6,7 +6,7 @@ description: An introduction to filtering queries with kJQ
 
 ## Overview
 
-[**JQ**](https://stedolan.github.io/jq/) is a popular, practical language described as 'like sed for JSON data'. 
+[**JQ**](https://stedolan.github.io/jq/) is a popular, practical language described as 'like sed for JSON data'.&#x20;
 
 Data Inspect supports JQ-like filters on Kafka topics. We call this kJQ.
 
@@ -14,7 +14,7 @@ kJQ is **fast**, easily scanning tens of thousands of messages from a Kafka topi
 
 ![Sample KJQ Query](../../.gitbook/assets/kjq.png)
 
-The kJQ input field provides context highlighting, auto-completion, command memory (press **up-arrow **to view previous filters) and fast-execution (press **shift-enter** to execute the search).
+The kJQ input field provides context highlighting, auto-completion, command memory (press **up-arrow** to view previous filters) and fast-execution (press **shift-enter** to execute the search).
 
 Normally your kJQ filters will start with **.key .value or .header** but you can search on any field returned with a Kafka record, including topic, offset, etc.
 
@@ -22,7 +22,7 @@ kPow implements a subset of JQ allowing you to search [**JSON**, **Avro**, **Tra
 
 ## Language
 
-kJQ filters can be applied to keys, values, and headers. 
+kJQ filters can be applied to keys, values, and headers.&#x20;
 
 kPow will scan **tens of thousands of messages a second** to find matching data.
 
@@ -34,9 +34,9 @@ A kJQ filter is a limited version of [a basic JQ filter](https://stedolan.github
 
 #### Filters
 
-A _filter_ consists of a _selector_ optionally followed by_ _a_ transform_ then either a _comparator_ or a _function._
+A _filter_ consists of a _selector_ optionally followed by __ a _transform_ then either a _comparator_ or a _function._
 
-A filter can optionally be _negated** **_and joined with other filters with a logical operator.
+A filter can optionally be _negated ****_ and joined with other filters with a logical operator.
 
 #### Selectors
 
@@ -78,7 +78,7 @@ e.g**:** `| test(".*tx")`, `| startswith("text")`, `| endswith("text")`, `| cont
 
 ### kJQ Query Evaluation
 
-Multiple kJQ filters can be joined with a logical **AND **or **OR**, just like normal JQ.
+Multiple kJQ filters can be joined with a logical **AND** or **OR**, just like normal JQ.
 
 kJQ also supports standard explicit logical operator precedence with parenthesis.
 
@@ -102,13 +102,13 @@ Matches where the selector is not null.
 
 E.g `{"foo": true}` or `{"foo": 1}` will match, `{"bar": true}` will not match
 
-###  Scalar Comparator Filter
+### &#x20;Scalar Comparator Filter
 
 ```
 .foo.bar > 10
 ```
 
-Matches where the selector > 10 
+Matches where the selector > 10&#x20;
 
 E.g. `{"foo": {"bar": 11}}` will match, `{"foo": {"bar": 8}}` will not
 

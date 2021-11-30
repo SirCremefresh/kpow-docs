@@ -7,7 +7,7 @@ description: Authenticate Users with Jetty JAAS JDBCLoginModule
 Configure kPow to read authentication and role information from a database via JDBC.
 
 {% hint style="info" %}
-**In Depth:** For specifics on JAAS / JSBC configuration see the [**Jetty JDBCLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html#jetty-jaas)** **docs.
+**In Depth:** For specifics on JAAS / JSBC configuration see the [**Jetty JDBCLoginModule**](https://www.eclipse.org/jetty/documentation/current/jaas-support.html#jetty-jaas) **** docs.
 {% endhint %}
 
 ## Form or Basic Authentication?
@@ -25,7 +25,7 @@ JETTY_AUTH_METHOD=basic
 To enable LdapLoginModule authentication you must:
 
 * Create a JAAS configuration file
-* Set the **`AUTH_PROVIDER_TYPE=jetty` **environment variable.
+* Set the **`AUTH_PROVIDER_TYPE=jetty` ** environment variable.
 * Start the JAR or Docker container with `-Djava.security.auth.login.config=/path/to/jaas.conf`
 
 ### JAAS Configuration
@@ -55,10 +55,10 @@ To activate Jetty JAAS authentication set the environment variable **`AUTH_PROVI
 
 Specify the JAAS config file by setting the following system property when starting the JAR:
 
-  `-Djava.security.auth.login.config=/path/to/jaas.conf` 
+&#x20; `-Djava.security.auth.login.config=/path/to/jaas.conf`&#x20;
 
 {% hint style="warning" %}
-**Note: **System properties must come after **java **but before **-jar**.
+**Note:** System properties must come after **java** but before **-jar**.
 {% endhint %}
 
 ```bash
@@ -70,13 +70,13 @@ java -Djava.security.auth.login.config=/opt/kpow/jaas.conf -jar /opt/kpow/latest
 ### Docker Container Startup
 
 {% hint style="info" %}
-**Note: **The JVM provides an environment variable called `JAVA_TOOL_OPTIONS` that can be used in place of system properties. We use this the thread the JAAS config to Docker.
+**Note:** The JVM provides an environment variable called `JAVA_TOOL_OPTIONS` that can be used in place of system properties. We use this the thread the JAAS config to Docker.
 {% endhint %}
 
 Set the env var `JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/path/to/jaas.conf`
 
 {% hint style="info" %}
-**Note: **When your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount so that kPow can read that configuration:
+**Note:** When your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount so that kPow can read that configuration:
 
 **`docker run --volume="/config/path:/config/path/" -p 3000:3000 --env-file ...`**
 {% endhint %}

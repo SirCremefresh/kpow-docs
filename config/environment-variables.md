@@ -1,10 +1,10 @@
 ---
-description: All configuration options available to kPow
+description: All the configuration options available to kPow
 ---
 
-# Environment Variable Glossary
+# Environment Variables
 
-kPow is configured with Environment Variables, as described below:
+kPow is configured with Environment Variables as described below:
 
 ## Kafka
 
@@ -16,37 +16,29 @@ kPow is configured with Environment Variables, as described below:
 
 ### PORT
 
-**Type:** Long, **Default**: 3000.
-
-{% hint style="info" %}
-The PORT variable applies to both HTTP or HTTPS traffic.
-{% endhint %}
+**Type:** Long, **Default**: 3000
 
 The server port of the kPow UI.
 
 ### HTTP\_FORWARDED
 
-**Type:** Boolean, **Default:** false.
+**Type:** Boolean, **Default:** false
 
 {% hint style="info" %}
-See the [Jetty HTTP\_FORWARDED module](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-module-http-forwarded) documentation for more information.
+See [Jetty HTTP\_FORWARDED module](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-module-http-forwarded) for more information.
 {% endhint %}
 
 Configure when running kPow with Jetty Authentication and behind a reverse-proxy that is performing HTTP termination. When **true** the Jetty Authentication process will respect the HTTPS scheme when redirecting post-authentication.
 
-### ENABLE\_GZIP
-
-| Env Var      | Type | Default | Description                                                                    |
-| ------------ | ---- | ------- | ------------------------------------------------------------------------------ |
-| ENABLE\_GZIP | bool | true    | Whether to enable gzip compression for kPow's static resources (JSON, CSS etc) |
-
 ### ENABLE\_HTTPS
 
-| Env Var       | Default | Type | Description                  |
-| ------------- | ------- | ---- | ---------------------------- |
-| ENABLE\_HTTPS | false   | bool | Serve kPow content via HTTPS |
+**Type:** Boolean, **Default:** false
 
-**Note:** see [HTTPS connections](../features/https-connections.md) for more details about configuration.&#x20;
+{% hint style="info" %}
+See [HTTPS Connections](../features/https-connections.md) for more information.&#x20;
+{% endhint %}
+
+Serve the kPow UI via HTTPS (requires further configuration, below)
 
 ### **HTTPS\_SNI\_HOST\_CHECK**
 

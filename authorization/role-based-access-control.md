@@ -48,7 +48,7 @@ admin_roles:
 An RBAC policy contains:
 
 * **Resource**: The resource that this policy controls access to
-* **Effect**: Whether to **deny,** **allow, **or **stage** access to the **Resource**
+* **Effect**: Whether to **deny,** **allow,** or **stage** access to the **Resource**
 * **Actions**: A list of actions that this policy **Effects**
 
 Then either:
@@ -87,15 +87,15 @@ policies:
     roles:    ["kafka-user"] 
 ```
 
-**`kafka-admin`** is allowed to inspect, produce, and edit all topics **in a specific cluster**, then explicitly denied produce and edit actions to **one specific topic in that same cluster**. 
+**`kafka-admin`** is allowed to inspect, produce, and edit all topics **in a specific cluster**, then explicitly denied produce and edit actions to **one specific topic in that same cluster**.&#x20;
 
-**`kafka-admin`** is then permitted group edit permissions on all clusters, **`kafka-user` **are permitted stage access to the group edit action - meaning the request will have to be confirmed by an admin user.
+**`kafka-admin`** is then permitted group edit permissions on all clusters, **`kafka-user` ** are permitted stage access to the group edit action - meaning the request will have to be confirmed by an admin user.
 
 All remaining actions are **implicitly denied** actions to all users on all resources.
 
 ## Resources
 
-Resources are defined within a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy_\(biology\)) that describes **the hierarchy of objects** in kPow.
+Resources are defined within a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy\_\(biology\)) that describes **the hierarchy of objects** in kPow.
 
 ```
 [DOMAIN_TYPE, DOMAIN_ID, OBJECT_TYPE?, OBJECT_ID?]
@@ -104,9 +104,9 @@ Resources are defined within a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy
 Where:
 
 * **Domain Type**: The top-level resource, either **cluster**, **schema**, or **connect**
-* **Domain ID: **Unique identifier of the domain or "**\*" for all/wildcard**
-* **Object Type:** Either **topic, group, connector, subject, **or **broker**
-* **Object ID: **Unique identified of the object. **Wildcard not supported**
+* **Domain ID:** Unique identifier of the domain or "**\*" for all/wildcard**
+* **Object Type:** Either **topic, group, connector, subject,** or **broker**
+* **Object ID:** Unique identified of the object. **Wildcard not supported**
 
 **Specifying the object is optional.** If not provided the resource includes all objects within a domain.
 
@@ -151,7 +151,7 @@ In the example above we have four **domain** resources:
 
 ## Effects
 
-Specify `Allow`, `Deny` or `Stage` to indicate whether the policy allows or denies access to a resource. View [Staged mutations](administration/#staging-mutations) documentation to learn about the `Stage` effect. 
+Specify `Allow`, `Deny` or `Stage` to indicate whether the policy allows or denies access to a resource. View [Staged mutations](administration/#staging-mutations) documentation to learn about the `Stage` effect.&#x20;
 
 Where no matching policy exists the effect is an **implicit deny.**
 
@@ -177,7 +177,7 @@ All actions are retained in the kPow Audit Log. See: [**Data Governance**](../fe
 
 ## Role Mapping
 
-To use RBAC you must configure [**User Authentication**](../authentication/overview.md)** **and ensure users have assigned roles.
+To use RBAC you must configure [**User Authentication**](../authentication/overview.md) **** and ensure users have assigned roles.
 
 ### Integration Guides
 
@@ -195,7 +195,7 @@ Operatr can integrate with your SAML IdP as a service provider.
 
 Roles are defined in a `Roles` attribute in the SAMLResponse from your IdP.
 
-If you would like to use a field other than the `Roles` attribute, you can extend the YAML configuration as follows: 
+If you would like to use a field other than the `Roles` attribute, you can extend the YAML configuration as follows:&#x20;
 
 ```
 saml:

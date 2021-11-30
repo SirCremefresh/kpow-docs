@@ -17,7 +17,7 @@ You can verify that Kafka Surface has been enabled, by navigating to your Event 
 
 Once you have verified Kafka Surface is enabled, visit the [Security and authentication](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#security-and-authentication) section of Azure's documentation to find Kafka configuration properties for each type of authentication mechanism.
 
-For example, if you were to use [**Shared Access Signature (SAS)**](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#shared-access-signature-sas)** **connection details, the environment variables passed to kPow would look like:
+For example, if you were to use [**Shared Access Signature (SAS)**](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview#shared-access-signature-sas) **** connection details, the environment variables passed to kPow would look like:
 
 ```
 BOOTSTRAP=NAMESPACENAME.servicebus.windows.net:9093

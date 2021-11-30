@@ -22,7 +22,7 @@ When you subscribe to a [kPow product on the AWS Marketplace](https://aws.amazon
 
 The AWS Marketplace container makes a single call to [AWSMarketplaceMetering/registerUsage](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API\_RegisterUsage.html) when kPow starts, allowing AWS to check your subscription and meter your usage if you have chosen the hourly-metered product.
 
-The kPow AWS Marketplace container is **automatically licensed** to the AWS account that subscribes to a product and that account is billed monthly for the subscription. You **do not need to arrange a separate license with us directly **if you subscribe to a kPow product on the AWS Marketplace. It just works.
+The kPow AWS Marketplace container is **automatically licensed** to the AWS account that subscribes to a product and that account is billed monthly for the subscription. You **do not need to arrange a separate license with us directly** if you subscribe to a kPow product on the AWS Marketplace. It just works.
 
 We update each kPow product on the AWS Marketplace with every major release, simply check your subscription details to find the latest container and update whenever you like.
 
@@ -72,7 +72,7 @@ Some customers pay for kPow via the AWS Marketplace but find the requirement to 
 
 We offer the Team and Corporate monthly subscription licenses for this exact use-case.&#x20;
 
-If you chose a Team or Corporate Subscription but do not want to implement IAM Roles for your kPow containers then contact [**support@operatr.io**](mailto:support@operatr.io)** **and once we have verified your subscription we will provide you a **Bring Your Own License** (BYOL) license for the Marketplace container that averts the call to registerUsage and allows you to run kPow without configuring IAM roles and in environments other than EKS / ECS / Fargate.
+If you chose a Team or Corporate Subscription but do not want to implement IAM Roles for your kPow containers then contact [**support@operatr.io**](mailto:support@operatr.io) **** and once we have verified your subscription we will provide you a **Bring Your Own License** (BYOL) license for the Marketplace container that averts the call to registerUsage and allows you to run kPow without configuring IAM roles and in environments other than EKS / ECS / Fargate.
 
 With this option AWS acts solely as a billing agent for your usage of kPow.
 
@@ -94,17 +94,17 @@ Once your subscription is activated, click **'Continue to Configuration':**
 
 ![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.00.22 pm.png>)
 
-Choose **'Operatr for Apache Kafka (Pro)' **as the delivery method, and the latest version available.
+Choose **'Operatr for Apache Kafka (Pro)'** as the delivery method, and the latest version available.
 
 Click **'Continue to Launch':**
 
 ![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.02.07 pm.png>)
 
-Click **'View container image details' **at the bottom of the launch page:
+Click **'View container image details'** at the bottom of the launch page:
 
 ![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.03.59 pm.png>)
 
-See **'Pull Command Instructions' **giving you access to the kPow container for your subscription.
+See **'Pull Command Instructions'** giving you access to the kPow container for your subscription.
 
 ![](<../.gitbook/assets/Screen Shot 2021-03-26 at 5.05.35 pm.png>)
 

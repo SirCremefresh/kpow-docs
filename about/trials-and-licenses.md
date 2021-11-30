@@ -28,6 +28,6 @@ To request a quote for _any number of Cluster Credits_ please contact [**sales@o
 
 Pre-packaged licenses for a set number of Cluster Credits can be bought online:
 
-* ****[**Pro License**](https://kpow.io/pricing/pro/)** **- 1 Cluster Credit
-* ****[**Team License**](https://kpow.io/pricing/team/)** **- 6 Clusters Credits
+* ****[**Pro License**](https://kpow.io/pricing/pro/) **** - 1 Cluster Credit
+* ****[**Team License**](https://kpow.io/pricing/team/) **** - 6 Clusters Credits
 * ****[**Corporate License**](https://kpow.io/pricing/corporate/) - 12 Clusters Credits

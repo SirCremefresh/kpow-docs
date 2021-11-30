@@ -27,8 +27,8 @@ Login to your [Okta](https://okta.com) account.
      * `Email` -> can be mapped to `user.email` using the `unspecified` name format
    * **Group attribute statements:**
      * `Roles` -> can be mapped to a relevant group filter for [Role Based Access Control](https://support.operatr.io/hc/en-us/articles/900002019823)
-5. Navigate to **Feedback > Finish **and you will be redirected to your new Okta application.
-6.  Navigate to  **Sign On > View Setup Instructions** and save the XML in **Provide the following IDP metadata to your SP provider **to a file on disk. 
+5. Navigate to **Feedback > Finish** and you will be redirected to your new Okta application.
+6.  Navigate to  **Sign On > View Setup Instructions** and save the XML in **Provide the following IDP metadata to your SP provider** to a file on disk.&#x20;
 
 
 
@@ -38,12 +38,12 @@ Login to your [Okta](https://okta.com) account.
 
 * `AUTH_PROVIDER_TYPE=saml`
 * `SAML_RELYING_PARTY_IDENTIFIER=` the **Audience URI (SP Entity ID)**
-*   `SAML_ACS_URL=` the **Single sign-on URL, **e.g.
+*   `SAML_ACS_URL=` the **Single sign-on URL,** e.g.
 
     ```
     https://kpow.corp.com/saml
     ```
-*   `SAML_METADATA_FILE=` the path to the **IDP metadata **file, e.g.
+*   `SAML_METADATA_FILE=` the path to the **IDP metadata** file, e.g.
 
     ```
     /var/saml/saml-idp-metadata.xml

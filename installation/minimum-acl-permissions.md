@@ -4,7 +4,7 @@ description: Configuration to run kPow secured with Kafka ACLs
 
 # Minimum ACL Permissions
 
-Kafka has the ability to restrict access to objects and operations within a cluster through the use of [Kafka Access Control Lists](https://kafka.apache.org/documentation/#security_authz) (ACLs). This is different to kPow's own [Role Based Access Controls](../authorization/role-based-access-control.md).
+Kafka has the ability to restrict access to objects and operations within a cluster through the use of [Kafka Access Control Lists](https://kafka.apache.org/documentation/#security\_authz) (ACLs). This is different to kPow's own [Role Based Access Controls](../authorization/role-based-access-control.md).
 
 {% hint style="info" %}
 You can skip this page if you do not have Kafka ACLs enabled in your cluster/s
@@ -16,7 +16,7 @@ When your cluster is secured with Kafka ACLs the Kafka user identified by the cl
 
 kPow needs the ability to read and write internal topics and read internal groups.
 
-kPow checks for the following internal topics in your **primary cluster **(the first bootstrap in your configuration) on startup and will attempt to create them if required:
+kPow checks for the following internal topics in your **primary cluster** (the first bootstrap in your configuration) on startup and will attempt to create them if required:
 
 ```
 __oprtr_metric_pt1m
@@ -75,11 +75,11 @@ See [User Authorization](../authorization/overview.md#user-actions) for a descri
 ### Configuring Kafka ACLS
 
 {% hint style="info" %}
-Creating ACLs on a cluster with no existing ACL configuration can cause issues. 
+Creating ACLs on a cluster with no existing ACL configuration can cause issues.&#x20;
 
 Consult your cluster provider documentation first.
 
-For example the [**Amazon MSK ACL Guide**](https://docs.aws.amazon.com/msk/latest/developerguide/msk-acls.html)** **describes extra ACLs required to allow inter-broker replication, and suggests not to set CLUSTER level ACLs.
+For example the [**Amazon MSK ACL Guide**](https://docs.aws.amazon.com/msk/latest/developerguide/msk-acls.html) **** describes extra ACLs required to allow inter-broker replication, and suggests not to set CLUSTER level ACLs.
 {% endhint %}
 
 Create a file containing client configuration for a user who has permissions to create ACLs.

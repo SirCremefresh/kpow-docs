@@ -6,27 +6,27 @@ description: Create and Control Connectors and Tasks with kPow
 
 ## Access Control
 
-User permissions to Kafka cluster resources are defined by [**Connect actions.**](../authorization/overview.md#user-actions)** **
+User permissions to Kafka cluster resources are defined by [**Connect actions.**](../authorization/overview.md#user-actions) ****&#x20;
 
 ## **Configuration**
 
 kPow connects to a Connect cluster with **environment variables**.
 
-| Variable                         | Description                                                                                                                                                     |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **CONNECT_REST_URL**             | The client connection URL for your connect cluster                                                                                                              |
-| **CONNECT_AUTH**                 | BASIC if basic authentication is configured                                                                                                                     |
-| **CONNECT_BASIC_AUTH_USER**      | Username if basic authentication is configured                                                                                                                  |
-| **CONNECT_BASIC_AUTH_PASS**      | Password if basic authentication is configured                                                                                                                  |
-| **CONNECT_OFFSET_STORAGE_TOPIC** | (Optional) Topic that holds connect offsets                                                                                                                     |
-| **CONNECT_GROUP_ID**             | (Optional) Unique string identifying worker cluster group                                                                                                       |
-| **CONNECT_PERMISSIVE_SSL**       | True if SSL certificate validation should be disabled                                                                                                           |
-| **CONNECT_TIMEOUT_MS**           | The timeout value in ms for all HTTP requests made to a Kafka Connect cluster. Default: 5000                                                                    |
-| **CONNECT_RESOURCE_IDS**         | Optional, comma separated list of unique ids. Only specify when configuring multiple [connect clusters](kafka-connect.md#configuring-multiple-connect-clusters) |
+| Variable                            | Description                                                                                                                                                     |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CONNECT\_REST\_URL**              | The client connection URL for your connect cluster                                                                                                              |
+| **CONNECT\_AUTH**                   | BASIC if basic authentication is configured                                                                                                                     |
+| **CONNECT\_BASIC\_AUTH\_USER**      | Username if basic authentication is configured                                                                                                                  |
+| **CONNECT\_BASIC\_AUTH\_PASS**      | Password if basic authentication is configured                                                                                                                  |
+| **CONNECT\_OFFSET\_STORAGE\_TOPIC** | (Optional) Topic that holds connect offsets                                                                                                                     |
+| **CONNECT\_GROUP\_ID**              | (Optional) Unique string identifying worker cluster group                                                                                                       |
+| **CONNECT\_PERMISSIVE\_SSL**        | True if SSL certificate validation should be disabled                                                                                                           |
+| **CONNECT\_TIMEOUT\_MS**            | The timeout value in ms for all HTTP requests made to a Kafka Connect cluster. Default: 5000                                                                    |
+| **CONNECT\_RESOURCE\_IDS**          | Optional, comma separated list of unique ids. Only specify when configuring multiple [connect clusters](kafka-connect.md#configuring-multiple-connect-clusters) |
 
 ### Configuring Multiple Connect Clusters
 
-kPow supports multiple Kafka Connect clusters associated to a single Kafka cluster. 
+kPow supports multiple Kafka Connect clusters associated to a single Kafka cluster.&#x20;
 
 To configure multiple Kafka Connect clusters, use the environment variable `CONNECT_RESOURCE_IDS` to define a comma separated list of Connect clusters. kPow uses the resource ID as a prefix in the environment variable.
 

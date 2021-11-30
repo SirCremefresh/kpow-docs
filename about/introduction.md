@@ -22,7 +22,7 @@ kPow offers full support for controlling and monitoring Kafka Connect clusters a
 
 ### Deep Data Inspect with kJQ
 
-Search **tens of thousands of messages a second** with kPow’s unique, custom implementation of JQ-like queries for Kafka topics. 
+Search **tens of thousands of messages a second** with kPow’s unique, custom implementation of JQ-like queries for Kafka topics.&#x20;
 
 **kJQ** works with JSON or JSON-like data including Apache Avro®, Transit, EDN, and even Protobuf messages where you have configured custom serdes to output JSON formatted text.
 
@@ -40,12 +40,12 @@ kPow Compute provides access to your consumer (and soon, _Kafka Streams_) topolo
 
 kPow comes from a practical application of Kafka to real-world requirements and provides:
 
-* **User Authentication **via DB, File, LDAP, SAML, or OpenID configuration.
-* **User Authorization **with Simple or Role Based Access Controls (RBAC).
+* **User Authentication** via DB, File, LDAP, SAML, or OpenID configuration.
+* **User Authorization** with Simple or Role Based Access Controls (RBAC).
 * **Data Policies** for masking and redaction of sensitive data like Credit Card or PII.
-* **Data Governance **with all user actions captured in the kPow audit log.
-* **Slack Integration **to have user actions sent to an operations channel as they happen.
-* **HTTPS **easily configured with your own certificates, or integrated with a reverse-proxy.
+* **Data Governance** with all user actions captured in the kPow audit log.
+* **Slack Integration** to have user actions sent to an operations channel as they happen.
+* **HTTPS** easily configured with your own certificates, or integrated with a reverse-proxy.
 * **Prometheus** endpoints to integrate with your preferred metrics and alerting systems.
 * **Multi-Cluster Monitoring** from a single installation for cost efficiency and simplicity.
 * **All data in local topics** makes kPow perfect for air-gapped environments.

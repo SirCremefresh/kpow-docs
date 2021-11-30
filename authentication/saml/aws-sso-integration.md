@@ -23,7 +23,7 @@ You will see a form like:
 #### Application Details
 
 * **Display Name:** the name of the application (e.g. kPow)
-* **Description: **the description of the application.
+* **Description:** the description of the application.
 
 
 
@@ -35,14 +35,14 @@ Download the AWS SSO SAML metadata file and optionally the **AWS SSO Certificate
 
 * **Session Duration:** Set to a value that makes sense for your users and security policies.
 * **Relay State:** Leave empty.
-* **Application Start URL: **Optional, can be left empty.
+* **Application Start URL:** Optional, can be left empty.
 
 #### Application Metadata
 
 Select the option to manually type metadata values.
 
-* **Application ACS URL: **Absolute path to your kPow, e.g. **https://kpow.corp.com/saml**
-* **Application SMAL Audience: **set to **urn:amazon:webservices**
+* **Application ACS URL:** Absolute path to your kPow, e.g. **https://kpow.corp.com/saml**
+* **Application SMAL Audience:** set to **urn:amazon:webservices**
 
 ### Integrate kPow with AWS SSO
 
@@ -78,4 +78,4 @@ Each of the `Roles` in this example will have the value of the GUID of the AWS S
 
 ![](../../.gitbook/assets/aws-sso-guid.png)
 
-**Note**: If you are using Active Directory or an external IdP as your identity source for AWS SSO you can use a [supported directory attribute](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html?icmpid=docs_sso_console) like `{dir:....}` that maps to your roles in your Active Directory deployment. For more info visit the [AWS documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/mapssoattributestocdattributes.html).\
+**Note**: If you are using Active Directory or an external IdP as your identity source for AWS SSO you can use a [supported directory attribute](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html?icmpid=docs\_sso\_console) like `{dir:....}` that maps to your roles in your Active Directory deployment. For more info visit the [AWS documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/mapssoattributestocdattributes.html).\

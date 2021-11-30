@@ -45,7 +45,7 @@ The YAML configuration defines policies, each policy contains:
 ### Example YAML
 
 {% hint style="success" %}
-**Example: **A **Credit Card** policy that shows only the last four digits of specific fields in all topics.
+**Example:** A **Credit Card** policy that shows only the last four digits of specific fields in all topics.
 {% endhint %}
 
 ```yaml
@@ -61,7 +61,7 @@ policies:
 
 ### Resource
 
-Resources are defined through a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy_\(biology\)) that describes the hierarchy of objects in kPow:
+Resources are defined through a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy\_\(biology\)) that describes the hierarchy of objects in kPow:
 
 ```
 [DOMAIN_TYPE, DOMAIN_ID, OBJECT_TYPE?, OBJECT_ID? OBJECT_RESOURCE?]
@@ -88,7 +88,7 @@ Where:
 | `["cluster", "*", "topic", "*", "value"]`         | All topics on all clusters (value only)        |
 | `["cluster", "*", "topic", "MyTopic", "headers"]` | Specific topic on all clusters (headers only)  |
 
-###  Redaction Functions
+### &#x20;Redaction Functions
 
 Supported redaction functions include:
 
@@ -107,12 +107,12 @@ Supported redaction functions include:
 | **ShowLast4**     | Show the last four characters    | John Smith                                      | \*\*\*\*\*\*mith            |
 | **ShowLast6**     | Show the last six characters     | John Smith                                      | \*\*\*\* Smith              |
 
-###  Nested Redaction
+### &#x20;Nested Redaction
 
 kPow supports redaction of nested data structures.
 
 {% hint style="success" %}
-**Example: **Applying the example **Credit Card** policy to a JSON message.
+**Example:** Applying the example **Credit Card** policy to a JSON message.
 {% endhint %}
 
 ```javascript
@@ -126,7 +126,7 @@ kPow supports redaction of nested data structures.
 }
 ```
 
-The data is masked accordingly when displayed in Data Inspect search results: 
+The data is masked accordingly when displayed in Data Inspect search results:&#x20;
 
 ```javascript
 { 
@@ -157,7 +157,7 @@ kPow is **conservative** when applying data policies. Given a field where the se
 }
 ```
 
-Applying the same Credit Card policy to this data incurs a **Full** redaction at the credit_card field as kPow does not know how to apply the configured "ShowLast4" redactor to a structured value (in this case a map with "pan" and "expiry" fields).
+Applying the same Credit Card policy to this data incurs a **Full** redaction at the credit\_card field as kPow does not know how to apply the configured "ShowLast4" redactor to a structured value (in this case a map with "pan" and "expiry" fields).
 
 The result is effectively truncated:
 

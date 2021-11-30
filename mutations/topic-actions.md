@@ -23,14 +23,14 @@ You can add configuration options to your topic by using the **Add configuration
 
 ![Topic create configuration in kPow](<../.gitbook/assets/Screen Shot 2021-04-29 at 3.54.12 pm.png>)
 
-Clicking the **Show description **link will open up the documentation accordion for the configuration item. \
+Clicking the **Show description** link will open up the documentation accordion for the configuration item. \
 The contents of the description include the configuration item's documentation, its type, default and common values. Common values are the top-5 most common values set on your cluster. Clicking on one of these values will pre-fill the configuration form for the item.
 
 ![Documentation about compression.type.](<../.gitbook/assets/Screen Shot 2021-04-29 at 3.57.49 pm.png>)
 
-### Copy configuration 
+### Copy configuration&#x20;
 
-Within the UI you can also copy the configuration of other topics within a cluster. For example if you select **\__consumer_offsets** from the dropdown, this will pre-fill the configuration of **\__consumer_offsets** into the form.
+Within the UI you can also copy the configuration of other topics within a cluster. For example if you select **\_\_consumer\_offsets** from the dropdown, this will pre-fill the configuration of **\_\_consumer\_offsets** into the form.
 
 ### kafka-topics.sh export
 
@@ -56,10 +56,10 @@ The top-level filters allow you to filter by topic or config item. If you click 
 
 Topic actions are visible by hovering over the actions icon, the last column of a row in the topic configuration UI. Available actions include viewing documentation and editing config
 
-![Actions available for \__consumer_offsets' cleanup.policy](<../.gitbook/assets/Screen Shot 2021-04-29 at 4.17.33 pm (1).png>)
+![Actions available for \_\_consumer\_offsets' cleanup.policy](<../.gitbook/assets/Screen Shot 2021-04-29 at 4.17.33 pm (1).png>)
 
 ### Editing config
 
-Clicking the **Edit Config** item inside a topic config item's action menu will bring up the edit config modal. This modal looks similar to the Topic Create UI, and will allow you to edit the config item. 
+Clicking the **Edit Config** item inside a topic config item's action menu will bring up the edit config modal. This modal looks similar to the Topic Create UI, and will allow you to edit the config item.&#x20;
 
-![The Edit Config modal for \__consumer_offsets' cleanup.policy](<../.gitbook/assets/Screen Shot 2021-04-29 at 4.23.46 pm.png>)
+![The Edit Config modal for \_\_consumer\_offsets' cleanup.policy](<../.gitbook/assets/Screen Shot 2021-04-29 at 4.23.46 pm.png>)

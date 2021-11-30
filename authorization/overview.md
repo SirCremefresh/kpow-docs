@@ -6,8 +6,8 @@ description: Secure kPow with User Authorization
 
 kPow supports two methods of controlling user access to [**User Actions**](overview.md#user-actions).
 
-* ****[**Simple Access Control**](simple-access-control.md)** **creates global access controls from environment variable config
-* ****[**Role Based Access Control**](role-based-access-control.md)** **integrates with [**User Authentication**](../authentication/overview.md) and respects role based controls
+* ****[**Simple Access Control**](simple-access-control.md) **** creates global access controls from environment variable config
+* ****[**Role Based Access Control**](role-based-access-control.md) **** integrates with [**User Authentication**](../authentication/overview.md) and respects role based controls
 
 ## User Actions
 
@@ -17,24 +17,24 @@ kPow supports two methods of controlling user access to [**User Actions**](overv
 
 The following actions are supported by both methods of access control.
 
-| Domain      | Action             | Control (when TRUE)                                                |
-| ----------- | ------------------ | ------------------------------------------------------------------ |
-| **CLUSTER** | **TOPIC_INSPECT**  | Allow users to read topic key and value data                       |
-|             | **TOPIC_PRODUCE**  | Allow users to write new messages to topics                        |
-|             | **TOPIC_CREATE**   | Allow users to create new topics                                   |
-|             | **TOPIC_EDIT**     | Allow users to edit topic configuration                            |
-|             | **TOPIC_DELETE**   | Allow users to delete topics                                       |
-|             | **GROUP_EDIT**     | Allow users to delete consumer groups and reset consumer offsets   |
-|             | **BROKER_EDIT**    | Allow users to edit broker configuration                           |
-|             | **ACL_EDIT**       | Allow users to create and delete Kafka ACLs                        |
-| **SCHEMA**  | **SCHEMA_CREATE**  | Allow users to create new schemas and subjects                     |
-|             | **SCHEMA_EDIT**    | Allow users to edit schemas and subjects                           |
-| **CONNECT** | **CONNECT_CREATE** | Allow users to create new connectors                               |
-|             | **CONNECT_EDIT**   | Allow users to edit, pause, stop, and restart connectors and tasks |
+| Domain      | Action              | Control (when TRUE)                                                |
+| ----------- | ------------------- | ------------------------------------------------------------------ |
+| **CLUSTER** | **TOPIC\_INSPECT**  | Allow users to read topic key and value data                       |
+|             | **TOPIC\_PRODUCE**  | Allow users to write new messages to topics                        |
+|             | **TOPIC\_CREATE**   | Allow users to create new topics                                   |
+|             | **TOPIC\_EDIT**     | Allow users to edit topic configuration                            |
+|             | **TOPIC\_DELETE**   | Allow users to delete topics                                       |
+|             | **GROUP\_EDIT**     | Allow users to delete consumer groups and reset consumer offsets   |
+|             | **BROKER\_EDIT**    | Allow users to edit broker configuration                           |
+|             | **ACL\_EDIT**       | Allow users to create and delete Kafka ACLs                        |
+| **SCHEMA**  | **SCHEMA\_CREATE**  | Allow users to create new schemas and subjects                     |
+|             | **SCHEMA\_EDIT**    | Allow users to edit schemas and subjects                           |
+| **CONNECT** | **CONNECT\_CREATE** | Allow users to create new connectors                               |
+|             | **CONNECT\_EDIT**   | Allow users to edit, pause, stop, and restart connectors and tasks |
 
 ## User Permissions
 
-**Users are denied permissions on all actions by default.** 
+**Users are denied permissions on all actions by default.**&#x20;
 
 To give permission to a specific action you must configure it **true.**
 

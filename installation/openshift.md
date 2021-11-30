@@ -70,7 +70,7 @@ kPow is configured almost entirely via environment variables.
 
 There are some small number of optional configuration files (yaml and keystores) that you may need to configure depending on your requirements and/or environment. In each case you will provide those files to the kPow instance via secrets. Details of creating secrets and configuring files are in the Operator summary.
 
-When you have a license and the bootstrap of your Kafka Cluster, click **Create Instance **then **YAML View**
+When you have a license and the bootstrap of your Kafka Cluster, click **Create Instance** then **YAML View**
 
 ![](<../.gitbook/assets/Screen Shot 2021-03-26 at 9.41.44 pm.png>)
 
@@ -114,7 +114,7 @@ If you need any assistance installing or configuring kPow on OpenShift contact *
 Register your OpenShift cluster to purchase kPow on the Red Hat Marketplace
 {% endhint %}
 
-Installation of kPow from the Red Hat Marketplace requires the OpenShift cluster to be registered to the Marketplace Portal, including the roll out of the PullSecret in your cluster. 
+Installation of kPow from the Red Hat Marketplace requires the OpenShift cluster to be registered to the Marketplace Portal, including the roll out of the PullSecret in your cluster.&#x20;
 
 Failure to register will result in an image pull authentication failure with the Red Hat registry.
 

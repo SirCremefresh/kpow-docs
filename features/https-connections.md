@@ -14,7 +14,7 @@ Once configured all content is served via HTTPS, meaning you must update any con
 
 kPow is powered by **Jetty** which uses Java KeyStores (JKS) to manage certificates.
 
-Refer to the** **[**Jetty documentation**](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-keystore) for instructions on using the JDK keytool or OpenSSL to create and import certificates (e.g. a `.pem` file) into a KeyStore.
+Refer to the **** [**Jetty documentation**](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-keystore) for instructions on using the JDK keytool or OpenSSL to create and import certificates (e.g. a `.pem` file) into a KeyStore.
 
 Set the following environment variable and start kPow with SSL connections.
 

@@ -50,7 +50,7 @@ Select a Headers Deserializer in the Data Inspect form to include Message Header
 
 #### Query progress
 
-Data inspect queries have a** start and end cursor position. **The start is defined by the [window](./#window) of the query, and the end position is the time in which the query was first executed. Once a query has been executed, the query metadata has the notion of "progress": how many records you have scanned, and how many records remain for the query. The green progress bar above the toolbar represents the total progress of the query. You can always click **"Continue consuming" **to keep progressing your cursor.
+Data inspect queries have a **start and end cursor position.** The start is defined by the [window](./#window) of the query, and the end position is the time in which the query was first executed. Once a query has been executed, the query metadata has the notion of "progress": how many records you have scanned, and how many records remain for the query. The green progress bar above the toolbar represents the total progress of the query. You can always click **"Continue consuming"** to keep progressing your cursor.
 
 #### Data Policies&#x20;
 
@@ -62,21 +62,21 @@ If you have any [Data policies](../data-policies.md) that apply to the query tha
 
 ### Result Metadata Table
 
-Clicking the **"Show metadata" **button** **in the results toolbar will expand the Result Metadata Table, which is a table of your queries cursors across all partitions.&#x20;
+Clicking the **"Show metadata"** button **** in the results toolbar will expand the Result Metadata Table, which is a table of your queries cursors across all partitions.&#x20;
 
 ![The Result Metadata Table](<../../.gitbook/assets/Screen Shot 2021-05-20 at 12.03.45 pm.png>)
 
 #### Result Metadata Table Explanation
 
-* **Partition: **the partition** **the row relates to
+* **Partition:** the partition **** the row relates to
 * **Partition start**: the earliest offset of this partition
 * **Partition end**: the most recent offset of this partition&#x20;
 * **Query start**: the offset that data inspect started scanning from for this partition. Calculated from the query window.
 * **Query end**: the offset that data inspect will scan up to. Calculated from the query window.
-* **Scanned Records: **the number of records in this partition that have been scanned
+* **Scanned Records:** the number of records in this partition that have been scanned
 * **Filtered Records**: the number of records that have positively matched the key or value filters specified in the query
 * **Remaining Records**: the number of records that remain in the query window.
-* **Consumed: **the percentage of overall records consumed** **for this partition**.**
+* **Consumed:** the percentage of overall records consumed **** for this partition**.**
 
 ## Configuration
 
@@ -102,6 +102,6 @@ To enable inspection of key/value/header contents of records, set the `ALLOW_TOP
 
 #### Data policies/redaction
 
-To configure data policies (configurable redaction of Data Inspection results**) **view our [Data Policies guide](../data-policies.md).
+To configure data policies (configurable redaction of Data Inspection results**)** view our [Data Policies guide](../data-policies.md).
 
 \
