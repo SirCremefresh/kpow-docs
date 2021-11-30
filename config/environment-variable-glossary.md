@@ -1,8 +1,10 @@
 ---
-description: A glossary of all configuration options available to kPow
+description: All configuration options available to kPow
 ---
 
 # Environment Variable Glossary
+
+kPow is configured with Environment Variables, as described below:
 
 ## Kafka
 
@@ -10,344 +12,348 @@ description: A glossary of all configuration options available to kPow
 * See [Kafka Connect](kafka-connect.md) for Connect environment variable reference
 * See [Schema Registry](schema-registry.md) for Schema registry environment variable reference
 
-## Web Server 
+## Web Server&#x20;
 
 ### PORT
 
-| Env Var | Type | Default | Description               |
-| ------- | ---- | ------- | ------------------------- |
-| PORT    | long | 3000    | The kPow web server port  |
+**Type:** Long, **Default**: 3000.
 
-**Note: **will serve HTTPS traffic if so configured.
+{% hint style="info" %}
+The PORT variable applies to both HTTP or HTTPS traffic.
+{% endhint %}
 
-### HTTP_FORWARDED
+The server port of the kPow UI.
 
-| Env Var        | Type | Default | Description                                      |
-| -------------- | ---- | ------- | ------------------------------------------------ |
-| HTTP_FORWARDED | bool | false   | Set when kPow is running behind a reverse proxy. |
+### HTTP\_FORWARDED
 
-**Note**: see [Deployment notes](../installation/deployment-notes.md) for reverse proxy examples. 
+**Type:** Boolean, **Default:** false.
 
-### ENABLE_GZIP
+{% hint style="info" %}
+See the [Jetty HTTP\_FORWARDED module](https://www.eclipse.org/jetty/documentation/jetty-10/operations-guide/index.html#og-module-http-forwarded) documentation for more information.
+{% endhint %}
 
-| Env Var     | Type | Default | Description                                                                    |
-| ----------- | ---- | ------- | ------------------------------------------------------------------------------ |
-| ENABLE_GZIP | bool | true    | Whether to enable gzip compression for kPow's static resources (JSON, CSS etc) |
+Configure when running kPow with Jetty Authentication and behind a reverse-proxy that is performing HTTP termination. When **true** the Jetty Authentication process will respect the HTTPS scheme when redirecting post-authentication.
 
-### ENABLE_HTTPS
+### ENABLE\_GZIP
 
-| Env Var      | Default | Type | Description                  |
-| ------------ | ------- | ---- | ---------------------------- |
-| ENABLE_HTTPS | false   | bool | Serve kPow content via HTTPS |
+| Env Var      | Type | Default | Description                                                                    |
+| ------------ | ---- | ------- | ------------------------------------------------------------------------------ |
+| ENABLE\_GZIP | bool | true    | Whether to enable gzip compression for kPow's static resources (JSON, CSS etc) |
 
-**Note: **see [HTTPS connections](../features/https-connections.md) for more details about configuration. 
+### ENABLE\_HTTPS
 
-### **HTTPS_SNI_HOST_CHECK**
+| Env Var       | Default | Type | Description                  |
+| ------------- | ------- | ---- | ---------------------------- |
+| ENABLE\_HTTPS | false   | bool | Serve kPow content via HTTPS |
 
-| Env Var                  | Default | Type | Description                                                                              |
-| ------------------------ | ------- | ---- | ---------------------------------------------------------------------------------------- |
-| **HTTPS_SNI_HOST_CHECK** | false   | bool | When SSL configured, whether the certificate sent to the client matches the Host header. |
+**Note:** see [HTTPS connections](../features/https-connections.md) for more details about configuration.&#x20;
 
-### **HTTPS_KEYSTORE_LOCATION**
+### **HTTPS\_SNI\_HOST\_CHECK**
 
-| Env Var                     | Default | Type   | Description                 |
-| --------------------------- | ------- | ------ | --------------------------- |
-| **HTTPS_KEYSTORE_LOCATION** |         | string | eg: /ssl/https.keystore.jks |
+| Env Var                     | Default | Type | Description                                                                              |
+| --------------------------- | ------- | ---- | ---------------------------------------------------------------------------------------- |
+| **HTTPS\_SNI\_HOST\_CHECK** | false   | bool | When SSL configured, whether the certificate sent to the client matches the Host header. |
 
-### **HTTPS_KEYSTORE_TYPE**
+### **HTTPS\_KEYSTORE\_LOCATION**
 
-| Env Var                 | Default | Type   |                              |
-| ----------------------- | ------- | ------ | ---------------------------- |
-| **HTTPS_KEYSTORE_TYPE** |         | string | Type of SSL Keystore, eg JKS |
+| Env Var                       | Default | Type   | Description                 |
+| ----------------------------- | ------- | ------ | --------------------------- |
+| **HTTPS\_KEYSTORE\_LOCATION** |         | string | eg: /ssl/https.keystore.jks |
 
-### **HTTPS_KEYSTORE_PASSWORD**
+### **HTTPS\_KEYSTORE\_TYPE**
 
-| Env Var                     | Default | Type   | Description           |
-| --------------------------- | ------- | ------ | --------------------- |
-| **HTTPS_KEYSTORE_PASSWORD** |         | string | SSL Keystore password |
+| Env Var                   | Default | Type   |                              |
+| ------------------------- | ------- | ------ | ---------------------------- |
+| **HTTPS\_KEYSTORE\_TYPE** |         | string | Type of SSL Keystore, eg JKS |
 
-### **HTTPS_TRUSTSTORE_LOCATION**
+### **HTTPS\_KEYSTORE\_PASSWORD**
 
-| Env Var                       | Default | Type   | Description                   |
-| ----------------------------- | ------- | ------ | ----------------------------- |
-| **HTTPS_TRUSTSTORE_LOCATION** |         | string | eg, /ssl/https.truststore.jks |
+| Env Var                       | Default | Type   | Description           |
+| ----------------------------- | ------- | ------ | --------------------- |
+| **HTTPS\_KEYSTORE\_PASSWORD** |         | string | SSL Keystore password |
 
-### **HTTPS_TRUSTSTORE_TYPE**
+### **HTTPS\_TRUSTSTORE\_LOCATION**
 
-| Env Var                   | Default | Type   | Description                         |
-| ------------------------- | ------- | ------ | ----------------------------------- |
-| **HTTPS_TRUSTSTORE_TYPE** |         | string | Type of SSL Truststore type, eg JKS |
+| Env Var                         | Default | Type   | Description                   |
+| ------------------------------- | ------- | ------ | ----------------------------- |
+| **HTTPS\_TRUSTSTORE\_LOCATION** |         | string | eg, /ssl/https.truststore.jks |
 
-### **HTTPS_TRUSTSTORE_PASSWORD**
+### **HTTPS\_TRUSTSTORE\_TYPE**
 
-| Env Var                       | Default | Type   | Description             |
-| ----------------------------- | ------- | ------ | ----------------------- |
-| **HTTPS_TRUSTSTORE_PASSWORD** |         | string | SSL Truststore password |
+| Env Var                     | Default | Type   | Description                         |
+| --------------------------- | ------- | ------ | ----------------------------------- |
+| **HTTPS\_TRUSTSTORE\_TYPE** |         | string | Type of SSL Truststore type, eg JKS |
+
+### **HTTPS\_TRUSTSTORE\_PASSWORD**
+
+| Env Var                         | Default | Type   | Description             |
+| ------------------------------- | ------- | ------ | ----------------------- |
+| **HTTPS\_TRUSTSTORE\_PASSWORD** |         | string | SSL Truststore password |
 
 ## Authentication
 
-### AUTH_PROVIDER_TYPE
+### AUTH\_PROVIDER\_TYPE
 
-| Env Var                | Default | Type | Description                                                          |
-| ---------------------- | ------- | ---- | -------------------------------------------------------------------- |
-| **AUTH_PROVIDER_TYPE** |         | enum | The OPENID provider configured for SSO, eg: `github`, `jetty`,`okta` |
+| Env Var                  | Default | Type | Description                                                          |
+| ------------------------ | ------- | ---- | -------------------------------------------------------------------- |
+| **AUTH\_PROVIDER\_TYPE** |         | enum | The OPENID provider configured for SSO, eg: `github`, `jetty`,`okta` |
 
 Note: see [User Authentication](../authentication/overview.md) for more details
 
-### OKTA_ORGANISATION
+### OKTA\_ORGANISATION
 
-| Env Var               | Default | Type   | Description                                     |
-| --------------------- | ------- | ------ | ----------------------------------------------- |
-| **OKTA_ORGANISATION** |         | string | The name of your Okta organisation, eg: my-corp |
+| Env Var                | Default | Type   | Description                                     |
+| ---------------------- | ------- | ------ | ----------------------------------------------- |
+| **OKTA\_ORGANISATION** |         | string | The name of your Okta organisation, eg: my-corp |
 
-### AUTH_LANDING_URI
+### AUTH\_LANDING\_URI
 
-| Env Var              | Default | Type   | Description                                                                                         |
-| -------------------- | ------- | ------ | --------------------------------------------------------------------------------------------------- |
-| **AUTH_LANDING_URI** |         | string | The absolute URL to redirect to after successful OKTA login. Eg: https://staging.operatr.z-corp.com |
+| Env Var                | Default | Type   | Description                                                                                         |
+| ---------------------- | ------- | ------ | --------------------------------------------------------------------------------------------------- |
+| **AUTH\_LANDING\_URI** |         | string | The absolute URL to redirect to after successful OKTA login. Eg: https://staging.operatr.z-corp.com |
 
-### **OPENID_AUTH_URI**
+### **OPENID\_AUTH\_URI**
 
-| Env Var             | Default | Type   | Description                                                                                                                                                                        |
-| ------------------- | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **OPENID_AUTH_URI** |         | string | <p>For GitHub: <a href="https://github.com/login/oauth/authorize">https://github.com/login/oauth/authorize</a></p><p>For GitHub enterprise: [Server URL]/login/oauth/authorize</p> |
+| Env Var               | Default | Type   | Description                                                                                                                                                                        |
+| --------------------- | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **OPENID\_AUTH\_URI** |         | string | <p>For GitHub: <a href="https://github.com/login/oauth/authorize">https://github.com/login/oauth/authorize</a></p><p>For GitHub enterprise: [Server URL]/login/oauth/authorize</p> |
 
-### OPENID_API_URI
+### OPENID\_API\_URI
 
-| Env Var            | Default | Type   | Description                                                                                                                                          |
-| ------------------ | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **OPENID_API_URI** |         | string | <p>For GitHub:</p><p><a href="https://api.github.com/user">https://api.github.com/user</a></p><p>For GitHub enterprise: [Server URL]/api/v3/user</p> |
+| Env Var              | Default | Type   | Description                                                                                                                                          |
+| -------------------- | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **OPENID\_API\_URI** |         | string | <p>For GitHub:</p><p><a href="https://api.github.com/user">https://api.github.com/user</a></p><p>For GitHub enterprise: [Server URL]/api/v3/user</p> |
 
-### OPENID_TOKEN_URI
+### OPENID\_TOKEN\_URI
 
-| Env Var              | Default | Type   | Description                                                                                                                                                                                 |
-| -------------------- | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **OPENID_TOKEN_URI** |         | string | <p>For GitHub: <a href="https://github.com/login/oauth/access_token">https://github.com/login/oauth/access_token</a></p><p>For GitHub enterprise: [Server URL]/login/oauth/access_token</p> |
+| Env Var                | Default | Type   | Description                                                                                                                                                                                 |
+| ---------------------- | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **OPENID\_TOKEN\_URI** |         | string | <p>For GitHub: <a href="https://github.com/login/oauth/access_token">https://github.com/login/oauth/access_token</a></p><p>For GitHub enterprise: [Server URL]/login/oauth/access_token</p> |
 
-### OPENID_CLIENT_ID
+### OPENID\_CLIENT\_ID
 
-| Env Var              | Default | Type   | Description                                         |
-| -------------------- | ------- | ------ | --------------------------------------------------- |
-| **OPENID_CLIENT_ID** |         | string | The 'Client ID' found in your configured OpenID App |
+| Env Var                | Default | Type   | Description                                         |
+| ---------------------- | ------- | ------ | --------------------------------------------------- |
+| **OPENID\_CLIENT\_ID** |         | string | The 'Client ID' found in your configured OpenID App |
 
-### OPENID_CLIENT_SECRET
+### OPENID\_CLIENT\_SECRET
 
-| Env Var                  | Default | Type   | Description                                             |
-| ------------------------ | ------- | ------ | ------------------------------------------------------- |
-| **OPENID_CLIENT_SECRET** |         | string | The 'Client Secret' found in your configured OpenID App |
+| Env Var                    | Default | Type   | Description                                             |
+| -------------------------- | ------- | ------ | ------------------------------------------------------- |
+| **OPENID\_CLIENT\_SECRET** |         | string | The 'Client Secret' found in your configured OpenID App |
 
-### **SAML_RELYING_PARTY_IDENTIFIER**
+### **SAML\_RELYING\_PARTY\_IDENTIFIER**
 
-| Env Var                           | Default | Type   | Description                |
-| --------------------------------- | ------- | ------ | -------------------------- |
-| **SAML_RELYING_PARTY_IDENTIFIER** |         | string | You Operatr Application ID |
+| Env Var                              | Default | Type   | Description                |
+| ------------------------------------ | ------- | ------ | -------------------------- |
+| **SAML\_RELYING\_PARTY\_IDENTIFIER** |         | string | You Operatr Application ID |
 
-### SAML_ACS_URL
+### SAML\_ACS\_URL
 
-| Env Var          | Default | Type   | Description                        |
-| ---------------- | ------- | ------ | ---------------------------------- |
-| **SAML_ACS_URL** |         | string | The Assertion Consumer Service URL |
+| Env Var            | Default | Type   | Description                        |
+| ------------------ | ------- | ------ | ---------------------------------- |
+| **SAML\_ACS\_URL** |         | string | The Assertion Consumer Service URL |
 
-### **SAML_METADATA_FILE**
+### **SAML\_METADATA\_FILE**
 
-| Env Var                | Default | Type   | Description                               |
-| ---------------------- | ------- | ------ | ----------------------------------------- |
-| **SAML_METADATA_FILE** |         | string | The SAML Metadata File from your provider |
+| Env Var                  | Default | Type   | Description                               |
+| ------------------------ | ------- | ------ | ----------------------------------------- |
+| **SAML\_METADATA\_FILE** |         | string | The SAML Metadata File from your provider |
 
-### SAML_CERT
+### SAML\_CERT
 
-| Env Var       | Default | Type   | Description                 |
-| ------------- | ------- | ------ | --------------------------- |
-| **SAML_CERT** |         | string | SAML Certificate (Optional) |
+| Env Var        | Default | Type   | Description                 |
+| -------------- | ------- | ------ | --------------------------- |
+| **SAML\_CERT** |         | string | SAML Certificate (Optional) |
 
-### **SAML_SESSION_S**
+### **SAML\_SESSION\_S**
 
-| Env Var            | Default | Type | Description                                                       |
-| ------------------ | ------- | ---- | ----------------------------------------------------------------- |
-| **SAML_SESSION_S** | 3600    | long | The duration in seconds before re-authenticating SAML credentials |
+| Env Var              | Default | Type | Description                                                       |
+| -------------------- | ------- | ---- | ----------------------------------------------------------------- |
+| **SAML\_SESSION\_S** | 3600    | long | The duration in seconds before re-authenticating SAML credentials |
 
-### DEBUG_SAML
+### DEBUG\_SAML
 
-| Env Var        | Default | Type | Description                                   |
-| -------------- | ------- | ---- | --------------------------------------------- |
-| **DEBUG_SAML** | false   | bool | Enable SAML debug logging in application logs |
+| Env Var         | Default | Type | Description                                   |
+| --------------- | ------- | ---- | --------------------------------------------- |
+| **DEBUG\_SAML** | false   | bool | Enable SAML debug logging in application logs |
 
-### **JETTY_AUTH_METHOD**
+### **JETTY\_AUTH\_METHOD**
 
-| Env Var               | Default | Type | Description                                                                                                                                                         |
-| --------------------- | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **JETTY_AUTH_METHOD** | form    | enum | <p>Configure if using <a href="../authentication/overview.md#jetty-authentication">Jetty authentication</a></p><p>Either: <code>form</code>or<code>basic</code></p> |
+| Env Var                 | Default | Type | Description                                                                                                                                                         |
+| ----------------------- | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **JETTY\_AUTH\_METHOD** | form    | enum | <p>Configure if using <a href="../authentication/overview.md#jetty-authentication">Jetty authentication</a></p><p>Either: <code>form</code>or<code>basic</code></p> |
 
 ## Authorization
 
-### **RBAC_CONFIGURATION_FILE**
+### **RBAC\_CONFIGURATION\_FILE**
 
-| Env Var                     | Default | Type   | Description                                                                 |
-| --------------------------- | ------- | ------ | --------------------------------------------------------------------------- |
-| **RBAC_CONFIGURATION_FILE** |         | string | The path to your Operatr RBAC Configuration (optional, expects SSO enabled) |
+| Env Var                       | Default | Type   | Description                                                                 |
+| ----------------------------- | ------- | ------ | --------------------------------------------------------------------------- |
+| **RBAC\_CONFIGURATION\_FILE** |         | string | The path to your Operatr RBAC Configuration (optional, expects SSO enabled) |
 
-**Note: **see [Authorization](../authorization/role-based-access-control.md) for more details
+**Note:** see [Authorization](../authorization/role-based-access-control.md) for more details
 
 ## kPow
 
-### **DATA_POLICY_CONFIGURATION_FILE**
+### **DATA\_POLICY\_CONFIGURATION\_FILE**
 
-| Env Var                            | Default | Type   | Description                                     |
-| ---------------------------------- | ------- | ------ | ----------------------------------------------- |
-| **DATA_POLICY_CONFIGURATION_FILE** |         | string | The path to your kPow Data Policy Configuration |
+| Env Var                               | Default | Type   | Description                                     |
+| ------------------------------------- | ------- | ------ | ----------------------------------------------- |
+| **DATA\_POLICY\_CONFIGURATION\_FILE** |         | string | The path to your kPow Data Policy Configuration |
 
 Note: see [Data Policies](../features/data-policies.md) for more information
 
-### CONNECT_TIMEOUT_MS
+### CONNECT\_TIMEOUT\_MS
 
-| Env Var                | Default | Type | Description                                                                   |
-| ---------------------- | ------- | ---- | ----------------------------------------------------------------------------- |
-| **CONNECT_TIMEOUT_MS** | 5000    | long | The timeout value in ms for all HTTP requests made to a Kafka Connect cluster |
+| Env Var                  | Default | Type | Description                                                                   |
+| ------------------------ | ------- | ---- | ----------------------------------------------------------------------------- |
+| **CONNECT\_TIMEOUT\_MS** | 5000    | long | The timeout value in ms for all HTTP requests made to a Kafka Connect cluster |
 
-### CUSTOM_SERDES
+### CUSTOM\_SERDES
 
-| Env Var           | Default | Type   | Description                                                                                                |
-| ----------------- | ------- | ------ | ---------------------------------------------------------------------------------------------------------- |
-| **CUSTOM_SERDES** |         | string | eg: `io.operatr.SerdeOne,io.operatr.SerdeTwo`Comma separated names of custom serdes found on the classpath |
+| Env Var            | Default | Type   | Description                                                                                                |
+| ------------------ | ------- | ------ | ---------------------------------------------------------------------------------------------------------- |
+| **CUSTOM\_SERDES** |         | string | eg: `io.operatr.SerdeOne,io.operatr.SerdeTwo`Comma separated names of custom serdes found on the classpath |
 
 **Note**: see [Custom serdes](../features/data-inspect/serdes.md#custom-serdes) for more information
 
-### DEFAULT_KEY_SERDES
-
-| Env Var                | Default | Type   | Description                                                   |
-| ---------------------- | ------- | ------ | ------------------------------------------------------------- |
-| **DEFAULT_KEY_SERDES** |         | string | The default key serde to use when inspecting data, eg: `AVRO` |
-
-### DEFAULT_VALUE_SERDES
+### DEFAULT\_KEY\_SERDES
 
 | Env Var                  | Default | Type   | Description                                                   |
 | ------------------------ | ------- | ------ | ------------------------------------------------------------- |
-| **DEFAULT_VALUE_SERDES** |         | string | The default key value to use when inspecting data, eg: `JSON` |
+| **DEFAULT\_KEY\_SERDES** |         | string | The default key serde to use when inspecting data, eg: `AVRO` |
 
-### **AVAILABLE_KEY_SERDES**
+### DEFAULT\_VALUE\_SERDES
 
-| Env Var                  | Default | Type   | Description                                                                              |
-| ------------------------ | ------- | ------ | ---------------------------------------------------------------------------------------- |
-| **AVAILABLE_KEY_SERDES** |         | string | The list of key serdes to present when inspecting data, eg: `JSON,String,Transit / JSON` |
+| Env Var                    | Default | Type   | Description                                                   |
+| -------------------------- | ------- | ------ | ------------------------------------------------------------- |
+| **DEFAULT\_VALUE\_SERDES** |         | string | The default key value to use when inspecting data, eg: `JSON` |
 
-### **AVAILABLE_VALUE_SERDES**
+### **AVAILABLE\_KEY\_SERDES**
 
-| Env Var                    | Default | Type   | Description                                                                                   |
-| -------------------------- | ------- | ------ | --------------------------------------------------------------------------------------------- |
-| **AVAILABLE_VALUE_SERDES** |         | string | The list of key serdes to present when inspecting data, eg: `JSON,String,io.operatr.SerdeOne` |
+| Env Var                    | Default | Type   | Description                                                                              |
+| -------------------------- | ------- | ------ | ---------------------------------------------------------------------------------------- |
+| **AVAILABLE\_KEY\_SERDES** |         | string | The list of key serdes to present when inspecting data, eg: `JSON,String,Transit / JSON` |
 
-### NUM_PARTITIONS
+### **AVAILABLE\_VALUE\_SERDES**
 
-| Env Var            | Default | Type | Description                                                  |
-| ------------------ | ------- | ---- | ------------------------------------------------------------ |
-| **NUM_PARTITIONS** | 12      | long | The number of partitions for kPow's internal consumer groups |
+| Env Var                      | Default | Type   | Description                                                                                   |
+| ---------------------------- | ------- | ------ | --------------------------------------------------------------------------------------------- |
+| **AVAILABLE\_VALUE\_SERDES** |         | string | The list of key serdes to present when inspecting data, eg: `JSON,String,io.operatr.SerdeOne` |
 
-### REPLICATION_FACTOR
+### NUM\_PARTITIONS
 
-| Env Var                | Default | Type | Description                                               |
-| ---------------------- | ------- | ---- | --------------------------------------------------------- |
-| **REPLICATION_FACTOR** | 3       | long | The replication factor of kPow's internal consumer groups |
+| Env Var             | Default | Type | Description                                                  |
+| ------------------- | ------- | ---- | ------------------------------------------------------------ |
+| **NUM\_PARTITIONS** | 12      | long | The number of partitions for kPow's internal consumer groups |
 
-### REQUEST_TIMEOUT_MS
+### REPLICATION\_FACTOR
 
-| Env Var                | Default | Type | Description                                                         |
-| ---------------------- | ------- | ---- | ------------------------------------------------------------------- |
-| **REQUEST_TIMEOUT_MS** | 30000   | long | The request.timeout.ms settting for kPow's internal consumer groups |
+| Env Var                 | Default | Type | Description                                               |
+| ----------------------- | ------- | ---- | --------------------------------------------------------- |
+| **REPLICATION\_FACTOR** | 3       | long | The replication factor of kPow's internal consumer groups |
 
-### **MAX_PRODUCE_REQUEST_SIZE**
+### REQUEST\_TIMEOUT\_MS
 
-| Env Var                      | Default | Type | Description                                                        |
-| ---------------------------- | ------- | ---- | ------------------------------------------------------------------ |
-| **MAX_PRODUCE_REQUEST_SIZE** | 1000000 | long | The max.produce.request.size setting for kPow's internal producers |
+| Env Var                  | Default | Type | Description                                                         |
+| ------------------------ | ------- | ---- | ------------------------------------------------------------------- |
+| **REQUEST\_TIMEOUT\_MS** | 30000   | long | The request.timeout.ms settting for kPow's internal consumer groups |
 
-### **PROMETHEUS_EGRESS**
+### **MAX\_PRODUCE\_REQUEST\_SIZE**
 
-| Env Var               | Default | Type | Description                                                |
-| --------------------- | ------- | ---- | ---------------------------------------------------------- |
-| **PROMETHEUS_EGRESS** | false   | bool | Enable Prometheus endpoints for metrics and offsets egress |
+| Env Var                         | Default | Type | Description                                                        |
+| ------------------------------- | ------- | ---- | ------------------------------------------------------------------ |
+| **MAX\_PRODUCE\_REQUEST\_SIZE** | 1000000 | long | The max.produce.request.size setting for kPow's internal producers |
 
-### **PROMETHEUS_LABEL_ENV**
+### **PROMETHEUS\_EGRESS**
 
-| Env Var                  | Default | Type | Description                                                        |
-| ------------------------ | ------- | ---- | ------------------------------------------------------------------ |
-| **PROMETHEUS_LABEL_ENV** | true    | bool | Include your ENVIRONMENT_NAME as 'env' label on Prometheus metrics |
+| Env Var                | Default | Type | Description                                                |
+| ---------------------- | ------- | ---- | ---------------------------------------------------------- |
+| **PROMETHEUS\_EGRESS** | false   | bool | Enable Prometheus endpoints for metrics and offsets egress |
 
-### SNAPSHOT_PARALLELISM
+### **PROMETHEUS\_LABEL\_ENV**
 
-| Env Var                  | Default | Type | Description                                                                                                                                   |
-| ------------------------ | ------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SNAPSHOT_PARALLELISM** | 3       | long | The level of parallelism configured for when kPow captures telemetry for snapshots. Increase OPEARTR internal parallelism for larger clusters |
+| Env Var                    | Default | Type | Description                                                         |
+| -------------------------- | ------- | ---- | ------------------------------------------------------------------- |
+| **PROMETHEUS\_LABEL\_ENV** | true    | bool | Include your ENVIRONMENT\_NAME as 'env' label on Prometheus metrics |
 
-### SNAPSHOT_DEBUG
+### SNAPSHOT\_PARALLELISM
 
-| Env Var            | Default | Type | Description                                                |
-| ------------------ | ------- | ---- | ---------------------------------------------------------- |
-| **SNAPSHOT_DEBUG** | false   | bool | Add additional logging messages to help debug snapshotting |
+| Env Var                   | Default | Type | Description                                                                                                                                   |
+| ------------------------- | ------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SNAPSHOT\_PARALLELISM** | 3       | long | The level of parallelism configured for when kPow captures telemetry for snapshots. Increase OPEARTR internal parallelism for larger clusters |
 
-### LIVE\_ MODE_ENABLED
+### SNAPSHOT\_DEBUG
 
-| Env Var               | Default | Type | Description                             |
-| --------------------- | ------- | ---- | --------------------------------------- |
-| **LIVE_MODE_ENABLED** | true    | bool | Allow your users to switch to Live Mode |
+| Env Var             | Default | Type | Description                                                |
+| ------------------- | ------- | ---- | ---------------------------------------------------------- |
+| **SNAPSHOT\_DEBUG** | false   | bool | Add additional logging messages to help debug snapshotting |
+
+### LIVE\_ MODE\_ENABLED
+
+| Env Var                 | Default | Type | Description                             |
+| ----------------------- | ------- | ---- | --------------------------------------- |
+| **LIVE\_MODE\_ENABLED** | true    | bool | Allow your users to switch to Live Mode |
 
 **Note**: see [Live mode](../features/live-mode.md) for more details.
 
-### **LIVE_MODE_PERIOD_MS**
+### **LIVE\_MODE\_PERIOD\_MS**
 
-| Env Var                 | Default | Type | Description                                             |
-| ----------------------- | ------- | ---- | ------------------------------------------------------- |
-| **LIVE_MODE_PERIOD_MS** | 60000   | long | Live Mode will prompt you to continue after this period |
+| Env Var                    | Default | Type | Description                                             |
+| -------------------------- | ------- | ---- | ------------------------------------------------------- |
+| **LIVE\_MODE\_PERIOD\_MS** | 60000   | long | Live Mode will prompt you to continue after this period |
 
-### **LIVE_MODE_INTERVAL_MS**
+### **LIVE\_MODE\_INTERVAL\_MS**
 
-| Env Var                   | Default | Type | Description                                    |
-| ------------------------- | ------- | ---- | ---------------------------------------------- |
-| **LIVE_MODE_INTERVAL_MS** | 3500    | long | The amount of time between Live Mode snapshots |
+| Env Var                      | Default | Type | Description                                    |
+| ---------------------------- | ------- | ---- | ---------------------------------------------- |
+| **LIVE\_MODE\_INTERVAL\_MS** | 3500    | long | The amount of time between Live Mode snapshots |
 
-### **LIVE_MODE_MAX_CONCURRENT_USERS**
+### **LIVE\_MODE\_MAX\_CONCURRENT\_USERS**
 
-| Env Var                            | Default | Type | Description                                              |
-| ---------------------------------- | ------- | ---- | -------------------------------------------------------- |
-| **LIVE_MODE_MAX_CONCURRENT_USERS** | 2       | long | The maximum number of concurrent Live Mode user sessions |
+| Env Var                                | Default | Type | Description                                              |
+| -------------------------------------- | ------- | ---- | -------------------------------------------------------- |
+| **LIVE\_MODE\_MAX\_CONCURRENT\_USERS** | 2       | long | The maximum number of concurrent Live Mode user sessions |
 
-### SAMPLER_TIMEOUT_MS
+### SAMPLER\_TIMEOUT\_MS
 
-| Env Var                | Default | Type | Description                                     |
-| ---------------------- | ------- | ---- | ----------------------------------------------- |
-| **SAMPLER_TIMEOUT_MS** | 7000    | long | The end-to-end timeout for a data inspect query |
+| Env Var                  | Default | Type | Description                                     |
+| ------------------------ | ------- | ---- | ----------------------------------------------- |
+| **SAMPLER\_TIMEOUT\_MS** | 7000    | long | The end-to-end timeout for a data inspect query |
 
-### SAMPLER_CONSUMER_THREADS
+### SAMPLER\_CONSUMER\_THREADS
 
-| Env Var                      | Default | Type | Description                                       |
-| ---------------------------- | ------- | ---- | ------------------------------------------------- |
-| **SAMPLER_CONSUMER_THREADS** | 6       | long | The level of parallelism for a data inspect query |
+| Env Var                        | Default | Type | Description                                       |
+| ------------------------------ | ------- | ---- | ------------------------------------------------- |
+| **SAMPLER\_CONSUMER\_THREADS** | 6       | long | The level of parallelism for a data inspect query |
 
-### **SLACK_WEBHOOK_URL**
+### **SLACK\_WEBHOOK\_URL**
 
-| Env Var               | Default | Type   | Description                      |
-| --------------------- | ------- | ------ | -------------------------------- |
-| **SLACK_WEBHOOK_URL** |         | string | Send Audit Log messages to Slack |
+| Env Var                 | Default | Type   | Description                      |
+| ----------------------- | ------- | ------ | -------------------------------- |
+| **SLACK\_WEBHOOK\_URL** |         | string | Send Audit Log messages to Slack |
 
-### **SLACK_WEBHOOK_URL**
+### **SLACK\_WEBHOOK\_URL**
 
-| **Env Var**                 | Default   | Type | Description                              |
-| --------------------------- | --------- | ---- | ---------------------------------------- |
-| **SLACK_WEBHOOK_VERBOSITY** | Mutations | enum | Possible values: All, Mutations, Queries |
+| **Env Var**                   | Default   | Type | Description                              |
+| ----------------------------- | --------- | ---- | ---------------------------------------- |
+| **SLACK\_WEBHOOK\_VERBOSITY** | Mutations | enum | Possible values: All, Mutations, Queries |
 
-### SHOW_SPLASH
+### SHOW\_SPLASH
 
-| **Env Var**     | Default | Type | Description                           |
-| --------------- | ------- | ---- | ------------------------------------- |
-| **SHOW_SPLASH** | true    | bool | Turn off the initial page splash scre |
+| **Env Var**      | Default | Type | Description                           |
+| ---------------- | ------- | ---- | ------------------------------------- |
+| **SHOW\_SPLASH** | true    | bool | Turn off the initial page splash scre |
 
-### **STREAMS_ERROR_STRATEGY**
+### **STREAMS\_ERROR\_STRATEGY**
 
-| **Env Var**                | Default       | Type | Description                                                                                                                         |
-| -------------------------- | ------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **STREAMS_ERROR_STRATEGY** | LOG_EXCEPTION | enum | The strategy to use when kPow's internal Kafka Streams instance enters an ERROR state. Possible values: LOG_EXCEPTION, LOG_AND_EXIT |
+| **Env Var**                  | Default        | Type | Description                                                                                                                            |
+| ---------------------------- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **STREAMS\_ERROR\_STRATEGY** | LOG\_EXCEPTION | enum | The strategy to use when kPow's internal Kafka Streams instance enters an ERROR state. Possible values: LOG\_EXCEPTION, LOG\_AND\_EXIT |
 
-### **STREAMS_TASK_TIMEOUT_MS**
+### **STREAMS\_TASK\_TIMEOUT\_MS**
 
-| **Env Var**                 | Default | Type | Description                                                                                                                                                                                                 |
-| --------------------------- | ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **STREAMS_TASK_TIMEOUT_MS** | 300000  | long | Configures kPow's internal streams `task.timeout.ms` value. See: [KIP-572](https://cwiki.apache.org/confluence/display/KAFKA/KIP-572%3A+Improve+timeouts+and+retries+in+Kafka+Streams) for more information |
+| **Env Var**                    | Default | Type | Description                                                                                                                                                                                                 |
+| ------------------------------ | ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **STREAMS\_TASK\_TIMEOUT\_MS** | 300000  | long | Configures kPow's internal streams `task.timeout.ms` value. See: [KIP-572](https://cwiki.apache.org/confluence/display/KAFKA/KIP-572%3A+Improve+timeouts+and+retries+in+Kafka+Streams) for more information |
