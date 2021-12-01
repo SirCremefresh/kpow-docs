@@ -367,14 +367,12 @@ Select the type of Audit Log messages that are sent to Slack.
 
 ### **STREAMS\_ERROR\_STRATEGY**
 
-**Type:** Enum,&#x20;
+**Type:** Enum, **Values:** LOG\_EXCEPTION_,_ LOG_\__AND\_EXIT, **Default:** LOG EXCEPTION
 
-| **Env Var**                  | Default        | Type | Description                                                                                                                            |
-| ---------------------------- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| **STREAMS\_ERROR\_STRATEGY** | LOG\_EXCEPTION | enum | The strategy to use when kPow's internal Kafka Streams instance enters an ERROR state. Possible values: LOG\_EXCEPTION, LOG\_AND\_EXIT |
+The strategy to use when kPow's internal Kafka Streams instance enters an ERROR state.
 
-### **STREAMS\_TASK\_TIMEOUT\_MS**
+### STREAMS\_TASK\_TIMEOUT\_MS
 
-| **Env Var**                    | Default | Type | Description                                                                                                                                                                                                 |
-| ------------------------------ | ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **STREAMS\_TASK\_TIMEOUT\_MS** | 300000  | long | Configures kPow's internal streams `task.timeout.ms` value. See: [KIP-572](https://cwiki.apache.org/confluence/display/KAFKA/KIP-572%3A+Improve+timeouts+and+retries+in+Kafka+Streams) for more information |
+**Type:** Long, **Default:** 300000
+
+Configures kPow's internal streams `task.timeout.ms` value. See: [KIP-572](https://cwiki.apache.org/confluence/display/KAFKA/KIP-572%3A+Improve+timeouts+and+retries+in+Kafka+Streams) for more information.
