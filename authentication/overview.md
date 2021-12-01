@@ -4,7 +4,7 @@ description: Secure kPow with User Authentication
 
 # Overview
 
-kPow supports Jetty (File, LDAP, DB, etc), SAML, and OpenID mechanisms for authenticating users.
+kPow supports Jetty (File, LDAP, DB), SAML, OpenID and OAuth for authentication.
 
 ## Jetty Authentication
 
