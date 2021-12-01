@@ -4,7 +4,7 @@ description: All the configuration options available to kPow
 
 # Environment Variables
 
-kPow is configured with Environment Variables described below:
+kPow is configured with these Environment Variables.
 
 ## Kafka
 
@@ -90,121 +90,142 @@ Password of the SSL Truststore
 
 ## Authentication
 
-kPow supports Jetty (File, LDAP, DB), SAML, OpenID and OAuth mechanisms for authentication.
+kPow supports Jetty (File, LDAP, DB, JAAS), SAML, OpenID and OAuth for authentication.
+
+{% hint style="info" %}
+See [User Authentication](../authentication/overview.md) for more details.
+{% endhint %}
 
 ### AUTH\_PROVIDER\_TYPE
 
-**Type:** Enum, **Values:**&#x20;
+**Type:** Enum, **Values:** okta, github, saml, jetty, auth0
 
-| Env Var                  | Default | Type | Description                                                          |
-| ------------------------ | ------- | ---- | -------------------------------------------------------------------- |
-| **AUTH\_PROVIDER\_TYPE** |         | enum | The OPENID provider configured for SSO, eg: `github`, `jetty`,`okta` |
-
-Note: see [User Authentication](../authentication/overview.md) for more details
+Your choice of Authentication provider, specify Jetty for LDAP, DB, File, or JAAS.
 
 ### OKTA\_ORGANISATION
 
-| Env Var                | Default | Type   | Description                                     |
-| ---------------------- | ------- | ------ | ----------------------------------------------- |
-| **OKTA\_ORGANISATION** |         | string | The name of your Okta organisation, eg: my-corp |
+**Type:** String
+
+When using Okta authentication - the name of your Okta organisation.
 
 ### AUTH\_LANDING\_URI
 
-| Env Var                | Default | Type   | Description                                                                                         |
-| ---------------------- | ------- | ------ | --------------------------------------------------------------------------------------------------- |
-| **AUTH\_LANDING\_URI** |         | string | The absolute URL to redirect to after successful OKTA login. Eg: https://staging.operatr.z-corp.com |
+**Type:** String (e.g. https://staging.operatr.z-corp.com)
+
+The absolute URL to redirect to after successful login.
 
 ### **OPENID\_AUTH\_URI**
 
-| Env Var               | Default | Type   | Description                                                                                                                                                                        |
-| --------------------- | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **OPENID\_AUTH\_URI** |         | string | <p>For GitHub: <a href="https://github.com/login/oauth/authorize">https://github.com/login/oauth/authorize</a></p><p>For GitHub enterprise: [Server URL]/login/oauth/authorize</p> |
+**Type:** String
+
+The OpenID Auth URI, e.g.
+
+* Github: [https://github.com/login/oauth/authorize](https://github.com/login/oauth/authorize)
+* Github Enterprise: \[Server URL]/login/oauth/authorize
 
 ### OPENID\_API\_URI
 
-| Env Var              | Default | Type   | Description                                                                                                                                          |
-| -------------------- | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **OPENID\_API\_URI** |         | string | <p>For GitHub:</p><p><a href="https://api.github.com/user">https://api.github.com/user</a></p><p>For GitHub enterprise: [Server URL]/api/v3/user</p> |
+**Type:** String
+
+The OpenID API URI, e.g.
+
+* Github: [https://api.github.com/user](https://api.github.com/user)
+* Github Enterprise: \[Server URL]/api/v3/user
 
 ### OPENID\_TOKEN\_URI
 
-| Env Var                | Default | Type   | Description                                                                                                                                                                                 |
-| ---------------------- | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **OPENID\_TOKEN\_URI** |         | string | <p>For GitHub: <a href="https://github.com/login/oauth/access_token">https://github.com/login/oauth/access_token</a></p><p>For GitHub enterprise: [Server URL]/login/oauth/access_token</p> |
+**Type:** String
+
+The OpenID Token URI, e.g.
+
+* Github: [https://github.com/login/oauth/access\_token](https://github.com/login/oauth/access\_token)
+* Github Enterprise: \[Server URL]/login/oauth/access\_token
 
 ### OPENID\_CLIENT\_ID
 
-| Env Var                | Default | Type   | Description                                         |
-| ---------------------- | ------- | ------ | --------------------------------------------------- |
-| **OPENID\_CLIENT\_ID** |         | string | The 'Client ID' found in your configured OpenID App |
+**Type:** String
+
+The OpenID Client ID found in your configured OpenID App.
 
 ### OPENID\_CLIENT\_SECRET
 
-| Env Var                    | Default | Type   | Description                                             |
-| -------------------------- | ------- | ------ | ------------------------------------------------------- |
-| **OPENID\_CLIENT\_SECRET** |         | string | The 'Client Secret' found in your configured OpenID App |
+**Type:** String
+
+The OpenID Client Secret found in your configured OpenID App.
 
 ### **SAML\_RELYING\_PARTY\_IDENTIFIER**
 
-| Env Var                              | Default | Type   | Description                |
-| ------------------------------------ | ------- | ------ | -------------------------- |
-| **SAML\_RELYING\_PARTY\_IDENTIFIER** |         | string | You Operatr Application ID |
+**Type:** String
+
+Your kPow Application ID
 
 ### SAML\_ACS\_URL
 
-| Env Var            | Default | Type   | Description                        |
-| ------------------ | ------- | ------ | ---------------------------------- |
-| **SAML\_ACS\_URL** |         | string | The Assertion Consumer Service URL |
+**Type:** String
+
+The Assertion Consumer Service URL
 
 ### **SAML\_METADATA\_FILE**
 
-| Env Var                  | Default | Type   | Description                               |
-| ------------------------ | ------- | ------ | ----------------------------------------- |
-| **SAML\_METADATA\_FILE** |         | string | The SAML Metadata File from your provider |
+**Type:** String (e.g. /path/to/metadata.xml)
+
+The Metadata File from your SAML provider.
 
 ### SAML\_CERT
 
-| Env Var        | Default | Type   | Description                 |
-| -------------- | ------- | ------ | --------------------------- |
-| **SAML\_CERT** |         | string | SAML Certificate (Optional) |
+**Type:** String (e.g. /path/to/saml.cert)
+
+Optional SAML Certificate
 
 ### **SAML\_SESSION\_S**
 
-| Env Var              | Default | Type | Description                                                       |
-| -------------------- | ------- | ---- | ----------------------------------------------------------------- |
-| **SAML\_SESSION\_S** | 3600    | long | The duration in seconds before re-authenticating SAML credentials |
+**Type:** Long, **Default:** 3600
+
+The duration in seconds before re-authenticating SAML credentials.
 
 ### DEBUG\_SAML
 
-| Env Var         | Default | Type | Description                                   |
-| --------------- | ------- | ---- | --------------------------------------------- |
-| **DEBUG\_SAML** | false   | bool | Enable SAML debug logging in application logs |
+**Type:** Boolean, **Default:** False
+
+Enable SAML debug logging
 
 ### **JETTY\_AUTH\_METHOD**
 
-| Env Var                 | Default | Type | Description                                                                                                                                                         |
-| ----------------------- | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **JETTY\_AUTH\_METHOD** | form    | enum | <p>Configure if using <a href="../authentication/overview.md#jetty-authentication">Jetty authentication</a></p><p>Either: <code>form</code>or<code>basic</code></p> |
+**Type:** Enum, **Values:** form, basic, **Default:** form
+
+When using Jetty Authentication, specifies to use form or basic-auth login UX
 
 ## Authorization
 
 ### **RBAC\_CONFIGURATION\_FILE**
 
-| Env Var                       | Default | Type   | Description                                                                 |
-| ----------------------------- | ------- | ------ | --------------------------------------------------------------------------- |
-| **RBAC\_CONFIGURATION\_FILE** |         | string | The path to your Operatr RBAC Configuration (optional, expects SSO enabled) |
+**Type:** String (e.g. /path/to/rbac.yaml)
 
-**Note:** see [Authorization](../authorization/role-based-access-control.md) for more details
+{% hint style="info" %}
+See [Role Based Access Control](../authorization/role-based-access-control.md) for more information
+{% endhint %}
 
-## kPow
+The path to your RBAC configuration file (optional, requires Authentication enabled)
+
+### Global Access Controls
+
+{% hint style="info" %}
+See [Global Access Controls](environment-variables.md#undefined) for more information
+{% endhint %}
+
+Apply global access controls like **ALLOW\_TOPIC\_CREATE**, etc.
+
+## General
 
 ### **DATA\_POLICY\_CONFIGURATION\_FILE**
 
-| Env Var                               | Default | Type   | Description                                     |
-| ------------------------------------- | ------- | ------ | ----------------------------------------------- |
-| **DATA\_POLICY\_CONFIGURATION\_FILE** |         | string | The path to your kPow Data Policy Configuration |
+**Type:** String (e.g. /path/to/data-policies.yaml)
 
-Note: see [Data Policies](../features/data-policies.md) for more information
+{% hint style="info" %}
+See [Data Policies](../features/data-policies.md) for more information
+{% endhint %}
+
+The path to your kPow Data Policy Configuration.
 
 ### CONNECT\_TIMEOUT\_MS
 
