@@ -227,51 +227,51 @@ See [Data Policies](../features/data-policies.md) for more information
 
 The path to your kPow Data Policy Configuration.
 
-### CONNECT\_TIMEOUT\_MS
-
-| Env Var                  | Default | Type | Description                                                                   |
-| ------------------------ | ------- | ---- | ----------------------------------------------------------------------------- |
-| **CONNECT\_TIMEOUT\_MS** | 5000    | long | The timeout value in ms for all HTTP requests made to a Kafka Connect cluster |
-
 ### CUSTOM\_SERDES
 
-| Env Var            | Default | Type   | Description                                                                                                |
-| ------------------ | ------- | ------ | ---------------------------------------------------------------------------------------------------------- |
-| **CUSTOM\_SERDES** |         | string | eg: `io.operatr.SerdeOne,io.operatr.SerdeTwo`Comma separated names of custom serdes found on the classpath |
+**Type:** String (e.g. io.kpow.SerdeOne,io.kpow.SerdeTwo)
 
-**Note**: see [Custom serdes](../features/data-inspect/serdes.md#custom-serdes) for more information
+{% hint style="info" %}
+See [Custom Serdes](../features/data-inspect/serdes.md#custom-serdes) for more information.
+{% endhint %}
+
+Comma separated names of custom Serdes that can be found on the classpath.
 
 ### DEFAULT\_KEY\_SERDES
 
-| Env Var                  | Default | Type   | Description                                                   |
-| ------------------------ | ------- | ------ | ------------------------------------------------------------- |
-| **DEFAULT\_KEY\_SERDES** |         | string | The default key serde to use when inspecting data, eg: `AVRO` |
+**Type:** String (e.g. JSON)
+
+The default key Serde to use when inspecting data.
 
 ### DEFAULT\_VALUE\_SERDES
 
-| Env Var                    | Default | Type   | Description                                                   |
-| -------------------------- | ------- | ------ | ------------------------------------------------------------- |
-| **DEFAULT\_VALUE\_SERDES** |         | string | The default key value to use when inspecting data, eg: `JSON` |
+**Type:** String (e.g. AVRO)
+
+The default value Serde to use when inspecting data.
 
 ### **AVAILABLE\_KEY\_SERDES**
 
-| Env Var                    | Default | Type   | Description                                                                              |
-| -------------------------- | ------- | ------ | ---------------------------------------------------------------------------------------- |
-| **AVAILABLE\_KEY\_SERDES** |         | string | The list of key serdes to present when inspecting data, eg: `JSON,String,Transit / JSON` |
+**Type:** String (e.g. JSON,String)
+
+Comma separated list of key Serdes to present when inspecting data.
 
 ### **AVAILABLE\_VALUE\_SERDES**
 
-| Env Var                      | Default | Type   | Description                                                                                   |
-| ---------------------------- | ------- | ------ | --------------------------------------------------------------------------------------------- |
-| **AVAILABLE\_VALUE\_SERDES** |         | string | The list of key serdes to present when inspecting data, eg: `JSON,String,io.operatr.SerdeOne` |
+**Type:** String (e.g. JSON,String)
+
+Comma separated list of value Serdes to present when inspecting data.
 
 ### NUM\_PARTITIONS
 
-| Env Var             | Default | Type | Description                                                  |
-| ------------------- | ------- | ---- | ------------------------------------------------------------ |
-| **NUM\_PARTITIONS** | 12      | long | The number of partitions for kPow's internal consumer groups |
+**Type:** Long, **Default:** 12
+
+The number of partitions for kPow's internal topics.
 
 ### REPLICATION\_FACTOR
+
+**Type:** Long, **Default:** 3
+
+The replication factor of kPow's internal topics.
 
 | Env Var                 | Default | Type | Description                                               |
 | ----------------------- | ------- | ---- | --------------------------------------------------------- |
@@ -279,97 +279,99 @@ The path to your kPow Data Policy Configuration.
 
 ### REQUEST\_TIMEOUT\_MS
 
-| Env Var                  | Default | Type | Description                                                         |
-| ------------------------ | ------- | ---- | ------------------------------------------------------------------- |
-| **REQUEST\_TIMEOUT\_MS** | 30000   | long | The request.timeout.ms settting for kPow's internal consumer groups |
+**Type:** Long, **Default:** 30000
+
+The `request.timeout.ms` setting for kPow's internal consumer groups.
 
 ### **MAX\_PRODUCE\_REQUEST\_SIZE**
 
-| Env Var                         | Default | Type | Description                                                        |
-| ------------------------------- | ------- | ---- | ------------------------------------------------------------------ |
-| **MAX\_PRODUCE\_REQUEST\_SIZE** | 1000000 | long | The max.produce.request.size setting for kPow's internal producers |
+**Type:** Long, **Default:** 1000000
+
+The `max.produce.request.size` setting for kPow's internal producers
 
 ### **PROMETHEUS\_EGRESS**
 
-| Env Var                | Default | Type | Description                                                |
-| ---------------------- | ------- | ---- | ---------------------------------------------------------- |
-| **PROMETHEUS\_EGRESS** | false   | bool | Enable Prometheus endpoints for metrics and offsets egress |
+**Type:** Boolean, **Default:** false
+
+{% hint style="info" %}
+See [Prometheus Integration](../features/prometheus/) for more information.
+{% endhint %}
+
+Enable Prometheus endpoints for metrics and offsets egress.
 
 ### **PROMETHEUS\_LABEL\_ENV**
 
-| Env Var                    | Default | Type | Description                                                         |
-| -------------------------- | ------- | ---- | ------------------------------------------------------------------- |
-| **PROMETHEUS\_LABEL\_ENV** | true    | bool | Include your ENVIRONMENT\_NAME as 'env' label on Prometheus metrics |
+**Type:** Boolean, **Default**: True
+
+Include your ENVIRONMENT\_NAME as 'env' label on Prometheus metrics.
 
 ### SNAPSHOT\_PARALLELISM
 
-| Env Var                   | Default | Type | Description                                                                                                                                   |
-| ------------------------- | ------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SNAPSHOT\_PARALLELISM** | 3       | long | The level of parallelism configured for when kPow captures telemetry for snapshots. Increase OPEARTR internal parallelism for larger clusters |
+**Type:** Long, **Default:** 3
+
+The level of parallelism configured for kPow telemetry capture and snapshotting.
 
 ### SNAPSHOT\_DEBUG
 
-| Env Var             | Default | Type | Description                                                |
-| ------------------- | ------- | ---- | ---------------------------------------------------------- |
-| **SNAPSHOT\_DEBUG** | false   | bool | Add additional logging messages to help debug snapshotting |
+**Type:** Boolean, **Default:** False
+
+Add additional logging messages to help debug snapshotting.
 
 ### LIVE\_ MODE\_ENABLED
 
-| Env Var                 | Default | Type | Description                             |
-| ----------------------- | ------- | ---- | --------------------------------------- |
-| **LIVE\_MODE\_ENABLED** | true    | bool | Allow your users to switch to Live Mode |
+**Type**: Boolean, **Default:** True
 
-**Note**: see [Live mode](../features/live-mode.md) for more details.
+{% hint style="info" %}
+See [Live mode](../features/live-mode.md) for more information.
+{% endhint %}
+
+Allow your users to switch to Live Mode.
 
 ### **LIVE\_MODE\_PERIOD\_MS**
 
-| Env Var                    | Default | Type | Description                                             |
-| -------------------------- | ------- | ---- | ------------------------------------------------------- |
-| **LIVE\_MODE\_PERIOD\_MS** | 60000   | long | Live Mode will prompt you to continue after this period |
+**Type:** Long, **Default:** 60000
+
+Live Mode will prompt you to continue after this period has elapsed.
 
 ### **LIVE\_MODE\_INTERVAL\_MS**
 
-| Env Var                      | Default | Type | Description                                    |
-| ---------------------------- | ------- | ---- | ---------------------------------------------- |
-| **LIVE\_MODE\_INTERVAL\_MS** | 3500    | long | The amount of time between Live Mode snapshots |
+**Type:** Long, **Default:** 3500
+
+The amount of time between Live Mode snapshots.
 
 ### **LIVE\_MODE\_MAX\_CONCURRENT\_USERS**
 
-| Env Var                                | Default | Type | Description                                              |
-| -------------------------------------- | ------- | ---- | -------------------------------------------------------- |
-| **LIVE\_MODE\_MAX\_CONCURRENT\_USERS** | 2       | long | The maximum number of concurrent Live Mode user sessions |
+**Type:** Long, **Default:** 2
+
+The maximum number of concurrent Live Mode user sessions.
 
 ### SAMPLER\_TIMEOUT\_MS
 
-| Env Var                  | Default | Type | Description                                     |
-| ------------------------ | ------- | ---- | ----------------------------------------------- |
-| **SAMPLER\_TIMEOUT\_MS** | 7000    | long | The end-to-end timeout for a data inspect query |
+**Type:** Long, **Default:** 7000
+
+The maximum period of a single data inspect query.
 
 ### SAMPLER\_CONSUMER\_THREADS
 
-| Env Var                        | Default | Type | Description                                       |
-| ------------------------------ | ------- | ---- | ------------------------------------------------- |
-| **SAMPLER\_CONSUMER\_THREADS** | 6       | long | The level of parallelism for a data inspect query |
+**Type:** Long, **Default:** 6
+
+The level of parallelism for a data inspect query.
 
 ### **SLACK\_WEBHOOK\_URL**
 
-| Env Var                 | Default | Type   | Description                      |
-| ----------------------- | ------- | ------ | -------------------------------- |
-| **SLACK\_WEBHOOK\_URL** |         | string | Send Audit Log messages to Slack |
+**Type:** String (e.g https://slack/webhook-url)
 
-### **SLACK\_WEBHOOK\_URL**
+Send Audit Log messages to Slack.
 
-| **Env Var**                   | Default   | Type | Description                              |
-| ----------------------------- | --------- | ---- | ---------------------------------------- |
-| **SLACK\_WEBHOOK\_VERBOSITY** | Mutations | enum | Possible values: All, Mutations, Queries |
+### **SLACK\_WEBHOOK\_URL\_VERBOSITY**
 
-### SHOW\_SPLASH
+**Type:** Enum, **Values:** Mutations, Queries, All, **Default:** Mutations
 
-| **Env Var**      | Default | Type | Description                           |
-| ---------------- | ------- | ---- | ------------------------------------- |
-| **SHOW\_SPLASH** | true    | bool | Turn off the initial page splash scre |
+Select the type of Audit Log messages that are sent to Slack.
 
 ### **STREAMS\_ERROR\_STRATEGY**
+
+**Type:** Enum,&#x20;
 
 | **Env Var**                  | Default        | Type | Description                                                                                                                            |
 | ---------------------------- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------- |
