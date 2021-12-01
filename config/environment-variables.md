@@ -4,15 +4,21 @@ description: All the configuration options available to kPow
 
 # Environment Variables
 
-kPow is configured with Environment Variables as described below:
+kPow is configured with Environment Variables described below:
 
 ## Kafka
+
+One instance of kPow can manage multiple Kafka Clusters and associated resources.
 
 * See [Kafka Cluster](kafka-cluster.md) for Kafka environment variable reference
 * See [Kafka Connect](kafka-connect.md) for Connect environment variable reference
 * See [Schema Registry](schema-registry.md) for Schema registry environment variable reference
 
 ## Web Server&#x20;
+
+The kPow UI and Prometheus endpoints are served by [Jetty](https://www.eclipse.org/jetty/).
+
+The server can be configured to serve the UI via HTTPS or on a different port, or to redirect correctly when fronted with an HTTPS-terminating proxy.
 
 ### PORT
 
@@ -66,25 +72,29 @@ Password of the SSL Keystore.
 
 ### **HTTPS\_TRUSTSTORE\_LOCATION**
 
-| Env Var                         | Default | Type   | Description                   |
-| ------------------------------- | ------- | ------ | ----------------------------- |
-| **HTTPS\_TRUSTSTORE\_LOCATION** |         | string | eg, /ssl/https.truststore.jks |
+**Type:** String (e.g. /ssl/https.truststore.jks)
+
+Path to the SSL Truststore.
 
 ### **HTTPS\_TRUSTSTORE\_TYPE**
 
-| Env Var                     | Default | Type   | Description                         |
-| --------------------------- | ------- | ------ | ----------------------------------- |
-| **HTTPS\_TRUSTSTORE\_TYPE** |         | string | Type of SSL Truststore type, eg JKS |
+**Type:** String, **Default**: JKS
+
+Type of the SSL Truststore.
 
 ### **HTTPS\_TRUSTSTORE\_PASSWORD**
 
-| Env Var                         | Default | Type   | Description             |
-| ------------------------------- | ------- | ------ | ----------------------- |
-| **HTTPS\_TRUSTSTORE\_PASSWORD** |         | string | SSL Truststore password |
+**Type:** String
+
+Password of the SSL Truststore
 
 ## Authentication
 
+kPow supports Jetty (File, LDAP, DB), SAML, OpenID and OAuth mechanisms for authentication.
+
 ### AUTH\_PROVIDER\_TYPE
+
+**Type:** Enum, **Values:**&#x20;
 
 | Env Var                  | Default | Type | Description                                                          |
 | ------------------------ | ------- | ---- | -------------------------------------------------------------------- |
