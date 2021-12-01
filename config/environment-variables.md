@@ -273,10 +273,6 @@ The number of partitions for kPow's internal topics.
 
 The replication factor of kPow's internal topics.
 
-| Env Var                 | Default | Type | Description                                               |
-| ----------------------- | ------- | ---- | --------------------------------------------------------- |
-| **REPLICATION\_FACTOR** | 3       | long | The replication factor of kPow's internal consumer groups |
-
 ### REQUEST\_TIMEOUT\_MS
 
 **Type:** Long, **Default:** 30000
