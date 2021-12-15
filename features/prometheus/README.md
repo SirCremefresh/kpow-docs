@@ -1,16 +1,20 @@
 ---
-description: kPow Exposes Prometheus Endpoints for Alerting and Reporting
+description: Prometheus Endpoints for Long-Term Reporting and Alerting
 ---
 
 # Prometheus Integration
 
 {% hint style="info" %}
-kPow's metrics egress endpoints follow the [OpenMetrics](https://openmetrics.io/) standard. This allows for kPow to integrate with your favourite observability tools such as [Prometheus](https://prometheus.io/docs/prometheus/latest/getting_started/), [New Relic](https://docs.newrelic.com/docs/integrations/prometheus-integrations/) or [Grafana](https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/) 
+kPow's Prometheus egress endpoints follow the [OpenMetrics](https://openmetrics.io) standard.
+
+This allows you to integrate kPow to your favourite observability tools such as [Prometheus](https://prometheus.io/docs/prometheus/latest/getting\_started/), [New Relic](https://docs.newrelic.com/docs/integrations/prometheus-integrations/) or [Grafana](https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/) for long-term reporting dashboards and alerting.
 {% endhint %}
 
-Use your favourite enterprise monitoring platform for alerting and to retain long-term Kafka telemetry.
-
 ## Configuration
+
+{% hint style="warning" %}
+Prometheus Endpoints are not secure, do not configure if kPow is publicly accessible.
+{% endhint %}
 
 To enable Prometheus endpoints set the following **environment variable.**
 
@@ -20,11 +24,11 @@ PROMETHEUS_EGRESS=true
 
 ## Getting Started
 
-[This blog post](https://kpow.io/how-to/kafka-alerting-with-kpow-prometheus-and-alertmanager/) covers an introduction to alerting and monitoring with kPow + Prometheus + AlertManager.
+See our how-to blogpost on [alerting and monitoring with kPow, Prometheus, and AlertManager](https://kpow.io/how-to/kafka-alerting-with-kpow-prometheus-and-alertmanager/).
 
 ## Endpoints
 
-kPow provides Prometheus endpoints all metrics, all offsets, and the same by resource.
+kPow provides Prometheus endpoints for all metrics, offsets, and streams.
 
 {% hint style="info" %}
 kPow logs the path to each Prometheus endpoint on startup
@@ -45,7 +49,7 @@ kPow logs the path to each Prometheus endpoint on startup
 
 Sample Prometheus scraper configuration that we use to test kPow:
 
-```text
+```
 scrape_configs:
   - job_name: 'operatr'
     metrics_path: '/metrics/v1'
@@ -60,4 +64,3 @@ scrape_configs:
     static_configs:
       - targets: ['host.docker.internal:3000']
 ```
-
