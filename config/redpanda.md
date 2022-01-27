@@ -4,11 +4,15 @@ description: Use kPow to monitor your Redpanda clusters
 
 # Redpanda
 
+{% hint style="warning" %}
+kPow is not officially supported with Redpanda.
+
+You may experience reduced function or unpredictable behaviour when using kPow with Redpanda. **kPow Support is strictly limited to Apache Kafka only.**
+{% endhint %}
+
 ## What is Redpanda?
 
-Redpanda is a Kafka® compatible event streaming platform. Read more about Red Panda [here](https://vectorized.io/).
-
-kPow has no reliance on Zookeeper or the JVM and is compatible with Redpanda. You may experience some reduced function where Redpanda diverges from Kafka in API or behaviour.
+Redpanda is a Kafka® compatible event streaming platform. Read more about Red Panda [here](https://vectorized.io).
 
 ## Quick Start
 
@@ -35,7 +39,7 @@ Configure kPow to connect to the local Redpanda cluster.
 You must provide a unique **CLUSTER\_ID** for each Redpanda Bootstrap configured
 {% endhint %}
 
-```text
+```
 ENVIRONMENT_NAME=Redpanda
 BOOTSTRAP=127.0.0.1:9092
 REPLICATION_FACTOR=1
@@ -45,4 +49,3 @@ CLUSTER_ID=red-panda-1
 Start your kPow instance and navigate to the UI.
 
 ![](../.gitbook/assets/kpow-overview.png)
-

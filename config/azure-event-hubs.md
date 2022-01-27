@@ -4,6 +4,12 @@ description: Use kPow with your Azure Event Hubs namespace.
 
 # Azure Event Hubs
 
+{% hint style="warning" %}
+kPow is not officially supported with Azure Event Hubs.
+
+You may experience reduced function or unpredictable behaviour when using kPow with Azure Event Hubs. **kPow Support is strictly limited to Apache Kafka only.**
+{% endhint %}
+
 ## Prerequisites&#x20;
 
 kPow can connect to your Azure Event Hubs namespace(s) if you have enabled Kafka Surface. \
@@ -40,4 +46,4 @@ The vast majority of kPow's features work with Azure Event Hubs, with the except
 * Broker disk information/metrics - as the admin client request does not return any log details
 * Broker configuration - as the admin client request does not return any broker configuration details
 
-Note: kPow is not officially supported with Azure Event Hubs.
+Caveat Emptor: kPow features and functionality may not be available where Azure Event Hubs diverges from standard Apache Kafka behaviour.

@@ -22,7 +22,11 @@ kPow is compatible with **Apache Kafka 1.0+.**
 
 kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.org), [Amazon MSK](https://aws.amazon.com/msk/), [Red Had AMQ Streams](https://www.redhat.com/en/resources/amq-streams-datasheet), [Red Hat OpenShift Streams for Apache Kafka](https://developers.redhat.com/products/red-hat-openshift-streams-for-apache-kafka/overview), [Aiven Managed Kafka](https://aiven.io/kafka), [Instaclustr Managed Kafka](https://www.instaclustr.com/products/managed-apache-kafka/), [Confluent Platform](https://www.confluent.io/product/confluent-platform), and [Confluent Cloud](https://www.confluent.io/confluent-cloud).
 
-kPow has been confirmed to work with Azure Event Hubs\* and Redpanda, though these platforms are not officially supported and all kPow features may not be available.
+{% hint style="info" %}
+kPow is not officially supported with Redpanda.
+
+You may experience reduced function or unpredictable behaviour when using kPow with Redpanda. **kPow Support is strictly limited to Apache Kafka only.**
+{% endhint %}
 
 **\***Some disk related metrics and telemetry are not available when using kPow Azure Event Hubs.
 
