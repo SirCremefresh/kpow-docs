@@ -63,6 +63,10 @@ See the guide to [Role Based Access Control](../../authorization/role-based-acce
 
 When RBAC is enabled kPow will request `groups` scope to view the groups associated with an authenticated user. kPow considers Okta groups as roles in your RBAC configuration.
 
-You will need to configure a relevant [group claim filter](https://developer.okta.com/docs/guides/customize-tokens-groups-claim/overview/) for the kPow OpenID integration:
+You will need to configure a relevant [group claim filter](https://developer.okta.com/docs/guides/customize-tokens-groups-claim/overview/) for the kPow OpenID integration.
+
+{% hint style="info" %}
+To match **all groups** use either 'Starts with' or 'Matches regex' and '.\*'
+{% endhint %}
 
 ![](<../../.gitbook/assets/Screen Shot 2021-07-23 at 3.20.29 pm.png>)
