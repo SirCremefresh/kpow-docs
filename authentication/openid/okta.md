@@ -49,7 +49,7 @@ Set the following environment variables and start kPow:
 * `OKTA_ORGANISATION=` the name of your Okta organization, e.g. **mycorp**
 * `OPENID_CLIENT_ID=` the **Client ID** found in **Client Credentials**.
 * `OPENID_CLIENT_SECRET=` the **Client Secret** found in **Client Credentials.**
-* `OPENID_LANDING_URI=` The absolute kPow URI, e.g:\
+* `AUTH_LANDING_URI=` The absolute kPow URI, e.g:\
   \
   `https://kpow-staging.mycorp.org`
 

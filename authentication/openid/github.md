@@ -47,7 +47,7 @@ Set the following environment variables and start kPow:
     ```
 * `OPENID_CLIENT_ID=` the **Client ID** found in the OAuth Apps page (required)
 * `OPENID_CLIENT_SECRET=` the **Client Secret** found in the OAuth Apps page (required)
-*   `OPENID_LANDING_URI=` The absolute kPow URI, e.g.
+*   `AUTH_LANDING_URI=` The absolute kPow URI, e.g.
 
     ```
     https://kpow.stage.mycorp.org

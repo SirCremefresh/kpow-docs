@@ -8,7 +8,7 @@ description: Secure the kPow UI with HTTPS
 
 kPow supports SSL termination at the instance without a reverse proxy.
 
-Once configured all content is served via HTTPS, meaning you must update any configured integrations including Prometheus scrapers, SSO providers (e.g. `OPENID_LANDING_URI` and callback-urls within the provider) as **https://**.
+Once configured all content is served via HTTPS, meaning you must update any configured integrations including Prometheus scrapers, SSO providers (e.g. `AUTH_LANDING_URI` and callback-urls within the provider) as **https://**.
 
 ## Configuration
 
