@@ -33,6 +33,20 @@ We have integration guides for common providers:
     /var/saml/saml-cert.pem
     ```
 
+### SAML and Path-Proxied kPow
+
+{% hint style="success" %}
+Set **`AUTH_LANDING_URI`**` ``` when running kPow at a proxied path.
+{% endhint %}
+
+Often our users configure kPow behind a [reverse proxy at a specific path](../../installation/deployment-notes.md#custom-path-configuration), e.g.
+
+`https://tools.your-corp/kafka/kpow`
+
+When kPow is proxied to a specific host/path we need to set the `AUTH_LANDING_URI` to that same path so the post-login redirect process can work properly, e.g.
+
+`AUTH_LANDING_URI=https://tools.your-corp/kafka/kpow`
+
 ### Debugging SAML
 
 Start kPow with the environment variable `DEBUG_SAML=true` to debug SAML configurations.
