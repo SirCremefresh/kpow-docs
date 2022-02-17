@@ -24,7 +24,6 @@ __oprtr_snapshot_state
 __oprtr_audit_log
 oprtr.compute.metrics.v2-oprtr_metric_v2_pt1m-changelog
 oprtr.compute.snapshots.v2-oprtr_snaphot_state_v2-changelog
-oprtr.compute.snapshots.v2-oprtr_snapshot_materialized_v2-repartition
 ```
 
 You can manually create these topics if you prefer, see [Create kPow Topics](minimum-acl-permissions.md#create-kpow-topics).
@@ -174,12 +173,4 @@ Using the same client configuration file as above, the following script correctl
          --config retention.ms=604800000 \
          --config message.timestamp.type=CreateTime \
          --config segment.ms=604800000
-./kafka-topics.sh --create \
-         --bootstrap-server 127.0.0.1:9092 \
-         --command-config client.conf \
-         --topic oprtr.compute.snapshots.v2-oprtr_snapshot_materialized_v2-repartition \
-         --config cleanup.policy=delete \
-         --config segment.bytes=52428800 \
-         --config retention.ms=-1 \
-         --config message.timestamp.type=CreateTime
 ```
