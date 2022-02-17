@@ -169,7 +169,7 @@ Using the same client configuration file as above, the following script correctl
          --command-config client.conf \
          --topic oprtr.compute.snapshots.v2-oprtr_snaphot_state_v2-changelog \
          --config cleanup.policy=compact,delete \
-         --config segment.bytes=26214400 \
+         --config segment.bytes=52428800 \
          --config retention.ms=604800000 \
          --config message.timestamp.type=CreateTime \
          --config segment.ms=604800000
