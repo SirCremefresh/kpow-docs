@@ -78,4 +78,6 @@ Each of the `Roles` in this example will have the value of the GUID of the AWS S
 
 ![](../../.gitbook/assets/aws-sso-guid.png)
 
-**Note**: If you are using Active Directory or an external IdP as your identity source for AWS SSO you can use a [supported directory attribute](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html?icmpid=docs\_sso\_console) like `{dir:....}` that maps to your roles in your Active Directory deployment. For more info visit the [AWS documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/mapssoattributestocdattributes.html).\
+{% hint style="info" %}
+If you are using Active Directory or an external IdP as your identity source for AWS SSO you can use a [supported directory attribute](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html?icmpid=docs\_sso\_console) like `{dir:....}` to map attributes from AD to AWS SSO. For more info visit the [AWS documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/mapssoattributestocdattributes.html).
+{% endhint %}
