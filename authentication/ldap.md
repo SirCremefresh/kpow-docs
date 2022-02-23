@@ -12,9 +12,11 @@ For specifics on JAAS / LDAP configuration see the [Jetty LdapLoginModule](https
 
 ## Form or Basic Authentication?
 
-kPow supports both form-based and basic authentication.
+{% hint style="info" %}
+Form-based authentication is the default login mechanism for Kpow.
+{% endhint %}
 
-**Form authentication is the default.** To basic authentication, set the environment variable:
+kPow supports both form-based and basic authentication. To use basic authentication, set:
 
 ```
 JETTY_AUTH_METHOD=basic
@@ -59,7 +61,7 @@ kpow {
 
 ### JAAS Debugging
 
-There are three steps to debugging JAAS LDAP connections, first add `debug="true"` to your config:
+To debug JAAS LDAP connections, first add `debug="true"` to your config:
 
 ```
 kpow {
@@ -105,7 +107,9 @@ java -Djava.security.auth.login.config=/opt/kpow/jaas.conf -jar /opt/kpow/latest
 **Note:** The JVM provides an environment variable called `JAVA_TOOL_OPTIONS` that can be used in place of system properties. We use this the thread the JAAS config to Docker.
 {% endhint %}
 
-Set the env var `JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/path/to/jaas.conf`
+Set the environment variable:
+
+&#x20;`JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/path/to/jaas.conf`
 
 {% hint style="info" %}
 **Note:** When your JAAS config is on the **host** machine and not within the container you will need to configure a docker volume mount so that kPow can read that configuration:
