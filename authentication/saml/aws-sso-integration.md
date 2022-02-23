@@ -77,7 +77,7 @@ In this case we are using a user's assigned groups as their role for kPow RBAC c
 Each of the `Roles` in this example will have the value of the GUID of the AWS SSO group.&#x20;
 
 {% hint style="warning" %}
-If you are using AWS SSO with Active Directory you may mind the Group SID from AD in place of the AWS SSO Group GUID in `${user:groups}`
+If you are using AWS SSO with Active Directory you may find the Group SID from AD in place of the AWS SSO Group GUID in `${user:groups}`
 {% endhint %}
 
 You can find the AWS SSO Group GUID from the AWS console in the URL params:
