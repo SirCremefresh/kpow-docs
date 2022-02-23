@@ -68,13 +68,19 @@ See the guide to [Role Based Access Control](../../authorization/role-based-acce
 
 Edit the kPow application within the AWS SSO dashboard and navigate to "Attribute Mappings".
 
-Add the following `Roles` mapping to `${user:groups}`:
+Add the following `Roles` mapping to `${user:groups}`
 
 ![](../../.gitbook/assets/aws-sso-attribute-mapping.png)
 
 In this case we are using a user's assigned groups as their role for kPow RBAC configuration.
 
-Each of the `Roles` in this example will have the value of the GUID of the AWS SSO group. You can find the GUID from the AWS console in the URL params:
+Each of the `Roles` in this example will have the value of the GUID of the AWS SSO group.&#x20;
+
+{% hint style="warning" %}
+If you are using AWS SSO with Active Directory you may mind the Group SID from AD in place of the AWS SSO Group GUID in `${user:groups}`
+{% endhint %}
+
+You can find the AWS SSO Group GUID from the AWS console in the URL params:
 
 ![](../../.gitbook/assets/aws-sso-guid.png)
 
