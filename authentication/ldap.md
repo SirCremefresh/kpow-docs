@@ -34,28 +34,32 @@ To enable LdapLoginModule authentication you must:
 
 Create a JAAS LDAP configuration file (the **kpow** realm is very important).
 
+{% hint style="info" %}
+See the [Kpow Secure Configuration Guide](https://github.com/operatr-io/kpow/tree/main/secure-config) for details of **bindPassword encryption**.
+{% endhint %}
+
 ```
 ## Your configuration will vary depending on your LDAP setup
 
 kpow {
-  org.eclipse.jetty.jaas.spi.LdapLoginModule required
+  io.kpow.jaas.spi.LdapLoginModule required
   useLdaps="false"
+  debug="true"
   contextFactory="com.sun.jndi.ldap.LdapCtxFactory"
-  hostname="your.ldap.host"
-  port="389"
-  bindDn="CN=Admin_User,OU=Service-Accounts,DC=your-corp,DC=com"
-  bindPassword="********"
+  hostname="localhost"
+  port="10389"
+  bindDn="uid=admin,ou=system"
+  bindPassword="AES:ARAOyh4tygxSknnTNknnuFXG+PYr0oLlN9UO/0XSq4RSOw=="
   authenticationMethod="simple"
   forceBindingLogin="true"
-  userBaseDn="OU=Service-Accounts,DC=your-corp,DC=com"
-  userRdnAttribute="sAMAccountName"
-  userIdAttribute="sAMAccountName"
+  userBaseDn="OU=Users,DC=example,DC=com"
+  userRdnAttribute="uid"
+  userIdAttribute="uid"
   userPasswordAttribute="userPassword"
-  userObjectClass="user"
-  roleBaseDn="OU=Global-Groups,DC=your-corp,DC=com"
-  roleNameAttribute="cn"
-  roleMemberAttribute="member"
-  roleObjectClass="group";
+  roleBaseDn="OU=Groups,DC=example,DC=com"
+  roleNameAttribute="roleName"
+  roleMemberAttribute="uniqueMember"
+  roleObjectClass="groupOfUniqueNames";
 };
 ```
 
@@ -65,7 +69,7 @@ To debug JAAS LDAP connections, first add `debug="true"` to your config:
 
 ```
 kpow {
-  org.eclipse.jetty.jaas.spi.LdapLoginModule required
+  io.kpow.jaas.spi.LdapLoginModule required
   debug="true"
   ...
   ...
@@ -83,7 +87,7 @@ Once configured you will find debug log lines in your application logs that prov
 
 ### Environment Configuration
 
-To activate Jetty JAAS authentication set the environment variable **`AUTH_PROVIDER_TYPE=jetty`**
+To activate Jetty JAAS authentication set the environment variable `AUTH_PROVIDER_TYPE=jetty`
 
 ### JAR Startup
 
