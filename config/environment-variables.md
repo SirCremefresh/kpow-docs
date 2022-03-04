@@ -301,6 +301,12 @@ Enable Prometheus endpoints for metrics and offsets egress.
 
 Include your ENVIRONMENT\_NAME as 'env' label on Prometheus metrics.
 
+### SNAPSHOT\_SIMPLE\_GROUPS
+
+**Type:** Boolean, **Default:** True
+
+Take observations of V1 consumer groups (simple groups including Flink consumers).
+
 ### SNAPSHOT\_PARALLELISM
 
 **Type:** Long, **Default:** 3
