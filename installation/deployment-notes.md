@@ -1,5 +1,5 @@
 ---
-description: 'Liveness Endpoints, Reverse Proxies, Error Strategies, and more.'
+description: Liveness Endpoints, Reverse Proxies, Error Strategies, and more.
 ---
 
 # Deployment Notes
@@ -12,15 +12,15 @@ Use our [**Helm**](https://github.com/operatr-io/kpow-helm-charts) and [**CloudF
 
 kPow's health check endpoint is served as a GET request at `/healthy`. This path can be used as a liveness probe from within your orchestration platform of choice.
 
-* The `/healthy` endpoint returns a `200` status code if the kPow instance is healthy. 
-* The `/healthy` endpoint returns a `503` status code if the kPow instance is unhealthy \(see: [Error states + strategies](deployment-notes.md#error-states-strategies)\)
-* The `/healthy` endpoint does not require any user authentication to access. 
+* The `/healthy` endpoint returns a `200` status code if the kPow instance is healthy.&#x20;
+* The `/healthy` endpoint returns a `503` status code if the kPow instance is unhealthy (see: [Error states + strategies](deployment-notes.md#error-states-strategies))
+* The `/healthy` endpoint does not require any user authentication to access.&#x20;
 
 The `/up` endpoint can be used for readiness probes. It always returns a `200` status when kPow's HTTP server is up and reachable.
 
 ## Error States + Strategies
 
-kPow runs an internal [Kafka Streams](https://kafka.apache.org/documentation/streams/) resource that may enter an `ERROR` state in certain scenarios where a Kafka Cluster becomes unavailable for a duration longer than the configured timeout+heartbeat. 
+kPow runs an internal [Kafka Streams](https://kafka.apache.org/documentation/streams/) resource that may enter an `ERROR` state in certain scenarios where a Kafka Cluster becomes unavailable for a duration longer than the configured timeout+heartbeat.&#x20;
 
 You can configure the `STREAMS_ERROR_STRATEGY` environment variable to handle this scenario. Possible strategies include:
 
@@ -33,11 +33,7 @@ Note: it is recommended to configure a [liveness probe](deployment-notes.md#live
 
 ## Availability
 
-{% hint style="info" %}
-Highly Available + Distributed kPow is in the backlog and coming soon!
-{% endhint %}
-
-At the moment, kPow is designed to be run as a single instance. When defining your task definition for kPow please ensure that the maximum number of instances does not exceed one.
+kPow is designed to be run as a single instance. When defining your task definition for kPow please ensure that the maximum number of instances does not exceed one.
 
 ## Reverse Proxies + Load Balancers
 
@@ -46,7 +42,7 @@ Configure `HTTP_FORWARDED=true` in conjunction with Jetty Authentication or when
 {% endhint %}
 
 {% hint style="info" %}
-kPow serves all UI traffic at the specified`PORT`\(default: 3000\). 
+kPow serves all UI traffic at the specified`PORT`(default: 3000).&#x20;
 {% endhint %}
 
 This port serves both websockets connections and general HTTP/S traffic.
@@ -88,11 +84,11 @@ In this example, kPow will be served at `http://kpow.info/kpow`
 
 ### NGINX Configuration
 
-#### Standard Configuration 
+#### Standard Configuration&#x20;
 
-A standard `nginx.conf` 
+A standard `nginx.conf`&#x20;
 
-```text
+```
   server {
     listen       80;
     server_name  localhost;
@@ -116,7 +112,7 @@ A standard `nginx.conf`
 
 This configuration serves kPow at a custom path such as `/kpow` . This scenario might be useful if your company has a suite of tools that you want to have grouped at a single HTTP endpoint.
 
-```text
+```
 server {
   listen       80;
   server_name  localhost;
@@ -143,6 +139,4 @@ server {
      }
 }
 ```
-
-
 
