@@ -191,7 +191,7 @@ Below are integration guides for common authentication providers:
 
 ### SAML Integration (Generic)
 
-Operatr can integrate with your SAML IdP as a service provider.
+kPow can integrate with your SAML IdP as a service provider.
 
 Roles are defined in a `Roles` attribute in the SAMLResponse from your IdP.
 
