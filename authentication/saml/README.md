@@ -61,3 +61,18 @@ kPow provides an endpoint for inspecting the state of the currently authenticate
  "name": "User",
  "roles": ["admin"]}
 ```
+
+### Custom Role Field
+
+kPow offers [Role Based Access Control](../../authorization/role-based-access-control.md) for user authorization.
+
+Roles are defined in a `Roles` attribute in the SAMLResponse from your IdP.
+
+If you would like to use a field other than the `Roles` attribute, add the following to your RBAC configuration file.
+
+```
+saml:
+  role_field: "Groups"
+```
+
+Now, kPow will look to the `Groups` attribute for its basis of roles.
