@@ -14,10 +14,12 @@ See the article [How to manage Kafka visibility with Multi-Tenancy](https://kpow
 
 A tenant restricts the set of Kafka resources that are accessible to a user role from all the resources available to kPow. A user role may be assigned multiple tenants.
 
-When operating within a tenant a user can only see resources included by that tenant, they will also see a fully consistent synthetic cluster-view of their aggregated resources. The overall user experience is simply of a restricted set of Kafka resources as if they were truly the only resources in the system.
+When operating within a tenant a user can only see resources included by that tenant, they will also see a fully consistent synthetic cluster-view of their aggregated resources.
+
+The overall user experience is simply of a restricted set of Kafka resources as if they were truly the only resources in the system.
 
 {% hint style="info" %}
-Tenancy restricts more that visibility, a user can also only **create** resources valid to their tenant.
+A user can only **create** resources valid to their tenant.
 {% endhint %}
 
 Tenant configuration is defined within your Role Based Access Configuration YAML file.
@@ -48,11 +50,13 @@ A tenant determines what resources are visible with the following logic:
 
 The primary use for multi-tenancy is to provide different views of Kafka resources to different teams within your organisation.
 
-Consider a kPow that is connected to three Kafka Clusters (Dev, UAT, Prod), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. **** You can create tenants that:
+Consider a kPow that is connected to three Kafka Clusters (Dev, UAT, Prod), each having 200 topics and 200 groups, two Connect installations and one Schema Registry. ****&#x20;
 
-* Contains only Kafka resources connected to or within Dev and UAT (or any combination of clusters)
-* Contains only specific topics or groups, or matches them with a prefix. E.g `my-topic` or `my-grou*`
-* Includes or excludes Connect or Schema resource in their entirety (more granular control shortly)
+You can create tenants that:
+
+* Contain Kafka resources connected to or within Dev and UAT (or any combination of clusters)
+* Contain specific topics or groups. E.g `my-topic` or `my-grou*`
+* Include or exclude Connect or Schema resource in their entirety
 * Any combination of the above.
 
 The secondary use is to exclude groups and topics of no interest to your organisation.
