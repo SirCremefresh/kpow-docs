@@ -24,9 +24,9 @@ Tenant configuration is defined within your Role Based Access Configuration YAML
 
 A tenant can:
 
-* Include or exclude specific topics or topic prefixes, e.g. tx-topic, tx-top\*
-* Include or exclude specific groups or group prefixes, e.g. tx-group, tx-grou\*
-* Include or exclude specific resources, e.g Kafka clusters, Schema registries, or Connect clusters
+* Include or exclude topics by name, prefix, or suffix, e.g. tx-topic, tx-top\*, \*-topic
+* Include or exclude groups by name, prefix, or suffix, e.g. tx-group, tx-grou\*, \*-group
+* Include or exclude full resources, e.g Kafka clusters, Schema registries, or Connect clusters
 * Be assigned to one or many user roles
 
 #### Inferred Resources
