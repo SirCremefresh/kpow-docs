@@ -81,7 +81,7 @@ policies:
     effect:   "Allow" 
     actions:  ["GROUP_EDIT"] 
     roles:    ["kafka-admin"]
-  - resource: ["cluster", "*"]
+  - resource: ["cluster", "*", "group", "tx_*"]
     effect:   "Stage" 
     actions:  ["GROUP_EDIT"] 
     roles:    ["kafka-user"] 
@@ -89,7 +89,7 @@ policies:
 
 **`kafka-admin`** is allowed to inspect, produce, and edit all topics **in a specific cluster**, then explicitly denied produce and edit actions to **one specific topic in that same cluster**.&#x20;
 
-**`kafka-admin`** is then permitted group edit permissions on all clusters, **`kafka-user` ** are permitted stage access to the group edit action - meaning the request will have to be confirmed by an admin user.
+**`kafka-admin`** is then permitted group edit permissions on all clusters, **`kafka-user` ** are permitted stage access to the group edit action for groups starting with `tx_` -  stage meaning the request will have to be confirmed by an admin user.
 
 All remaining actions are **implicitly denied** actions to all users on all resources.
 
@@ -104,9 +104,9 @@ Resources are defined within a [taxonomy](https://en.wikipedia.org/wiki/Taxonomy
 Where:
 
 * **Domain Type**: The top-level resource, either **cluster**, **schema**, or **connect**
-* **Domain ID:** Unique identifier of the domain or "**\*" for all/wildcard**
+* **Domain ID:** Unique identifier of the domain or "**\***" **for all/wildcard**
 * **Object Type:** Either **topic, group, connector, subject,** or **broker**
-* **Object ID:** Unique identified of the object. **Wildcard not supported**
+* **Object ID:** Unique identified of the object. Prefix and Suffix supported
 
 **Specifying the object is optional.** If not provided the resource includes all objects within a domain.
 
@@ -120,7 +120,7 @@ Where:
 ["schema", "*"] - all schema registries and all objects
 ["schema", "*", "subject", "tx-events"] - named subject in all schema registries
 ["connect", "*"] - all connect clusters and all objects
-["connect", "*", "connector", "csv-in"] - named connector in all connect clusters
+["connect", "*", "connector", "csv-*"] - matching connector in all connect clusters
 ```
 
 ### Resource IDs
