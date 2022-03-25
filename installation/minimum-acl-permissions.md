@@ -144,21 +144,22 @@ Using the same client configuration file as above, the following script correctl
          --topic __oprtr_metric_pt1m \
          --config compression.type=gzip \
          --config segment.bytes=104857600 \
-         --config retention.ms=86400000 \
-         --config segment.ms=43200000
+         --config retention.ms=7200000 \
+         --config segment.ms=5400000
 ./kafka-topics.sh --create \
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic __oprtr_snapshot_state \
          --config compression.type=gzip \
          --config segment.bytes=104857600 \
-         --config retention.ms=86400000 \
+         --config retention.ms=7200000 \
          --config message.timestamp.type=LogAppendTime \
-         --config segment.ms=43200000
+         --config segment.ms=5400000
 ./kafka-topics.sh --create \
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic oprtr.compute.metrics.v2-oprtr_metric_v2_pt1m-changelog \
+         --config compression.type=gzip \
          --config cleanup.policy=compact,delete \
          --config segment.bytes=52428800 \
          --config retention.ms=5400000 \
@@ -168,6 +169,7 @@ Using the same client configuration file as above, the following script correctl
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic oprtr.compute.snapshots.v2-oprtr_snaphot_state_v2-changelog \
+         --config compression.type=gzip \         
          --config cleanup.policy=compact,delete \
          --config segment.bytes=52428800 \
          --config retention.ms=604800000 \
