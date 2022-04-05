@@ -64,4 +64,4 @@ kPow uses the following resources:
 * A Kafka Consumer to inspect data on topics
 * A Kafka Producer to produce data to topics
 
-kPow must be connected to **at least on Kafka Cluster**.
+kPow must be connected to **at least one Kafka Cluster**.
