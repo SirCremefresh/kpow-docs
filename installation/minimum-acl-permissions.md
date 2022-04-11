@@ -135,6 +135,8 @@ Using the same client configuration file as above, the following script correctl
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic __oprtr_audit_log \
+         --replication-factor 3 \
+         --partitions 12 \
          --config compression.type=gzip \
          --config segment.bytes=104857600 \
          --config retention.ms=-1
@@ -142,6 +144,8 @@ Using the same client configuration file as above, the following script correctl
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic __oprtr_metric_pt1m \
+         --replication-factor 3 \
+         --partitions 12 \
          --config compression.type=gzip \
          --config segment.bytes=104857600 \
          --config retention.ms=7200000 \
@@ -150,6 +154,8 @@ Using the same client configuration file as above, the following script correctl
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic __oprtr_snapshot_state \
+         --replication-factor 3 \
+         --partitions 12 \
          --config compression.type=gzip \
          --config segment.bytes=104857600 \
          --config retention.ms=7200000 \
@@ -159,6 +165,8 @@ Using the same client configuration file as above, the following script correctl
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic oprtr.compute.metrics.v2-oprtr_metric_v2_pt1m-changelog \
+         --replication-factor 3 \
+         --partitions 12 \
          --config compression.type=gzip \
          --config cleanup.policy=compact,delete \
          --config segment.bytes=52428800 \
@@ -169,7 +177,9 @@ Using the same client configuration file as above, the following script correctl
          --bootstrap-server 127.0.0.1:9092 \
          --command-config client.conf \
          --topic oprtr.compute.snapshots.v2-oprtr_snaphot_state_v2-changelog \
-         --config compression.type=gzip \         
+         --replication-factor 3 \
+         --partitions 12 \
+         --config compression.type=gzip \
          --config cleanup.policy=compact,delete \
          --config segment.bytes=52428800 \
          --config retention.ms=604800000 \
