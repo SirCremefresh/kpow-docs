@@ -9,6 +9,7 @@ By default, kPow ships with the following serdes available from data inspect:
 * JSON
 * JSON Schema
 * AVRO
+* AVRO (Strict)
 * Protobuf
 * String
 * EDN
@@ -52,6 +53,10 @@ Set `DEFAULT_KEY_SERDES` or `DEFAULT_VALUE_SERDES` to specify which serdes shoul
 To restrict the serdes available to your users set `AVAILABLE_KEY_SERDES` or `AVAILABLE_VALUE_SERDES`\
 \
 Eg: `AVAILABLE_VALUE_SERDES=JSON,AVRO` to only ever show JSON or AVRO serdes from within kPow's UI
+
+{% hint style="info" %}
+When filtering serdes use the same label name as the one in the serdes dropdown. Eg: "AVRO (Strict)"
+{% endhint %}
 
 ## Custom Serdes
 
