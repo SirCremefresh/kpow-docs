@@ -46,6 +46,7 @@
   * [Okta integration](authentication/saml/okta-integration.md)
   * [AWS SSO integration](authentication/saml/aws-sso-integration.md)
   * [Azure AD integration](authentication/saml/azure-ad-integration.md)
+  * [Keycloak Integration](authentication/saml/keycloak-integration.md)
 
 ## User Authorization <a href="#authorization" id="authorization"></a>
 
