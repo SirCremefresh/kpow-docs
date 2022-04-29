@@ -11,6 +11,7 @@ We have integration guides for common providers:
 * [Okta](okta-integration.md)
 * [AWS SSO](aws-sso-integration.md)
 * [Azure AD](azure-ad-integration.md)
+* [Keycloak](keycloak-integration.md)
 
 ## Generic configuration
 
