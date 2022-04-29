@@ -49,7 +49,7 @@ Set the following environment variables and start kPow:
     /var/saml/saml-idp-metadata.xml
     ```
 
-kPow will now authenticate users with Okta (SAML).\
+kPow will now authenticate users with Keycloak (SAML).\
 
 
 ## User Authorization
