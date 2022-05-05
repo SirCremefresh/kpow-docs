@@ -16,26 +16,52 @@ kPow connects to a Schema registry with **environment variables**.
 
 ### Confluent Scheme Registry
 
-| Variable                         | Description                                                                                                                                                       |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SCHEMA_REGISTRY_NAME**         | UI and logs friendly name for this Schema registry                                                                                                                |
-| **SCHEMA_REGISTRY_URL**          | The client connection URL for your registry                                                                                                                       |
-| **SCHEMA_REGISTRY_AUTH**         | USER_INFO if basic authentication is configured                                                                                                                   |
-| **SCHEMA_REGISTRY_USER**         | Username if basic authentication is configured                                                                                                                    |
-| **SCHEMA_REGISTRY_PASSWORD**     | Password if basic authentication is configured                                                                                                                    |
-| **SCHEMA_REGISTRY_RESOURCE_IDS** | Optional, comma separated list of unique ids. Only specify when configuring multiple [s](kafka-connect.md#configuring-multiple-connect-clusters)chema registries. |
+
+
+| Variable                            | Description                                                                                             |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **SCHEMA\_REGISTRY\_NAME**          | UI and logs friendly name for this Schema registry                                                      |
+| **SCHEMA\_REGISTRY\_URL**           | The client connection URL for your registry                                                             |
+| **SCHEMA\_REGISTRY\_AUTH**          | USER\_INFO if basic authentication is configured                                                        |
+| **SCHEMA\_REGISTRY\_USER**          | Username if basic authentication is configured                                                          |
+| **SCHEMA\_REGISTRY\_PASSWORD**      | Password if basic authentication is configured                                                          |
+| **SCHEMA\_REGISTRY\_RESOURCE\_IDS** | Optional, comma separated list of unique ids. Only specify when configuring multiple schema registries. |
+
+#### Mutual TLS
+
+The following environment variables can be used to configure Confluent schema registry connections with mutual TLS:
+
+* SCHEMA\_REGISTRY\_SSL\_KEYSTORE\_LOCATION
+* SCHEMA\_REGISTRY\_SSL\_KEYSTORE\_PASSWORD
+* SCHEMA\_REGISTRY\_SSL\_KEY\_PASSWORD
+* SCHEMA\_REGISTRY\_SSL\_KEYSTORE\_TYPE
+* SCHEMA\_REGISTRY\_SSL\_KEYMANAGER\_ALGORITHM
+* SCHEMA\_REGISTRY\_SSL\_TRUSTSTORE\_LOCATION
+* SCHEMA\_REGISTRY\_SSL\_TRUSTSTORE\_PASSWORD
+* SCHEMA\_REGISTRY\_SSL\_TRUSTSTORE\_TYPE
+* SCHEMA\_REGISTRY\_SSL\_TRUSTMANAGER\_ALGORITHM
+* SCHEMA\_REGISTRY\_SSL\_ENDPOINT\_IDENTIFICATION\_ALGORITHM
+* SCHEMA\_REGISTRY\_SSL\_PROVIDER
+* SCHEMA\_REGISTRY\_SSL\_CIPHER\_SUITES
+* SCHEMA\_REGISTRY\_SSL\_PROTOCOL
+* SCHEMA\_REGISTRY\_SSL\_ENABLED\_PROTOCOLS
+* SCHEMA\_REGISTRY\_SSL\_SECURE\_RANDOM\_IMPLEMENTATION
+* SCHEMA\_REGISTRY\_SSL\_KEYSTORE\_KEY
+* SCHEMA\_REGISTRY\_SSL\_KEYSTORE\_CERTIFICATE\_CHAIN
+* SCHEMA\_REGISTRY\_SSL\_TRUSTSTORE\_CERTIFICATES
+* SCHEMA\_REGISTRY\_SSL\_ENGINE\_FACTORY\_CLASS
 
 ### AWS Glue Schema Registry
 
-| Variable                   | Description                                                      |
-| -------------------------- | ---------------------------------------------------------------- |
-| **SCHEMA_REGISTRY_NAME**   | UI and logs friendly name for this Schema registry               |
-| **SCHEMA_REGISTRY_ARN**    | The ARN of your AWS Glue Schema Registry                         |
-| **SCHEMA_REGISTRY_REGION** | The Region of your AWS Glue Schema Registry (default: us-east-1) |
+| Variable                     | Description                                                      |
+| ---------------------------- | ---------------------------------------------------------------- |
+| **SCHEMA\_REGISTRY\_NAME**   | UI and logs friendly name for this Schema registry               |
+| **SCHEMA\_REGISTRY\_ARN**    | The ARN of your AWS Glue Schema Registry                         |
+| **SCHEMA\_REGISTRY\_REGION** | The Region of your AWS Glue Schema Registry (default: us-east-1) |
 
 ### Configuring Multiple Schema Registries
 
-kPow supports multiple Schema Registries associated to a single Kafka cluster. 
+kPow supports multiple Schema Registries associated to a single Kafka cluster.&#x20;
 
 To configure multiple Schema Registries, use the environment variable `SCHEMA_REGISTRY_RESOURCE_IDS` to define a comma separated list of Schema Registries. kPow uses the resource ID as a prefix in the environment variable.
 
