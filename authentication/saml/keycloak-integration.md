@@ -59,7 +59,7 @@ kPow will now authenticate users with Keycloak (SAML).\
 
 ![](<../../.gitbook/assets/Screen Shot 2022-04-29 at 9.45.49 am.png>)
 
-Within your [RBAC yaml configuration](../../authorization/role-based-access-control.md#saml-integration-generic) add the following line:
+3\. Within your [RBAC yaml configuration](../../authorization/role-based-access-control.md#saml-integration-generic) add the following line:
 
 ```
 saml:
