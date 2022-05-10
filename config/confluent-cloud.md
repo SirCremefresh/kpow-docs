@@ -4,16 +4,20 @@ description: Use kPow to monitor your Confluent Cloud clusters
 
 # Confluent Cloud
 
-kPow works out of the box with Confluent Cloud, simply follow our [Kafka Cluster](kafka-cluster.md) configuration documentation to get started.
+kPow  works out of the box with Confluent Cloud, simply follow our [Kafka Cluster](kafka-cluster.md) configuration documentation to get started.
 
-Extra configuration is required for kPow when monitoring multiple Confluent Cloud clusters that share the same bootstrap url, but have different authentication details. Read on to configure kPow in a multi-tenant scenario.
+Extra configuration is required to display disk information related to your clusters, or to monitor multiple Confluent Cloud clusters that share the same bootstrap url.
 
-## Confluent Cloud Metrics API integration
+## Confluent Cloud Metrics API Integration
 
-Configure this integration to allow kPow to capture extra telemetry about your Confluent Cloud clusters:
+Kpow retrieves the following information via the Confluent Metrics API.
 
-* Broker disk information \(`io.confluent.kafka.server/retained_bytes`\)
-* Active connection count \(`io.confluent.kafka.server/active_connection_count`\)
+* Broker disk information (`io.confluent.kafka.server/retained_bytes`)
+* Active connection count (`io.confluent.kafka.server/active_connection_count`)
+
+![](../.gitbook/assets/kpow-v88-5-ui-full.png)
+
+Kpow requires this integration to show disk information (both topic and brokers) as Confluent Cloud does not support the Kafka AdminClient function that normally returns this data.
 
 To enable this integration, first create a [new API key](https://confluent.cloud/settings/api-keys) in Confluent Cloud.
 
@@ -47,14 +51,14 @@ To get around the API limitations imposed by Confluent Cloud's metrics API, kPow
 
 Currently two modes are supported:
 
-* `COMPLETE` \(default\): data is queried at a topic-partition granularity, all replica disk information is complete.
-* `INFERRED`: data is queried at a topic granularity. Topic-partition replica disk information is estimated based on other kPow telemetry \(number of messages in partition, average size of record, etc\). Replica disk information at a topic granularity is complete.
+* `COMPLETE` (default): data is queried at a topic-partition granularity, all replica disk information is complete.
+* `INFERRED`: data is queried at a topic granularity. Topic-partition replica disk information is estimated based on other kPow telemetry (number of messages in partition, average size of record, etc). Replica disk information at a topic granularity is complete.
 
 If you are bumping up against any of the Confluent Cloud API limitations, it is recommended to set `CONFLUENT_DISK_MODE=INFERRED` if you are comfortable with the topic-partition replica disk data being estimated.
 
 #### CONFLUENT\_METRICS\_URL
 
-If you are using the self-managed Confluent Platform, you can set `CONFLUENT_METRICS_URL=https://my-metrics-endpoint`. 
+If you are using the self-managed Confluent Platform, you can set `CONFLUENT_METRICS_URL=https://my-metrics-endpoint`.&#x20;
 
 The default metrics endpoint is `https://api.telemetry.confluent.cloud/v2/metrics/cloud/query`
 
@@ -66,7 +70,7 @@ Specifies the number of parallel HTTP requests made to the Metrics API when coll
 
 To connect to two clusters that share the same `BOOTSTRAP` , but are accessed with different auth credentials, provide a unique `CLUSTER_ID` environment variable for each cluster definition, for example:
 
-```text
+```
 BOOTSTRAP=pkc-5nym1.us-east-1.aws.confluent.cloud:9092
 CLUSTER_ID=confluent-cloud-dev
 SECURITY_PROTOCOL=SASL_SSL
@@ -86,7 +90,5 @@ CONFLUENT_API_KEY_2=XXXYYYZZZZ
 CONFLUENT_API_SECRET_2=XXXYYYZZZZYYYZZZZ
 ```
 
-**Note**: the `CLUSTER_ID` environment variable must be unique across all clusters defined in kPow, and can be any unique identifier \(eg, the string `confluent-cloud-stage`\) 
-
-
+**Note**: the `CLUSTER_ID` environment variable must be unique across all clusters defined in kPow, and can be any unique identifier (eg, the string `confluent-cloud-stage`)&#x20;
 
