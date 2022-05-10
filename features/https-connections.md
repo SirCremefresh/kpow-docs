@@ -19,14 +19,14 @@ Refer to the **** [**Jetty documentation**](https://www.eclipse.org/jetty/docume
 Set the following environment variable and start kPow with SSL connections.
 
 * `ENABLE_HTTPS=true` Once set kPow will serve HTTPS traffic on the configured UI `PORT`
-*   `HTTPS_KEYSTORE=` The location of your KeyStore, e.g.
+*   `HTTPS_KEYSTORE_LOCATION=` The location of your KeyStore, e.g.
 
     ```
     /var/certs/keystore.jks
     ```
 * `HTTPS_KEYSTORE_TYPE=` The type of KeyStore (eg, `PKCS12`).
 * `HTTPS_KEYSTORE_PASSWORD=` The password of the KeyStore.
-*   `HTTPS_TRUSTSTORE=` - (optional) The location of your Truststore e.g.
+*   `HTTPS_TRUSTSTORE_LOCATION=` - (optional) The location of your Truststore e.g.
 
     ```
     /var/certs/truststore.jks
