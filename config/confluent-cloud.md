@@ -17,7 +17,7 @@ Kpow retrieves the following information via the Confluent Metrics API.
 
 ![](../.gitbook/assets/kpow-v88-5-ui-full.png)
 
-Kpow requires this integration to show disk information (both topic and brokers) as Confluent Cloud does not support the Kafka AdminClient function that normally returns this data.
+Kpow requires this integration to show disk information (both topic and broker) as Confluent Cloud does not support the Kafka AdminClient function that normally returns this data.
 
 To enable this integration, first create a [new API key](https://confluent.cloud/settings/api-keys) in Confluent Cloud.
 
