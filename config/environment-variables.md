@@ -237,6 +237,12 @@ See [Custom Serdes](../features/data-inspect/serdes.md#custom-serdes) for more i
 
 Comma separated names of custom Serdes that can be found on the classpath.
 
+### DEFAULT\_HEADERS\_SERDES
+
+**Type:** String (e.g. JSON)
+
+The default headers Serde to use when inspecting data.
+
 ### DEFAULT\_KEY\_SERDES
 
 **Type:** String (e.g. JSON)

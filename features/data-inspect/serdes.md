@@ -46,7 +46,7 @@ kPow offers some configuration on how serdes are presented in the UI.
 
 #### Default Serdes
 
-Set `DEFAULT_KEY_SERDES` or `DEFAULT_VALUE_SERDES` to specify which serdes should be selected from the dropdown by default when using data inspect.&#x20;
+Set `DEFAULT_KEY_SERDES`, `DEFAULT_VALUE_SERDES` or `DEFAULT_HEADERS_SERDES` to specify which serdes should be selected from the dropdown by default when using data inspect.&#x20;
 
 #### Available Serdes
 
