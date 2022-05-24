@@ -27,9 +27,9 @@ kPow connects to a Schema registry with **environment variables**.
 | **SCHEMA\_REGISTRY\_PASSWORD**      | Password if basic authentication is configured                                                          |
 | **SCHEMA\_REGISTRY\_RESOURCE\_IDS** | Optional, comma separated list of unique ids. Only specify when configuring multiple schema registries. |
 
-#### Mutual TLS
+#### SSL Configuration
 
-The following environment variables can be used to configure Confluent schema registry connections with mutual TLS:
+The following environment variables can be used to configure Confluent schema registry connections with mutual-TLS:
 
 * SCHEMA\_REGISTRY\_SSL\_KEYSTORE\_LOCATION
 * SCHEMA\_REGISTRY\_SSL\_KEYSTORE\_PASSWORD
