@@ -20,6 +20,12 @@ The kPow UI and Prometheus endpoints are served by [Jetty](https://www.eclipse.o
 
 The server can be configured to serve the UI via HTTPS or on a different port, or to redirect correctly when fronted with an HTTPS-terminating proxy.
 
+### LOG\_FORMAT
+
+**Type:** String, **Default:** plain
+
+Set to 'json' to have Kpow write application logs in JSON format.
+
 ### PORT
 
 **Type:** Long, **Default**: 3000
