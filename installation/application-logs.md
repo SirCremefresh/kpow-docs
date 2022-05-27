@@ -4,7 +4,11 @@ description: Configure kPow Application Logs
 
 # Application Logs
 
-kPow uses [**Logback**](http://logback.qos.ch) to record application logs to **stdout**.
+kPow uses [**Logback**](http://logback.qos.ch/) to record application logs to **stdout**.
+
+{% hint style="success" %}
+Switch to JSON formatted logs with the environment variable`LOG_FORMAT=json`
+{% endhint %}
 
 Configure kPow to write application logs to disk (or any other supported Logback appender) and control the log levels by providing a Logback configuration file.
 
@@ -74,4 +78,4 @@ Once configured, application logs are written to file and JAAS debug output is v
 09:30:05.257 INFO  [OperatrScheduler_Worker-5] operatr.observe.kafka – R9AvkXfHTsCiI8g3E_5EVA: [38] kafka telemetry snapshots captured in 250 ms
 ```
 
-See the [Logback](http://logback.qos.ch) site for full information on configuration options like rolling file appenders.
+See the [Logback](http://logback.qos.ch/) site for full information on configuration options like rolling file appenders.
