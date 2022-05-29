@@ -89,7 +89,9 @@ sasl.mechanism=PLAIN
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin-secret";
 ```
 
-The following commands use the kafka-acls.sh script provided by Apache Kafka to create the **basic set** of ACLs described above that allows kPow to operate plus the ALTER CLUSTER ACL that allows kPow to create and delete ACLs.
+#### Basic ACL Creation Script
+
+Use the kafka-acls.sh script provided by Apache Kafka to create the **basic set** of ACLs described above. This allows kPow to operate plus the ALTER CLUSTER ACL allowing kPow to create and delete ACLs.
 
 ```
 ./kafka-acls.sh --bootstrap-server 127.0.0.1:9092 --command-config client.conf --add --allow-principal User:kpow --operation Describe --cluster '*'
