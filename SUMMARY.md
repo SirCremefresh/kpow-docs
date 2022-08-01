@@ -32,6 +32,7 @@
 * [Azure Event Hubs](config/azure-event-hubs.md)
 * [Confluent Cloud](config/confluent-cloud.md)
 * [Redpanda](config/redpanda.md)
+* [MSK](config/msk.md)
 
 ## User Authentication <a href="#authentication" id="authentication"></a>
 

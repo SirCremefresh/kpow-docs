@@ -20,7 +20,7 @@ A Kafka cluster can have **multiple** associated Schema registries and/or Kafka 
 
 kPow is compatible with **Apache Kafka 1.0+.**
 
-kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.org), [Amazon MSK](https://aws.amazon.com/msk/), [Red Had AMQ Streams](https://www.redhat.com/en/resources/amq-streams-datasheet), [Red Hat OpenShift Streams for Apache Kafka](https://developers.redhat.com/products/red-hat-openshift-streams-for-apache-kafka/overview), [Aiven Managed Kafka](https://aiven.io/kafka), [Instaclustr Managed Kafka](https://www.instaclustr.com/products/managed-apache-kafka/), [Confluent Platform](https://www.confluent.io/product/confluent-platform), and [Confluent Cloud](https://www.confluent.io/confluent-cloud).
+kPow has been tested and is compatible with [Apache Kafka](https://kafka.apache.org/), [Amazon MSK](https://aws.amazon.com/msk/), [Red Had AMQ Streams](https://www.redhat.com/en/resources/amq-streams-datasheet), [Red Hat OpenShift Streams for Apache Kafka](https://developers.redhat.com/products/red-hat-openshift-streams-for-apache-kafka/overview), [Aiven Managed Kafka](https://aiven.io/kafka), [Instaclustr Managed Kafka](https://www.instaclustr.com/products/managed-apache-kafka/), [Confluent Platform](https://www.confluent.io/product/confluent-platform), and [Confluent Cloud](https://www.confluent.io/confluent-cloud).
 
 {% hint style="info" %}
 kPow is not officially supported with Redpanda.
@@ -40,21 +40,7 @@ Contact [support@operatr.io](mailto:support@operatr.io) for assistance.
 
 User permissions to Kafka cluster resources are defined by [**Cluster actions.**](../authorization/overview.md#user-actions)****
 
-## **AWS IAM Integration**
 
-kPow supports [IAM Access Control for AWS MSK](https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html).
-
-Simply set your kPow connection fields appropriately, e.g.
-
-```
-SSL_TRUSTSTORE_LOCATION=<PATH_TO_TRUST_STORE_FILE>
-SECURITY_PROTOCOL=SASL_SSL
-SASL_MECHANISM=AWS_MSK_IAM
-SASL_JAAS_CONFIG=software.amazon.msk.auth.iam.IAMLoginModule required;
-SASL_CLIENT_CALLBACK_HANDLER_CLASS=software.amazon.msk.auth.iam.IAMClientCallbackHandler
-```
-
-See the AWS documentation for more information, including JAAS config for named profiles.
 
 ## Configuration
 
