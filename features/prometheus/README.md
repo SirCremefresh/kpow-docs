@@ -26,7 +26,7 @@ PROMETHEUS_EGRESS=true
 
 To secure all metrics endpoints you can configure basic authentication:
 
-```
+```bash
 PROMETHEUS_USERNAME=foo
 PROMETHEUS_PASSWORD=bar
 ```
