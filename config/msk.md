@@ -76,3 +76,7 @@ The following functionality will be impacted due MSK's own limitations:
 
 * kPow's internal audit log topic will only have a retention of 1 day
 * Broker disk metrics are not available in MSK serverless
+
+## MSK Connect
+
+See the [MSK Connect](msk.md#msk-connect) article

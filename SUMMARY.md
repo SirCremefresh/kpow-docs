@@ -28,6 +28,7 @@
 * [Kafka Cluster](config/kafka-cluster.md)
 * [Schema Registry](config/schema-registry.md)
 * [Kafka Connect](config/kafka-connect/README.md)
+  * [MSK Connect](config/kafka-connect/msk-connect.md)
   * [Confluent Managed Connect](config/kafka-connect/confluent-managed-connect.md)
 * [Multi-Cluster Management](config/multi-cluster.md)
 * [Azure Event Hubs](config/azure-event-hubs.md)
