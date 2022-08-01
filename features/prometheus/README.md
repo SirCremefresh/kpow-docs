@@ -22,6 +22,15 @@ To enable Prometheus endpoints set the following **environment variable.**
 PROMETHEUS_EGRESS=true
 ```
 
+### Security
+
+To secure all metrics endpoints you can configure basic authentication:
+
+```
+PROMETHEUS_USERNAME=foo
+PROMETHEUS_PASSWORD=bar
+```
+
 ## Getting Started
 
 See our how-to blogpost on [alerting and monitoring with kPow, Prometheus, and AlertManager](https://kpow.io/how-to/kafka-alerting-with-kpow-prometheus-and-alertmanager/).
