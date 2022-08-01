@@ -11,7 +11,7 @@ kPow is configured with these Environment Variables.
 One instance of kPow can manage multiple Kafka Clusters and associated resources.
 
 * See [Kafka Cluster](kafka-cluster.md) for Kafka environment variable reference
-* See [Kafka Connect](kafka-connect.md) for Connect environment variable reference
+* See [Kafka Connect](kafka-connect/) for Connect environment variable reference
 * See [Schema Registry](schema-registry.md) for Schema registry environment variable reference
 
 ## Web Server&#x20;

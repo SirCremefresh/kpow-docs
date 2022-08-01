@@ -7,7 +7,7 @@ description: Manage Kafka Connect from within kPow
 ## Prerequisites
 
 * You have setup the correct [access control permissions](../authorization/overview.md) in kPow to allow `CONNECT_CREATE` and `CONNECT_EDIT`
-* You have configured [Kafka Connect](../config/kafka-connect.md) within kPow
+* You have configured [Kafka Connect](../config/kafka-connect/) within kPow
 
 ## Creating Connectors
 

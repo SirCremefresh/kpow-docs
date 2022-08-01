@@ -12,7 +12,7 @@ Configure RBAC and set the organisation field to restrict access to your organis
 
 ### Create a Github OAuth2 Application
 
-1. Login to [GitHub](https://github.com) and navigate to the organisation you wish to integrate with kPow.
+1. Login to [GitHub](https://github.com/) and navigate to the organisation you wish to integrate with kPow.
 2. Navigate to **Settings > Developer Settings > OAuth Apps > New Oath Application**
 3. Fill out the **Register a new OAuth application** form:
    * **Application Name**: The name of your kPow instance, e.g. 'kPow Staging'.

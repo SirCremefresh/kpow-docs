@@ -8,7 +8,7 @@ description: >-
 
 ### Create an Okta SAML Application
 
-Login to your [Okta](https://okta.com) account.
+Login to your [Okta](https://okta.com/) account.
 
 1. Navigate to **Admin > Applications > Add Application > Create New App.**
 2. In **Create a New Application Integration** set these values and click **Create:**

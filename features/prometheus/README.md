@@ -5,7 +5,7 @@ description: Prometheus Endpoints for Long-Term Reporting and Alerting
 # Prometheus Integration
 
 {% hint style="info" %}
-kPow's Prometheus egress endpoints follow the [OpenMetrics](https://openmetrics.io) standard.
+kPow's Prometheus egress endpoints follow the [OpenMetrics](https://openmetrics.io/) standard.
 
 This allows you to integrate kPow to your favourite observability tools such as [Prometheus](https://prometheus.io/docs/prometheus/latest/getting\_started/), [New Relic](https://docs.newrelic.com/docs/integrations/prometheus-integrations/) or [Grafana](https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/) for long-term reporting dashboards and alerting.
 {% endhint %}
