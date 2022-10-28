@@ -24,6 +24,7 @@ The following actions are supported by both methods of access control.
 |  | **TOPIC\_CREATE** | Allow users to create new topics |
 |  | **TOPIC\_EDIT** | Allow users to edit topic configuration |
 |  | **TOPIC\_DELETE** | Allow users to delete topics |
+|  | **TOPIC\_TRUNCATE** | Allow users to delete messages in topics |
 |  | **GROUP\_EDIT** | Allow users to delete consumer groups and reset consumer offsets |
 |  | **BROKER\_EDIT** | Allow users to edit broker configuration |
 | **SCHEMA** | **SCHEMA\_CREATE** | Allow users to create new schemas and subjects |

@@ -16,6 +16,7 @@ ALLOW_TOPIC_PRODUCE=true      # Allow users to write new messages to topics
 ALLOW_TOPIC_CREATE=true       # Allow users to create new topics
 ALLOW_TOPIC_EDIT=true         # Allow users to edit topic configuration
 ALLOW_TOPIC_DELETE=true       # Allow users to delete topics
+ALLOW_TOPIC_TRUNCATE=true     # Allow users to delete messages
 ALLOW_GROUP_EDIT=true         # Allow users to delete consumer groups and reset consumer offsets
 ALLOW_BROKER_EDIT=true        # Allow users to edit broker configuration
 ALLOW_ACL_EDIT=true           # Allow users to create and delete Kafka ACLs
